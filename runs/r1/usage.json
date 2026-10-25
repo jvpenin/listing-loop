@@ -243,5 +243,20 @@
         }
       ]
     }
+  ],
+  "learn": [
+    {
+      "sessionId": "5407594c-c900-4186-9fa0-9bbe354c1204",
+      "success": true,
+      "durationMs": 44637,
+      "tokenUsage": {
+        "inputTokens": 426,
+        "outputTokens": 4561,
+        "cacheCreationTokens": 28270,
+        "cacheReadTokens": 66564,
+        "thinkingTokens": 1071,
+        "factoryCredits": 84629
+      }
+    }
   ]
 }
