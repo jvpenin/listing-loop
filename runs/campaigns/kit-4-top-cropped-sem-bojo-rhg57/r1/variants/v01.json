@@ -1,0 +1,61 @@
+{
+  "variantId": "v01",
+  "axes": {
+    "angulo": "academia",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "exploit",
+  "title": "Kit 4 Top Cropped Sem Bojo para Academia Fitness Feminino Microfibra Alça Larga Cós Largo 4 Cores",
+  "description": "Kit 4 Top Cropped Sem Bojo para Academia, com 4 cores: preto, branco, azul-marinho e rosa.\n\nProcurando top cropped para academia confortável e sem bojo? Este kit traz 4 tops cropped femininos em microfibra, pensados para treino, fitness e o dia a dia.\n\nDestaques:\n- 4 cores no kit: preto, branco, azul-marinho e rosa\n- Microfibra macia e leve\n- Modelo sem bojo, sem enchimento: fácil de vestir e tirar\n- Alça larga para o treino\n- Cós largo na barra\n- Decote redondo e corte cropped\n\nPara quem é:\n- Top cropped feminino para academia e treino\n- Quem busca top fitness confortável para malhar\n- Quem quer um top cropped básico para combinar com tudo\n\nPor que escolher este kit:\n- 4 tops por R$ 51,90, cerca de R$ 12,98 por peça\n- Um top de cada cor para trocar a cada treino\n- Kit pronto para presente ou para repor o guarda-roupa de academia\n\nCaracterísticas:\n- Material: microfibra\n- Modelo: top cropped sem bojo\n- Alça: larga\n- Acabamento: cós largo\n- Quantidade: kit com 4 peças\n- Cores: preto, branco, azul-marinho e rosa\n\nTamanhos: escolha o tamanho nas opções do anúncio.\nCuidados: siga a etiqueta de cada peça.\n\nBuscas relacionadas: top cropped academia, top fitness feminino, top sem bojo academia, top cropped microfibra, kit top academia, top para treino feminino, top cropped cós largo.",
+  "keywords": [
+    "top cropped academia",
+    "top fitness feminino",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "kit top cropped academia",
+    "top academia feminino sem bojo",
+    "top para treino feminino",
+    "top cropped fitness feminino",
+    "top alça larga academia",
+    "kit 4 tops academia",
+    "top cropped cós largo",
+    "top esportivo feminino sem bojo"
+  ],
+  "coverBrief": "Square 1:1 cover generated with image-to-image editing from the attached reference photo of the four tops (black, white, navy blue, pink), passed as the reference image. Style per capa solo_grade: the four tops with NO person, arranged in a 2x2 grid (black top-left, white top-right, navy bottom-left, pink bottom-right) as flat product packshots on a clean, plain light neutral background with soft even studio lighting and a subtle shadow under each top. Cut, scoop neckline, wide straps, wide bottom band, cropped length, microfibra texture and the four colors were kept identical to the reference; only the scene and framing changed. Mood matches angulo academia (fitness-ready, clean). No text or logos were added. The generator did not refuse the reference.",
+  "coverPath": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/covers/v01.png",
+  "appliedRules": [
+    "angulo-academia-profit",
+    "capa-solo_grade-profit",
+    "aquisicao-organico-profit"
+  ],
+  "hypothesis": "",
+  "benchmark": {
+    "competitorsAnalyzed": 20,
+    "referenceItemIds": [
+      "22099070066",
+      "58210105679",
+      "57118862429",
+      "23197890808",
+      "22693400310"
+    ],
+    "pricePosition": "R$ 51,90 for a kit of 4 vs median R$ 49,00 across 20 competitors (+6%, 25th-75th range R$ 45,00-R$ 52,90); cheaper than 25% of them. Intel has no per-piece price, so no per-piece price claim is made against competitors.",
+    "keywordsAdopted": [
+      "academia",
+      "feminino",
+      "fitness",
+      "cropped",
+      "top",
+      "tops",
+      "microfibra",
+      "alça"
+    ],
+    "differentiators": [
+      "Four colors in one kit (black, white, navy blue, pink) with a navy and a pink option that many kit listings do not show",
+      "Sem bojo (no padding) with wide straps and wide cós largo, versus competitor listings that use thin straps (alça fina, alcinha) or tomara que caia styles",
+      "Microfibra material, a term used by 25% of competitor titles, with cropped academia positioning matching 60% of competitor titles",
+      "Price per piece of about R$ 12,98 (4 tops for R$ 51,90), presented as a kit of 4 to match the kit-4 search intent"
+    ]
+  }
+}

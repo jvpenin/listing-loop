@@ -1,0 +1,57 @@
+{
+  "variantId": "v02",
+  "axes": {
+    "angulo": "academia",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit 4 Top Cropped Sem Bojo para Academia Feminino Microfibra Alça Larga Cós Largo 4 Cores",
+  "description": "Kit 4 Top Cropped Sem Bojo para Academia Feminino, com 4 cores para treinar e usar no dia a dia.\n\nKit com 4 tops cropped femininos sem bojo nas cores preto, branco, azul-marinho e rosa.\n\nPor que escolher o top cropped academia deste kit:\n- Microfibra lisa e macia, confortável na pele durante o treino\n- Sem bojo: modelo leve, sem enchimento, fácil de vestir e tirar\n- Alça larga: mais conforto nos ombros durante os movimentos\n- Cós largo: faixa larga na base, com acabamento mais firme\n- Modelo cropped: combina com legging, short de treino ou calça de cintura alta\n\nIdeal para:\n- Musculação, treino funcional, pilates e aulas de academia\n- Caminhada e treino em casa\n- O look do dia a dia\n- Quem procura top fitness feminino sem bojo para treinar com conforto\n\nKit 4 cores: preto, branco, azul-marinho e rosa.\nValor do kit: R$ 51,90 (4 peças).\n\nTamanhos e cuidados:\n- Escolha seu tamanho habitual. Em caso de dúvida, fale com a loja antes de comprar.\n- Siga a etiqueta da peça para lavagem e secagem.\n\nPor que comprar o kit:\n- Quatro cores para variar nos treinos sem comprar peças avulsas\n- As quatro peças seguem o mesmo tecido e modelagem\n- Uma boa opção para presentear quem treina\n\nDúvidas sobre o top cropped para academia sem bojo? Envie uma mensagem para a loja antes da compra.",
+  "keywords": [
+    "top cropped academia",
+    "top cropped sem bojo",
+    "kit top cropped academia",
+    "top fitness feminino",
+    "top academia feminino",
+    "top sem bojo academia",
+    "top microfibra feminino",
+    "top cropped fitness",
+    "top alça larga academia",
+    "kit 4 tops cropped",
+    "top para treino feminino"
+  ],
+  "coverBrief": "Uso cover, 1:1 square, saved at runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r1/covers/v02.png. Four women mid-workout in a bright modern gym (one doing a dumbbell squat, one reaching up in a side stretch, one in a lunge, one walking with a water bottle), each wearing one of the four tops in the reference colors (black, white, navy blue, hot pink) with neutral high-waisted leggings; daylight through large windows, motion blur and gym equipment out of focus, no text, no logos, no catalog pose. The attached product photo was passed to GenerateImage as the reference image, then one edit pass was run to bring the tops closer to the reference cut. FIDELITY CAVEAT: the colors and the overall style match, but the generator's tops are sportier than the reference (the white top, and to a lesser degree the others, reads as a higher sport-bra cut with a band rather than the reference scoop tank with wide straps and wide bottom band), so the product is close but NOT identical to the reference photo. Regenerate or check the cover by hand before publishing.",
+  "coverPath": "runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r1/covers/v02.png",
+  "appliedRules": [
+    "angulo-academia-profit",
+    "aquisicao-organico-profit"
+  ],
+  "hypothesis": "A capa uso em cena de treino aumenta o CTR do ângulo academia em relação às capas testadas (modelo, que perdeu no r2), testando se movimento e ambiente de academia elevam os cliques de um kit de 4 tops sem bojo.",
+  "benchmark": {
+    "competitorsAnalyzed": 20,
+    "referenceItemIds": [
+      "23197890808",
+      "22099070066",
+      "58210105679",
+      "57118862429"
+    ],
+    "pricePosition": "R$ 51.90 for 4 pieces (R$ 12.98 each) vs. a market median of R$ 47.90 across 20 competitors (IQR R$ 38.40-51.80): 8% above the median and cheaper than 20% of listings; per piece it is above 5 of the 7 four-piece kits (e.g. R$ 9.98 for 57118862429, R$ 11.98 for 23197890808, R$ 12.40 for 22099070066), so price per piece is not claimed as a selling point in this listing.",
+    "keywordsAdopted": [
+      "top",
+      "cropped",
+      "academia",
+      "feminino",
+      "fitness",
+      "microfibra",
+      "bojo",
+      "alça"
+    ],
+    "differentiators": [
+      "Four named colors in one kit (preto, branco, azul-marinho, rosa); the competitor titles shown do not name colors.",
+      "Wide straps and wide waistband (alça larga, cós largo): competitor 22099070066 uses cós largo in its title and competitor 57118862429 sells alça fina, a thinner-strap cut.",
+      "Microfiber is named in only 25% of competitor titles (5 of 20), so the fabric is an under-used selling point for this kit."
+    ]
+  }
+}

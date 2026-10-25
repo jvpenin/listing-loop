@@ -1,0 +1,57 @@
+{
+  "variantId": "v02",
+  "axes": {
+    "angulo": "presente",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit 4 Top Cropped Sem Bojo Presente para Ela Feminino Microfibra Alça Larga Cós Largo 4 Cores",
+  "description": "Kit Presente Top Cropped Sem Bojo: 4 tops femininos em microfibra para academia, treino e dia a dia.\n\nProcurando presente feminino útil e bonito? Este kit traz 4 tops cropped sem bojo nas cores preto, branco, azul-marinho e rosa. Ela escolhe a favorita e usa todo dia.\n\n4 cores por R$ 51,90 (cerca de R$ 12,98 por peça)\n\nPor que escolher este top cropped:\n- Microfibra lisa e macia, leve e agradável na pele\n- Sem bojo: modelagem simples, sem enchimento\n- Alça larga, mais confortável que alças finas\n- Cós largo que acompanha o corpo sem apertar\n- Decote redondo e comprimento cropped: combina com calça de cintura alta, saia e short\n- Serve para top cropped academia, treino fitness feminino, caminhada e look casual\n\nO que vem no kit:\n- 1 top cropped preto\n- 1 top cropped branco\n- 1 top cropped azul-marinho\n- 1 top cropped rosa\n\nIdeal para:\n- Presente para esposa, namorada, irmã, mãe ou amiga\n- Kit básico de top cropped feminino para renovar o guarda-roupa\n- Quem treina e quer top cropped sem bojo confortável\n- Looks do dia a dia, passeio e praia\n\nCuidados: lave à mão ou em ciclo suave, use sabão neutro e evite alvejante. Siga sempre a etiqueta da peça.\n\nGaranta já o seu kit 4 top cropped sem bojo e presenteie com conforto!",
+  "keywords": [
+    "top cropped sem bojo",
+    "kit top cropped feminino",
+    "top cropped microfibra",
+    "top cropped alça larga",
+    "top cropped academia feminino",
+    "kit 4 tops cropped",
+    "presente para mulher",
+    "presente feminino",
+    "top cropped fitness",
+    "top cropped cós largo",
+    "cropped feminino academia",
+    "kit top cropped 4 cores"
+  ],
+  "coverBrief": "Square 1:1 lifestyle cover in real use, generated image-to-image from the product reference photo (the forwarded attachment at /Users/joaocaldeira/.factory/temp/images/eeb7f088/f851100e-cd9f-45ba-85c7-dc7269185a12.jpeg; the runs/.../photo.jpg path was rejected by the image tool). A smiling woman with long wavy brown hair walks through a sunlit park at golden hour, wearing the black cropped top with cream linen wide-leg trousers, and holds an open kraft gift box with a cream ribbon. The white, navy blue and pink tops are folded inside the box so the four colors are visible. The tops keep the reference cut: scoop neckline, wide straps, wide bottom band, cropped length, smooth microfiber. Mood: candid and gift-like, with natural motion in the hair and trousers, shallow depth of field and warm tones. No text, logos, prices or the 'KIT 4' header from the reference photo; the kit count lives in the title.",
+  "coverPath": "runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r2/covers/v02.png",
+  "appliedRules": [
+    "aquisicao-organico-profit"
+  ],
+  "hypothesis": "A gift framing (presente) with organic long-tail copy and a real-use cover (uso) will lift click-through against the catalog-style listings in this set, testing whether a use-scene cover works for the gift angle.",
+  "benchmark": {
+    "competitorsAnalyzed": 20,
+    "referenceItemIds": [
+      "22099070066",
+      "58218753657",
+      "57118862429",
+      "22994447429"
+    ],
+    "pricePosition": "R$ 51.90 for 4 tops (R$ 12.98 per piece) vs market median R$ 50.00 across 20 competitors (+4%); cheaper than 40% of them (p25 R$ 48.08, p75 R$ 56.89). Per piece it sits between the cheapest 4-piece kit (R$ 39.90, R$ 9.98 per piece) and the 4-piece kits at R$ 54.00 to R$ 57.44 (R$ 13.50 to R$ 14.36 per piece), so it is not the cheapest per piece and the listing does not lead on price.",
+    "keywordsAdopted": [
+      "cropped",
+      "top",
+      "feminino",
+      "academia",
+      "fitness",
+      "microfibra",
+      "alça",
+      "bojo"
+    ],
+    "differentiators": [
+      "Wide straps (alça larga) and wide waistband (cós largo): 2 competitors list alça fina and 3 list tomara que caia in their titles, so the wide-strap comfort angle is a real difference in the set.",
+      "Sem bojo and microfibra match the terms in 45% and 30% of competitor titles, so the listing is findable for the same searches.",
+      "Four colors (black, white, navy blue, pink) in one kit, with gift framing (presente) that none of the top title words in the set use, so the gift angle is not crowded by the competitor titles."
+    ]
+  }
+}

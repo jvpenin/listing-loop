@@ -1,6 +1,6 @@
 {
   "cap": 80,
-  "used": 47,
+  "used": 53,
   "log": [
     {
       "at": "2026-10-25T04:13:27.004Z",
@@ -121,6 +121,24 @@
       "round": "r1",
       "sessions": 1,
       "what": "retry v02"
+    },
+    {
+      "at": "2026-10-25T11:45:58.480Z",
+      "round": "kit-4-top-cropped-sem-bojo-rhg57/r1",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T11:55:31.644Z",
+      "round": "kit-4-top-cropped-sem-bojo-rtp9v/r1",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T11:59:08.102Z",
+      "round": "kit-4-top-cropped-sem-bojo-rtp9v/r2",
+      "sessions": 2,
+      "what": "lab round v01,v02"
     }
   ]
 }

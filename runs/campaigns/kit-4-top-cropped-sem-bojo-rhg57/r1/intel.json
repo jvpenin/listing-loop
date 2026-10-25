@@ -1,0 +1,1353 @@
+{
+  "generatedAt": "2026-10-25T11:45:58.439Z",
+  "source": "Apify xtracto/shopee-search, Shopee Brazil, query \"Kit 4 Top Cropped Sem Bojo\"",
+  "marketplace": "shopee_br",
+  "headlines": [
+    "Shopee Brazil: 20 competitors for \"Kit 4 Top Cropped Sem Bojo\"; median R$ 49,00 (range R$ 45,00–R$ 52,90); your R$ 51,90 is cheaper than 25% of them; words competitors use and you do not: academia, feminino, fitness, tops"
+  ],
+  "market": {
+    "n": 20,
+    "price": {
+      "min": 28.08,
+      "p25": 45,
+      "median": 49,
+      "p75": 52.9,
+      "max": 104.17
+    },
+    "ratingMedian": 4.8,
+    "titles": {
+      "avgLength": 69,
+      "topWords": [
+        {
+          "term": "cropped",
+          "count": 13,
+          "sharePct": 65
+        },
+        {
+          "term": "top",
+          "count": 13,
+          "sharePct": 65
+        },
+        {
+          "term": "academia",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "feminino",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "fitness",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "bojo",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "tops",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "alça",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "casual",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "duplo",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "microfibra",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "tomara",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "caia",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "forro",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "confortável",
+          "count": 4,
+          "sharePct": 20
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "tops cropped",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "tomara caia",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "forro duplo",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "duplo microfibra",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "microfibra feminino",
+          "count": 4,
+          "sharePct": 20
+        },
+        {
+          "term": "top cropped",
+          "count": 3,
+          "sharePct": 15
+        },
+        {
+          "term": "cropped academia",
+          "count": 3,
+          "sharePct": 15
+        },
+        {
+          "term": "academia forro",
+          "count": 3,
+          "sharePct": 15
+        },
+        {
+          "term": "top feminino",
+          "count": 3,
+          "sharePct": 15
+        },
+        {
+          "term": "cropped fitness",
+          "count": 2,
+          "sharePct": 10
+        }
+      ]
+    },
+    "seller": {
+      "price": 51.9,
+      "priceVsMedianPct": 6,
+      "cheaperThanPct": 25
+    },
+    "keywordGaps": [
+      {
+        "term": "academia",
+        "count": 12,
+        "sharePct": 60
+      },
+      {
+        "term": "feminino",
+        "count": 12,
+        "sharePct": 60
+      },
+      {
+        "term": "fitness",
+        "count": 9,
+        "sharePct": 45
+      },
+      {
+        "term": "tops",
+        "count": 6,
+        "sharePct": 30
+      },
+      {
+        "term": "alça",
+        "count": 6,
+        "sharePct": 30
+      },
+      {
+        "term": "casual",
+        "count": 5,
+        "sharePct": 25
+      },
+      {
+        "term": "duplo",
+        "count": 5,
+        "sharePct": 25
+      },
+      {
+        "term": "microfibra",
+        "count": 5,
+        "sharePct": 25
+      }
+    ],
+    "topCompetitors": [
+      {
+        "itemId": "22099070066",
+        "title": "Kit 4 Tops Cropped Fitness Sem Bojo Cós Largo Treino Casual",
+        "price": 49.6,
+        "rating": 4.7,
+        "sold": null,
+        "salesRank": 1,
+        "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Fitness-Sem-Bojo-Cós-Largo-Treino-Casual-i.1175999222.22099070066"
+      },
+      {
+        "itemId": "58270428611",
+        "title": "Kit 5 Cropped Top Tomara que Caia",
+        "price": 39.64,
+        "rating": 5,
+        "sold": null,
+        "salesRank": 2,
+        "url": "https://shopee.com.br/Kit-5-Cropped-Top-Tomara-que-Caia-i.955441435.58270428611"
+      },
+      {
+        "itemId": "58210105679",
+        "title": "Kit 4 Top Cropped Academia Forro Duplo Microfibra Feminino",
+        "price": 50,
+        "rating": 4.7,
+        "sold": null,
+        "salesRank": 3,
+        "url": "https://shopee.com.br/Kit-4-Top-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.1175999222.58210105679"
+      },
+      {
+        "itemId": "57118862429",
+        "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+        "price": 39.9,
+        "rating": 4.7,
+        "sold": null,
+        "salesRank": 4,
+        "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+      },
+      {
+        "itemId": "23197890808",
+        "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+        "price": 47.9,
+        "rating": 4.9,
+        "sold": null,
+        "salesRank": 5,
+        "url": "https://shopee.com.br/Kit-4-Top-Fitness-Academia-sem-Bojo-Sustentação-Alcinha-Conforto-Esportivo-Malhar-i.336225904.23197890808"
+      },
+      {
+        "itemId": "22693400310",
+        "title": "Kit 4 Tops Academia sem Bojo Esportivo  Confortável Forrado Sustentação",
+        "price": 49,
+        "rating": 4.9,
+        "sold": null,
+        "salesRank": 6,
+        "url": "https://shopee.com.br/Kit-4-Tops-Academia-sem-Bojo-Esportivo-Confortável-Forrado-Sustentação-i.378662672.22693400310"
+      },
+      {
+        "itemId": "58218753657",
+        "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+        "price": 56.88,
+        "rating": null,
+        "sold": null,
+        "salesRank": 7,
+        "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+      },
+      {
+        "itemId": "58265431253",
+        "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+        "price": 45,
+        "rating": 4.8,
+        "sold": null,
+        "salesRank": 8,
+        "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+      }
+    ]
+  },
+  "angles": {
+    "academia": {
+      "n": 20,
+      "price": {
+        "min": 28.08,
+        "p25": 45,
+        "median": 49,
+        "p75": 52.9,
+        "max": 104.17
+      },
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 69,
+        "topWords": [
+          {
+            "term": "cropped",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "top",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "academia",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "feminino",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "fitness",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "bojo",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "tops",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "alça",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "casual",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "duplo",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "microfibra",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "confortável",
+            "count": 4,
+            "sharePct": 20
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "tops cropped",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro duplo",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "duplo microfibra",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "microfibra feminino",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "top cropped",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped academia",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "academia forro",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "top feminino",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped fitness",
+            "count": 2,
+            "sharePct": 10
+          }
+        ]
+      },
+      "seller": {
+        "price": 51.9,
+        "priceVsMedianPct": 6,
+        "cheaperThanPct": 25
+      },
+      "keywordGaps": [
+        {
+          "term": "academia",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "feminino",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "fitness",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "tops",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "alça",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "casual",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "duplo",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "microfibra",
+          "count": 5,
+          "sharePct": 25
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "22099070066",
+          "title": "Kit 4 Tops Cropped Fitness Sem Bojo Cós Largo Treino Casual",
+          "price": 49.6,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 1,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Fitness-Sem-Bojo-Cós-Largo-Treino-Casual-i.1175999222.22099070066"
+        },
+        {
+          "itemId": "58270428611",
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "rating": 5,
+          "sold": null,
+          "salesRank": 2,
+          "url": "https://shopee.com.br/Kit-5-Cropped-Top-Tomara-que-Caia-i.955441435.58270428611"
+        },
+        {
+          "itemId": "58210105679",
+          "title": "Kit 4 Top Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 50,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 3,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.1175999222.58210105679"
+        },
+        {
+          "itemId": "57118862429",
+          "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+          "price": 39.9,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 4,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+        },
+        {
+          "itemId": "23197890808",
+          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+          "price": 47.9,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 5,
+          "url": "https://shopee.com.br/Kit-4-Top-Fitness-Academia-sem-Bojo-Sustentação-Alcinha-Conforto-Esportivo-Malhar-i.336225904.23197890808"
+        },
+        {
+          "itemId": "22693400310",
+          "title": "Kit 4 Tops Academia sem Bojo Esportivo  Confortável Forrado Sustentação",
+          "price": 49,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 6,
+          "url": "https://shopee.com.br/Kit-4-Tops-Academia-sem-Bojo-Esportivo-Confortável-Forrado-Sustentação-i.378662672.22693400310"
+        },
+        {
+          "itemId": "58218753657",
+          "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 56.88,
+          "rating": null,
+          "sold": null,
+          "salesRank": 7,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+        },
+        {
+          "itemId": "58265431253",
+          "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+          "price": 45,
+          "rating": 4.8,
+          "sold": null,
+          "salesRank": 8,
+          "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+        }
+      ]
+    },
+    "casual": {
+      "n": 20,
+      "price": {
+        "min": 28.08,
+        "p25": 45,
+        "median": 49,
+        "p75": 52.9,
+        "max": 104.17
+      },
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 69,
+        "topWords": [
+          {
+            "term": "cropped",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "top",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "academia",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "feminino",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "fitness",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "bojo",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "tops",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "alça",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "casual",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "duplo",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "microfibra",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "confortável",
+            "count": 4,
+            "sharePct": 20
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "tops cropped",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro duplo",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "duplo microfibra",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "microfibra feminino",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "top cropped",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped academia",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "academia forro",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "top feminino",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped fitness",
+            "count": 2,
+            "sharePct": 10
+          }
+        ]
+      },
+      "seller": {
+        "price": 51.9,
+        "priceVsMedianPct": 6,
+        "cheaperThanPct": 25
+      },
+      "keywordGaps": [
+        {
+          "term": "academia",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "feminino",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "fitness",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "tops",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "alça",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "casual",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "duplo",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "microfibra",
+          "count": 5,
+          "sharePct": 25
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "22099070066",
+          "title": "Kit 4 Tops Cropped Fitness Sem Bojo Cós Largo Treino Casual",
+          "price": 49.6,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 1,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Fitness-Sem-Bojo-Cós-Largo-Treino-Casual-i.1175999222.22099070066"
+        },
+        {
+          "itemId": "58270428611",
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "rating": 5,
+          "sold": null,
+          "salesRank": 2,
+          "url": "https://shopee.com.br/Kit-5-Cropped-Top-Tomara-que-Caia-i.955441435.58270428611"
+        },
+        {
+          "itemId": "58210105679",
+          "title": "Kit 4 Top Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 50,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 3,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.1175999222.58210105679"
+        },
+        {
+          "itemId": "57118862429",
+          "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+          "price": 39.9,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 4,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+        },
+        {
+          "itemId": "23197890808",
+          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+          "price": 47.9,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 5,
+          "url": "https://shopee.com.br/Kit-4-Top-Fitness-Academia-sem-Bojo-Sustentação-Alcinha-Conforto-Esportivo-Malhar-i.336225904.23197890808"
+        },
+        {
+          "itemId": "22693400310",
+          "title": "Kit 4 Tops Academia sem Bojo Esportivo  Confortável Forrado Sustentação",
+          "price": 49,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 6,
+          "url": "https://shopee.com.br/Kit-4-Tops-Academia-sem-Bojo-Esportivo-Confortável-Forrado-Sustentação-i.378662672.22693400310"
+        },
+        {
+          "itemId": "58218753657",
+          "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 56.88,
+          "rating": null,
+          "sold": null,
+          "salesRank": 7,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+        },
+        {
+          "itemId": "58265431253",
+          "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+          "price": 45,
+          "rating": 4.8,
+          "sold": null,
+          "salesRank": 8,
+          "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+        }
+      ]
+    },
+    "conforto": {
+      "n": 20,
+      "price": {
+        "min": 28.08,
+        "p25": 45,
+        "median": 49,
+        "p75": 52.9,
+        "max": 104.17
+      },
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 69,
+        "topWords": [
+          {
+            "term": "cropped",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "top",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "academia",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "feminino",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "fitness",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "bojo",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "tops",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "alça",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "casual",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "duplo",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "microfibra",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "confortável",
+            "count": 4,
+            "sharePct": 20
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "tops cropped",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro duplo",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "duplo microfibra",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "microfibra feminino",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "top cropped",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped academia",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "academia forro",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "top feminino",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped fitness",
+            "count": 2,
+            "sharePct": 10
+          }
+        ]
+      },
+      "seller": {
+        "price": 51.9,
+        "priceVsMedianPct": 6,
+        "cheaperThanPct": 25
+      },
+      "keywordGaps": [
+        {
+          "term": "academia",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "feminino",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "fitness",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "tops",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "alça",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "casual",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "duplo",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "microfibra",
+          "count": 5,
+          "sharePct": 25
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "22099070066",
+          "title": "Kit 4 Tops Cropped Fitness Sem Bojo Cós Largo Treino Casual",
+          "price": 49.6,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 1,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Fitness-Sem-Bojo-Cós-Largo-Treino-Casual-i.1175999222.22099070066"
+        },
+        {
+          "itemId": "58270428611",
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "rating": 5,
+          "sold": null,
+          "salesRank": 2,
+          "url": "https://shopee.com.br/Kit-5-Cropped-Top-Tomara-que-Caia-i.955441435.58270428611"
+        },
+        {
+          "itemId": "58210105679",
+          "title": "Kit 4 Top Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 50,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 3,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.1175999222.58210105679"
+        },
+        {
+          "itemId": "57118862429",
+          "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+          "price": 39.9,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 4,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+        },
+        {
+          "itemId": "23197890808",
+          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+          "price": 47.9,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 5,
+          "url": "https://shopee.com.br/Kit-4-Top-Fitness-Academia-sem-Bojo-Sustentação-Alcinha-Conforto-Esportivo-Malhar-i.336225904.23197890808"
+        },
+        {
+          "itemId": "22693400310",
+          "title": "Kit 4 Tops Academia sem Bojo Esportivo  Confortável Forrado Sustentação",
+          "price": 49,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 6,
+          "url": "https://shopee.com.br/Kit-4-Tops-Academia-sem-Bojo-Esportivo-Confortável-Forrado-Sustentação-i.378662672.22693400310"
+        },
+        {
+          "itemId": "58218753657",
+          "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 56.88,
+          "rating": null,
+          "sold": null,
+          "salesRank": 7,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+        },
+        {
+          "itemId": "58265431253",
+          "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+          "price": 45,
+          "rating": 4.8,
+          "sold": null,
+          "salesRank": 8,
+          "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+        }
+      ]
+    },
+    "presente": {
+      "n": 20,
+      "price": {
+        "min": 28.08,
+        "p25": 45,
+        "median": 49,
+        "p75": 52.9,
+        "max": 104.17
+      },
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 69,
+        "topWords": [
+          {
+            "term": "cropped",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "top",
+            "count": 13,
+            "sharePct": 65
+          },
+          {
+            "term": "academia",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "feminino",
+            "count": 12,
+            "sharePct": 60
+          },
+          {
+            "term": "fitness",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "bojo",
+            "count": 9,
+            "sharePct": 45
+          },
+          {
+            "term": "tops",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "alça",
+            "count": 6,
+            "sharePct": 30
+          },
+          {
+            "term": "casual",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "duplo",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "microfibra",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "confortável",
+            "count": 4,
+            "sharePct": 20
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "tops cropped",
+            "count": 5,
+            "sharePct": 25
+          },
+          {
+            "term": "tomara caia",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "forro duplo",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "duplo microfibra",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "microfibra feminino",
+            "count": 4,
+            "sharePct": 20
+          },
+          {
+            "term": "top cropped",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped academia",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "academia forro",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "top feminino",
+            "count": 3,
+            "sharePct": 15
+          },
+          {
+            "term": "cropped fitness",
+            "count": 2,
+            "sharePct": 10
+          }
+        ]
+      },
+      "seller": {
+        "price": 51.9,
+        "priceVsMedianPct": 6,
+        "cheaperThanPct": 25
+      },
+      "keywordGaps": [
+        {
+          "term": "academia",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "feminino",
+          "count": 12,
+          "sharePct": 60
+        },
+        {
+          "term": "fitness",
+          "count": 9,
+          "sharePct": 45
+        },
+        {
+          "term": "tops",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "alça",
+          "count": 6,
+          "sharePct": 30
+        },
+        {
+          "term": "casual",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "duplo",
+          "count": 5,
+          "sharePct": 25
+        },
+        {
+          "term": "microfibra",
+          "count": 5,
+          "sharePct": 25
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "22099070066",
+          "title": "Kit 4 Tops Cropped Fitness Sem Bojo Cós Largo Treino Casual",
+          "price": 49.6,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 1,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Fitness-Sem-Bojo-Cós-Largo-Treino-Casual-i.1175999222.22099070066"
+        },
+        {
+          "itemId": "58270428611",
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "rating": 5,
+          "sold": null,
+          "salesRank": 2,
+          "url": "https://shopee.com.br/Kit-5-Cropped-Top-Tomara-que-Caia-i.955441435.58270428611"
+        },
+        {
+          "itemId": "58210105679",
+          "title": "Kit 4 Top Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 50,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 3,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.1175999222.58210105679"
+        },
+        {
+          "itemId": "57118862429",
+          "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+          "price": 39.9,
+          "rating": 4.7,
+          "sold": null,
+          "salesRank": 4,
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+        },
+        {
+          "itemId": "23197890808",
+          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+          "price": 47.9,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 5,
+          "url": "https://shopee.com.br/Kit-4-Top-Fitness-Academia-sem-Bojo-Sustentação-Alcinha-Conforto-Esportivo-Malhar-i.336225904.23197890808"
+        },
+        {
+          "itemId": "22693400310",
+          "title": "Kit 4 Tops Academia sem Bojo Esportivo  Confortável Forrado Sustentação",
+          "price": 49,
+          "rating": 4.9,
+          "sold": null,
+          "salesRank": 6,
+          "url": "https://shopee.com.br/Kit-4-Tops-Academia-sem-Bojo-Esportivo-Confortável-Forrado-Sustentação-i.378662672.22693400310"
+        },
+        {
+          "itemId": "58218753657",
+          "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 56.88,
+          "rating": null,
+          "sold": null,
+          "salesRank": 7,
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+        },
+        {
+          "itemId": "58265431253",
+          "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+          "price": 45,
+          "rating": 4.8,
+          "sold": null,
+          "salesRank": 8,
+          "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+        }
+      ]
+    }
+  },
+  "round": "r1",
+  "itemIds": [
+    "22099070066",
+    "58270428611",
+    "58210105679",
+    "57118862429",
+    "23197890808",
+    "22693400310",
+    "58218753657",
+    "58265431253",
+    "23594956768",
+    "58205078939",
+    "23318609922",
+    "56018291145",
+    "10581981237",
+    "58263857996",
+    "58213854017",
+    "21699891186",
+    "58217943342",
+    "49369259565",
+    "58260101046",
+    "56417405538"
+  ]
+}

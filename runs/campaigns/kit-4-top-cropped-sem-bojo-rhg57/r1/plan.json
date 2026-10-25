@@ -1,0 +1,74 @@
+{
+  "round": "r1",
+  "createdAt": "2026-10-25T11:45:58.478Z",
+  "playbookVersion": 2,
+  "variants": [
+    {
+      "variantId": "v01",
+      "round": "r1",
+      "produto": {
+        "sku": "KIT-4-TOP-CROPPED-SE",
+        "descricao": "Kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo.\nSeller target margin: 15% before ad spend. This is a seller constraint, not measured profit.",
+        "fotoReferencia": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/photo.jpg",
+        "nome": "Kit 4 Top Cropped Sem Bojo",
+        "preco": 51.9,
+        "moeda": "BRL",
+        "marketplace": "Shopee Brazil",
+        "idioma": "pt-BR",
+        "tituloMax": 120,
+        "descricaoMax": 3000
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Exploits what already wins: angulo=academia backed by playbook rule angulo-academia-profit; capa=solo_grade backed by playbook rule capa-solo_grade-profit; aquisicao=organico backed by playbook rule aquisicao-organico-profit",
+      "priorEvidence": [
+        "rule angulo-academia-profit (high): Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores.",
+        "rule capa-solo_grade-profit (low): Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+        "rule aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ],
+      "paths": {
+        "json": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/variants/v01.json",
+        "png": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/covers/v01.png",
+        "intel": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/intel.json"
+      }
+    },
+    {
+      "variantId": "v02",
+      "round": "r1",
+      "produto": {
+        "sku": "KIT-4-TOP-CROPPED-SE",
+        "descricao": "Kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo.\nSeller target margin: 15% before ad spend. This is a seller constraint, not measured profit.",
+        "fotoReferencia": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/photo.jpg",
+        "nome": "Kit 4 Top Cropped Sem Bojo",
+        "preco": 51.9,
+        "moeda": "BRL",
+        "marketplace": "Shopee Brazil",
+        "idioma": "pt-BR",
+        "tituloMax": 120,
+        "descricaoMax": 3000
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explores uncertainty: angulo=academia backed by playbook rule angulo-academia-profit; capa=uso no sales data yet; aquisicao=organico backed by playbook rule aquisicao-organico-profit",
+      "priorEvidence": [
+        "rule angulo-academia-profit (high): Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores.",
+        "rule aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ],
+      "paths": {
+        "json": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/variants/v02.json",
+        "png": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/covers/v02.png",
+        "intel": "runs/campaigns/kit-4-top-cropped-sem-bojo-rhg57/r1/intel.json"
+      }
+    }
+  ]
+}

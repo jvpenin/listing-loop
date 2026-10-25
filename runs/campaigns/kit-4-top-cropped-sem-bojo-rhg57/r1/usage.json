@@ -1,0 +1,43 @@
+{
+  "round": "r1",
+  "runs": [
+    {
+      "variantId": "v01",
+      "attempts": [
+        {
+          "sessionId": "60181e36-9117-481c-8d33-e85ff60e48e2",
+          "success": true,
+          "durationMs": 89819,
+          "tokenUsage": {
+            "inputTokens": 2501,
+            "outputTokens": 11608,
+            "cacheCreationTokens": 68895,
+            "cacheReadTokens": 117289,
+            "thinkingTokens": 5880,
+            "factoryCredits": 6707
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "attempts": [
+        {
+          "sessionId": "3c6f47a0-6673-4821-877d-56629f81a935",
+          "success": true,
+          "durationMs": 166692,
+          "tokenUsage": {
+            "inputTokens": 5283,
+            "outputTokens": 19109,
+            "cacheCreationTokens": 76340,
+            "cacheReadTokens": 251488,
+            "thinkingTokens": 10393,
+            "factoryCredits": 8686
+          },
+          "why": ""
+        }
+      ]
+    }
+  ]
+}

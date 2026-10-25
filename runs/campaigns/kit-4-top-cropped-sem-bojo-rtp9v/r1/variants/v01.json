@@ -1,0 +1,58 @@
+{
+  "variantId": "v01",
+  "axes": {
+    "angulo": "academia",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "exploit",
+  "title": "Kit 4 Top Cropped Sem Bojo para Academia Feminino Fitness Treino Microfibra Alça Larga Cós Largo 4 Cores",
+  "description": "Kit 4 Top Cropped Sem Bojo para Academia, Treino e Dia a Dia\n\nMonte seu treino com 4 tops cropped femininos sem bojo em microfibra, com alça larga e cós largo. Ideal para academia, fitness, pilates, dança e corrida leve.\n\nCores do kit (4 peças):\n- Preto\n- Branco\n- Azul-marinho\n- Rosa\n\nPor que escolher este top fitness feminino:\n- Microfibra lisa e macia, com toque agradável na pele\n- Modelo sem bojo: sem enchimento, modelagem leve\n- Alça larga, diferente das alcinhas finas, com visual mais estruturado\n- Cós largo na barra, com acabamento de faixa larga\n- Decote redondo, para usar com legging, short de academia ou calça de linho\n\nKit de 4 cores: monte o look de treino da semana sem comprar peça por peça. Kit com 4 peças por R$ 51,90.\n\nIdeal para:\n- Academia e musculação\n- Aulas de fitness, dança e pilates\n- Corrida e caminhada\n- Dia a dia, com calça, short ou saia\n\nComposição e cuidados:\n- Material: microfibra\n- Lavar em ciclo delicado, de preferência à mão, e secar à sombra\n- Não usar alvejante nem secadora\n\nTamanhos:\n- Confira a tabela de medidas do anúncio antes de comprar e escolha pelo seu busto e cintura.\n\nCompre o kit de top cropped sem bojo para trocar a roupa de treino todos os dias e manter sempre um look limpo para a academia.",
+  "keywords": [
+    "top cropped sem bojo",
+    "top cropped academia",
+    "top fitness feminino",
+    "kit top cropped",
+    "kit 4 tops cropped",
+    "top academia feminino",
+    "top cropped microfibra",
+    "top sem bojo alça larga",
+    "top cropped fitness",
+    "top treino feminino",
+    "cropped academia microfibra"
+  ],
+  "coverBrief": "Square 1:1 solo_grade cover generated with the image generator, using the attached product reference photo as the image-to-image reference (the generator reported it as an edit of that photo). The four tops are shown with no person, no mannequin and no text, in a 2x2 grid on a neutral light warm-grey seamless studio background with soft diffused light and a soft shadow under each piece. Cell order: black (top-left), white (top-right), navy blue (bottom-left), hot pink (bottom-right). The cut, scoop neckline, wide straps, wide bottom band, cropped length and smooth microfiber texture were kept to match the reference; the 'KIT 4' overlay from the reference photo was left out of the cover. Saved to runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r1/covers/v01.png.",
+  "coverPath": "runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r1/covers/v01.png",
+  "appliedRules": [
+    "angulo-academia-profit",
+    "capa-solo_grade-profit",
+    "aquisicao-organico-profit"
+  ],
+  "hypothesis": "",
+  "benchmark": {
+    "competitorsAnalyzed": 20,
+    "referenceItemIds": [
+      "22099070066",
+      "23197890808",
+      "58210105679",
+      "58218753657"
+    ],
+    "pricePosition": "R$ 51.90 for a kit of 4 (R$ 12.98 per piece) vs. a median of R$ 47.90 across the 20 Shopee Brazil academia listings (range R$ 23.80 to R$ 104.17): priced 8% above the median and cheaper than 20% of competitors. The closest Kit 4 academia/fitness competitors sit at R$ 47.90 to R$ 56.88. The intel has no per-piece figures and several top sellers are kits of 5, so a per-piece price advantage is not established and the copy does not claim one.",
+    "keywordsAdopted": [
+      "top",
+      "cropped",
+      "feminino",
+      "academia",
+      "fitness",
+      "microfibra",
+      "alça",
+      "tops"
+    ],
+    "differentiators": [
+      "Cós largo and alça larga: 'cós largo' appears in competitor 22099070066's title and 'alça' in 4 of 20 titles; this kit has both features.",
+      "Sem bojo and microfibra, both searched terms: 'bojo' appears in 10 of 20 titles and 'microfibra' in 5 of 20; the product has no padding and a smooth microfiber texture.",
+      "Four-color kit (black, white, navy, pink) in a single listing, shown in one organic cover; price is above the market median, so the case rests on the kit and features, not on price."
+    ]
+  }
+}

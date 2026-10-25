@@ -1,0 +1,21 @@
+{
+  "id": "kit-4-top-cropped-sem-bojo-rhg57",
+  "createdAt": "2026-10-25T11:45:48.284Z",
+  "product": {
+    "name": "Kit 4 Top Cropped Sem Bojo",
+    "description": "Kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo.\nSeller target margin: 15% before ad spend. This is a seller constraint, not measured profit.",
+    "price": 51.9,
+    "marginPct": 15,
+    "currency": "BRL",
+    "sku": "KIT-4-TOP-CROPPED-SE",
+    "category": "tops"
+  },
+  "marketplace": "shopee_br",
+  "angles": [
+    "academia",
+    "casual",
+    "conforto",
+    "presente"
+  ],
+  "photo": "photo.jpg"
+}

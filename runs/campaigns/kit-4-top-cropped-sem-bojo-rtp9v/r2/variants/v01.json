@@ -1,0 +1,60 @@
+{
+  "variantId": "v01",
+  "axes": {
+    "angulo": "academia",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "exploit",
+  "title": "Kit 4 Top Cropped Sem Bojo para Academia Fitness Feminino Microfibra Alça Larga Cós Largo 4 Cores",
+  "description": "Kit 4 Top Cropped Sem Bojo para Academia: 4 cores em um kit, para treino e dia a dia.\n\nTop cropped feminino para academia e fitness, com microfibra macia, alça larga e cós largo. Sem bojo e sem enchimento.\n\nO QUE VEM NO KIT\n- 4 tops cropped: preto, branco, azul-marinho e rosa\n- 4 peças por R$ 51,90 (cerca de R$ 12,98 por peça)\n\nPOR QUE ESCOLHER ESTE TOP CROPPED SEM BOJO\n- Microfibra macia e confortável na pele, para academia, treino e dia a dia\n- Sem bojo: modelagem leve, sem enchimento\n- Alça larga: mais conforto nos ombros do que as alças finas\n- Cós largo na barra, para o top ficar firme no corpo\n- Decote redondo e corte cropped: combina com legging e calça de cintura alta\n- Cores básicas para montar looks de academia, casual e dia a dia\n\nPARA QUEM É\n- Quem treina na academia e procura top cropped feminino fitness\n- Quem quer top cropped sem bojo para treino e uso diário\n- Quem quer um kit top cropped para academia com 4 cores para variar\n\nCUIDADOS\n- Lave à mão ou no ciclo delicado para preservar a microfibra\n- Evite alvejante e secadora para manter o tecido\n\nAntes de finalizar a compra, confira as opções de tamanho disponíveis no anúncio.",
+  "keywords": [
+    "top cropped academia",
+    "top cropped sem bojo",
+    "top cropped fitness feminino",
+    "top cropped microfibra",
+    "cropped academia feminino",
+    "kit top cropped 4 cores",
+    "top cropped alça larga",
+    "top cropped cós largo",
+    "top fitness sem bojo",
+    "top academia feminino",
+    "kit 4 tops cropped",
+    "top cropped para treino"
+  ],
+  "coverBrief": "Square 1:1 solo_grade cover with no person: the four cropped tops (black, white, navy blue and hot pink) in a clean 2x2 grid on a neutral light-grey seamless studio background, each shown as a flat product shot with a soft shadow, bright even studio light and a sporty gym-ready mood. The generator received the attached reference photo as the input image (image-to-image edit), and the output keeps the same cut: scoop neckline, wide straps, wide bottom band, cropped length, smooth microfiber texture and no padding, with the same four colours. The 'KIT 4' heading from the reference was left out on purpose to keep the cover free of text. Saved to runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r2/covers/v01.png.",
+  "coverPath": "runs/campaigns/kit-4-top-cropped-sem-bojo-rtp9v/r2/covers/v01.png",
+  "appliedRules": [
+    "angulo-academia-profit",
+    "capa-solo_grade-profit",
+    "aquisicao-organico-profit"
+  ],
+  "hypothesis": "",
+  "benchmark": {
+    "competitorsAnalyzed": 20,
+    "referenceItemIds": [
+      "22099070066",
+      "58210105679",
+      "58218753657",
+      "57118862429"
+    ],
+    "pricePosition": "R$ 51.90 is 4% above the R$ 50.00 median of 20 Shopee Brazil competitors (IQR R$ 48.08 to R$ 56.89) and cheaper than 40% of them; at about R$ 12.98 per piece it is above the 4-piece kits 58210105679 (R$ 12.50 per piece) and 57118862429 (R$ 9.98 per piece).",
+    "keywordsAdopted": [
+      "cropped",
+      "top cropped",
+      "academia",
+      "fitness",
+      "feminino",
+      "microfibra",
+      "alça",
+      "cropped academia"
+    ],
+    "differentiators": [
+      "Wide straps: 'alça fina' appears in 3 of 20 competitor titles and 'tomara que caia' in 3; this kit is alça larga and the title says so.",
+      "Four colours (black, white, navy, pink) in one 4-piece kit, the same piece count as 7 of the top 8 academia competitors, so the visible colour set is the difference to show.",
+      "Sem bojo and microfibra are both in the title, matching the terms in 9 and 6 of 20 competitor titles (bojo 45%, microfibra 30%).",
+      "Price is not the lead argument: R$ 12.98 per piece is above the 4-piece peers 58210105679 (R$ 12.50) and 57118862429 (R$ 9.98), so the copy leads with colours, straps and fabric instead."
+    ]
+  }
+}
