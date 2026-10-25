@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 import { ChevronUp, ChevronDown, TerminalSquare } from "lucide-react";
 import { SPONSOR_LABEL, sponsorOf, type LabEvent, type Sponsor } from "@/lib/labTypes";
 
@@ -68,21 +67,20 @@ function jobDate(id: string) {
 type Status = { live: boolean; runningJobId?: string | null; replayJobId?: string | null };
 
 export function EngineTerminal() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<Status | null>(null);
   const [events, setEvents] = useState<LabEvent[]>([]);
   const [hidden, setHidden] = useState<Set<Sponsor>>(new Set());
   const body = useRef<HTMLDivElement>(null);
 
-  // Open by default on desktop at /lab; remember the viewer's choice otherwise.
+  // Keep diagnostics tucked away until the viewer requests them.
   useEffect(() => {
     let saved: string | null = null;
     try {
       saved = localStorage.getItem("engine-terminal");
     } catch {}
     const desktop = window.matchMedia("(min-width: 900px)").matches;
-    setOpen(saved ? saved === "open" && desktop : desktop && pathname === "/lab");
+    setOpen(saved === "open" && desktop);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const toggle = () =>

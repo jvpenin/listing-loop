@@ -5148,3 +5148,10 @@ td > a {
 .lab-term-body p .sp-badge, .engine-body p .sp-badge { align-self: flex-start; margin-top: 2px; }
 .lab-term-body p span.sp-badge.sp-factory { color: #111; }
 .lab-term-body p span.sp-badge:not(.sp-factory) { color: #fff; }
+
+/* Judge-focused navigation: evidence remains one click away. */
+.case-navigation { margin-top: 22px; }
+.case-navigation > summary { padding: 10px 8px; cursor: pointer; font-size: 11px; color: var(--muted); font-weight: 600; }
+.case-navigation nav { margin-top: 4px; }
+.engine-ready-copy { color: var(--muted); font-size: 11px; padding-top: 6px; }
+.app-footer .track-brands { flex-wrap: wrap; }

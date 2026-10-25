@@ -12,8 +12,7 @@ export function Logo() {
         />
       </svg>
       <span>
-        listing<span className="logo-light">loop</span>
-        <i />
+        Fox<span className="logo-light">.ai</span>
       </span>
     </span>
   );
@@ -43,7 +42,7 @@ export function Mascot({
       role="img"
       aria-label={
         name === "lo"
-          ? "Lo, the Listing Loop mascot"
+          ? "Lo, the Fox.ai mascot"
           : name === "fox"
             ? "Fox, the creative producer"
             : "Spark, the analyst"

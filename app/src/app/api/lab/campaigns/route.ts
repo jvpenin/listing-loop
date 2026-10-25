@@ -20,6 +20,8 @@ export async function POST(req: NextRequest) {
   const name = text("name", 80);
   const description = text("description", 600);
   const price = Number(String(form.get("price") ?? "").replace(",", "."));
+  const marginText = text("marginPct", 20);
+  const marginPct = marginText ? Number(marginText.replace(",", ".")) : undefined;
   const marketplace = text("marketplace", 40);
   const category = text("category", 40).toLowerCase() || "general";
   const angles = text("angles", 200)
@@ -32,6 +34,7 @@ export async function POST(req: NextRequest) {
   if (!name) return bad("Product name is required.");
   if (!description) return bad("A short description is required.");
   if (!Number.isFinite(price) || price <= 0) return bad("Price must be a positive number.");
+  if (marginPct !== undefined && (!Number.isFinite(marginPct) || marginPct < 0 || marginPct >= 100)) return bad("Target margin must be between 0 and less than 100%.");
   if (!MARKETPLACES.some((m) => m.id === marketplace)) return bad("Unknown marketplace.");
   if (angles.length === 1) return bad("Give 2 to 4 angles, or leave it empty for the defaults.");
   if (!(photo instanceof File) || photo.size === 0) return bad("A product photo is required.");
@@ -42,6 +45,7 @@ export async function POST(req: NextRequest) {
     name,
     description,
     price,
+    marginPct,
     marketplace,
     category,
     angles: angles.length ? angles : DEFAULT_ANGLES,

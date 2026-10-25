@@ -8,7 +8,8 @@
     "start": "next start --hostname 0.0.0.0",
     "snapshot": "node --import tsx scripts/snapshot.ts",
     "test": "playwright test",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "demo": "LISTING_LOOP_LIVE=1 next dev --hostname 0.0.0.0"
   },
   "dependencies": {
     "next": "^16.0.0",

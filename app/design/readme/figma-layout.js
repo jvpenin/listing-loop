@@ -15,9 +15,9 @@ header.x=100;header.y=100;header.cornerRadius=24;header.paddingLeft=48;header.pa
 header.exportSettings=[{format:'PNG',constraint:{type:'SCALE',value:1},suffix:''}];
 const top=stack('Brand and context','HORIZONTAL',1224,44);
 header.appendChild(top);top.primaryAxisAlignItems='SPACE_BETWEEN';top.counterAxisAlignItems='CENTER';
-const logo=stack('Listing Loop wordmark','HORIZONTAL',280,44);top.appendChild(logo);logo.itemSpacing=8;logo.counterAxisAlignItems='CENTER';
+const logo=stack('Fox.ai wordmark','HORIZONTAL',280,44);top.appendChild(logo);logo.itemSpacing=8;logo.counterAxisAlignItems='CENTER';
 const mark=track(figma.createNodeFromSvg('<svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 25c-8-3-4-15 4-12 4 2 4 12 9 14 9 4 15-8 8-13-6-5-10 3-13 8" stroke="#3269E8" stroke-width="4.5" stroke-linecap="round"/></svg>'));
-logo.appendChild(mark);mark.resize(44,44);text(logo,'Brand name','listing loop',31,'Bold',ink);
+logo.appendChild(mark);mark.resize(44,44);text(logo,'Brand name','Fox.ai',31,'Bold',ink);
 text(top,'Hackathon context','CAL HACKS 13  /  WORKING DEMO',12,'Semi Bold',muted);
 const body=stack('Product promise and mascot team','HORIZONTAL',1224,294);header.appendChild(body);body.itemSpacing=32;body.counterAxisAlignItems='CENTER';
 const copy=stack('Product promise','VERTICAL',640,294);body.appendChild(copy);copy.itemSpacing=17;

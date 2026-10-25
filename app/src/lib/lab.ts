@@ -27,7 +27,7 @@ export function validId(s: string) {
 export type CampaignFile = {
   id: string;
   createdAt: string;
-  product: { name: string; description: string; price: number; currency: string; sku: string; category: string };
+  product: { name: string; description: string; price: number; currency: string; sku: string; category: string; marginPct?: number };
   marketplace: string;
   angles: string[];
   photo: string;
@@ -246,6 +246,7 @@ export async function createCampaign(input: {
   name: string;
   description: string;
   price: number;
+  marginPct?: number;
   marketplace: string;
   category: string;
   angles: string[];
@@ -263,8 +264,9 @@ export async function createCampaign(input: {
     createdAt: new Date().toISOString(),
     product: {
       name: input.name,
-      description: input.description,
+      description: input.marginPct === undefined ? input.description : `${input.description}\nSeller target margin: ${input.marginPct}% before ad spend. This is a seller constraint, not measured profit.`,
       price: input.price,
+      ...(input.marginPct === undefined ? {} : { marginPct: input.marginPct }),
       currency: mp.currency,
       sku: slug.toUpperCase().slice(0, 20),
       category: input.category,

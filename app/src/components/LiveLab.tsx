@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import "./LiveLab.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Upload,
@@ -17,14 +18,14 @@ import {
   ArrowRight,
   RotateCcw,
   Timer,
-  Wallet,
   Search,
   ImageIcon,
   TriangleAlert,
   FlaskConical,
   Radio,
 } from "lucide-react";
-import { DroidTerminal, secs } from "./DroidTerminal";
+import { secs } from "./DroidTerminal";
+import { Mascot } from "./Brand";
 import { SponsorBadge } from "./EngineTerminal";
 import {
   initialStatus,
@@ -233,7 +234,7 @@ export function LabVariantCard({
         )}
         {listing ? (
           <div className="lab-strats">
-            <Section title="Title strategy" by="claude" open>
+            <Section title="Generated listing" by="claude" open>
               <h4>{listing.title}</h4>
               <small className={listing.title.length > titleMax ? "lab-over" : ""}>
                 {listing.title.length}/{titleMax} chars
@@ -242,7 +243,7 @@ export function LabVariantCard({
               </small>
               {price !== undefined && <strong className="lab-price">{formatMoney(price, currency)}</strong>}
             </Section>
-            <Section title="Description strategy" by="claude" open>
+            <Section title="Description & keywords" by="claude">
               <p className="lab-strat-rule">{ACQUISITION_STRATEGY[axes.aquisicao] ?? `Acquisition: ${axisValue(axes.aquisicao ?? "")}`}</p>
               <details className="lab-desc-full">
                 <summary>Read the full description ({listing.description.length} chars)</summary>
@@ -344,8 +345,6 @@ export function LabVariantCard({
             <SponsorBadge by="factory" />
             {state === "ok" ? " Zod-validated" : " finished"}
             {secsTaken !== undefined ? ` in ${secsTaken.toFixed(0)}s` : ""}
-            {evidence?.sessionId ? ` · session ${evidence.sessionId.slice(0, 8)}…` : ""}
-            {evidence?.factoryCredits ? ` · ${evidence.factoryCredits} credits` : ""}
             {evidence?.attempts && evidence.attempts > 1 ? ` · ${evidence.attempts} attempts` : ""}
           </small>
         )}
@@ -500,11 +499,11 @@ function Stepper({
 
 type Step = { id: StageName; label: string; hint: string; by: Sponsor };
 const ROUND_STEPS = (n: number): Step[] => [
-  { id: "apify", label: "Apify scrape", hint: "Actor run on Apify cloud: live Shopee Brazil search", by: "apify" },
-  { id: "intel", label: "Competitor intel", hint: "Price bands, title patterns, keyword gaps (TypeScript)", by: "code" },
-  { id: "plan", label: "Plan · Thompson sampling", hint: "Picks axes per variant from beliefs + feedback memory", by: "code" },
+  { id: "apify", label: "Find competitors", hint: "Apify searches Shopee Brazil", by: "apify" },
+  { id: "intel", label: "Read the market", hint: "Prices, keywords and gaps", by: "code" },
+  { id: "plan", label: "Choose what to test", hint: "Use past results and explore new angles", by: "code" },
   { id: "producer", label: `listing-producer × ${n}`, hint: "Factory custom droids, one session each, in parallel", by: "factory" },
-  { id: "validate", label: "Zod validation", hint: "Schema, fixed axes, cited competitor ids", by: "code" },
+  { id: "validate", label: "Check the listings", hint: "Validate product facts, structure and competitor references", by: "code" },
 ];
 const LEARN_STEPS: Step[] = [
   { id: "analyst", label: "performance-analyst", hint: "Factory custom droid on Claude Opus 5.5", by: "factory" },
@@ -664,6 +663,7 @@ type FormState = {
   name: string;
   description: string;
   price: string;
+  marginPct: string;
   category: string;
   marketplace: string;
   angles: string[];
@@ -671,12 +671,13 @@ type FormState = {
   photo: File | null;
 };
 const EMPTY_FORM: FormState = {
-  name: "",
-  description: "",
-  price: "",
-  category: "",
+  name: "Kit 4 Top Cropped Sem Bojo",
+  description: "Kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo.",
+  price: "51.90",
+  marginPct: "",
+  category: "tops",
   marketplace: "shopee_br",
-  angles: [],
+  angles: ["academia", "casual", "conforto", "presente"],
   variants: 2,
   photo: null,
 };
@@ -684,11 +685,14 @@ const MAX_PHOTO = 8 * 1024 * 1024;
 
 function validate(f: FormState): string {
   if (!f.name.trim()) return "Give the product a name.";
+  if (!f.description.trim()) return "Add a few product facts, such as material, colors and what is included.";
   const p = Number(f.price.replace(",", "."));
   if (!Number.isFinite(p) || p <= 0) return "Enter a price greater than zero.";
+  if (f.marginPct.trim() && (!Number.isFinite(Number(f.marginPct.replace(",", "."))) || Number(f.marginPct.replace(",", ".")) < 0 || Number(f.marginPct.replace(",", ".")) >= 100)) return "Target margin must be between 0 and 99%.";
   if (!f.photo) return "Upload a product photo: the droid uses it as the reference for every cover.";
   if (!/^image\/(jpeg|png)$/.test(f.photo.type)) return "The photo must be a JPG or PNG.";
   if (f.photo.size > MAX_PHOTO) return "The photo must be 8 MB or less.";
+  if (f.angles.length > 4) return "Choose up to 4 keywords or approaches.";
   if (f.angles.length === 1) return "Add at least 2 angles, or leave them empty to let the planner choose.";
   return "";
 }
@@ -711,9 +715,11 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   const [status, setStatus] = useState<LabStatus>({ ...initialStatus, live });
   const [noRecording, setNoRecording] = useState(false);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
-  const [angleDraft, setAngleDraft] = useState("");
+  const [keywords, setKeywords] = useState(EMPTY_FORM.angles.join(", "));
+  const [photoLoading, setPhotoLoading] = useState(true);
   const [preview, setPreview] = useState("");
   const [formError, setFormError] = useState("");
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [roundSource, setRoundSource] = useState<JobSource | null>(
     initialJob && live ? { kind: "sse", id: initialJob } : null,
@@ -723,6 +729,24 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   const [roundData, setRoundData] = useState<RoundData | null>(null);
   const [actionError, setActionError] = useState("");
   const results = useRef<HTMLDivElement>(null);
+
+  // Seed only the reference photo; never replace a judge's edits when the request finishes.
+  useEffect(() => {
+    let active = true;
+    fetch("/api/product").then(async (response) => {
+      if (!response.ok) return;
+      const file = new File([await response.blob()], "dnt-tp001-k4.jpg", { type: "image/jpeg" });
+      if (active) setForm((current) => current.photo || current.name !== EMPTY_FORM.name ? current : { ...current, photo: file });
+    }).catch(() => {}).finally(() => { if (active) setPhotoLoading(false); });
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    if (!form.photo) { setPreview(""); return; }
+    const url = URL.createObjectURL(form.photo);
+    setPreview(url);
+    return () => URL.revokeObjectURL(url);
+  }, [form.photo]);
 
   const refreshStatus = useCallback(async () => {
     try {
@@ -739,6 +763,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   useEffect(() => {
     refreshStatus().then((s) => {
       const isLive = s?.live ?? live;
+      if (isLive && !initialJob && s?.runningJobId) setRoundSource({ kind: "sse", id: s.runningJobId });
       if (!isLive && !initialJob) {
         if (s?.replayJobId) setRoundSource({ kind: "recorded", id: s.replayJobId });
         else setNoRecording(true);
@@ -827,19 +852,12 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   );
 
   function setPhoto(file: File | null) {
-    if (preview) URL.revokeObjectURL(preview);
-    setPreview(file ? URL.createObjectURL(file) : "");
     setForm((f) => ({ ...f, photo: file }));
-  }
-  function addAngle(raw: string) {
-    const a = raw.trim().toLowerCase();
-    if (!a || form.angles.includes(a) || form.angles.length >= 4) return;
-    setForm((f) => ({ ...f, angles: [...f.angles, a] }));
-    setAngleDraft("");
   }
   // The DNT case: the only product with feedback memory (its real Shopee listings).
   async function useDntCase() {
     setFormError("");
+    setKeywords(EMPTY_FORM.angles.join(", "));
     let photo: File | null = null;
     try {
       const r = await fetch("/api/product");
@@ -849,6 +867,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       name: "Kit 4 Top Cropped Sem Bojo",
       description: "kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo",
       price: "51.90",
+      marginPct: "",
       category: "tops",
       marketplace: "shopee_br",
       angles: ["academia", "casual", "conforto", "presente"],
@@ -872,6 +891,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
     e.preventDefault();
     const problem = validate(form);
     setFormError(problem);
+    if (problem && (!form.description.trim() || !Number(form.price.replace(",", ".")))) setDetailsOpen(true);
     if (problem || !isLive) return;
     setSubmitting(true);
     try {
@@ -879,6 +899,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       body.set("name", form.name.trim());
       body.set("description", form.description.trim());
       body.set("price", String(Number(form.price.replace(",", "."))));
+      if (form.marginPct.trim()) body.set("marginPct", String(Number(form.marginPct.replace(",", "."))));
       body.set("marketplace", form.marketplace);
       body.set("category", form.category.trim().toLowerCase());
       if (form.angles.length) body.set("angles", form.angles.join(","));
@@ -892,7 +913,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       const { campaignId, round: rnd, jobId } = await r.json();
       const m = status.marketplaces.find((x) => x.id === form.marketplace);
       startJob({ kind: "sse", id: jobId }, { campaignId, round: rnd, currency: m?.currency ?? "BRL", price: Number(form.price.replace(",", ".")) });
-      history.replaceState(null, "", `/lab?job=${encodeURIComponent(jobId)}`);
+      history.replaceState(null, "", `${window.location.pathname}?job=${encodeURIComponent(jobId)}`);
     } catch {
       setFormError("Could not reach the server. Is `npm run dev` still running?");
     } finally {
@@ -925,7 +946,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       if (!r.ok) return setActionError(await errorText(r));
       const { campaignId, round: rnd, jobId } = await r.json();
       startJob({ kind: "sse", id: jobId }, { ...ctx, campaignId, round: rnd });
-      history.replaceState(null, "", `/lab?job=${encodeURIComponent(jobId)}`);
+      history.replaceState(null, "", `${window.location.pathname}?job=${encodeURIComponent(jobId)}`);
     } catch {
       setActionError("Could not reach the server.");
     }
@@ -938,491 +959,115 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   const replaying = !isLive && !!roundSource;
 
   return (
-    <div className="lab">
+    <div className="lab judge-lab">
       <header className="lab-head">
         <div>
-          <span className="eyebrow">
-            <Radio size={13} /> LIVE LAB · RUN BOTH FACTORY DROIDS NOW
-          </span>
-          <h1>Give it a product. Watch Apify, Factory and Claude build the listings.</h1>
-          <p>
-            An <b>Apify</b> actor scrapes real Shopee competitors, our planner reads the feedback memory and picks what to test,
-            parallel <b>Factory</b> <code>listing-producer</code> droids (<b>Claude</b>) write title, description, benchmark and cover for
-            each variant, and the <code>performance-analyst</code> turns sales evidence into memory.
-          </p>
+          <h1>Try a campaign.</h1>
+          <p>Start with our cropped top. Edit the title and keywords, then generate two ads.</p>
         </div>
-        <div className="lab-meters">
-          <span>
-            <Wallet size={14} /> Factory sessions{" "}
-            {status.budget ? (
-              <>
-                <b>{status.budget.used}</b>/{status.budget.cap}
-              </>
-            ) : (
-              "—"
-            )}
-          </span>
-          <span>
-            <Timer size={14} /> {roundSource ? secs(now) : "—"}
-          </span>
-          <span className={`lab-live ${isLive ? "on" : ""}`}>
-            <i /> {isLive ? "LIVE" : "REPLAY"}
-          </span>
-        </div>
+        <div className="demo-guide-anchor"><Mascot name="lo" /><Link className="demo-how-link" href="/architecture">How does it work? <ArrowRight size={18} /></Link></div>
       </header>
-
-      {!isLive && (
-        <div className="lab-banner">
-          <Play size={16} />
-          <p>
-            <b>Live droids run on our laptop at the judging table.</b>{" "}
-            {noRecording
-              ? "No recorded run is available in this deployment."
-              : "Below: a real recorded run (same events the engine wrote), replayed with compressed timing."}
-          </p>
-        </div>
-      )}
+      {!isLive && <p className="demo-recording-note">{noRecording ? "Live generation is available on our laptop at the judging table." : "You’re viewing a recorded run. Try live generation on our laptop at the judging table."}</p>}
 
       <div className="lab-grid">
         <form className="panel lab-form" onSubmit={submit} aria-disabled={!isLive}>
           <fieldset disabled={!isLive || submitting || anyRunning}>
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">1 · PRODUCT</span>
-                <h2>What are we launching?</h2>
+            <div className="demo-form-layout">
+              <div className="demo-photo-column">
+                <label className="lab-photo judge-photo">
+                  {preview ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={preview} alt="Product reference preview" />
+                  ) : <span>{photoLoading ? <LoaderCircle size={24} className="spin" /> : <Upload size={24} />}<b>{photoLoading ? "Loading photo…" : "Add a product photo"}</b></span>}
+                  <input type="file" aria-label="Upload a product reference photo" accept="image/jpeg,image/png" onChange={(e) => setPhoto(e.target.files?.[0] ?? null)} />
+                </label>
+                <span className="demo-photo-caption">Reference photo · click to replace</span>
+              </div>
+              <div className="demo-fields">
+                <label>Product title
+                  <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="What are you selling?" maxLength={80} />
+                </label>
+                <label>Keywords to test
+                  <input value={keywords} onChange={(e) => { setKeywords(e.target.value); setForm({ ...form, angles: e.target.value.split(",").map(a => a.trim()).filter(Boolean) }); }} placeholder="e.g. gym, everyday, comfort" aria-describedby="keyword-help" />
+                </label>
+                <p id="keyword-help" className="demo-field-help">Separate 2–4 audiences or uses with commas. Each ad tests a different approach.</p>
+                <button className="demo-product-reset" type="button" onClick={() => { setDetailsOpen(true); setKeywords(""); setForm({ ...EMPTY_FORM, name: "", description: "", price: "", category: "", angles: [], photo: null }); setFormError(""); }}>Use my product <ArrowRight size={16} /></button>
               </div>
             </div>
-            <div className="lab-case">
-              <button type="button" className="button primary" onClick={useDntCase}>
-                <Sparkles size={15} /> Use the DNT case product
-              </button>
-              <p>
-                Feedback memory exists for this product only: DNT&apos;s 14 real Shopee listings (Seller Center, 30 days) stand in for
-                the sales feedback our own listings would generate over time. Any other product runs cold (no memory in scope).
-              </p>
-            </div>
-            <label className="lab-photo">
-              {preview ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={preview} alt="Product reference preview" />
-              ) : (
-                <span>
-                  <Upload size={22} />
-                  <b>Upload product photo</b>
-                  <small>JPG or PNG, up to 8 MB. Every cover is generated from it.</small>
-                </span>
-              )}
-              <input
-                type="file"
-                accept="image/jpeg,image/png"
-                onChange={(e) => setPhoto(e.target.files?.[0] ?? null)}
-              />
-            </label>
-            <label>
-              Product name
-              <input
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                placeholder="e.g. Stainless steel water bottle 1L"
-                maxLength={120}
-              />
-            </label>
-            <label>
-              Short description
-              <textarea
-                value={form.description}
-                onChange={(e) => setForm({ ...form, description: e.target.value })}
-                placeholder="Material, sizes, what is in the box. The droid never invents product facts."
-                rows={3}
-                maxLength={600}
-              />
-            </label>
-            <div className="lab-row">
-              <label>
-                Price ({market?.currency ?? "BRL"})
-                <input
-                  inputMode="decimal"
-                  value={form.price}
-                  onChange={(e) => setForm({ ...form, price: e.target.value })}
-                  placeholder="49.90"
-                />
-              </label>
-              <label>
-                Marketplace
-                <input readOnly value="Shopee Brazil" aria-describedby="lab-market-note" />
-              </label>
-            </div>
-            <label>
-              Category <small>(memory scope; the DNT case is “tops”)</small>
-              <input
-                value={form.category}
-                onChange={(e) => setForm({ ...form, category: e.target.value })}
-                placeholder="e.g. tops — empty = general (no memory)"
-                maxLength={40}
-              />
-            </label>
-            {market && (
-              <small className="lab-hint">
-                <span id="lab-market-note">Shopee Brazil case: listings in {market.language} (the store&apos;s customers) · title limit {market.titleMax} chars · prices in {market.currency}</span>
-              </small>
-            )}
-            <span className="eyebrow lab-sub">2 · EXPERIMENT</span>
-            <label>
-              Angles to test <small>(optional, 2–4)</small>
-              <div className="lab-chips">
-                {form.angles.map((a) => (
-                  <span key={a}>
-                    {a}
-                    <button
-                      type="button"
-                      aria-label={`Remove ${a}`}
-                      onClick={() => setForm((f) => ({ ...f, angles: f.angles.filter((x) => x !== a) }))}
-                    >
-                      <X size={11} />
-                    </button>
-                  </span>
-                ))}
-                {form.angles.length < 4 && (
-                  <input
-                    value={angleDraft}
-                    onChange={(e) => setAngleDraft(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === ",") {
-                        e.preventDefault();
-                        addAngle(angleDraft);
-                      }
-                    }}
-                    onBlur={() => addAngle(angleDraft)}
-                    placeholder={form.angles.length ? "add another…" : "e.g. gym, office, gift — Enter to add"}
-                  />
-                )}
+            <details className="judge-details judge-settings" open={detailsOpen} onToggle={e => setDetailsOpen(e.currentTarget.open)}>
+              <summary>Product details & pricing <span>Optional for the sample</span></summary>
+              <div className="judge-settings-body">
+                <label>Product category
+                  <input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} placeholder="e.g. tops, bags, electronics" maxLength={40} />
+                  <small>Use “tops” for the DNT history. Other categories start with no learned rules.</small>
+                </label>
+                <label>Key product facts<textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Material, colors, sizes and what is included." rows={3} maxLength={600} /></label>
+                <div className="lab-row">
+                  <label>Selling price (BRL)<input inputMode="decimal" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} /></label>
+                  <label>Target margin % <small>optional</small><input inputMode="decimal" value={form.marginPct} onChange={(e) => setForm({ ...form, marginPct: e.target.value })} placeholder="e.g. 30" /></label>
+                </div>
+                <p className="demo-field-help">Margin is a target before ad spend, not calculated profit.</p>
+                <div className="lab-variants"><div><b>Listings this round</b><small>2 recommended for a quick demo</small></div><div className="lab-stepper-input"><button type="button" aria-label="Fewer variants" onClick={() => setForm((f) => ({ ...f, variants: Math.max(1, f.variants - 1) }))}><Minus size={14} /></button><output>{form.variants}</output><button type="button" aria-label="More variants" onClick={() => setForm((f) => ({ ...f, variants: Math.min(4, f.variants + 1) }))}><Plus size={14} /></button></div></div>
+                <button type="button" className="button secondary" onClick={useDntCase}><Sparkles size={14} /> Reset to DNT sample</button>
               </div>
-            </label>
-            <div className="lab-variants">
-              <div>
-                <b>Variants this round</b>
-                <small>Each variant = 1 paid Factory session, ~2 min, run in parallel.</small>
-              </div>
-              <div className="lab-stepper-input">
-                <button
-                  type="button"
-                  aria-label="Fewer variants"
-                  onClick={() => setForm((f) => ({ ...f, variants: Math.max(1, f.variants - 1) }))}
-                >
-                  <Minus size={14} />
-                </button>
-                <output>{form.variants}</output>
-                <button
-                  type="button"
-                  aria-label="More variants"
-                  onClick={() => setForm((f) => ({ ...f, variants: Math.min(4, f.variants + 1) }))}
-                >
-                  <Plus size={14} />
-                </button>
-              </div>
-            </div>
-            {formError && (
-              <p className="lab-error" role="alert">
-                <TriangleAlert size={14} /> {formError}
-              </p>
-            )}
-            <button type="submit" className="button primary lab-go">
+            </details>
+            {formError && <p className="lab-error" role="alert"><TriangleAlert size={14} /> {formError}</p>}
+            {isLive && <button type="submit" className="button primary lab-go" disabled={photoLoading}>
               {submitting ? <LoaderCircle size={17} className="spin" /> : <Play size={17} />}
-              {isLive ? `Run droids · ${form.variants} variant${form.variants > 1 ? "s" : ""}` : "Live only at the judging table"}
-            </button>
-            <small className="lab-hint center">
-              Nothing is published. Models: conductor {status.models.conductor} · producer {status.models.producer} · analyst{" "}
-              {status.models.analyst}
-            </small>
+              {isLive ? submitting ? "Starting the droids…" : `Generate ${form.variants} listings` : "Watch the recorded run →"}
+            </button>}
+            <p className="demo-field-help demo-publish-note">You’ll review the ads before using them. Nothing is published to Shopee.</p>
           </fieldset>
         </form>
 
-        <div className="lab-results" ref={results}>
+        {roundSource && <div className="lab-results" ref={results}>
           <section className="panel lab-pipeline">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">PIPELINE{ctx.round ? ` · ROUND ${ctx.round.toUpperCase()}` : ""}</span>
-                <h2>{roundSource ? (round.done ? (round.done.ok ? "Round complete" : "Round finished with errors") : replaying ? "Replaying a recorded run" : "Droids at work") : "Ready when you are"}</h2>
-              </div>
-              {roundSource && (
-                <span className="lab-clock">
-                  <Timer size={14} /> {secs(now)}
-                </span>
-              )}
-            </div>
-            {!roundSource ? (
-              <p className="muted">
-                Fill in the product and hit <b>Run droids</b>. Each stage below lights up as it happens; every line comes from a
-                real Factory session or from our TypeScript validators.
-              </p>
-            ) : (
-              <Stepper steps={ROUND_STEPS(specs.length || form.variants)} stages={roundStages} now={now} finished={!!round.done} />
-            )}
-            {roundSource && (
-              <DroidTerminal
-                source={["system", "apify", "plan"]}
-                title="Pipeline log"
-                subtitle="TypeScript orchestrator · Apify · planner"
-                events={round.events}
-                state={round.done ? (round.done.ok ? "ok" : "error") : "running"}
-                emptyText="Connecting to the job…"
-              />
-            )}
-            {round.error && (
-              <p className="lab-error">
-                <TriangleAlert size={14} /> {round.error}
-              </p>
-            )}
-            {stageErrors.map((e, i) => (
-              <p key={i} className="lab-error">
-                <CircleX size={14} /> {e.stage} failed{e.detail ? `: ${e.detail}` : ""}
-              </p>
-            ))}
-            {actionError && (
-              <p className="lab-error" role="alert">
-                <TriangleAlert size={14} /> {actionError}
-              </p>
-            )}
+            <div className="section-heading"><div className="demo-stage-heading"><Mascot name="fox" /><h2>{roundSource ? round.done ? round.done.ok ? "Your listings are ready." : "Run finished. Review the results." : replaying ? "Replaying a real run" : "The droids are working…" : "From reference to ready-to-test."}</h2></div>{roundSource && <span className="lab-clock"><Timer size={14} /> {secs(now)}</span>}</div>
+            {!round.done && <div className="demo-progress" role="status">{roundStages.producer?.status === "start" ? "Creating your ads. Covers and copy will appear below as they’re ready." : "Researching competitors and preparing your campaign. Keep this page open."}</div>}
+            {round.done && <p className="demo-field-help">Compare the covers and open each listing to read the copy. Then try the analyst below.</p>}
+            {!roundSource && <p className="lab-note">Start a run to see real competitors, then watch each cover and listing arrive here.</p>}
+            {round.error && <p className="lab-error" role="alert"><TriangleAlert size={14} /> {round.error}</p>}
+            {stageErrors.map((e, i) => <p key={i} className="lab-error"><CircleX size={14} /> {e.stage} failed{e.detail ? `: ${e.detail}` : ""}</p>)}
+            {actionError && <p className="lab-error" role="alert"><TriangleAlert size={14} /> {actionError}</p>}
           </section>
 
-          {intel && (
-            <section className="panel lab-intel">
-              <span className="eyebrow">
-                <Search size={13} /> <SponsorBadge by="apify" /> {intel.actor}
-              </span>
-              <div className="lab-intel-top">
-                <strong>{intel.n}</strong>
-                <span>
-                  real competitors for
-                  <br />“{intel.query}”
-                </span>
-              </div>
-              <dl className="lab-evidence">
-                {intel.runId && (
-                  <div>
-                    <dt>Actor run</dt>
-                    <dd>
-                      <code>{intel.runId}</code>
-                    </dd>
-                  </div>
-                )}
-                {intel.datasetId && (
-                  <div>
-                    <dt>Dataset</dt>
-                    <dd>
-                      <code>{intel.datasetId}</code>
-                    </dd>
-                  </div>
-                )}
-                {intel.secs !== undefined && (
-                  <div>
-                    <dt>Run time</dt>
-                    <dd>{intel.secs.toFixed(1)}s</dd>
-                  </div>
-                )}
-                {intel.cached && (
-                  <div>
-                    <dt>Source</dt>
-                    <dd>live scrape empty; cached from {intel.cached}</dd>
-                  </div>
-                )}
-              </dl>
-              <ul>
-                {intel.headlines.map((h, i) => (
-                  <li key={i}>{h}</li>
-                ))}
-              </ul>
-              {intel.top && intel.top.length > 0 && (
-                <ol className="lab-top">
-                  {intel.top.map((c) => (
-                    <li key={c.itemId}>
-                      {c.url ? (
-                        <a href={c.url} target="_blank" rel="noreferrer">
-                          {c.title}
-                        </a>
-                      ) : (
-                        c.title
-                      )}{" "}
-                      <b>{formatMoney(c.price)}</b>
-                      <small>
-                        {" "}
-                        · id {c.itemId}
-                        {c.sold ? ` · ${c.sold} sold` : ""}
-                      </small>
-                    </li>
-                  ))}
-                </ol>
-              )}
-            </section>
-          )}
+          {intel && <section className="panel lab-intel judge-benchmark">
+            <div className="judge-benchmark-heading"><SponsorBadge by="apify" /><h3>{intel.n} competitors benchmarked</h3>{intel.secs !== undefined && <small>{intel.secs.toFixed(1)}s</small>}</div>
+            <p className="lab-note">Shopee Brazil · “{intel.query}”{intel.cached ? " · Live search returned no items; using a recorded benchmark." : ""}</p>
+            <ul>{intel.headlines.slice(0, 2).map((h, i) => <li key={i}>{h}</li>)}</ul>
+            <details className="judge-details"><summary>See competitors & scrape evidence</summary>
+              <ol className="lab-top">{intel.top?.map((c) => <li key={c.itemId}>{c.url ? <a href={c.url} target="_blank" rel="noreferrer">{c.title}</a> : c.title} <b>{formatMoney(c.price)}</b>{c.sold ? <small> · {c.sold} sold</small> : null}</li>)}</ol>
+              <dl className="lab-evidence"><div><dt>Apify actor</dt><dd>{intel.actor}</dd></div>{intel.runId && <div><dt>Run</dt><dd><code>{intel.runId}</code></dd></div>}{intel.datasetId && <div><dt>Dataset</dt><dd><code>{intel.datasetId}</code></dd></div>}</dl>
+            </details>
+          </section>}
 
-          {memory && <MemoryPanel memory={memory} plan={specs} />}
+          {specs.length > 0 && ctx.campaignId && ctx.round && <div className="lab-cards">
+            {specs.map((v) => {
+              const f = finished[v.variantId];
+              const listing = f?.ok ? listingOf(v.variantId) : null;
+              const producing = roundStages.producer && roundStages.producer.status !== "skip";
+              const state = f ? f.ok ? "ok" : "error" : covers[v.variantId] !== undefined ? "cover" : producing && !round.done ? "generating" : "planned";
+              return <LabVariantCard key={v.variantId} spec={v} listing={listing} campaign={ctx.campaignId!} round={ctx.round!} state={state} coverTs={covers[v.variantId]} why={f?.why} secsTaken={f?.secs} currency={ctx.currency} price={ctx.price ?? (v.produto as { preco?: number } | undefined)?.preco ?? v.produto?.precoShopee} memoryRules={memory?.rules} competitorUrls={competitorUrls} evidence={f} />;
+            })}
+          </div>}
 
-          {specs.length > 0 && (
-            <section className="panel lab-plan">
-              <span className="eyebrow">
-                PLAN · THOMPSON SAMPLING · <SponsorBadge by="code" />
-              </span>
-              <div className="lab-table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Variant</th>
-                      <th>Angle</th>
-                      <th>Cover</th>
-                      <th>Acquisition</th>
-                      <th>Mode</th>
-                      <th>Why</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {specs.map((v) => (
-                      <tr key={v.variantId}>
-                        <td>
-                          <code>{v.variantId}</code>
-                        </td>
-                        <td>{axisValue(v.axes.angulo)}</td>
-                        <td>{axisValue(v.axes.capa)}</td>
-                        <td>{axisValue(v.axes.aquisicao)}</td>
-                        <td>
-                          <span className={`lab-mode inline ${v.mode}`}>{v.mode === "explore" ? "explore" : "exploit"}</span>
-                        </td>
-                        <td className="lab-rationale">{v.rationale}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          )}
-
-          {roundStages.producer?.status === "skip" && (
-            <p className="lab-note">Dry run: the plan was written, no Factory droid session was opened.</p>
-          )}
-          {sources.length > 0 && roundStages.producer?.status !== "skip" && (
-            <div className="lab-lanes">
-              {sources.map((s) => {
-                const f = finished[s];
-                const st = f ? (f.ok ? "ok" : "error") : round.done ? "error" : roundStages.producer?.status === "start" ? "running" : "idle";
-                return (
-                  <DroidTerminal
-                    key={s}
-                    source={s}
-                    title={`listing-producer · ${s}`}
-                    subtitle={`Factory session ${sessions[s] ? sessions[s].slice(0, 8) + "…" : "opening…"} · conductor ${
-                      f?.models?.conductor ?? status.models.conductor
-                    } → producer ${f?.models?.producer ?? status.models.producer}${f?.factoryCredits ? ` · ${f.factoryCredits} credits` : ""}`}
-                    events={round.events}
-                    state={st}
-                  />
-                );
-              })}
+          {round.done && <section className="panel lab-next">
+            <div className="demo-stage-heading"><Mascot name="spark" /><h2>Next: see what the sales teach us.</h2></div>
+            <p className="lab-note">Try the analyst on DNT’s 14 real listings and 30 days of sales. It proposes memory changes; this demo does not save them. New ads need sales before they can teach the loop.</p>
+            <div className="lab-actions"><button className="button primary" onClick={runAnalyst} disabled={learnRunning || (isLive && anyRunning)}>{learnRunning ? <LoaderCircle size={16} className="spin" /> : <Brain size={16} />} {learnRunning ? "Reading sales evidence…" : "Run the analyst"}</button>
+              {isLive && ctx.campaignId && ctx.campaignId !== "dnt-top-cropped" && <button className="button secondary" onClick={nextRound} disabled={!canRunLive}><RotateCcw size={16} /> Generate next round</button>}
+              {ctx.campaignId && <Link className="button secondary" href={`/campaigns/${encodeURIComponent(ctx.campaignId)}`}>View campaign <ArrowRight size={16} /></Link>}
             </div>
-          )}
+          </section>}
 
-          {specs.length > 0 && ctx.campaignId && ctx.round && (
-            <div className="lab-cards">
-              {specs.map((v) => {
-                const f = finished[v.variantId];
-                const listing = f?.ok ? listingOf(v.variantId) : null;
-                const producing = roundStages.producer && roundStages.producer.status !== "skip";
-                const state = f ? (f.ok ? "ok" : "error") : covers[v.variantId] !== undefined ? "cover" : producing && !round.done ? "generating" : "planned";
-                return (
-                  <LabVariantCard
-                    key={v.variantId}
-                    spec={v}
-                    listing={listing}
-                    campaign={ctx.campaignId!}
-                    round={ctx.round!}
-                    state={state}
-                    coverTs={covers[v.variantId]}
-                    why={f?.why}
-                    secsTaken={f?.secs}
-                    currency={ctx.currency}
-                    price={ctx.price ?? (v.produto as { preco?: number } | undefined)?.preco ?? v.produto?.precoShopee}
-                    memoryRules={memory?.rules}
-                    competitorUrls={competitorUrls}
-                    evidence={f}
-                  />
-                );
-              })}
-            </div>
-          )}
+          {learnSource && <section className="panel lab-learn">
+            <div className="section-heading"><div><span className="eyebrow">DROID 02 · PERFORMANCE-ANALYST · {status.models.analyst}</span><h2>{learn.done ? "What the analyst would change" : "Reading real sales evidence…"}</h2></div><span className="lab-clock"><Timer size={14} /> {secs(learnNow)}</span></div>
+            <Stepper steps={LEARN_STEPS} stages={learnStages} now={learnNow} finished={!!learn.done} />
+            {learn.error && <p className="lab-error"><TriangleAlert size={14} /> {learn.error}</p>}
+            {diff && <><DiffView diff={diff} /><p className="demo-field-help">You’ve completed the demo. <Link href="/architecture">Open Architecture to trace each step →</Link></p></>}
+          </section>}
 
-          {round.done && (
-            <section className="panel lab-next">
-              <span className="eyebrow">3 · CLOSE THE LOOP</span>
-              <h2>Now let the second droid learn.</h2>
-              <p className="lab-note">
-                No sales exist yet for a listing created a minute ago, so the analyst runs on the DNT store&apos;s 14 real listings
-                (30-day Seller Center export). <b>Dry-run: memory is not committed.</b>
-              </p>
-              <div className="lab-actions">
-                <button className="button primary" onClick={runAnalyst} disabled={learnRunning || (isLive && anyRunning)}>
-                  {learnRunning ? <LoaderCircle size={16} className="spin" /> : <Brain size={16} />} Run performance-analyst (Opus 5.5)
-                  now
-                </button>
-                {isLive && ctx.campaignId && ctx.campaignId !== "dnt-top-cropped" && (
-                  <button className="button secondary" onClick={nextRound} disabled={!canRunLive}>
-                    <RotateCcw size={16} /> Plan next round
-                  </button>
-                )}
-                {ctx.campaignId && (
-                  <Link className="button secondary" href={`/campaigns/${encodeURIComponent(ctx.campaignId)}`}>
-                    Open campaign <ArrowRight size={16} />
-                  </Link>
-                )}
-                {replaying && (
-                  <button
-                    className="button secondary"
-                    onClick={() => {
-                      setLearnSource(null);
-                      setRoundSource((s) => (s ? { ...s } : s));
-                    }}
-                  >
-                    <RotateCcw size={16} /> Replay again
-                  </button>
-                )}
-              </div>
-            </section>
-          )}
-
-          {learnSource && (
-            <section className="panel lab-learn">
-              <div className="section-heading">
-                <div>
-                  <span className="eyebrow">PERFORMANCE-ANALYST · {status.models.analyst}</span>
-                  <h2>{learn.done ? "What the analyst would change" : "Analyst reading the evidence"}</h2>
-                </div>
-                <span className="lab-clock">
-                  <Timer size={14} /> {secs(learnNow)}
-                </span>
-              </div>
-              <Stepper steps={LEARN_STEPS} stages={learnStages} now={learnNow} finished={!!learn.done} />
-              {learn.error && (
-                <p className="lab-error">
-                  <TriangleAlert size={14} /> {learn.error}
-                </p>
-              )}
-              <DroidTerminal
-                source="analyst"
-                title="performance-analyst"
-                subtitle={`Factory session ${sessions.analyst ? sessions.analyst.slice(0, 8) + "…" : "opening…"} · reads runs/r2/stats.json + memory/playbook.json`}
-                events={learn.events}
-                state={learn.done ? (learn.done.ok ? "ok" : "error") : "running"}
-              />
-              {diff && (
-                <>
-                  <p className="lab-note">
-                    <SponsorBadge by="claude" /> Written by {status.models.analyst} inside the <code>performance-analyst</code> droid;
-                    validated by Zod before it is shown.
-                  </p>
-                  <DiffView diff={diff} />
-                </>
-              )}
-            </section>
-          )}
-        </div>
+        </div>}
       </div>
     </div>
   );

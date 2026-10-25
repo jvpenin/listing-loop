@@ -4,8 +4,8 @@ import { live } from "@/lib/fsdata";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Listing Loop · Cal Hacks 13",
-    template: "%s · Listing Loop",
+    default: "Fox.ai · Cal Hacks 13",
+    template: "%s · Fox.ai",
   },
   description:
     "Two Factory droids run an iterative listing campaign for any product a small seller launches on Shopee: generate variants, measure, learn, reallocate.",

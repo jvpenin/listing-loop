@@ -1,0 +1,90 @@
+.judge-lab { gap: 28px; padding: 0; }
+.judge-lab .lab-head { align-items: center; gap: 20px; }
+.judge-lab .lab-head > div:first-child { max-width: 850px; gap: 12px; }
+.judge-lab .lab-head h1 { font-size: clamp(32px, 4vw, 44px); line-height: 1.15; letter-spacing: -1.5px; color: var(--deep-ink); }
+.judge-lab .lab-head p { font-size: 18px; line-height: 1.65; color: var(--muted); }
+.demo-how-link { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; color: var(--muted); }
+.demo-recording-note { font-size: 16px; color: #87602e; border-left: 3px solid var(--warm-detail); padding-left: 16px; }
+.judge-lab .lab-grid { display: flex; flex-direction: column; gap: 32px; }
+.judge-lab .lab-form { width: 100%; position: static; padding: 32px; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); background: var(--white); }
+.judge-lab .lab-form fieldset { gap: 22px; opacity: 1; }
+.demo-form-layout { display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 40px; align-items: center; }
+.demo-photo-column { display: flex; flex-direction: column; gap: 10px; }
+.judge-lab .judge-photo { height: 240px; min-height: 240px; border: 1px solid var(--border); border-radius: 12px; background: var(--sky); }
+.judge-lab .judge-photo > img { width: 100%; height: 100%; object-fit: contain; max-height: none; background: var(--sky); }
+.demo-photo-caption { color: var(--muted); font-size: 14px; text-align: center; line-height: 1.5; }
+.demo-fields { display: grid; gap: 20px; }
+.judge-lab .lab-form label { font-size: 16px; font-weight: 600; color: var(--deep-ink); gap: 10px; }
+.judge-lab .lab-form input, .judge-lab .lab-form textarea { font-size: 17px; font-weight: 400; padding: 13px 14px; border: 1px solid #d7e1f3; background: #fff; border-radius: 10px; color: var(--deep-ink); width: 100%; min-width: 0; }
+.judge-lab .lab-form input:disabled, .judge-lab .lab-form textarea:disabled { color: var(--deep-ink); -webkit-text-fill-color: var(--deep-ink); opacity: 1; }
+.demo-field-help { font-size: 16px; line-height: 1.6; color: var(--muted); }
+.demo-fields .demo-field-help { margin-top: -10px; }
+.demo-product-reset { display: flex; align-items: center; gap: 8px; font-size: 15px; justify-self: start; padding: 0; color: var(--primary); }
+.judge-details > summary { display: flex; align-items: center; gap: 18px; cursor: pointer; padding: 16px 0; font-size: 16px; font-weight: 500; list-style: none; color: var(--deep-ink); }
+.judge-details > summary::after { content: '+'; font-size: 22px; margin-left: auto; }
+.judge-details[open] > summary::after { content: '−'; }
+.judge-details > summary > span { font-size: 15px; color: var(--muted); font-weight: 400; }
+.judge-settings { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.judge-settings-body { display: grid; gap: 20px; padding: 8px 0 24px; }
+.judge-settings-body label > small { font-size: 15px; font-weight: 400; color: var(--muted); line-height: 1.6; }
+.judge-lab .lab-go { align-self: flex-start; min-width: 240px; min-height: 52px; font-size: 17px; padding: 14px 24px; }
+.demo-publish-note { font-size: 15px; }
+.judge-replay-label { margin: 20px 0 0; display: flex; gap: 8px; font-size: 16px; color: var(--muted); }
+.judge-lab .lab-results { width: 100%; gap: 26px; scroll-margin-top: 24px; }
+.judge-lab .lab-results .panel { border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 26px; }
+.judge-lab .lab-results h2 { font-size: 26px; color: var(--deep-ink); }
+.judge-lab .lab-results h3 { font-size: 22px; }
+.judge-lab .lab-results p, .judge-lab .lab-results li, .judge-lab .lab-results .lab-note { font-size: 16px; line-height: 1.7; }
+.demo-progress { margin-top: 14px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.judge-lab .lab-clock { font-size: 16px; }
+.judge-lab .lab-cards { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.judge-lab .lab-card { border: 1px solid var(--border); box-shadow: none; border-radius: 10px; }
+.judge-lab .lab-card-body { padding: 22px; }
+.judge-lab .lab-card h4 { font-size: 19px; line-height: 1.5; }
+.judge-lab .lab-card .lab-why { font-size: 16px; }
+.judge-lab .lab-card .lab-axes > span { font-size: 14px; }
+.judge-lab .lab-card .lab-axes small { font-size: 12px; }
+.judge-lab .lab-card summary { font-size: 16px; }
+.judge-lab .lab-card small, .judge-lab .lab-card-foot { font-size: 14px; line-height: 1.5; }
+.judge-benchmark-heading { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.judge-benchmark-heading > small { font-size: 15px; color: var(--muted); margin-left: auto; }
+.judge-lab .lab-next .lab-note { margin: 14px 0 20px; }
+.judge-lab .lab-actions .button { font-size: 16px; }
+.judge-lab .lab-error { font-size: 16px; line-height: 1.5; }
+.judge-lab .lab-stepper strong, .judge-lab .lab-stepper small { font-size: 15px; }
+.judge-lab .lab-learn > .section-heading .eyebrow { font-size: 13px; letter-spacing: .4px; }
+@media(max-width: 760px) {
+  .demo-form-layout { grid-template-columns: 180px minmax(0,1fr); gap: 24px; }
+  .judge-lab .judge-photo { height: 200px; min-height: 200px; }
+  .judge-lab .lab-form { padding: 24px; }
+  .judge-details > summary > span { display: none; }
+}
+@media(max-width: 550px) {
+  .demo-form-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .judge-lab .judge-photo { height: 220px; min-height: 220px; }
+  .judge-lab .lab-form { padding: 20px; }
+  .judge-lab .lab-head p { font-size: 17px; }
+  .judge-lab .lab-cards { grid-template-columns: minmax(0,1fr); }
+  .judge-lab .lab-go { width: 100%; min-width: 0; }
+  .judge-lab .lab-actions { align-items: stretch; flex-direction: column; }
+  .judge-lab .lab-results .panel { padding: 20px; }
+}
+@media(prefers-reduced-motion: reduce) { .judge-lab .spin { animation: none; } }
+/* File input remains a transparent hit target in both live and replay. */
+.judge-lab .lab-form input[type="file"], .judge-lab .lab-form input[type="file"]:disabled { opacity: 0; padding: 0; border: 0; }
+
+/* Lo guides the entry; Fox and Spark appear at their stages, as in the brand guide. */
+.demo-guide-anchor { display: flex; gap: 18px; align-items: center; flex-shrink: 0; }
+.demo-guide-anchor > .mascot { width: 84px; height: 104px; flex: 0 0 84px; }
+.demo-guide-anchor .demo-how-link { color: var(--primary); font-weight: 500; }
+.judge-lab .lab-head h1 { font-weight: 800; }
+.judge-lab .lab-form input:focus, .judge-lab .lab-form textarea:focus { border-color: var(--primary); }
+.judge-lab .judge-photo:hover { border-color: var(--primary); }
+.demo-stage-heading { display: flex; align-items: center; gap: 18px; }
+.demo-stage-heading > .mascot { width: 58px; height: 68px; flex: 0 0 58px; }
+.demo-stage-heading > .mascot-spark { width: 74px; flex-basis: 74px; }
+.demo-recording-note { background: #fff4e4; padding: 14px 18px; border-radius: 0 10px 10px 0; }
+@media(max-width: 650px) {
+  .demo-guide-anchor { gap: 12px; width: 100%; }
+  .demo-guide-anchor > .mascot { width: 58px; height: 72px; flex-basis: 58px; }
+}
