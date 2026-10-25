@@ -18,7 +18,7 @@ const ACTOR = 'xtracto/shopee-search';
 
 // Two searches per angle: the angle's own wording plus the product's generic search, so
 // "presente"/"conforto" are benchmarked against real kits of tops, not tube tops.
-export const keywords: Record<(typeof eixos.angulo)[number], string[]> = {
+const keywords: Record<(typeof eixos.angulo)[number], string[]> = {
   academia: ['kit top cropped academia', 'kit top fitness academia feminino'],
   casual: ['kit top cropped casual', 'kit cropped feminino basico'],
   conforto: ['kit top cropped sem bojo', 'kit top cropped microfibra'],

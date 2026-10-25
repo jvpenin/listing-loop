@@ -2,8 +2,9 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 
-import { ROOT, eixos, produto, runDir, variantesPorRodada } from './config';
-import { Plan, Playbook, type Axes, type MemoryRule, type VariantSpec } from './schemas';
+import { eixos, produto, runDir, variantesPorRodada } from './config';
+import { readPlaybook } from './memory';
+import { Plan, type Axes, type MemoryRule, type VariantSpec } from './schemas';
 
 // Usage: npx tsx src/plan.ts --round r1 --from r1 --seed 42
 // No paid call: reads runs/<from>/stats.json (if any) and writes runs/<round>/plan.json.
@@ -89,11 +90,6 @@ function buildPriors(stats: Stats) {
   return { priors, best, overall };
 }
 
-function loadPlaybook(): Playbook {
-  const file = join(ROOT, 'memory', 'playbook.json');
-  return existsSync(file) ? Playbook.parse(JSON.parse(readFileSync(file, 'utf8'))) : { version: 0, rules: [] };
-}
-
 // A rule with pBetter >= 0.5 backs its value; below that it is an "evitar" rule.
 const isPositive = (r: MemoryRule) => r.evidence.pBetter >= 0.5;
 
@@ -107,7 +103,7 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   // - a backed value gets a narrower, higher belief (sd / 2, mean + sd / 2 of the original);
   // - an "evitar" value has its mean pushed down 2 sd and is capped at AVOID_CAP variants
   //   (one stays, so the system keeps exploring it instead of freezing a possibly lucky loser).
-  const playbook = loadPlaybook();
+  const playbook = readPlaybook();
   const rulesFor = (a: ScoredAxis, value: string) => playbook.rules.filter((r) => r.axis === a && r.value === value);
   const avoided = new Set<string>();
   for (const a of SCORED) {

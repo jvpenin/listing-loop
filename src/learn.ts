@@ -55,7 +55,7 @@ async function main() {
   const round = values.round;
   if (!round) throw new Error('--round is required');
 
-  // stats.ts reads its CSV relative to cwd and writes runs/<round>/stats.json.
+  // stats.ts writes runs/<round>/stats.json.
   execFileSync('npx', ['tsx', 'src/stats.ts', round], { cwd: ROOT, stdio: 'inherit' });
 
   const diffFile = join(runDir(round), 'memory-diff.json');

@@ -1,15 +1,19 @@
 {
   "name": "listing-loop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
+  "description": "Motor do Listing Loop: plano, rodada de anúncios, estatística e aprendizado (playbook).",
   "type": "commonjs",
+  "scripts": {
+    "typecheck": "tsc -p .",
+    "stats": "tsx src/stats.ts",
+    "plan": "tsx src/plan.ts",
+    "intel": "tsx src/intel.ts",
+    "memory": "tsx src/memory.ts",
+    "competitors": "tsx src/competitors.ts",
+    "round": "tsx src/round.ts",
+    "learn": "tsx src/learn.ts"
+  },
   "dependencies": {
     "@factory/droid-sdk": "^0.10.0",
     "apify-client": "^2.25.0",

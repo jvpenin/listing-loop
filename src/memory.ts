@@ -21,7 +21,7 @@ export function readPlaybook(): Playbook {
 }
 
 // Pure: add, update by id (an update of an unknown id is added), retire = move to `retired`.
-export function applyDiff(playbook: Playbook, diff: MemoryDiff): Playbook {
+function applyDiff(playbook: Playbook, diff: MemoryDiff): Playbook {
   const rules = new Map(playbook.rules.map((r) => [r.id, r]));
   for (const r of [...diff.add, ...diff.update]) rules.set(r.id, r);
   const retired = [...(playbook.retired ?? [])];
@@ -41,7 +41,7 @@ const evidence = (r: MemoryRule) =>
   `n=${r.evidence.n}, μ=${fmt(r.evidence.mean)}, IC90 [${fmt(r.evidence.ci90[0])}, ${fmt(r.evidence.ci90[1])}], P(melhor)=${r.evidence.pBetter.toFixed(2)}`;
 const cell = (s: string) => s.replace(/\|/g, '\\|').replace(/\n/g, ' ');
 
-export function renderPlaybook(pb: Playbook, diff?: MemoryDiff): string {
+function renderPlaybook(pb: Playbook, diff?: MemoryDiff): string {
   const lines = [
     '# Playbook — tops na Shopee',
     '',

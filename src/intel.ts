@@ -88,7 +88,7 @@ function ownShopIds(items: Item[]): Set<string> {
 // Only comparable garments count: tube tops ("tomara que caia", faixa) and bras show up in the same
 // searches but are a different product, and would distort price per piece.
 const NOT_COMPARABLE = /tomara\s*que\s*caia|\btube\b|tubinho|\bfaixa\b|suti[ãa]|\bbiqu[ií]ni/i;
-export const isComparable = (it: Item) => !NOT_COMPARABLE.test(titleOf(it));
+const isComparable = (it: Item) => !NOT_COMPARABLE.test(titleOf(it));
 
 function analyze(items: Item[], dntWords: Set<string>) {
   const priced = items.filter((it) => titleOf(it) && priceOf(it) !== null);

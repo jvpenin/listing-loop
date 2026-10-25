@@ -9,8 +9,10 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
+import { ROOT, runDir } from "./config";
+
 // ---------- Configuração (custos da Plataforma DNT, taxas Shopee vigentes) ----------
-export const CONFIG = {
+const CONFIG = {
   historyCsv: "data/history/dnt_tops.csv",
   custoKit4: 23.4, // TP001-K4, Plataforma DNT
   shopee: { comissaoPct: 0.22, taxaFixaPorItem: 4.5, impostoPct: 0.01 }, // faixa < R$ 80
@@ -108,7 +110,7 @@ function compare(group: number[], rest: number[], rand: () => number) {
 }
 
 // ---------- Principal ----------
-export function computeStats(rows: Row[]) {
+function computeStats(rows: Row[]) {
   const rand = mulberry32(241026);
   const listings = rows.map((r) => ({ row: r, m: listingMetrics(r) }));
   const axes: Record<string, Record<string, unknown>> = {};
@@ -164,9 +166,9 @@ export function computeStats(rows: Row[]) {
 const isMain = process.argv[1]?.endsWith("stats.ts");
 if (isMain) {
   const round = process.argv[2] ?? "r1";
-  const rows = parseCsv(readFileSync(CONFIG.historyCsv, "utf8"));
+  const rows = parseCsv(readFileSync(join(ROOT, CONFIG.historyCsv), "utf8"));
   const stats = computeStats(rows);
-  const outDir = join("runs", round);
+  const outDir = runDir(round);
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, "stats.json"), JSON.stringify(stats, null, 2));
 
@@ -185,5 +187,5 @@ if (isMain) {
       );
     }
   }
-  console.log(`→ ${join(outDir, "stats.json")}`);
+  console.log(`→ runs/${round}/stats.json`);
 }
