@@ -19,18 +19,33 @@ interface ValueStat {
   pBetter?: number;
 }
 
+type AxisValues = { angulo: readonly string[]; capa: readonly string[]; aquisicao: readonly string[]; oferta: readonly string[] };
+
+// A live campaign (src/lab.ts) plans for its own product, axes and marketplace. Without options,
+// makePlan plans the DNT case exactly as before.
+export interface PlanOptions {
+  eixos?: AxisValues;
+  produto?: VariantSpec['produto'];
+  n?: number;
+  // Playbook rules apply only inside their scope (rules learned on tops/shopee transfer to a new
+  // product of the same category and channel, not to a water bottle on Amazon).
+  scope?: { category: string; channel: string };
+  paths?: (variantId: string) => NonNullable<VariantSpec['paths']>;
+  hooks?: string[];
+}
+
 type Stats = Partial<Record<ScoredAxis, Record<string, ValueStat>>> & { overallMean?: number; dataQuality?: string };
 
 // Reads src/stats.ts output: axes.<axis>.<value>.metrics.profitPer1kImpr = { mean, ci90, pBetter }.
 // Values that are not in config.eixos (e.g. angulo "neutro") are ignored.
-function loadStats(file: string): Stats {
+function loadStats(file: string, ax: AxisValues): Stats {
   if (!existsSync(file)) return {};
   const raw = JSON.parse(readFileSync(file, 'utf8'));
   const out: Stats = {};
   for (const axis of SCORED) {
     out[axis] = {};
     for (const [value, v] of Object.entries<any>(raw.axes?.[axis] ?? {})) {
-      if (!(eixos[axis] as readonly string[]).includes(value)) continue;
+      if (!ax[axis].includes(value)) continue;
       const m = v?.metrics?.profitPer1kImpr;
       if (typeof m?.mean !== 'number' || !Array.isArray(m?.ci90)) continue;
       out[axis]![value] = { n: v.n, mean: m.mean, ci90: m.ci90, pBetter: m.pBetter };
@@ -73,7 +88,7 @@ interface Prior {
   stat?: ValueStat;
 }
 
-function buildPriors(stats: Stats) {
+function buildPriors(stats: Stats, ax: AxisValues) {
   const all = SCORED.flatMap((a) => Object.values(stats[a] ?? {}));
   const maxSd = all.length ? Math.max(...all.map(sdOf)) : 1;
   const overall = stats.overallMean ?? (all.length ? all.reduce((s, v) => s + v.mean, 0) / all.length : 0);
@@ -81,7 +96,7 @@ function buildPriors(stats: Stats) {
   const best = {} as Record<ScoredAxis, string | undefined>;
   for (const axis of SCORED) {
     priors[axis] = {};
-    for (const value of eixos[axis]) {
+    for (const value of ax[axis]) {
       const stat = stats[axis]?.[value];
       priors[axis][value] = stat ? { mean: stat.mean, sd: sdOf(stat), stat } : { mean: overall, sd: 2 * maxSd };
     }
@@ -93,10 +108,15 @@ function buildPriors(stats: Stats) {
 // A rule with pBetter >= 0.5 backs its value; below that it is an "evitar" rule.
 const isPositive = (r: MemoryRule) => r.evidence.pBetter >= 0.5;
 
-export function makePlan(round: string, from: string | undefined, seed: number): Plan {
+export function makePlan(round: string, from: string | undefined, seed: number, opts: PlanOptions = {}): Plan {
+  const ax: AxisValues = opts.eixos ?? eixos;
+  const n = opts.n ?? variantesPorRodada;
+  const hooks = opts.hooks ?? TITLE_HOOKS;
+  // Live campaigns are read by the judges in the app: rationale in English. The DNT case keeps its Portuguese.
+  const en = !!opts.paths;
   const statsFile = from ? join(runDir(from), 'stats.json') : '';
-  const stats = from ? loadStats(statsFile) : {};
-  const { priors, best } = buildPriors(stats);
+  const stats = from ? loadStats(statsFile, ax) : {};
+  const { priors, best } = buildPriors(stats, ax);
   const normal = rng(seed);
 
   // The playbook (memory written by the performance-analyst) shapes the next round:
@@ -104,7 +124,8 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   // - an "evitar" value has its mean pushed down 2 sd and is capped at AVOID_CAP variants
   //   (one stays, so the system keeps exploring it instead of freezing a possibly lucky loser).
   const playbook = readPlaybook();
-  const rulesFor = (a: ScoredAxis, value: string) => playbook.rules.filter((r) => r.axis === a && r.value === value);
+  const inScope = (r: MemoryRule) => !opts.scope || (r.scope.category === opts.scope.category && r.scope.channel === opts.scope.channel);
+  const rulesFor = (a: ScoredAxis, value: string) => playbook.rules.filter((r) => inScope(r) && r.axis === a && r.value === value);
   const avoided = new Set<string>();
   for (const a of SCORED) {
     for (const [value, p] of Object.entries(priors[a])) {
@@ -127,9 +148,9 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   };
 
   const combos: Axes[] = [];
-  for (const angulo of eixos.angulo)
-    for (const capa of eixos.capa)
-      for (const aquisicao of eixos.aquisicao) combos.push({ angulo, capa, aquisicao, oferta: 'kit4' });
+  for (const angulo of ax.angulo)
+    for (const capa of ax.capa)
+      for (const aquisicao of ax.aquisicao) combos.push({ angulo, capa, aquisicao, oferta: ax.oferta[0] });
 
   // Batch Thompson sampling: each slot draws a fresh posterior sample per axis value,
   // scores every combination as the sum of its values, and takes the best compliant one.
@@ -141,7 +162,7 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   const usedPairs = new Set<string>([`${anchor.capa}|${anchor.angulo}`]);
   const chosen: Axes[] = [anchor];
   count(anchor);
-  while (chosen.length < variantesPorRodada) {
+  while (chosen.length < n) {
     const draw = {} as Record<ScoredAxis, Record<string, number>>;
     for (const axis of SCORED) {
       draw[axis] = {};
@@ -166,7 +187,7 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   }
 
   const hookIndex = new Map<string, number>();
-  const variants: VariantSpec[] = chosen.map((axes, i) => {
+  const variants: VariantSpec[] = chosen.slice(0, n).map((axes, i) => {
     const h = hookIndex.get(axes.angulo) ?? 0;
     hookIndex.set(axes.angulo, h + 1);
     const strong = (a: ScoredAxis) => {
@@ -184,11 +205,13 @@ export function makePlan(round: string, from: string | undefined, seed: number):
     for (const a of SCORED) {
       const p = priors[a][axes[a]];
       if (!p.stat) {
-        notes.push(`${a}=${axes[a]} sem dado`);
+        const backing = rulesFor(a, axes[a]).find(isPositive);
+        if (backing) notes.push(`${a}=${axes[a]} ${en ? 'backed by playbook rule' : 'apoiado pela regra'} ${backing.id}`);
+        else notes.push(`${a}=${axes[a]} ${en ? 'no sales data yet' : 'sem dado'}`);
         continue;
       }
       const s = p.stat;
-      notes.push(`${a}=${axes[a]} ${best[a] === axes[a] ? 'lidera' : 'μ'} ${fmt(s.mean)}`);
+      notes.push(`${a}=${axes[a]} ${best[a] === axes[a] ? (en ? 'leads' : 'lidera') : 'μ'} ${fmt(s.mean)}`);
       evidence.push(
         `${a}=${axes[a]}: profitPer1kImpr μ=${fmt(s.mean)} IC90 [${fmt(s.ci90[0])}, ${fmt(s.ci90[1])}]` +
           (s.pBetter !== undefined ? ` pBetter=${fmt(s.pBetter)}` : '') +
@@ -196,18 +219,21 @@ export function makePlan(round: string, from: string | undefined, seed: number):
       );
     }
     for (const a of SCORED) {
-      for (const r of rulesFor(a, axes[a])) evidence.push(`regra ${r.id} (${r.confidence}): ${r.effect}`);
+      for (const r of rulesFor(a, axes[a])) evidence.push(`${en ? 'rule' : 'regra'} ${r.id} (${r.confidence}): ${r.effect}`);
     }
-    const rationale = `${mode === 'exploit' ? 'Aproveita o que já vence' : 'Explora incerteza'}: ${notes.join('; ')}`;
+    const lead = en ? (mode === 'exploit' ? 'Exploits what already wins' : 'Explores uncertainty') : mode === 'exploit' ? 'Aproveita o que já vence' : 'Explora incerteza';
+    const rationale = `${lead}: ${notes.join('; ')}`;
+    const variantId = `v${String(i + 1).padStart(2, '0')}`;
     return {
-      variantId: `v${String(i + 1).padStart(2, '0')}`,
+      variantId,
       round,
-      produto: { ...produto },
+      produto: { ...(opts.produto ?? produto) },
       axes,
       mode,
-      rationale,
-      titleHook: TITLE_HOOKS[h % TITLE_HOOKS.length],
+      rationale: rationale.slice(0, 300),
+      titleHook: hooks.length ? hooks[h % hooks.length] : undefined,
       priorEvidence: evidence.slice(0, 6),
+      ...(opts.paths ? { paths: opts.paths(variantId) } : {}),
     };
   });
 

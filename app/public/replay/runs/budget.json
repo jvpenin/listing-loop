@@ -1,0 +1,114 @@
+{
+  "cap": 80,
+  "used": 44,
+  "log": [
+    {
+      "at": "2026-10-25T04:13:27.004Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "round v03"
+    },
+    {
+      "at": "2026-10-25T04:22:32.778Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "round v03"
+    },
+    {
+      "at": "2026-10-25T05:12:05.707Z",
+      "round": "r1",
+      "sessions": 4,
+      "what": "round v01,v02,v04,v07"
+    },
+    {
+      "at": "2026-10-25T05:14:06.125Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "retry v01"
+    },
+    {
+      "at": "2026-10-25T05:14:42.785Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "retry v07"
+    },
+    {
+      "at": "2026-10-25T05:24:14.918Z",
+      "round": "r1",
+      "sessions": 10,
+      "what": "round v02,v03,v04,v05,v06,v08,v09,v10,v11,v12"
+    },
+    {
+      "at": "2026-10-25T06:17:35.603Z",
+      "round": "r1",
+      "sessions": 7,
+      "what": "round v05,v06,v08,v09,v10,v11,v12"
+    },
+    {
+      "at": "2026-10-25T06:36:31.502Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "learn analyst"
+    },
+    {
+      "at": "2026-10-25T07:37:34.920Z",
+      "round": "r2",
+      "sessions": 1,
+      "what": "learn analyst"
+    },
+    {
+      "at": "2026-10-25T07:41:28.115Z",
+      "round": "r2",
+      "sessions": 4,
+      "what": "round v01,v02,v04,v06"
+    },
+    {
+      "at": "2026-10-25T08:56:52.544Z",
+      "round": "women-s-cropped-tops-4-pack-lg1p5/r1",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T08:59:25.248Z",
+      "round": "jobs/learn-mvnljgt0",
+      "sessions": 1,
+      "what": "lab learn analyst"
+    },
+    {
+      "at": "2026-10-25T09:02:34.548Z",
+      "round": "women-s-cropped-tops-4-pack-lg1p5/r2",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T09:20:07.697Z",
+      "round": "jobs/learn-mvnma3fp",
+      "sessions": 1,
+      "what": "lab learn analyst"
+    },
+    {
+      "at": "2026-10-25T09:27:49.300Z",
+      "round": "women-s-cropped-tops-4-pack-lg1p5/r2",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T09:29:23.159Z",
+      "round": "jobs/learn-mvnmlzyb",
+      "sessions": 1,
+      "what": "lab learn analyst"
+    },
+    {
+      "at": "2026-10-25T09:30:56.691Z",
+      "round": "women-s-cropped-tops-4-pack-lg1p5/r3",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T09:36:55.841Z",
+      "round": "kit-4-top-cropped-sem-bojo-mvk6j/r1",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    }
+  ]
+}

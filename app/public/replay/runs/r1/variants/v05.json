@@ -1,0 +1,55 @@
+{
+  "variantId": "v05",
+  "axes": {
+    "angulo": "conforto",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Confortável Kit 4 Cores Sem Bojo Microfibra Cós Largo Feminino Academia Dia a Dia",
+  "description": "Top Cropped Confortável Sem Bojo em Microfibra: Kit 4 Tops Cropped para o Dia a Dia e a Academia\n\nProcurando top cropped confortável sem bojo para usar todo dia? Este kit traz 4 tops cropped femininos em microfibra lisa e macia, com alças largas e cós largo, para casa, passeio, treino fitness ou academia. Moda feminina básica que combina com tudo.\n\nKIT COM 4 CORES\n- Preto, branco, azul marinho e rosa\n- 4 tops por R$ 51,90: R$ 12,98 por peça\n- Cores básicas para montar o guarda-roupa de treino e casual\n\nCARACTERÍSTICAS\n- Top cropped feminino (corte curto)\n- Sem bojo e sem enchimento\n- Microfibra lisa e macia ao toque\n- Decote redondo com alças largas (não é alça fina)\n- Cós largo na barra, para acabamento limpo\n\nPARA QUEM É\n- Quem procura top cropped confortável para o dia a dia\n- Treino fitness, academia leve, caminhada ou yoga\n- Presente prático: kit com 4 cores\n\nMATERIAL, TAMANHO E CUIDADOS\n- Material: microfibra\n- Tamanho: confira as medidas no anúncio antes de comprar\n- Lavar com as cores separadas, em ciclo delicado, sem alvejante\n\nPOR QUE ESCOLHER ESTE KIT DE TOP CROPPED SEM BOJO\n- Kit de 4 tops com preço por peça competitivo\n- Alças largas e cós largo, sem bojo e com microfibra macia\n- 4 cores essenciais em um único kit",
+  "keywords": [
+    "top cropped sem bojo",
+    "top cropped confortável",
+    "top cropped microfibra",
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top sem bojo feminino",
+    "top cropped alça larga",
+    "top cropped cós largo",
+    "top cropped academia",
+    "top cropped dia a dia",
+    "top fitness sem bojo",
+    "kit top microfibra feminino"
+  ],
+  "coverBrief": "Capa solo_grade gerada com GenerateImage em modo edição, usando a foto de referência do produto (imagem anexada, KIT 4) como imagem de entrada, para que o corte, as alças, o decote, a barra larga e as 4 cores fossem preservados. Composição: grade 2x2 com os 4 tops sem modelo, sem pessoas, sem partes do corpo e sem manequim com cabeça; preto no canto superior esquerdo, branco no superior direito, azul marinho no inferior esquerdo e rosa no inferior direito. Fundo neutro cinza-claro/off-white de estúdio, iluminação suave e sombra discreta sob cada peça, estilo catálogo, sem texto, logos ou marcas d'água. Clima de conforto e uso diário. Verificação visual: corte, alças largas, decote redondo, cós largo e as 4 cores conferem com a referência. Arquivo original: /Users/joaocaldeira/.factory/generated-images/square-e-commerce-product-cover-1-1-for-a-brazil.png, copiado para runs/r1/covers/v05.png. O gerador aceitou a referência sem recusa.",
+  "coverPath": "runs/r1/covers/v05.png",
+  "appliedRules": [],
+  "hypothesis": "Capa solo_grade (4 tops sem modelo em grade 2x2) com título que abre com Top Cropped Confortável e gancho Kit 4 Cores aumenta o CTR orgânico no ângulo conforto frente a capas com modelo, porque mostra as 4 cores e o corte de forma direta.",
+  "benchmark": {
+    "competitorsAnalyzed": 42,
+    "referenceItemIds": [
+      "57118862429",
+      "58218753657",
+      "56417405538",
+      "58268750396"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 11,98 dos 39 concorrentes com preço por peça (DNT fica acima da mediana por peça); mais barato por peça que 41% deles; preço total R$ 51,90 contra mediana de R$ 40,99 (+27%).",
+    "keywordsAdopted": [
+      "bojo",
+      "microfibra",
+      "confortável",
+      "alça",
+      "academia",
+      "fitness",
+      "moda",
+      "cropped"
+    ],
+    "differentiators": [
+      "4 cores no kit (preto, branco, azul marinho e rosa) por R$ 51,90, ou R$ 12,98 por peça: mais barato por peça que os dois kits de 4 tops de microfibra listados (R$ 14,25 e R$ 14,22).",
+      "Sem bojo e microfibra: 'bojo' aparece em 36% dos títulos de conforto e 'microfibra' em 19%, e o kit atende às duas buscas.",
+      "Alças largas e cós largo contra o padrão alça fina (bigrama 'alça fina' em 17% dos títulos de conforto); o kit não é alça fina."
+    ]
+  }
+}

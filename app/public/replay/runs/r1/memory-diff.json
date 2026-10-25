@@ -1,0 +1,172 @@
+{
+  "round": "r1",
+  "add": [
+    {
+      "id": "angulo-casual-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "casual",
+      "effect": "Priorizar o ângulo casual, que entregou maior lucro por mil impressões que os demais ângulos.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 4,
+        "mean": 3.664820200336088,
+        "ci90": [
+          0.7328713478425861,
+          6.220593374296955
+        ],
+        "pBetter": 0.93275
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,93 com n=4 (confiança média), rebaixada para baixa porque os confundidores SIM-K4-004 e SIM-K4-006, com campanha e os dois maiores lucros da rodada, estão neste grupo e podem explicar o efeito; o CTR (pBetter 0,008) e a taxa de carrinho (0,04) foram piores, então o ganho vem do lucro por venda e não do funil."
+    },
+    {
+      "id": "angulo-academia-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "academia",
+      "effect": "Evitar o ângulo academia como padrão, pois teve lucro por mil impressões bem abaixo dos demais ângulos apesar do CTR maior.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 8,
+        "mean": 0.8753912294431265,
+        "ci90": [
+          -0.2597098263139296,
+          1.9908898346472428
+        ],
+        "pBetter": 0.05325
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,053 com n=8 (não chega a 0,05, então confiança média), rebaixada para baixa porque os confundidores 58210105679, 22099070066, SIM-K4-001, SIM-K4-003 e SIM-K4-008 (campanhas e dias sem estoque) estão no grupo; o CTR maior (pBetter 0,97) não se converteu em lucro."
+    },
+    {
+      "id": "capa-solo_grade-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "solo_grade",
+      "effect": "Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 3.173941619938622,
+        "ci90": [
+          2.046139860573659,
+          4.301743379303585
+        ],
+        "pBetter": 0.972
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,972 mas n=5 é menor que 2 × minListings (confiança média), rebaixada para baixa porque os confundidores 58210105679, SIM-K4-001 e SIM-K4-004 (com campanha) estão no grupo; a conversão paga (pBetter 1,0) sustenta o efeito."
+    },
+    {
+      "id": "capa-solo_linha-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "solo_linha",
+      "effect": "Evitar a capa solo_linha, que atrai cliques e carrinhos mas teve lucro por mil impressões negativo.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": -0.4659878920739587,
+        "ci90": [
+          -1.3206930327562667,
+          0.3302318672022131
+        ],
+        "pBetter": 0.00025
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,00025 com n=5 é menor que 2 × minListings (confiança média), rebaixada para baixa porque os confundidores 22099070066 e SIM-K4-008 (4 dias sem estoque cada) estão no grupo; o CTR (pBetter 0,996) e o carrinho (0,93) foram altos, mas a conversão paga (0,10) foi baixa."
+    },
+    {
+      "id": "aquisicao-organico-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "aquisicao",
+      "value": "organico",
+      "effect": "Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 3.583927580299074,
+        "ci90": [
+          1.6523956348939823,
+          5.515459525704165
+        ],
+        "pBetter": 0.98125
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,981 mas n=5 é menor que 2 × minListings (confiança média), rebaixada para baixa porque os confundidores 58210105679, SIM-K4-004 e SIM-K4-006 (todos com campanha) estão no grupo e podem inflar o lucro."
+    },
+    {
+      "id": "aquisicao-ads-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "aquisicao",
+      "value": "ads",
+      "effect": "Evitar depender de ads como aquisição principal, pois o lucro por mil impressões ficou bem abaixo dos demais canais.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 8,
+        "mean": 0.9457095683529986,
+        "ci90": [
+          0.02395077841111104,
+          1.8615577781750268
+        ],
+        "pBetter": 0.092
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,092 com n=8 (confiança média, sem chegar a 0,05), rebaixada para baixa porque os confundidores 22099070066, SIM-K4-003 e SIM-K4-012 estão no grupo; o custo de ads provavelmente consome a margem, já que o funil (CTR 0,19, carrinho 0,76) não foi muito pior."
+    }
+  ],
+  "update": [],
+  "retire": [],
+  "inconclusive": [
+    {
+      "axis": "angulo",
+      "value": "conforto",
+      "note": "seguir explorando: nenhum anúncio testado nesta rodada."
+    },
+    {
+      "axis": "angulo",
+      "value": "presente",
+      "note": "seguir explorando: nenhum anúncio testado nesta rodada."
+    },
+    {
+      "axis": "angulo",
+      "value": "neutro",
+      "note": "fora do experimento"
+    },
+    {
+      "axis": "capa",
+      "value": "modelo",
+      "note": "seguir explorando: pBetter de lucro 0,792 ficou abaixo do limite de 0,8."
+    },
+    {
+      "axis": "capa",
+      "value": "uso",
+      "note": "seguir explorando: nenhum anúncio testado nesta rodada."
+    },
+    {
+      "axis": "aquisicao",
+      "value": "afiliado",
+      "note": "seguir explorando: n=2 é menor que minListings (enoughData false)."
+    }
+  ],
+  "summary": "Na rodada r1, os melhores resultados de lucro vieram de casual, solo_grade e orgânico, enquanto academia, solo_linha e ads ficaram abaixo dos demais; todas as regras têm confiança baixa por causa de confundidores. A base tem 12 de 15 anúncios simulados, então estas regras precisam ser confirmadas com dados reais."
+}

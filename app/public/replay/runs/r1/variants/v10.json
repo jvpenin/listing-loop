@@ -1,0 +1,56 @@
+{
+  "variantId": "v10",
+  "axes": {
+    "angulo": "academia",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Academia Kit 4 Cores Sem Bojo Microfibra Alça Larga Feminino Fitness Treino",
+  "description": "Top Cropped Academia Kit 4 Cores: 4 tops femininos para treino, fitness e dia a dia, com 4 cores em um kit só: preto, branco, azul marinho e rosa pink.\n\nPor que escolher este kit de top cropped para academia:\n- Kit 4 por R$ 51,90, ou seja R$ 12,98 por peça\n- 4 cores: preto, branco, azul marinho e rosa pink\n- Sem bojo: sem enchimento, mais leve para treinar\n- Microfibra lisa: toque macio no corpo\n- Alça larga, no lugar das alças finas que aparecem em muitos tops de academia\n- Cós largo na base: fica no lugar durante o treino\n- Cropped com decote redondo: estilo esportivo que combina com legging, short e calça\n\nIdeal para:\n- Academia, musculação, pilates, corrida e treino funcional\n- Aulas de dança e atividades ao ar livre\n- Dia a dia com calça de linho, jeans ou short\n\nDetalhes do produto:\n- Material: microfibra lisa\n- Modelagem: cropped com decote redondo e alça larga\n- Sem bojo removível: não tem enchimento\n- Kit com 4 peças nas cores preto, branco, azul marinho e rosa pink\n\nCuidados: lavar à mão ou no ciclo delicado, secar à sombra e não usar alvejante, para manter a cor e a elasticidade.\n\nTamanho: confira a tabela de medidas do anúncio antes de comprar. Em caso de dúvida, fale com a loja.\n\nCompre o kit de top cropped para academia feminino e tenha 4 tops para treinar a semana toda sem repetir peça.",
+  "keywords": [
+    "top cropped academia",
+    "top fitness feminino",
+    "kit top cropped academia",
+    "top cropped sem bojo",
+    "top fitness sem bojo",
+    "top cropped microfibra",
+    "top academia alça larga",
+    "top para treino feminino",
+    "kit top academia 4 cores",
+    "cropped academia feminino",
+    "top fitness microfibra",
+    "top academia fitness"
+  ],
+  "coverBrief": "Capa quadrada em estilo lifestyle de academia (capa uso): uma modelo de cabelo castanho ondulado, sorrindo, faz um movimento real de treino com kettlebell em uma academia moderna e iluminada por janelas amplas, com fundo levemente desfocado e equipamentos ao redor. Ela veste o top cropped preto da referência, com decote redondo, alças largas, faixa elástica larga na base e microfibra lisa sem bojo, combinado com calça ou legging bege. A imagem foi gerada por edição da foto de referência do kit (imagem anexada), e o modelo do top foi mantido. A capa mostra apenas a peça preta; as cores branca, azul marinho e rosa aparecem no título, na descrição e na foto do produto. Arquivo salvo em runs/r1/covers/v10.png.",
+  "coverPath": "runs/r1/covers/v10.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de uso em academia (modelo em movimento real) aumenta o CTR frente a capa de produto no ângulo academia com aquisição orgânica.",
+  "benchmark": {
+    "competitorsAnalyzed": 66,
+    "referenceItemIds": [
+      "58264919459",
+      "56417405538",
+      "22794946896",
+      "58266995829"
+    ],
+    "pricePosition": "R$ 12,98 por peça (kit de 4 por R$ 51,90) contra mediana de R$ 14,83 por peça dos concorrentes com preço por peça (59 de 66 comparáveis); mais barato por peça que 64% deles, mas o preço total fica 30% acima da mediana de R$ 39,90.",
+    "keywordsAdopted": [
+      "academia",
+      "fitness",
+      "treino",
+      "bojo",
+      "alça",
+      "confortável",
+      "esportivo",
+      "fitness academia"
+    ],
+    "differentiators": [
+      "Kit de 4 peças por R$ 12,98 por peça, contra R$ 14,25 por peça no concorrente de kit 4 com forro duplo (56417405538), que custa R$ 56,99 no total.",
+      "4 cores no mesmo kit (preto, branco, azul marinho e rosa pink); o kit 3 domina os concorrentes de academia (45%) e o kit 4 aparece em apenas 11%.",
+      "Sem bojo com microfibra lisa e alça larga, enquanto 27% dos concorrentes de academia citam bojo e 14% citam alcinha.",
+      "Cós largo na base e cropped de decote redondo, em um kit de tops para academia e uso diário."
+    ]
+  }
+}

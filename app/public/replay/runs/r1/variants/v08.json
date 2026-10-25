@@ -1,0 +1,56 @@
+{
+  "variantId": "v08",
+  "axes": {
+    "angulo": "presente",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit Presente Top Cropped Cós Largo Kit 4 Sem Bojo Microfibra Feminino 4 Cores Casual Moda",
+  "description": "Kit Presente Top Cropped: 4 tops cropped femininos sem bojo, em microfibra, com cós largo, para dar de presente ou usar no dia a dia.\n\n4 cores por R$ 51,90 (R$ 12,98 por peça): preto, branco, azul marinho e pink. As 4 cores que combinam com tudo no guarda-roupa.\n\nPor que essa blusa cropped vai agradar:\n- Microfibra lisa e macia, com toque suave na pele\n- Sem bojo: caimento natural, sem forro acolchoado\n- Alças largas para mais conforto no dia a dia\n- Cós largo na barra, acabamento confortável\n- Modelagem cropped com decote redondo: combina com calça de linho, jeans, saia e shorts\n\nPresente perfeito para mãe, irmã, amiga, namorada ou para você mesma. Um kit completo para variar o look toda semana, sem precisar comprar peça por peça.\n\nO que vem no kit:\n- 1 top cropped preto\n- 1 top cropped branco\n- 1 top cropped azul marinho\n- 1 top cropped pink\n\nIdeal para: moda casual, passeios, dia a dia, viagens, treino leve e academia.\n\nCaracterísticas:\n- Material: microfibra\n- Sem bojo\n- Alças largas\n- Cós largo\n- Modelagem cropped, estilo blusa feminina casual\n\nDúvidas sobre tamanho? Confira a tabela de medidas antes de comprar e fale com a gente.\n\nCuidados: lavar à mão ou no ciclo delicado e secar à sombra para manter a cor e a maciez.",
+  "keywords": [
+    "kit top cropped feminino",
+    "kit 4 top cropped",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "top cropped cós largo",
+    "kit presente feminino",
+    "presente para mulher",
+    "top cropped casual",
+    "kit tops femininos",
+    "top cropped cores",
+    "blusa cropped feminina",
+    "top cropped alça larga",
+    "moda feminina casual",
+    "kit 4 tops cropped"
+  ],
+  "coverBrief": "Capa de uso (modelo em ação, cena de presente), gerada com GenerateImage usando a foto de referência do produto anexada como imagem de entrada (edição da referência), formato quadrado 1:1. Mulher de cabelo castanho ondulado, sorrindo e em movimento, abrindo uma caixa de presente com papel de seda em uma sala ensolarada, com sofá claro, plantas e vista de morro carioca ao fundo. Ela veste o top cropped preto da referência com calça de linho creme; dentro da caixa, os outros três tops (branco, azul marinho e pink) aparecem dobrados, mostrando as 4 cores do kit. Sem texto, logo, marca d'água ou pessoas extras. Verificação visual: corte, decote redondo, alças largas, barra larga e as 4 cores batem com a referência; não houve comparação pixel a pixel. Arquivo: runs/r1/covers/v08.png.",
+  "coverPath": "runs/r1/covers/v08.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de uso com cena de abertura de presente, em vez de catálogo, aumenta o CTR no ângulo presente com aquisição orgânica.",
+  "benchmark": {
+    "competitorsAnalyzed": 48,
+    "referenceItemIds": [
+      "56417405538",
+      "23499181350",
+      "58217160458",
+      "58208074966"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 12,75 dos 45 concorrentes com preço por peça no ângulo presente; mais barato por peça que 47% deles, mas o total de R$ 51,90 fica 14% acima da mediana de R$ 45,60.",
+    "keywordsAdopted": [
+      "cores",
+      "sem bojo",
+      "microfibra",
+      "blusa",
+      "casual",
+      "moda"
+    ],
+    "differentiators": [
+      "Kit 4 por R$ 12,98 a peça, abaixo de R$ 14,25 do kit 4 de microfibra (56417405538), R$ 13,75 do kit 4 baby look (58217160458) e R$ 18,13 do kit 4 com bojo (23499181350)",
+      "Sem bojo em microfibra lisa, enquanto o concorrente 23499181350 do mesmo kit 4 é com bojo",
+      "Cós largo e alças largas: diferenciais físicos do produto que aparecem na foto de referência",
+      "Formato kit 4 é o dominante no ângulo presente (50% dos concorrentes), com as 4 cores do kit"
+    ]
+  }
+}

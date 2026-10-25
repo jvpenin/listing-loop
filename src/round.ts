@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, extname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 
 import {
@@ -8,18 +8,20 @@ import {
   DroidMessageType,
   ReasoningEffort,
   ToolConfirmationOutcome,
-  run,
+  createSession,
   type ClientPermissionHandler,
+  type DroidResultMessage,
 } from '@factory/droid-sdk/node';
 import pLimit from 'p-limit';
 
 import { readBudget, remaining, reserveSessions } from './budget';
-import { ROOT, concorrencia, modelos, produto, retry, runDir, timeoutMs } from './config';
+import { ROOT, concorrencia, modelos, retry, runDir, shopee, timeoutMs } from './config';
 import { buildIntel, competitorIds } from './intel';
 import { makePlan, printPlan, writePlan } from './plan';
 import { Listing, Plan, type VariantSpec } from './schemas';
 
 // Usage: npx tsx src/round.ts --round r1 [--only v01,v02,...]
+// Live campaigns (src/lab.ts) reuse runSpecs() with specs that carry their own `paths`.
 // One run() per variant = one paid session. A bad output is redone within config.retry limits;
 // timeouts and SDK errors are never redone automatically.
 
@@ -30,7 +32,10 @@ function promptFor(spec: VariantSpec, previousProblem?: string): string {
       : []),
     'Use the subagent listing-producer with this variant spec and WAIT until it finishes (do not run it in background).',
     'Pass the spec to the subagent exactly as given. The axes are fixed.',
-    'The attached image is the product reference photo (data/product/photo.jpg). Tell the subagent it is attached to this',
+    ...(spec.paths
+      ? [`The subagent must write exactly ${spec.paths.json} and ${spec.paths.png}, and read competitor intel from ${spec.paths.intel}.`]
+      : []),
+    `The attached image is the product reference photo (${spec.produto.fotoReferencia}). Tell the subagent it is attached to this`,
     'conversation as a user image, so it must pass it to the image generator as the reference image.',
     '',
     JSON.stringify(spec, null, 2),
@@ -51,13 +56,29 @@ function permissionHandlerFor(id: string): ClientPermissionHandler {
   };
 }
 
-const outputsOf = (spec: VariantSpec) => ({
-  json: join(runDir(spec.round), 'variants', `${spec.variantId}.json`),
-  png: join(runDir(spec.round), 'covers', `${spec.variantId}.png`),
-});
+export const outputsOf = (spec: VariantSpec) =>
+  spec.paths
+    ? { json: join(ROOT, spec.paths.json), png: join(ROOT, spec.paths.png) }
+    : {
+        json: join(runDir(spec.round), 'variants', `${spec.variantId}.json`),
+        png: join(runDir(spec.round), 'covers', `${spec.variantId}.png`),
+      };
+
+// The plan sits next to variants/ and covers/: runs/<round>/plan.json or runs/campaigns/<id>/<round>/plan.json.
+const planFileOf = (spec: VariantSpec) => join(dirname(dirname(outputsOf(spec).json)), 'plan.json');
+
+// Competitor ids the producer may cite: the Apify items behind this angle's intel.
+function knownCompetitors(spec: VariantSpec): Set<string> | null {
+  if (!spec.paths) return competitorIds(spec.round, spec.axes.angulo);
+  const file = join(ROOT, spec.paths.intel);
+  if (!existsSync(file)) return null;
+  const intel = JSON.parse(readFileSync(file, 'utf8'));
+  const ids: string[] = intel.itemIds ?? (intel.angles?.[spec.axes.angulo]?.topCompetitors ?? []).map((c: { itemId: string }) => c.itemId);
+  return ids.length >= 2 ? new Set(ids.map(String)) : null;
+}
 
 // Checks the files once, after the run returned. No waiting.
-function checkOutputs(spec: VariantSpec): string | null {
+export function checkOutputs(spec: VariantSpec): string | null {
   const { json, png } = outputsOf(spec);
   if (!existsSync(json)) return 'missing json';
   if (!existsSync(png)) return 'missing png';
@@ -70,7 +91,11 @@ function checkOutputs(spec: VariantSpec): string | null {
   if (listing.variantId !== spec.variantId) return `json variantId=${listing.variantId}`;
   if (JSON.stringify(listing.axes) !== JSON.stringify(spec.axes)) return `axes changed: ${JSON.stringify(listing.axes)}`;
   if (listing.mode !== spec.mode) return `mode changed: ${listing.mode}`;
-  const known = competitorIds(spec.round, spec.axes.angulo);
+  const titleMax = spec.produto.tituloMax ?? shopee.tituloMax;
+  if (listing.title.length > titleMax) return `title has ${listing.title.length} chars, limit ${titleMax}`;
+  const descMax = spec.produto.descricaoMax ?? shopee.descricaoMax;
+  if (listing.description.length > descMax) return `description has ${listing.description.length} chars, limit ${descMax}`;
+  const known = knownCompetitors(spec);
   if (known) {
     const refs = listing.benchmark.referenceItemIds;
     if (refs.length < 2) return 'benchmark cites fewer than 2 competitors';
@@ -80,7 +105,7 @@ function checkOutputs(spec: VariantSpec): string | null {
   return null;
 }
 
-interface Outcome {
+export interface Outcome {
   variantId: string;
   ok: boolean;
   why: string;
@@ -96,18 +121,25 @@ interface Attempt {
   why: string;
 }
 
-interface Usage {
+export interface Usage {
   variantId: string;
   attempts: Attempt[];
 }
 
 // The image generator only accepts user-attached or session-generated images as reference,
 // so the photo goes in as a run() attachment instead of a path the droid reads.
-const referenceImage = () => ({
+const referenceImage = (spec: VariantSpec) => ({
   type: 'base64' as const,
-  data: readFileSync(join(ROOT, produto.fotoReferencia)).toString('base64'),
-  mediaType: 'image/jpeg' as const,
+  data: readFileSync(join(ROOT, spec.produto.fotoReferencia)).toString('base64'),
+  mediaType: extname(spec.produto.fotoReferencia).toLowerCase() === '.png' ? ('image/png' as const) : ('image/jpeg' as const),
 });
+
+// One line per tool call, so the live lab can show what the conductor and its subagent are doing.
+function describeTool(name: string, input: unknown): string {
+  const i = (input ?? {}) as Record<string, unknown>;
+  const pick = i.subagent_type ?? i.subagentType ?? i.file_path ?? i.filePath ?? i.path ?? i.command ?? i.description;
+  return typeof pick === 'string' ? pick.replace(ROOT + '/', '').slice(0, 140) : '';
+}
 
 type AttemptResult = Attempt & { badOutput: boolean };
 
@@ -116,16 +148,50 @@ type AttemptResult = Attempt & { badOutput: boolean };
 async function runAttempt(spec: VariantSpec, previousProblem?: string): Promise<AttemptResult> {
   const id = spec.variantId;
   const signal = AbortSignal.timeout(timeoutMs);
+  const began = Date.now();
+  const failed = (err: unknown): AttemptResult => {
+    const why = signal.aborted ? `aborted after ${timeoutMs / 1000}s` : (err as Error).message;
+    return { sessionId: null, success: false, durationMs: null, tokenUsage: null, why, badOutput: false };
+  };
   try {
-    const result = await run(promptFor(spec, previousProblem), {
+    return await attemptOnce(spec, signal, previousProblem);
+  } catch (err) {
+    // A session that dies in its first seconds ("Connection error.") did no work: try once more.
+    if (signal.aborted || Date.now() - began > 15_000) return failed(err);
+    console.log(`[${id}] [retry] session failed fast (${(err as Error).message}), reconnecting once`);
+    try {
+      return await attemptOnce(spec, signal, previousProblem);
+    } catch (err2) {
+      return failed(err2);
+    }
+  }
+}
+
+// Throws on SDK/connection errors; runAttempt turns them into a failed attempt.
+async function attemptOnce(spec: VariantSpec, signal: AbortSignal, previousProblem?: string): Promise<AttemptResult> {
+  const id = spec.variantId;
+  {
+    // Same as the SDK's run(), but streamed so every tool call is logged as it happens.
+    const session = await createSession({
       cwd: ROOT,
       modelId: modelos.conductor,
       reasoningEffort: ReasoningEffort.Low,
-      images: [referenceImage()],
       autonomyLevel: AutonomyLevel.High,
       permissionHandler: permissionHandlerFor(id),
-      abortSignal: signal,
     });
+    console.log(`[${id}] [session] ${session.id} conductor=${modelos.conductor}`);
+    let result: DroidResultMessage | undefined;
+    try {
+      for await (const msg of session.stream(promptFor(spec, previousProblem), { images: [referenceImage(spec)], abortSignal: signal })) {
+        if (msg.type === DroidMessageType.ToolCall) console.log(`[${id}] [tool] ${msg.name} ${describeTool(msg.name, msg.input)}`);
+        else if (msg.type === DroidMessageType.ToolResult) console.log(`[${id}] [result] ${msg.toolName} ${msg.isError ? 'error' : 'ok'}`);
+        else if (msg.type === DroidMessageType.Assistant && msg.text.trim()) console.log(`[${id}] [say] ${msg.text.trim().replace(/\s+/g, ' ').slice(0, 200)}`);
+        else if (msg.type === DroidMessageType.Result) result = msg;
+      }
+    } finally {
+      await session.close();
+    }
+    if (!result) throw new Error('stream ended without a result message');
     const tools = result.messages
       .filter((m) => m.type === DroidMessageType.ToolCall)
       .map((m) => (m as { name: string }).name);
@@ -139,9 +205,6 @@ async function runAttempt(spec: VariantSpec, previousProblem?: string): Promise<
       why: problem ?? '',
       badOutput: result.success && problem !== null,
     };
-  } catch (err) {
-    const why = signal.aborted ? `aborted after ${timeoutMs / 1000}s` : (err as Error).message;
-    return { sessionId: null, success: false, durationMs: null, tokenUsage: null, why, badOutput: false };
   }
 }
 
@@ -155,7 +218,7 @@ function spawnAttempt(spec: VariantSpec, previousProblem?: string): Promise<Atte
   const { json, png } = outputsOf(spec);
   rmSync(json, { force: true });
   rmSync(png, { force: true });
-  const args = ['tsx', __filename, '--round', spec.round, '--worker', id, ...(previousProblem ? ['--problem', previousProblem] : [])];
+  const args = ['tsx', __filename, '--plan', planFileOf(spec), '--worker', id, ...(previousProblem ? ['--problem', previousProblem] : [])];
   const child = spawn('npx', args, { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'inherit'] });
   let out = '';
   child.stdout.on('data', (d: Buffer) => {
@@ -165,14 +228,22 @@ function spawnAttempt(spec: VariantSpec, previousProblem?: string): Promise<Atte
   });
   return new Promise((resolve) => {
     let killed = false;
+    let settled = false;
     const timer = setTimeout(() => {
       killed = true;
       try {
         process.kill(-child.pid!, 'SIGKILL');
       } catch {}
+      // droid's own child processes can keep the stdout pipe open for minutes after the kill
+      // (r2 live: 'close' came 11 min late), so the attempt ends now instead of waiting for it.
+      setTimeout(finish, 2_000);
     }, timeoutMs + 15_000);
-    child.on('close', () => {
+    child.on('close', finish);
+    function finish() {
+      if (settled) return;
+      settled = true;
       clearTimeout(timer);
+      child.stdout.destroy();
       const line = out.split('\n').find((l) => l.startsWith(RESULT_TAG));
       const result: AttemptResult = line
         ? JSON.parse(line.slice(RESULT_TAG.length))
@@ -183,14 +254,14 @@ function spawnAttempt(spec: VariantSpec, previousProblem?: string): Promise<Atte
         result.badOutput = false;
       }
       resolve(result);
-    });
+    }
   });
 }
 
 // Shared by the concurrent variants of one execution (JS is single-threaded, so no race).
 let retriesLeft: number = retry.maxRetriesPerRun;
 
-async function runVariant(spec: VariantSpec): Promise<{ outcome: Outcome; usage: Usage }> {
+export async function runVariant(spec: VariantSpec): Promise<{ outcome: Outcome; usage: Usage }> {
   const id = spec.variantId;
   const start = Date.now();
   const attempts: Attempt[] = [];
@@ -260,14 +331,18 @@ async function main() {
   if (!process.env.FACTORY_API_KEY) process.loadEnvFile(join(ROOT, '.env'));
 
   const { values } = parseArgs({
-    options: { round: { type: 'string' }, only: { type: 'string' }, worker: { type: 'string' }, problem: { type: 'string' } },
+    options: {
+      round: { type: 'string' },
+      only: { type: 'string' },
+      worker: { type: 'string' },
+      problem: { type: 'string' },
+      plan: { type: 'string' },
+    },
   });
-  const round = values.round;
-  if (!round) throw new Error('--round is required');
-  const dir = runDir(round);
 
   if (values.worker) {
-    const plan = Plan.parse(JSON.parse(readFileSync(join(dir, 'plan.json'), 'utf8')));
+    const planFile = values.plan ?? join(runDir(values.round ?? ''), 'plan.json');
+    const plan = Plan.parse(JSON.parse(readFileSync(planFile, 'utf8')));
     const spec = plan.variants.find((v) => v.variantId === values.worker);
     if (!spec) throw new Error(`no variant ${values.worker}`);
     const result = await runAttempt(spec, values.problem);
@@ -275,6 +350,9 @@ async function main() {
     process.exit(0);
   }
 
+  const round = values.round;
+  if (!round) throw new Error('--round is required');
+  const dir = runDir(round);
   const planFile = join(dir, 'plan.json');
   if (!existsSync(planFile)) {
     console.log(`[round] ${planFile} not found, generating with seed 42`);
@@ -295,9 +373,8 @@ async function main() {
   mkdirSync(join(dir, 'variants'), { recursive: true });
   mkdirSync(join(dir, 'covers'), { recursive: true });
 
-  const limit = pLimit(concorrencia);
   const start = Date.now();
-  const results = await Promise.all(specs.map((s) => limit(() => runVariant(s))));
+  const results = await runSpecs(specs);
   const total = (Date.now() - start) / 1000;
 
   const summaryFile = join(dir, 'summary.json');
@@ -324,7 +401,23 @@ async function main() {
   process.exitCode = results.every((r) => r.outcome.ok) ? 0 : 1;
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// Fan-out: one killable worker process (one paid session) per variant, at most `concorrencia` at once.
+export function runSpecs(specs: VariantSpec[], onDone?: (r: { outcome: Outcome; usage: Usage }) => void) {
+  const limit = pLimit(concorrencia);
+  return Promise.all(
+    specs.map((s) =>
+      limit(async () => {
+        const r = await runVariant(s);
+        onDone?.(r);
+        return r;
+      }),
+    ),
+  );
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

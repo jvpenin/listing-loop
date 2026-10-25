@@ -1,12 +1,13 @@
 import { z } from 'zod';
 
-import { eixos, produto, shopee } from './config';
-
+// Axis values depend on the product (a live campaign brings its own angles), so they are plain
+// strings here; plan.ts only picks values from the campaign's axes and round.ts checks the
+// producer copied them unchanged.
 export const Axes = z.object({
-  angulo: z.enum(eixos.angulo),
-  capa: z.enum(eixos.capa),
-  aquisicao: z.enum(eixos.aquisicao),
-  oferta: z.enum(eixos.oferta),
+  angulo: z.string().min(1),
+  capa: z.string().min(1),
+  aquisicao: z.string().min(1),
+  oferta: z.string().min(1),
 });
 export type Axes = z.infer<typeof Axes>;
 
@@ -16,16 +17,27 @@ export const VariantSpec = z.object({
   variantId: z.string().regex(/^v\d{2}$/),
   round: z.string().min(1),
   produto: z.object({
-    sku: z.literal(produto.sku),
+    sku: z.string().min(1),
     descricao: z.string(),
     fotoReferencia: z.string(),
-    precoShopee: z.number(),
+    precoShopee: z.number().optional(),
+    // Live campaigns (src/lab.ts): any product on any marketplace.
+    nome: z.string().optional(),
+    preco: z.number().optional(),
+    moeda: z.string().optional(),
+    marketplace: z.string().optional(),
+    idioma: z.string().optional(),
+    tituloMax: z.number().int().optional(),
+    descricaoMax: z.number().int().optional(),
   }),
   axes: Axes,
   mode: Mode,
   rationale: z.string().max(300),
   titleHook: z.string().optional(),
   priorEvidence: z.array(z.string()).max(6),
+  // Exact files the producer reads and writes, relative to the repo root. Absent in the DNT
+  // rounds, which use runs/<round>/...
+  paths: z.object({ json: z.string(), png: z.string(), intel: z.string() }).optional(),
 });
 export type VariantSpec = z.infer<typeof VariantSpec>;
 
@@ -33,8 +45,8 @@ export const Listing = z.object({
   variantId: z.string(),
   axes: Axes,
   mode: Mode,
-  title: z.string().min(1).max(shopee.tituloMax),
-  description: z.string().min(1).max(shopee.descricaoMax),
+  title: z.string().min(1).max(200),
+  description: z.string().min(1).max(5000),
   keywords: z.array(z.string().min(1)).min(5).max(15),
   coverBrief: z.string().min(1),
   coverPath: z.string().min(1),

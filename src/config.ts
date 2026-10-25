@@ -24,7 +24,8 @@ export const modelos = { conductor: 'claude-haiku-5-5', producer: 'claude-haiku-
 
 export const variantesPorRodada = 12;
 export const concorrencia = 3;
-export const timeoutMs = 360_000;
+// The live lab (app spawns src/lab.ts) sets LISTING_LOOP_TIMEOUT_MS lower so a stalled droid never holds a judge for minutes.
+export const timeoutMs = Number(process.env.LISTING_LOOP_TIMEOUT_MS) || 360_000;
 
 // Demo budget guard: a variant whose output is bad (missing file, Zod error, axes changed) is redone
 // once, at most `maxRetriesPerRun` times per execution and only while the budget has

@@ -1,0 +1,56 @@
+{
+  "variantId": "v12",
+  "axes": {
+    "angulo": "academia",
+    "capa": "modelo",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Academia Cós Largo Kit 4 Tops Microfibra Sem Bojo Alça Larga Fitness Treino Feminino",
+  "description": "Top Cropped Academia com Cós Largo: kit com 4 tops cropped femininos sem bojo, em microfibra lisa, para academia treino, fitness e dia a dia.\n4 cores por R$ 51,90 (apenas R$ 12,98 por peça).\n\nDestaques:\n- Cós largo: faixa larga na barra do top\n- Alças largas e decote redondo\n- Sem bojo: modelagem simples, sem enchimento\n- Microfibra lisa e macia na pele\n- Cropped: comprimento curto, combina com calça de cintura alta\n\nO que vem no kit:\n- 4 tops cropped femininos nas cores preto, branco, azul marinho e pink\n\nPor que comprar o kit:\n- Preço por peça de R$ 12,98, mais barato que 64% dos tops de academia da Shopee\n- Monte seu guarda-roupa de academia treino com 4 cores sem pagar caro por peça\n- Serve para treino, caminhada, yoga e uso casual\n\nTamanhos: confira a tabela de medidas na variação antes de comprar. Na dúvida, fale com a loja.\nMaterial: microfibra lisa, sem bojo.\nCuidados: lavar à mão ou no ciclo delicado, sem alvejante, secar à sombra.\n\nTop cropped academia feminino sem bojo, top fitness feminino microfibra, top academia cós largo para treino, kit top cropped academia com 4 cores, top cropped esportivo para dia a dia.",
+  "keywords": [
+    "top cropped academia",
+    "top fitness feminino",
+    "kit 4 top cropped",
+    "top academia sem bojo",
+    "top cropped microfibra",
+    "top academia cós largo",
+    "top treino feminino",
+    "top fitness academia",
+    "top cropped esportivo",
+    "top academia confortável",
+    "kit top cropped academia",
+    "top cropped sem bojo"
+  ],
+  "coverBrief": "Capa de modelo em estilo catálogo de academia, gerada por edição image-to-image a partir da foto de referência anexada (4 tops preto, branco, azul marinho e pink, com o mesmo corte, decote redondo, alças largas, barra larga e textura de microfibra). Quatro modelas sorridentes lado a lado, em pose esportiva, cada uma usando um dos tops do kit, sobre fundo cinza claro neutro e sem logos, com o texto KIT 4 em preto no topo, como na referência, e energia de treino. Os tops ficaram consistentes com a referência. Mudanças permitidas: cena, pessoas, pose e enquadramento; a parte de baixo (legging esportiva de cintura alta) foi acrescentada pelo gerador e não faz parte do produto. O gerador aceitou a foto de referência.",
+  "coverPath": "runs/r1/covers/v12.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de modelo com o kit de 4 cores e o título com hook Cós Largo aumenta o CTR no ângulo academia com aquisição orgânica.",
+  "benchmark": {
+    "competitorsAnalyzed": 66,
+    "referenceItemIds": [
+      "58264919459",
+      "56417405538",
+      "22399710152",
+      "58266995829"
+    ],
+    "pricePosition": "R$ 12,98 por peça (R$ 51,90 pelo kit de 4) contra mediana de R$ 14,83 por peça dos 66 concorrentes de academia: mais barato por peça que 64%, mas acima dos kits de 3 regatas a R$ 10,00 e R$ 10,63 por peça, e o preço total do kit fica 30% acima da mediana de R$ 39,90 por ter 4 peças.",
+    "keywordsAdopted": [
+      "academia",
+      "fitness",
+      "treino",
+      "esportivo",
+      "confortável",
+      "alça",
+      "fitness academia",
+      "academia treino"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98, mais barato que 64% dos concorrentes de academia (mediana R$ 14,83).",
+      "Kit de 4 cores: kit de 4 é raro no ângulo (11% dos concorrentes, contra 45% de kits de 3).",
+      "Sem bojo e microfibra lisa: 27% dos concorrentes de academia destacam bojo, e este kit não tem enchimento.",
+      "Cós largo: nenhum dos 8 concorrentes de academia mais vendidos destaca essa característica no título."
+    ]
+  }
+}

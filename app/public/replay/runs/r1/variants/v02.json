@@ -1,0 +1,52 @@
+{
+  "variantId": "v02",
+  "axes": {
+    "angulo": "casual",
+    "capa": "modelo",
+    "aquisicao": "afiliado",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Casual Preço por Peça | Kit 4 Tops Femininos Sem Bojo Microfibra Alça Larga Cós Largo",
+  "description": "Top Cropped Casual para o dia a dia: 4 tops por menos de R$ 13 cada.\n\nKit 4 Tops Cropped Femininos por R$ 51,90 = R$ 12,98 por peça.\n4 cores por R$ 51,90: preto, branco, azul marinho e rosa.\n\nPor que escolher este kit:\n- Preço por peça: R$ 12,98, abaixo da mediana de R$ 15,00 por peça dos concorrentes casuais.\n- 4 cores no mesmo kit para combinar com tudo que você já tem no guarda-roupa.\n- Microfibra macia, sem bojo e sem enchimento: confortável para usar o dia inteiro.\n- Alça larga para mais conforto e firmeza nos ombros.\n- Decote canoa e corte cropped: caimento leve e moderno.\n- Cós largo na barra para um caimento firme.\n\nComo usar:\n- Combine com calça de linho, jeans, saia ou short.\n- Perfeito para o dia a dia, passeios e encontros com amigas.\n\nO que vem no kit:\n- 4 tops cropped: preto, branco, azul marinho e rosa.\n\nTamanhos e medidas:\n- Confira a tabela de medidas antes de comprar e escolha pelo busto e pela cintura.\n\nMaterial e cuidados:\n- Microfibra. Lave em ciclo delicado, com água fria, e seque à sombra para manter a cor e o caimento.\n\nGaranta já o seu kit de 4 tops!",
+  "keywords": [
+    "top cropped casual",
+    "kit top cropped",
+    "top cropped feminino",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "kit 4 tops cropped",
+    "cropped feminino casual",
+    "top alça larga",
+    "moda casual feminina",
+    "blusa cropped feminina",
+    "top regata feminina",
+    "kit cropped feminino"
+  ],
+  "coverBrief": "Capa de modelo em estilo catálogo sobre fundo neutro cinza-claro: quatro mulheres lado a lado, cada uma usando um dos tops (preto, branco, azul marinho e rosa), calça de linho bege, sorriso natural e poses descontraídas de rua, com o texto 'KIT 4' no topo. Gerada por edição de imagem (imagem para imagem) a partir da foto de referência anexada (data/product/photo.jpg), que o gerador aceitou; o produto da capa segue a referência (corte, alças largas, decote canoa, cós largo, microfibra, as 4 cores). Formato quadrado, 1254 x 1254 px, PNG.",
+  "coverPath": "runs/r1/covers/v02.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de modelo em catálogo com o gancho 'Preço por Peça' no título aumenta o CTR do ângulo casual para afiliado frente à capa solo.",
+  "benchmark": {
+    "competitorsAnalyzed": 57,
+    "referenceItemIds": [
+      "58269308875",
+      "58206609367",
+      "58267373854",
+      "58218110445"
+    ],
+    "pricePosition": "R$ 12,98 por peça (kit de 4 por R$ 51,90) contra mediana de R$ 15,00 por peça dos 52 concorrentes casuais com preço por peça (57 comparáveis); mais barato por peça que 67% deles, mas o kit total fica 33% acima da mediana de R$ 39,00.",
+    "keywordsAdopted": [
+      "casual",
+      "moda",
+      "casual moda",
+      "blusa",
+      "regata"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98 contra mediana casual de R$ 15,00: mais barato por peça que 67% dos concorrentes casuais.",
+      "Kit de 4 cores (preto, branco, azul marinho e rosa): só 5% dos concorrentes casuais vendem kit de 4 (3 de 57).",
+      "Sem bojo, microfibra e alça larga: concorrentes de conforto usam 'bojo' em 36% dos títulos e 'alça fina' em 17%; esta DNT é sem bojo com alça larga."
+    ]
+  }
+}

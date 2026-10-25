@@ -1,0 +1,628 @@
+{
+  "generatedAt": "2026-10-25T06:36:31.492Z",
+  "unit": "listing",
+  "method": "bootstrap por anúncio; pBetter = P(média do grupo > média dos demais anúncios do eixo)",
+  "thresholds": {
+    "minListings": 3,
+    "pBetterRule": 0.8
+  },
+  "dataQuality": {
+    "listings": 15,
+    "realPartial": 3,
+    "simulated": 12,
+    "note": "Base de demonstração: 3 anúncios reais parciais (vendas, unidades e preço reais; funil estimado) e 12 simulados. Não apresentar os simulados como histórico real da loja."
+  },
+  "confounders": [
+    {
+      "item_id": "58210105679",
+      "campanha": "sim",
+      "diasSemEstoque": 2
+    },
+    {
+      "item_id": "22099070066",
+      "campanha": "nao",
+      "diasSemEstoque": 4
+    },
+    {
+      "item_id": "SIM-K4-001",
+      "campanha": "sim",
+      "diasSemEstoque": 0
+    },
+    {
+      "item_id": "SIM-K4-003",
+      "campanha": "sim",
+      "diasSemEstoque": 2
+    },
+    {
+      "item_id": "SIM-K4-004",
+      "campanha": "sim",
+      "diasSemEstoque": 5
+    },
+    {
+      "item_id": "SIM-K4-006",
+      "campanha": "sim",
+      "diasSemEstoque": 3
+    },
+    {
+      "item_id": "SIM-K4-008",
+      "campanha": "nao",
+      "diasSemEstoque": 4
+    },
+    {
+      "item_id": "SIM-K4-012",
+      "campanha": "sim",
+      "diasSemEstoque": 4
+    }
+  ],
+  "perListing": [
+    {
+      "item_id": "58210105679",
+      "fonte": "real_parcial",
+      "ctr": 0.02766857128730186,
+      "cartRate": 0.20077371159233404,
+      "paidConversion": 0.03320734581350883,
+      "profitPer1kImpr": 0.7085186736512921
+    },
+    {
+      "item_id": "22099070066",
+      "fonte": "real_parcial",
+      "ctr": 0.04088987506072933,
+      "cartRate": 0.21951219512195122,
+      "paidConversion": 0.03677893921796361,
+      "profitPer1kImpr": -0.576127390197743
+    },
+    {
+      "item_id": "58260101046",
+      "fonte": "real_parcial",
+      "ctr": 0.02518891687657431,
+      "cartRate": 0.12751677852348994,
+      "paidConversion": 0.020134228187919462,
+      "profitPer1kImpr": 2.495651572399052
+    },
+    {
+      "item_id": "SIM-K4-001",
+      "fonte": "simulado",
+      "ctr": 0.031197646783808004,
+      "cartRate": 0.23012704174228676,
+      "paidConversion": 0.03012704174228675,
+      "profitPer1kImpr": 3.292681263879692
+    },
+    {
+      "item_id": "SIM-K4-002",
+      "fonte": "simulado",
+      "ctr": 0.04599918990837761,
+      "cartRate": 0.23998693504266524,
+      "paidConversion": 0.020005715918833954,
+      "profitPer1kImpr": 0.929925878325611
+    },
+    {
+      "item_id": "SIM-K4-003",
+      "fonte": "simulado",
+      "ctr": 0.03810009366737411,
+      "cartRate": 0.12995819786344637,
+      "paidConversion": 0.010032512772875058,
+      "profitPer1kImpr": -0.9053243381036504
+    },
+    {
+      "item_id": "SIM-K4-004",
+      "fonte": "simulado",
+      "ctr": 0.02649935584486032,
+      "cartRate": 0.1600197433366239,
+      "paidConversion": 0.030009871668311944,
+      "profitPer1kImpr": 5.731297464062923
+    },
+    {
+      "item_id": "SIM-K4-005",
+      "fonte": "simulado",
+      "ctr": 0.045599784416384355,
+      "cartRate": 0.2399848971115726,
+      "paidConversion": 0.01000566358316028,
+      "profitPer1kImpr": 0.5568216815522021
+    },
+    {
+      "item_id": "SIM-K4-006",
+      "fonte": "simulado",
+      "ctr": 0.031101507235158785,
+      "cartRate": 0.10015710919088766,
+      "paidConversion": 0.029850746268656716,
+      "profitPer1kImpr": 7.4622406415962566
+    },
+    {
+      "item_id": "SIM-K4-007",
+      "fonte": "simulado",
+      "ctr": 0.028698459337727862,
+      "cartRate": 0.19996150885296382,
+      "paidConversion": 0.04003079291762895,
+      "profitPer1kImpr": 2.6764512574665087
+    },
+    {
+      "item_id": "SIM-K4-008",
+      "fonte": "simulado",
+      "ctr": 0.04329997492575807,
+      "cartRate": 0.14999403127611316,
+      "paidConversion": 0.019995225020890534,
+      "profitPer1kImpr": -2.2106507533359836
+    },
+    {
+      "item_id": "SIM-K4-009",
+      "fonte": "simulado",
+      "ctr": 0.0326006533217232,
+      "cartRate": 0.24997161993415826,
+      "paidConversion": 0.019979566352593937,
+      "profitPer1kImpr": 0.858766238668797
+    },
+    {
+      "item_id": "SIM-K4-010",
+      "fonte": "simulado",
+      "ctr": 0.04429895773320065,
+      "cartRate": 0.21995877288711047,
+      "paidConversion": 0.029950284952103796,
+      "profitPer1kImpr": 3.4607594406326947
+    },
+    {
+      "item_id": "SIM-K4-011",
+      "fonte": "simulado",
+      "ctr": 0.02910267692395038,
+      "cartRate": 0.24002630425252083,
+      "paidConversion": 0.01994739149495835,
+      "profitPer1kImpr": -1.02990887671388
+    },
+    {
+      "item_id": "SIM-K4-012",
+      "fonte": "simulado",
+      "ctr": 0.014090541248155376,
+      "cartRate": 0.22053231939163498,
+      "paidConversion": 0.030418250950570342,
+      "profitPer1kImpr": 3.1162422049792933
+    }
+  ],
+  "axes": {
+    "angulo": {
+      "academia": {
+        "n": 8,
+        "enoughData": true,
+        "listings": [
+          "58210105679",
+          "22099070066",
+          "SIM-K4-001",
+          "SIM-K4-003",
+          "SIM-K4-005",
+          "SIM-K4-007",
+          "SIM-K4-008",
+          "SIM-K4-010"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.03746917040153553,
+            "ci90": [
+              0.03331132865033354,
+              0.041358159052772306
+            ],
+            "baselineMean": 0.029226120194114285,
+            "pBetter": 0.97225
+          },
+          "cartRate": {
+            "mean": 0.19878379455597228,
+            "ci90": [
+              0.17741074985500627,
+              0.2198265437148714
+            ],
+            "baselineMean": 0.19117297281028303,
+            "pBetter": 0.62025
+          },
+          "paidConversion": {
+            "mean": 0.02626597575255223,
+            "ci90": [
+              0.01961933660437877,
+              0.032487394738209
+            ],
+            "baselineMean": 0.024335110120263535,
+            "pBetter": 0.65875
+          },
+          "profitPer1kImpr": {
+            "mean": 0.8753912294431265,
+            "ci90": [
+              -0.2597098263139296,
+              1.9908898346472428
+            ],
+            "baselineMean": 2.794887874759722,
+            "pBetter": 0.05325
+          }
+        }
+      },
+      "casual": {
+        "n": 4,
+        "enoughData": true,
+        "listings": [
+          "58260101046",
+          "SIM-K4-004",
+          "SIM-K4-006",
+          "SIM-K4-011"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.027973114220135948,
+            "ci90": [
+              0.026167356888418324,
+              0.029950969387584167
+            ],
+            "baselineMean": 0.03567670433550368,
+            "pBetter": 0.00775
+          },
+          "cartRate": {
+            "mean": 0.15692998382588058,
+            "ci90": [
+              0.11512276772732172,
+              0.20505900548711253
+            ],
+            "baselineMean": 0.20916011189238518,
+            "pBetter": 0.04425
+          },
+          "paidConversion": {
+            "mean": 0.024985559404961617,
+            "ci90": [
+              0.020087519014679183,
+              0.029890527618570525
+            ],
+            "baselineMean": 0.02550284902203782,
+            "pBetter": 0.42925
+          },
+          "profitPer1kImpr": {
+            "mean": 3.664820200336088,
+            "ci90": [
+              0.7328713478425861,
+              6.220593374296955
+            ],
+            "baselineMean": 1.082551287047156,
+            "pBetter": 0.93275
+          }
+        }
+      },
+      "neutro": {
+        "n": 3,
+        "enoughData": true,
+        "listings": [
+          "SIM-K4-002",
+          "SIM-K4-009",
+          "SIM-K4-012"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.03089679482608539,
+            "ci90": [
+              0.020260578606011315,
+              0.041533011046159474
+            ],
+            "baselineMean": 0.034303818341069,
+            "pBetter": 0.3425
+          },
+          "cartRate": {
+            "mean": 0.23683029145615284,
+            "ci90": [
+              0.22701719127531172,
+              0.24664339163699392
+            ],
+            "baselineMean": 0.1848325243126084,
+            "pBetter": 1
+          },
+          "paidConversion": {
+            "mean": 0.023467844407332742,
+            "ci90": [
+              0.019988282874673944,
+              0.026947405939991547
+            ],
+            "baselineMean": 0.025839170303355353,
+            "pBetter": 0.26575
+          },
+          "profitPer1kImpr": {
+            "mean": 1.6349781073245673,
+            "ci90": [
+              0.8824861185544016,
+              2.3874700960947326
+            ],
+            "baselineMean": 1.8052008864074474,
+            "pBetter": 0.4325
+          }
+        }
+      }
+    },
+    "capa": {
+      "solo_grade": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "58210105679",
+          "SIM-K4-001",
+          "SIM-K4-004",
+          "SIM-K4-007",
+          "SIM-K4-010"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.03167259819737974,
+            "ci90": [
+              0.02766857128730186,
+              0.037179116977864524
+            ],
+            "baselineMean": 0.034597321358418545,
+            "pBetter": 0.22925
+          },
+          "cartRate": {
+            "mean": 0.2021681556822638,
+            "ci90": [
+              0.18414724319430192,
+              0.2182232691344316
+            ],
+            "baselineMean": 0.191764038770844,
+            "pBetter": 0.69925
+          },
+          "paidConversion": {
+            "mean": 0.032665067418768054,
+            "ci90": [
+              0.030032905011418608,
+              0.03601050707466052
+            ],
+            "baselineMean": 0.021714823976842226,
+            "pBetter": 1
+          },
+          "profitPer1kImpr": {
+            "mean": 3.173941619938622,
+            "ci90": [
+              2.046139860573659,
+              4.301743379303585
+            ],
+            "baselineMean": 1.0697636859169957,
+            "pBetter": 0.972
+          }
+        }
+      },
+      "solo_linha": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "22099070066",
+          "SIM-K4-002",
+          "SIM-K4-005",
+          "SIM-K4-008",
+          "SIM-K4-011"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.04097830024703995,
+            "ci90": [
+              0.035781401019322624,
+              0.04483962281693114
+            ],
+            "baselineMean": 0.029944470333588446,
+            "pBetter": 0.9955
+          },
+          "cartRate": {
+            "mean": 0.21790087256096463,
+            "ci90": [
+              0.1859986590384866,
+              0.23999399371219932
+            ],
+            "baselineMean": 0.18389768033149362,
+            "pBetter": 0.9305
+          },
+          "paidConversion": {
+            "mean": 0.021346587047161344,
+            "ci90": [
+              0.015982365215014244,
+              0.028057974546401892
+            ],
+            "baselineMean": 0.027374064162645578,
+            "pBetter": 0.10025
+          },
+          "profitPer1kImpr": {
+            "mean": -0.4659878920739587,
+            "ci90": [
+              -1.3206930327562667,
+              0.3302318672022131
+            ],
+            "baselineMean": 2.8897284419232863,
+            "pBetter": 0.00025
+          }
+        }
+      },
+      "modelo": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "58260101046",
+          "SIM-K4-003",
+          "SIM-K4-006",
+          "SIM-K4-009",
+          "SIM-K4-012"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.028216342469797158,
+            "ci90": [
+              0.021494586077582502,
+              0.03411814102277108
+            ],
+            "baselineMean": 0.03632544922220984,
+            "pBetter": 0.0255
+          },
+          "cartRate": {
+            "mean": 0.16562720498072342,
+            "ci90": [
+              0.12253312852496076,
+              0.2137049314350153
+            ],
+            "baselineMean": 0.21003451412161417,
+            "pBetter": 0.0625
+          },
+          "paidConversion": {
+            "mean": 0.0220830609065231,
+            "ci90": [
+              0.016062609654836597,
+              0.02802094358889199
+            ],
+            "baselineMean": 0.027005827232964703,
+            "pBetter": 0.1275
+          },
+          "profitPer1kImpr": {
+            "mean": 2.6055152639079497,
+            "ci90": [
+              0.6046252012219172,
+              4.73052345311003
+            ],
+            "baselineMean": 1.3539768639323317,
+            "pBetter": 0.792
+          }
+        }
+      }
+    },
+    "aquisicao": {
+      "organico": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "58210105679",
+          "SIM-K4-004",
+          "SIM-K4-005",
+          "SIM-K4-006",
+          "SIM-K4-010"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.035033635303381196,
+            "ci90": [
+              0.028807902577956318,
+              0.041519533365442805
+            ],
+            "baselineMean": 0.032916802805417825,
+            "pBetter": 0.65175
+          },
+          "cartRate": {
+            "mean": 0.18417884682370572,
+            "ci90": [
+              0.1480624955884267,
+              0.2199866415116904
+            ],
+            "baselineMean": 0.20075869320012307,
+            "pBetter": 0.26725
+          },
+          "paidConversion": {
+            "mean": 0.026604782457148313,
+            "ci90": [
+              0.018634924303018694,
+              0.03126502663990744
+            ],
+            "baselineMean": 0.024744966457652097,
+            "pBetter": 0.65175
+          },
+          "profitPer1kImpr": {
+            "mean": 3.583927580299074,
+            "ci90": [
+              1.6523956348939823,
+              5.515459525704165
+            ],
+            "baselineMean": 0.8647707057367697,
+            "pBetter": 0.98125
+          }
+        }
+      },
+      "ads": {
+        "n": 8,
+        "enoughData": true,
+        "listings": [
+          "22099070066",
+          "58260101046",
+          "SIM-K4-002",
+          "SIM-K4-003",
+          "SIM-K4-007",
+          "SIM-K4-009",
+          "SIM-K4-011",
+          "SIM-K4-012"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.03183380079307652,
+            "ci90": [
+              0.026270765546895742,
+              0.03714489153474505
+            ],
+            "baselineMean": 0.03566654260378172,
+            "pBetter": 0.193
+          },
+          "cartRate": {
+            "mean": 0.20343323237285382,
+            "ci90": [
+              0.17561594950932263,
+              0.22869826042230848
+            ],
+            "baselineMean": 0.1858593295909898,
+            "pBetter": 0.763
+          },
+          "paidConversion": {
+            "mean": 0.02466592472666796,
+            "ci90": [
+              0.018884962530669156,
+              0.030155292645546186
+            ],
+            "baselineMean": 0.026163739864131265,
+            "pBetter": 0.34725
+          },
+          "profitPer1kImpr": {
+            "mean": 0.9457095683529986,
+            "ci90": [
+              0.02395077841111104,
+              1.8615577781750268
+            ],
+            "baselineMean": 2.7145240588627253,
+            "pBetter": 0.092
+          }
+        }
+      },
+      "afiliado": {
+        "n": 2,
+        "enoughData": false,
+        "listings": [
+          "SIM-K4-001",
+          "SIM-K4-008"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.037248810854783036,
+            "ci90": [
+              0.031197646783808004,
+              0.04329997492575807
+            ],
+            "baselineMean": 0.03306450637396293,
+            "pBetter": 0.78775
+          },
+          "cartRate": {
+            "mean": 0.19006053650919996,
+            "ci90": [
+              0.14999403127611316,
+              0.23012704174228676
+            ],
+            "baselineMean": 0.19602769946933532,
+            "pBetter": 0.41275
+          },
+          "paidConversion": {
+            "mean": 0.025061133381588642,
+            "ci90": [
+              0.019995225020890534,
+              0.03012704174228675
+            ],
+            "baselineMean": 0.025411639238391168,
+            "pBetter": 0.47325
+          },
+          "profitPer1kImpr": {
+            "mean": 0.5410152552718541,
+            "ci90": [
+              -2.2106507533359836,
+              3.292681263879692
+            ],
+            "baselineMean": 1.9604088037168739,
+            "pBetter": 0.2545
+          }
+        }
+      }
+    }
+  }
+}

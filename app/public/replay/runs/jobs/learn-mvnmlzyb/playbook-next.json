@@ -1,0 +1,111 @@
+{
+  "version": 3,
+  "updatedAt": "2026-10-25T09:30:21.862Z",
+  "rules": [
+    {
+      "id": "angulo-academia-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "academia",
+      "effect": "Prioritize the academia angle, which had higher profit per 1k impressions than the casual angle and a better funnel at every step.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 11,
+        "mean": 7.653214120337754,
+        "ci90": [
+          6.807211256947166,
+          8.49944435354031
+        ],
+        "pBetter": 0.96825
+      },
+      "confidence": "high",
+      "reason": "Confirmed with 14 real listings and no confounders: pBetter 0.968 with n=11 (at least 2 x minListings), backed by CTR, cart rate and paid conversion (pBetter 1.0 each), noting that profit is measured before ADS spend."
+    },
+    {
+      "id": "angulo-casual-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "casual",
+      "effect": "Avoid the casual angle as the default, since its profit per 1k impressions was below the academia angle and its funnel was worse at every step.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 3,
+        "mean": 5.585547087214337,
+        "ci90": [
+          4.235864341173112,
+          6.935229833255562
+        ],
+        "pBetter": 0.034
+      },
+      "confidence": "medium",
+      "reason": "pBetter 0.034 with n=3 and no confounders, backed by CTR (0.0), cart rate (0.00025) and paid conversion (0.0), but confidence stays medium because n=3 is below 2 x minListings and all three casual listings also use the modelo cover, so the effect may come from the cover rather than the angle."
+    },
+    {
+      "id": "capa-modelo-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "modelo",
+      "effect": "Avoid the modelo cover, which had profit per 1k impressions well below the other covers and the worst funnel at every step.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 4,
+        "mean": 5.525214688253101,
+        "ci90": [
+          4.472459825897069,
+          6.799459550317955
+        ],
+        "pBetter": 0.00475
+      },
+      "confidence": "medium",
+      "reason": "pBetter 0.00475 with n=4 and no confounders, backed by CTR (0.00525), cart rate (0.0) and paid conversion (0.0), but confidence stays medium because n=4 is below 2 x minListings and three of the four listings are also casual-angle, so the two effects are mixed."
+    },
+    {
+      "id": "capa-solo_linha-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "solo_linha",
+      "effect": "Prioritize the solo_linha cover, which had the highest profit per 1k impressions among covers, with better cart rate and paid conversion.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 8.759763776508967,
+        "ci90": [
+          8.002414261774495,
+          9.797828277473393
+        ],
+        "pBetter": 1
+      },
+      "confidence": "medium",
+      "reason": "pBetter 1.0 with n=5 and no confounders, backed by cart rate (0.9995) and paid conversion (0.99975), but confidence stays medium because n=5 is below 2 x minListings and profit is measured before ADS spend."
+    }
+  ],
+  "retired": [
+    {
+      "id": "capa-solo_grade-profit",
+      "reason": "The rule rested on n=5 from a base with simulated listings and campaign confounders; in the current fully real base solo_grade has only 1 listing (enoughData false), so the rule is no longer supported.",
+      "round": "learn-mvnmlzyb"
+    },
+    {
+      "id": "aquisicao-ads-profit",
+      "reason": "The rule rested on simulated listings and confounders; in the current real base every listing runs ADS, so there is no comparison group, no metrics, and the export does not include ADS spend.",
+      "round": "learn-mvnmlzyb"
+    },
+    {
+      "id": "aquisicao-organico-profit",
+      "reason": "The rule rested on simulated listings and campaign confounders; the current fully real base has no organic listings, so the rule has no supporting evidence.",
+      "round": "learn-mvnmlzyb"
+    }
+  ]
+}

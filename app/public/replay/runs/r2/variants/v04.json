@@ -1,0 +1,58 @@
+{
+  "variantId": "v04",
+  "axes": {
+    "angulo": "academia",
+    "capa": "uso",
+    "aquisicao": "afiliado",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Academia Preço por Peça | Kit 4 Tops Cropped Microfibra Sem Bojo Cós Largo Feminino Treino",
+  "description": "Top Cropped Academia com preço por peça de R$ 12,98: kit com 4 tops cropped femininos por R$ 51,90.\n4 cores por R$ 51,90: preto, branco, azul marinho e rosa pink.\n\nKit 4 Tops Cropped Feminino para academia, treino e dia a dia.\n\nO que vem no kit:\n- 4 tops cropped femininos\n- Cores: preto, branco, azul marinho e rosa pink\n\nPor que escolher este kit:\n- Menos de R$ 13 por top\n- Preço por peça abaixo da média dos kits de academia\n- Microfibra lisa e macia\n- Sem bojo, sem enchimento\n- Decote redondo amplo\n- Alças largas\n- Cós largo na barra, acabamento encorpado\n\nFrases para o seu vídeo:\n- Quatro tops de academia por menos de R$ 13 cada.\n- 4 cores por R$ 51,90, veja o kit inteiro.\n- Top cropped sem bojo para treinar e sair.\n- Kit de 4 tops cropped com preço por peça que cabe no seu bolso.\n\nMaterial: microfibra lisa.\nTamanhos: consulte a tabela de medidas no anúncio antes de comprar. Em dúvida, fale com a loja no chat.\n\nCuidados: lavar do avesso, em ciclo delicado, sem alvejante. Secar à sombra.\n\nCompre o kit de 4 tops cropped e escolha as cores que combinam com o seu treino.",
+  "keywords": [
+    "top cropped academia",
+    "kit top cropped academia",
+    "kit 4 top cropped",
+    "top fitness feminino",
+    "top academia feminino",
+    "top cropped microfibra",
+    "top cropped sem bojo",
+    "top academia treino",
+    "kit top academia fitness",
+    "top cropped treino feminino",
+    "kit top fitness preço por peça",
+    "top cropped azul marinho"
+  ],
+  "coverBrief": "Foto quadrada de lifestyle em uma academia iluminada por luz natural. Uma modelo de cabelo castanho ondulado, sorrindo e em movimento (avanço com halteres leves), não é pose de catálogo. Ela usa o top preto, com o mesmo corte da foto de referência (decote redondo amplo, alças largas, faixa larga na barra, microfibra lisa sem bojo), e calça de linho bege. No canto inferior direito, uma fileira de quatro tops dobrados nas cores preto, branco, azul marinho e rosa pink, para mostrar o kit. Gerada por edição de imagem (image-to-image) com a foto de referência data/product/photo.jpg anexada como imagem de entrada; o gerador aceitou a referência e não houve recusa. Sem texto nem marca d'água.",
+  "coverPath": "runs/r2/covers/v04.png",
+  "appliedRules": [
+    "angulo-academia-profit"
+  ],
+  "hypothesis": "Capa uso, com modelo em treino, aumenta o CTR no ângulo academia com aquisição afiliado em relação às capas de catálogo.",
+  "benchmark": {
+    "competitorsAnalyzed": 66,
+    "referenceItemIds": [
+      "56417405538",
+      "58264919459",
+      "22794946896",
+      "58266995829"
+    ],
+    "pricePosition": "R$ 12,98 por peça (kit de 4 por R$ 51,90) contra mediana de R$ 14,83 por peça dos 59 concorrentes de academia com preço por peça; mais barato por peça que 64%. O preço total do kit fica 30% acima da mediana de R$ 39,90, por isso o argumento de venda é o preço por peça.",
+    "keywordsAdopted": [
+      "academia",
+      "fitness",
+      "treino",
+      "academia fitness",
+      "fitness academia",
+      "academia treino",
+      "alça",
+      "esportivo"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98, abaixo da mediana de R$ 14,83 dos kits de academia e mais barato que 64% deles.",
+      "Kit de 4 cores (preto, branco, azul marinho e rosa pink) por R$ 51,90; 45% dos concorrentes de academia vendem kit de 3 peças, então este formato de 4 se destaca.",
+      "Sem bojo, sem enchimento; bojo aparece em 27% dos títulos de academia e este kit atende quem procura top leve.",
+      "Kit de 4 peças é só 11% da oferta de academia (7 de 66), um formato menos disputado com preço por peça competitivo."
+    ]
+  }
+}

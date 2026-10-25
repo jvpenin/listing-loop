@@ -1,0 +1,55 @@
+{
+  "variantId": "v11",
+  "axes": {
+    "angulo": "academia",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "exploit",
+  "title": "Top Cropped Academia Preço por Peça | Kit 4 Tops Microfibra Sem Bojo Alça Larga Fitness Treino",
+  "description": "Kit top fitness academia feminino: 4 tops cropped sem bojo em microfibra lisa e macia, com alça larga e cós largo para treinar com conforto.\n\nPor que escolher este kit:\n• R$ 51,90 o kit de 4 tops = R$ 12,98 por peça\n• 4 cores: preto, branco, azul marinho e rosa pink\n• Sem bojo: sem enchimento, só o tecido\n• Microfibra macia e lisa\n• Alça larga, confortável no ombro\n• Cós largo na base para conforto durante o treino\n• Modelo cropped: combina com legging, short e calça de treino\n\nIdeal para:\n• Academia e musculação\n• Treino fitness e funcional\n• Yoga, pilates e caminhada\n• Uso casual no dia a dia\n\nDetalhes do produto:\n• Tipo: top cropped sem bojo, decote redondo\n• Material: microfibra\n• Kit: 4 tops\n• Cores: preto, branco, azul marinho e rosa pink\n\nCuidados:\n• Lavar à mão ou no ciclo delicado\n• Não usar alvejante\n• Secar à sombra\n\nTamanhos: antes de comprar, confira a tabela de medidas do anúncio e escolha a variação do seu tamanho.\n\nSe você procura top cropped academia feminino sem bojo com preço justo por peça, este kit de 4 cores é a escolha para treinar, combinar e trocar no dia a dia.",
+  "keywords": [
+    "top cropped academia",
+    "top fitness feminino",
+    "top academia sem bojo",
+    "top cropped sem bojo feminino",
+    "kit top cropped academia",
+    "top treino feminino",
+    "top microfibra academia",
+    "kit 4 tops cropped",
+    "top fitness sem bojo",
+    "top alça larga academia",
+    "top cropped fitness feminino",
+    "kit top fitness academia 4 cores"
+  ],
+  "coverBrief": "Capa solo_grade sem pessoa: quatro tops cropped do kit dispostos em grade 2x2 sobre fundo neutro cinza-claro quente, sem adereços nem outras peças. Posição: preto (superior esquerdo), branco (superior direito), azul marinho (inferior esquerdo) e rosa pink (inferior direito). Os tops foram gerados a partir da foto de referência anexada, passada ao gerador como imagem de entrada (edição por referência, não descrição apenas em texto); o gerador aceitou a referência. Corte, decote redondo, alças largas, faixa larga na base, comprimento cropped, microfibra lisa e ausência de bojo foram mantidos. Título 'KIT 4' em preto, em negrito, centralizado acima da grade, como na referência. Iluminação nítida e contrastada para transmitir energia de academia. Arquivo salvo em runs/r1/covers/v11.png (PNG 1254x1254).",
+  "coverPath": "runs/r1/covers/v11.png",
+  "appliedRules": [],
+  "hypothesis": "",
+  "benchmark": {
+    "competitorsAnalyzed": 66,
+    "referenceItemIds": [
+      "58264919459",
+      "56417405538",
+      "22794946896",
+      "58266995829"
+    ],
+    "pricePosition": "R$ 12,98 por peça (R$ 51,90 no kit de 4) contra mediana de R$ 14,83 por peça dos 59 concorrentes de academia com preço por peça (66 comparáveis); mais barato por peça que 64% deles, mas 30% acima da mediana de preço de kit (R$ 39,90).",
+    "keywordsAdopted": [
+      "academia",
+      "fitness",
+      "treino",
+      "bojo",
+      "alça",
+      "confortável",
+      "fitness academia"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98 contra mediana de R$ 14,83 nos kits de academia (intel r1), com 4 peças por R$ 51,90",
+      "4 cores no kit (preto, branco, azul marinho e rosa pink); kit de 4 é só 11% da oferta de academia, que é dominada por kit3 (45%)",
+      "Sem bojo, microfibra lisa e alça larga: bojo aparece em 27% dos títulos de academia, e o kit atende quem busca top sem enchimento",
+      "Sem suplex ou sustentação prometidos: a descrição fala só do que o produto tem (microfibra, sem bojo, alça larga, cós largo), sem overclaim"
+    ]
+  }
+}

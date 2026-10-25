@@ -1,0 +1,45 @@
+{"t":1,"type":"log","source":"system","text":"campaign kit-4-top-cropped-sem-bojo-mvk6j · r1 · Kit 4 Top Cropped Sem Bojo on Shopee Brazil · 2 variants"}
+{"t":1,"type":"stage","stage":"apify","status":"start","detail":"Shopee Brazil: \"Kit 4 Top Cropped Sem Bojo\""}
+{"t":6731,"type":"stage","stage":"apify","status":"ok","detail":"20 competitors in 7s via xtracto/shopee-search"}
+{"t":6731,"type":"stage","stage":"intel","status":"start"}
+{"t":6734,"type":"intel","n":20,"query":"Kit 4 Top Cropped Sem Bojo","actor":"xtracto/shopee-search","headlines":["Shopee Brazil: 20 competitors for \"Kit 4 Top Cropped Sem Bojo\"; median R$ 45,60 (range R$ 37,78–R$ 53,80); your R$ 51,90 is cheaper than 25% of them; words competitors use and you do not: feminino, academia, fitness, alça"]}
+{"t":6735,"type":"stage","stage":"intel","status":"ok","detail":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/intel.json"}
+{"t":6735,"type":"stage","stage":"plan","status":"start"}
+{"t":6741,"type":"plan","variants":[{"variantId":"v01","round":"r1","produto":{"sku":"KIT-4-TOP-CROPPED-SE","descricao":"kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo","fotoReferencia":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/photo.jpg","nome":"Kit 4 Top Cropped Sem Bojo","preco":51.9,"moeda":"BRL","marketplace":"Shopee Brazil","idioma":"pt-BR","tituloMax":120,"descricaoMax":3000},"axes":{"angulo":"academia","capa":"solo","aquisicao":"organico","oferta":"single"},"mode":"explore","rationale":"Explores uncertainty: angulo=academia no data yet; capa=solo no data yet; aquisicao=organico no data yet","priorEvidence":["rule angulo-academia-profit (high): Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores.","rule aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."],"paths":{"json":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v01.json","png":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/covers/v01.png","intel":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/intel.json"}},{"variantId":"v02","round":"r1","produto":{"sku":"KIT-4-TOP-CROPPED-SE","descricao":"kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo","fotoReferencia":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/photo.jpg","nome":"Kit 4 Top Cropped Sem Bojo","preco":51.9,"moeda":"BRL","marketplace":"Shopee Brazil","idioma":"pt-BR","tituloMax":120,"descricaoMax":3000},"axes":{"angulo":"academia","capa":"uso","aquisicao":"afiliado","oferta":"single"},"mode":"explore","rationale":"Explores uncertainty: angulo=academia no data yet; capa=uso no data yet; aquisicao=afiliado no data yet","priorEvidence":["rule angulo-academia-profit (high): Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores."],"paths":{"json":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v02.json","png":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/covers/v02.png","intel":"runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/intel.json"}}]}
+{"t":6741,"type":"stage","stage":"plan","status":"ok","detail":"2 variants, playbook v2"}
+{"t":6741,"type":"log","source":"system","text":"[budget] lab round v01,v02: +2 paid sessions -> 44/80 used"}
+{"t":6741,"type":"stage","stage":"producer","status":"start","detail":"2 × listing-producer (claude-haiku-5-5) via conductor (claude-haiku-5-5)"}
+{"t":7830,"type":"log","source":"v02","text":"[session] 9a4aa568-ff56-41ca-914d-2081956a54a4 conductor=claude-haiku-5-5"}
+{"t":7858,"type":"log","source":"v01","text":"[session] 3c3f07d3-b2bd-4548-a554-be7e69009c8f conductor=claude-haiku-5-5"}
+{"t":14093,"type":"tool","source":"v01","name":"Task","detail":"listing-producer"}
+{"t":14370,"type":"tool","source":"v02","name":"Task","detail":"listing-producer"}
+{"t":21760,"type":"log","source":"v01","text":"[wait] listing-producer still working (15s)"}
+{"t":21760,"type":"log","source":"v02","text":"[wait] listing-producer still working (15s)"}
+{"t":36776,"type":"log","source":"v01","text":"[wait] listing-producer still working (30s)"}
+{"t":36777,"type":"log","source":"v02","text":"[wait] listing-producer still working (30s)"}
+{"t":51790,"type":"log","source":"v01","text":"[wait] listing-producer still working (45s)"}
+{"t":51790,"type":"log","source":"v02","text":"[wait] listing-producer still working (45s)"}
+{"t":66805,"type":"log","source":"v01","text":"[wait] listing-producer still working (60s)"}
+{"t":66806,"type":"log","source":"v02","text":"[wait] listing-producer still working (60s)"}
+{"t":73812,"type":"cover","variantId":"v01"}
+{"t":73812,"type":"log","source":"v01","text":"[file] cover written: runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/covers/v01.png"}
+{"t":81818,"type":"log","source":"v01","text":"[wait] listing-producer still working (75s)"}
+{"t":81818,"type":"log","source":"v02","text":"[wait] listing-producer still working (75s)"}
+{"t":90825,"type":"log","source":"v01","text":"[file] listing written: runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v01.json (validating with Zod)"}
+{"t":95098,"type":"log","source":"v01","text":"[result] Task ok"}
+{"t":96832,"type":"log","source":"v02","text":"[wait] listing-producer still working (90s)"}
+{"t":97502,"type":"log","source":"v01","text":"DONE The listing-producer subagent finished variant v01 and wrote both files: - `runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v01.json` - `runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6"}
+{"t":97833,"type":"cover","variantId":"v02"}
+{"t":97833,"type":"log","source":"v02","text":"[file] cover written: runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/covers/v02.png"}
+{"t":99032,"type":"log","source":"v01","text":"tools: Task"}
+{"t":99048,"type":"variant","variantId":"v01","ok":true,"secs":92.306}
+{"t":111846,"type":"log","source":"v02","text":"[wait] listing-producer still working (105s)"}
+{"t":122855,"type":"log","source":"v02","text":"[file] listing written: runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v02.json (validating with Zod)"}
+{"t":127089,"type":"log","source":"v02","text":"[result] Task ok"}
+{"t":129745,"type":"log","source":"v02","text":"DONE The listing-producer subagent finished and wrote both files: - `runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/variants/v02.json` - `runs/campaigns/kit-4-top-cropped-sem-bojo-mvk6j/r1/covers/"}
+{"t":131505,"type":"log","source":"v02","text":"tools: Task"}
+{"t":131521,"type":"variant","variantId":"v02","ok":true,"secs":124.777}
+{"t":131521,"type":"stage","stage":"producer","status":"ok","detail":"2/2 variants"}
+{"t":131521,"type":"stage","stage":"validate","status":"ok","detail":"Zod schema, fixed axes, cited competitor ids: 2/2 passed"}
+{"t":131522,"type":"log","source":"system","text":"budget 44/80 sessions"}
+{"t":131522,"type":"done","ok":true,"secs":131.522,"campaignId":"kit-4-top-cropped-sem-bojo-mvk6j","round":"r1"}

@@ -21,7 +21,7 @@ export function readPlaybook(): Playbook {
 }
 
 // Pure: add, update by id (an update of an unknown id is added), retire = move to `retired`.
-function applyDiff(playbook: Playbook, diff: MemoryDiff): Playbook {
+export function applyDiff(playbook: Playbook, diff: MemoryDiff): Playbook {
   const rules = new Map(playbook.rules.map((r) => [r.id, r]));
   for (const r of [...diff.add, ...diff.update]) rules.set(r.id, r);
   const retired = [...(playbook.retired ?? [])];

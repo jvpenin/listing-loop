@@ -1,0 +1,55 @@
+{
+  "variantId": "v07",
+  "axes": {
+    "angulo": "presente",
+    "capa": "modelo",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit Presente Top Cropped Feminino Kit 4 Cores Sem Bojo Microfibra Moda Casual Academia",
+  "description": "Kit Presente Top Cropped Feminino com 4 cores: o presente que ela vai usar todo dia.\n\nProcurando kit top cropped feminino sem bojo, kit 4 tops cropped microfibra ou presente para mulher? Esse é o kit.\n\nKit com 4 tops cropped femininos em preto, branco, azul marinho e rosa pink, em várias cores para combinar com qualquer look. Também conhecido como blusa cropped, é a peça básica que vai da academia à caminhada e ao dia a dia casual.\n\nIdeal para presentear mulher em aniversário, Dia das Mães, Dia dos Namorados ou só para mimar.\n\nO que vem no kit:\n- 4 tops cropped: preto, branco, azul marinho e rosa\n- Modelagem sem bojo, para usar sem enchimento\n- Alças largas e cós largo para dar conforto e suporte no dia a dia\n- Decote redondo (canoa) e comprimento cropped\n- Microfibra lisa e macia, toque agradável na pele\n\nPor que este kit?\n- 4 cores por R$ 51,90, cerca de R$ 12,98 por peça\n- Serve para academia, treino, caminhada e look casual\n- Combina com calça de linho, legging, saia ou shorts\n- Presente para mãe, irmã, amiga ou namorada que ama treinar ou gosta de um look básico bem feito\n\nTamanhos e cuidados:\n- Confira a tabela de medidas antes de comprar\n- Lavar à mão ou no ciclo delicado, secar à sombra\n- Não usar alvejante\n\nDúvidas sobre tamanho? Chame no chat antes de finalizar o pedido.",
+  "keywords": [
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "kit presente feminino",
+    "presente para mulher",
+    "top cropped casual",
+    "top cropped academia",
+    "top fitness feminino",
+    "moda feminina casual",
+    "kit 4 cores"
+  ],
+  "coverBrief": "Capa quadrada 1:1 gerada a partir da foto de referência anexa (kit de 4 tops, com o mesmo corte, decote redondo, alças largas, cós largo e as cores preto, branco, azul marinho e rosa). Quatro modelos diferentes lado a lado, cada uma vestindo um dos tops, enquadramento da cintura para cima, sorrindo, com calça de linho bege. Fundo cremoso neutro, luz natural suave e clima de presente em tons pastel, sem texto, logo ou preço. A imagem de referência foi usada como base de edição e não houve recusa do gerador.",
+  "coverPath": "runs/r1/covers/v07.png",
+  "appliedRules": [],
+  "hypothesis": "Capa modelo com as 4 cores lado a lado, em tom neutro de presente, aumenta o clique frente à capa solo_grade no ângulo presente com aquisição orgânica (teste explore, sem dado prévio do ângulo).",
+  "benchmark": {
+    "competitorsAnalyzed": 48,
+    "referenceItemIds": [
+      "56417405538",
+      "23499181350",
+      "58217160458",
+      "44667451088"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 12,75 por peça dos 48 concorrentes do ângulo presente; mais barato por peça que 47% deles, ou seja, faixa média e não a mais barata. O kit de R$ 51,90 fica 14% acima da mediana total de R$ 45,60.",
+    "keywordsAdopted": [
+      "moda",
+      "academia",
+      "fitness",
+      "casual",
+      "cores",
+      "bojo",
+      "várias cores",
+      "blusa"
+    ],
+    "differentiators": [
+      "Kit de 4 peças, o formato dominante no ângulo presente (kit4 em 50% dos concorrentes: 24 de 48).",
+      "Sem bojo: bojo aparece em 19% dos títulos do ângulo presente (9 de 48), e o kit 4 com bojo e alças finas (23499181350) é o concorrente de referência de preço alto; a DNT é sem bojo.",
+      "Alças largas em vez de alcinha: alcinha aparece em 31% dos títulos do ângulo presente (15 de 48); a DNT usa alça larga e cós largo.",
+      "Microfibra lisa, sem canelado nem forro duplo: canelado aparece em 21% dos títulos do ângulo presente (10 de 48)."
+    ]
+  }
+}

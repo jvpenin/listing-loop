@@ -1,0 +1,83 @@
+{
+  "round": "r2",
+  "add": [
+    {
+      "id": "capa-modelo-profit",
+      "scope": { "category": "tops", "channel": "shopee" },
+      "axis": "capa",
+      "value": "modelo",
+      "effect": "Evitar a capa modelo, que teve lucro por mil impressões bem abaixo das demais capas e o pior funil em todas as etapas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 4,
+        "mean": 5.525214688253101,
+        "ci90": [4.472459825897069, 6.799459550317955],
+        "pBetter": 0.00475
+      },
+      "confidence": "medium",
+      "reason": "pBetter 0,005 com n=4 em 14 anúncios reais e sem confundidores, sustentado por CTR (pBetter 0,005), carrinho (0,0) e conversão paga (0,0) piores, mas a confiança fica média porque n=4 é menor que 2 × minListings e três dos quatro anúncios também são do ângulo casual, então os dois efeitos se misturam; o lucro é antes do gasto com ADS."
+    }
+  ],
+  "update": [
+    {
+      "id": "angulo-academia-profit",
+      "scope": { "category": "tops", "channel": "shopee" },
+      "axis": "angulo",
+      "value": "academia",
+      "effect": "Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 11,
+        "mean": 7.653214120337754,
+        "ci90": [6.807211256947166, 8.49944435354031],
+        "pBetter": 0.96825
+      },
+      "confidence": "high",
+      "reason": "A regra de r1 (evitar, confiança baixa, base com dados simulados e confundidores) foi invertida porque em r2, com 14 anúncios reais e sem confundidores, academia teve pBetter 0,968 com n=11 e funil melhor em todas as etapas (pBetter 1,0 em CTR, carrinho e conversão paga), lembrando que o lucro é antes do gasto com ADS."
+    },
+    {
+      "id": "angulo-casual-profit",
+      "scope": { "category": "tops", "channel": "shopee" },
+      "axis": "angulo",
+      "value": "casual",
+      "effect": "Evitar o ângulo casual como padrão, pois teve lucro por mil impressões abaixo do ângulo academia e funil pior em todas as etapas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 3,
+        "mean": 5.585547087214337,
+        "ci90": [4.235864341173112, 6.935229833255562],
+        "pBetter": 0.034
+      },
+      "confidence": "medium",
+      "reason": "A regra de r1 (priorizar, confiança baixa, puxada por confundidores simulados com campanha) foi invertida porque em r2, com dados reais e sem confundidores, casual teve pBetter 0,034 com n=3 e CTR, carrinho e conversão paga piores (pBetter próximo de 0), mas os três anúncios usam capa modelo, então o efeito pode vir da capa e não do ângulo."
+    },
+    {
+      "id": "capa-solo_linha-profit",
+      "scope": { "category": "tops", "channel": "shopee" },
+      "axis": "capa",
+      "value": "solo_linha",
+      "effect": "Priorizar a capa solo_linha, que teve o maior lucro por mil impressões entre as capas, com carrinho e conversão paga também melhores.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 8.759763776508967,
+        "ci90": [8.002414261774495, 9.797828277473393],
+        "pBetter": 1
+      },
+      "confidence": "medium",
+      "reason": "A regra de r1 (evitar, confiança baixa, com confundidores de estoque) foi invertida porque em r2, com dados reais e sem confundidores, solo_linha teve pBetter 1,0 com carrinho (0,9995) e conversão paga (0,99975) melhores, mas a confiança fica média porque n=5 é menor que 2 × minListings e o lucro é antes do gasto com ADS."
+    }
+  ],
+  "retire": [],
+  "inconclusive": [
+    { "axis": "angulo", "value": "conforto", "note": "seguir explorando: nenhum anúncio com este ângulo nesta rodada." },
+    { "axis": "angulo", "value": "presente", "note": "seguir explorando: nenhum anúncio com este ângulo nesta rodada." },
+    { "axis": "capa", "value": "solo_grade", "note": "seguir explorando: só 1 anúncio (enoughData falso); a regra capa-solo_grade-profit de r1 fica como está, sem nova evidência." },
+    { "axis": "capa", "value": "uso", "note": "seguir explorando: nenhum anúncio com esta capa nesta rodada." },
+    { "axis": "capa", "value": "sem_capa", "note": "fora do experimento" },
+    { "axis": "aquisicao", "value": "ads", "note": "seguir explorando: todos os 14 anúncios rodam ADS, então o eixo não varia, não há métricas e o lucro não desconta o gasto com ADS; a regra aquisicao-ads-profit de r1 fica como está." },
+    { "axis": "aquisicao", "value": "organico", "note": "seguir explorando: nenhum anúncio orgânico nesta rodada; a regra aquisicao-organico-profit de r1 fica como está." },
+    { "axis": "aquisicao", "value": "afiliado", "note": "seguir explorando: nenhum anúncio com afiliado nesta rodada." }
+  ],
+  "summary": "Com 14 anúncios reais e sem confundidores, r2 inverte três regras de r1: academia e capa solo_linha passam a ser priorizadas, casual passa a ser evitado, e a capa modelo entra como regra de evitar. O lucro é antes do gasto com ADS, e casual e modelo se sobrepõem em três anúncios, então convém testar esses eixos de forma independente."
+}

@@ -1,0 +1,161 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-25T07:38:24.156Z",
+  "rules": [
+    {
+      "id": "angulo-academia-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "academia",
+      "effect": "Priorizar o ângulo academia, que teve lucro por mil impressões maior que o ângulo casual, com CTR, carrinho e conversão paga também melhores.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 11,
+        "mean": 7.653214120337754,
+        "ci90": [
+          6.807211256947166,
+          8.49944435354031
+        ],
+        "pBetter": 0.96825
+      },
+      "confidence": "high",
+      "reason": "A regra de r1 (evitar, confiança baixa, base com dados simulados e confundidores) foi invertida porque em r2, com 14 anúncios reais e sem confundidores, academia teve pBetter 0,968 com n=11 e funil melhor em todas as etapas (pBetter 1,0 em CTR, carrinho e conversão paga), lembrando que o lucro é antes do gasto com ADS."
+    },
+    {
+      "id": "angulo-casual-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "angulo",
+      "value": "casual",
+      "effect": "Evitar o ângulo casual como padrão, pois teve lucro por mil impressões abaixo do ângulo academia e funil pior em todas as etapas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 3,
+        "mean": 5.585547087214337,
+        "ci90": [
+          4.235864341173112,
+          6.935229833255562
+        ],
+        "pBetter": 0.034
+      },
+      "confidence": "medium",
+      "reason": "A regra de r1 (priorizar, confiança baixa, puxada por confundidores simulados com campanha) foi invertida porque em r2, com dados reais e sem confundidores, casual teve pBetter 0,034 com n=3 e CTR, carrinho e conversão paga piores (pBetter próximo de 0), mas os três anúncios usam capa modelo, então o efeito pode vir da capa e não do ângulo."
+    },
+    {
+      "id": "aquisicao-ads-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "aquisicao",
+      "value": "ads",
+      "effect": "Evitar depender de ads como aquisição principal, pois o lucro por mil impressões ficou bem abaixo dos demais canais.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 8,
+        "mean": 0.9457095683529986,
+        "ci90": [
+          0.02395077841111104,
+          1.8615577781750268
+        ],
+        "pBetter": 0.092
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,092 com n=8 (confiança média, sem chegar a 0,05), rebaixada para baixa porque os confundidores 22099070066, SIM-K4-003 e SIM-K4-012 estão no grupo; o custo de ads provavelmente consome a margem, já que o funil (CTR 0,19, carrinho 0,76) não foi muito pior."
+    },
+    {
+      "id": "aquisicao-organico-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "aquisicao",
+      "value": "organico",
+      "effect": "Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 3.583927580299074,
+        "ci90": [
+          1.6523956348939823,
+          5.515459525704165
+        ],
+        "pBetter": 0.98125
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,981 mas n=5 é menor que 2 × minListings (confiança média), rebaixada para baixa porque os confundidores 58210105679, SIM-K4-004 e SIM-K4-006 (todos com campanha) estão no grupo e podem inflar o lucro."
+    },
+    {
+      "id": "capa-modelo-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "modelo",
+      "effect": "Evitar a capa modelo, que teve lucro por mil impressões bem abaixo das demais capas e o pior funil em todas as etapas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 4,
+        "mean": 5.525214688253101,
+        "ci90": [
+          4.472459825897069,
+          6.799459550317955
+        ],
+        "pBetter": 0.00475
+      },
+      "confidence": "medium",
+      "reason": "pBetter 0,005 com n=4 em 14 anúncios reais e sem confundidores, sustentado por CTR (pBetter 0,005), carrinho (0,0) e conversão paga (0,0) piores, mas a confiança fica média porque n=4 é menor que 2 × minListings e três dos quatro anúncios também são do ângulo casual, então os dois efeitos se misturam; o lucro é antes do gasto com ADS."
+    },
+    {
+      "id": "capa-solo_grade-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "solo_grade",
+      "effect": "Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 3.173941619938622,
+        "ci90": [
+          2.046139860573659,
+          4.301743379303585
+        ],
+        "pBetter": 0.972
+      },
+      "confidence": "low",
+      "reason": "pBetter 0,972 mas n=5 é menor que 2 × minListings (confiança média), rebaixada para baixa porque os confundidores 58210105679, SIM-K4-001 e SIM-K4-004 (com campanha) estão no grupo; a conversão paga (pBetter 1,0) sustenta o efeito."
+    },
+    {
+      "id": "capa-solo_linha-profit",
+      "scope": {
+        "category": "tops",
+        "channel": "shopee"
+      },
+      "axis": "capa",
+      "value": "solo_linha",
+      "effect": "Priorizar a capa solo_linha, que teve o maior lucro por mil impressões entre as capas, com carrinho e conversão paga também melhores.",
+      "metric": "profitPer1kImpr",
+      "evidence": {
+        "n": 5,
+        "mean": 8.759763776508967,
+        "ci90": [
+          8.002414261774495,
+          9.797828277473393
+        ],
+        "pBetter": 1
+      },
+      "confidence": "medium",
+      "reason": "A regra de r1 (evitar, confiança baixa, com confundidores de estoque) foi invertida porque em r2, com dados reais e sem confundidores, solo_linha teve pBetter 1,0 com carrinho (0,9995) e conversão paga (0,99975) melhores, mas a confiança fica média porque n=5 é menor que 2 × minListings e o lucro é antes do gasto com ADS."
+    }
+  ],
+  "retired": []
+}

@@ -1,0 +1,55 @@
+{
+  "variantId": "v02",
+  "axes": {
+    "angulo": "presente",
+    "capa": "solo_linha",
+    "aquisicao": "afiliado",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit Presente Top Cropped Kit 4 Cores Feminino Microfibra Sem Bojo Cós Largo",
+  "description": "Kit Presente Top Cropped Feminino com 4 Cores\n\n4 cores por R$ 51,90 (cerca de R$ 12,98 por peça)\nPresente pronto para dar: 4 tops cropped, várias cores, um kit só.\n\nO QUE VEM NO KIT\n- 4 tops cropped femininos\n- Cores: preto, branco, azul marinho e rosa pink\n- Decote redondo, alças largas e cós largo na barra inferior\n\nPOR QUE VAI AGRADAR\n- Microfibra lisa e macia, toque suave na pele\n- Sem bojo: sem enchimento, confortável no dia a dia\n- Alças largas, não são alcinhas finas\n- Corte cropped: fica bem com cintura alta, calça ou saia\n- Cores básicas e cores vivas no mesmo kit, para escolher a favorita\n\nPARA PRESENTEAR\n- Aniversário, Dia das Mães, amigas, irmãs ou para quem gosta de moda e conforto\n- Quatro peças para usar em vários looks, sem precisar comprar uma por uma\n\nTAMANHOS E MEDIDAS\n- Confira a numeração e a tabela de medidas no anúncio antes de comprar\n\nCUIDADOS\n- Lavar à mão ou na máquina em ciclo suave, com água fria\n- Não usar alvejante\n- Secar à sombra\n\nKit 4 Tops Cropped Feminino: 4 cores, microfibra, sem bojo, cós largo. Presente que combina com o dia a dia.",
+  "keywords": [
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top cropped microfibra",
+    "top cropped sem bojo",
+    "top cropped cores",
+    "kit presente feminino",
+    "presente para mulher",
+    "top cropped moda",
+    "top cropped cós largo",
+    "cropped feminino kit",
+    "kit top cropped cores",
+    "top cropped alça larga"
+  ],
+  "coverBrief": "Capa solo_linha: as quatro peças sem pessoa, dispostas lado a lado em uma única fileira horizontal, centralizadas e na mesma altura, fotografadas de frente. Gerada por edição de imagem (image-to-image) usando a foto de referência anexada como guia do produto, sem recusa do gerador. O produto ficou fiel à referência: corte cropped, decote redondo, alças largas, faixa inferior larga, microfibra lisa, sem enchimento, nas quatro cores da referência (preto, branco, azul marinho e rosa pink, da esquerda para a direita). Fundo neutro bege-claro/off-white com luz de estúdio suave e sombra leve sob as peças. Clima de presente: calmo, minimalista, tons quentes e espaço generoso ao redor. Sem texto, logotipo ou etiqueta de preço (o texto KIT 4 da referência não foi reproduzido). Arquivo copiado para o caminho da capa.",
+  "coverPath": "runs/r2/covers/v02.png",
+  "appliedRules": [
+    "capa-solo_linha-profit"
+  ],
+  "hypothesis": "A capa solo_linha, com as quatro cores lado a lado sem modelo, no ângulo presente com aquisição por afiliado, gera mais cliques e carrinhos por impressão do que as capas com modelo para o kit 4.",
+  "benchmark": {
+    "competitorsAnalyzed": 48,
+    "referenceItemIds": [
+      "56417405538",
+      "44667451088",
+      "58217160458",
+      "23499181350"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 12,75 dos 45 concorrentes comparáveis do ângulo presente: mais barato por peça que 47% deles, então não é o mais barato; o kit total de R$ 51,90 fica 14% acima da mediana de R$ 45,60.",
+    "keywordsAdopted": [
+      "cores",
+      "várias cores",
+      "moda",
+      "bojo",
+      "cós largo"
+    ],
+    "differentiators": [
+      "4 cores no kit de R$ 51,90 (R$ 12,98 por peça); 'cores' aparece em 19% dos títulos do ângulo presente e o kit 4 é o formato dominante (50%).",
+      "Sem bojo e microfibra lisa; concorrentes presente de maior venda usam acabamento diferente, como 'Com Bojo' (23499181350) ou 'alcinha canelado' (58208074966).",
+      "Alças largas e cós largo; concorrentes presente de maior venda usam alcinha ou alça fina (58203290236, 29387323889), o que este kit não usa.",
+      "Kit 4 é o formato mais comum do ângulo presente (50% dos anúncios), o que facilita a comparação direta de preço por peça com os concorrentes do mesmo formato."
+    ]
+  }
+}

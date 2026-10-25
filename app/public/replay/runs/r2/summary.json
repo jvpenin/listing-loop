@@ -1,0 +1,38 @@
+{
+  "round": "r2",
+  "updatedAt": "2026-10-25T07:44:43.436Z",
+  "lastRunSecs": 195.312,
+  "ok": 4,
+  "total": 4,
+  "titleWarnings": [],
+  "variants": [
+    {
+      "variantId": "v01",
+      "ok": true,
+      "why": "",
+      "secs": 98.831,
+      "attempts": 1
+    },
+    {
+      "variantId": "v02",
+      "ok": true,
+      "why": "",
+      "secs": 115.067,
+      "attempts": 1
+    },
+    {
+      "variantId": "v04",
+      "ok": true,
+      "why": "",
+      "secs": 118.3,
+      "attempts": 1
+    },
+    {
+      "variantId": "v06",
+      "ok": true,
+      "why": "",
+      "secs": 96.48,
+      "attempts": 1
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "round": "r1",
+  "runs": [
+    {
+      "variantId": "v01",
+      "attempts": [
+        {
+          "sessionId": "ceeaa14b-25f4-4726-be03-bc6cf037a861",
+          "success": true,
+          "durationMs": 116431,
+          "tokenUsage": {
+            "inputTokens": 2090,
+            "outputTokens": 13282,
+            "cacheCreationTokens": 54061,
+            "cacheReadTokens": 251621,
+            "thinkingTokens": 7601,
+            "factoryCredits": 6618
+          },
+          "why": "invalid json: [ { \"origin\": \"array\", \"code\": \"too_big\", \"maximum\": 8, \"inclusive\": true, \"path\": [ \"benchmark\", \"keywordsAdopted\" ], \"message\": \"Too big: expected array to have <=8 items\" } ]"
+        },
+        {
+          "sessionId": "3cbf871f-8918-4d27-ab00-b2e844f63a78",
+          "success": true,
+          "durationMs": 142303,
+          "tokenUsage": {
+            "inputTokens": 2212,
+            "outputTokens": 18243,
+            "cacheCreationTokens": 46708,
+            "cacheReadTokens": 441480,
+            "thinkingTokens": 9789,
+            "factoryCredits": 7965
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v03",
+      "attempts": [
+        {
+          "sessionId": "cb86c227-7856-4d09-bcb8-dc8c6e3428b9",
+          "success": true,
+          "durationMs": 159572,
+          "tokenUsage": {
+            "inputTokens": 2079,
+            "outputTokens": 16406,
+            "cacheCreationTokens": 42103,
+            "cacheReadTokens": 230921,
+            "thinkingTokens": 10637,
+            "factoryCredits": 6471
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v05",
+      "attempts": [
+        {
+          "sessionId": "358a049d-b1c9-4f7c-92d9-511d653e26f0",
+          "success": true,
+          "durationMs": 104197,
+          "tokenUsage": {
+            "inputTokens": 2101,
+            "outputTokens": 16185,
+            "cacheCreationTokens": 56662,
+            "cacheReadTokens": 352188,
+            "thinkingTokens": 10287,
+            "factoryCredits": 7780
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v06",
+      "attempts": [
+        {
+          "sessionId": "42bf6a72-f704-4cf8-a73f-04b25a146452",
+          "success": true,
+          "durationMs": 92494,
+          "tokenUsage": {
+            "inputTokens": 1991,
+            "outputTokens": 14344,
+            "cacheCreationTokens": 53765,
+            "cacheReadTokens": 123072,
+            "thinkingTokens": 9274,
+            "factoryCredits": 6271
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v07",
+      "attempts": [
+        {
+          "sessionId": "3e0f4a89-5b16-4b56-967d-3d78b2e2a406",
+          "success": true,
+          "durationMs": 154355,
+          "tokenUsage": {
+            "inputTokens": 2083,
+            "outputTokens": 13312,
+            "cacheCreationTokens": 40419,
+            "cacheReadTokens": 188255,
+            "thinkingTokens": 5319,
+            "factoryCredits": 5362
+          },
+          "why": "invalid json: [ { \"origin\": \"array\", \"code\": \"too_big\", \"maximum\": 8, \"inclusive\": true, \"path\": [ \"benchmark\", \"keywordsAdopted\" ], \"message\": \"Too big: expected array to have <=8 items\" } ]"
+        },
+        {
+          "sessionId": "55f569c3-a453-4898-ad7e-f4294353ae6d",
+          "success": true,
+          "durationMs": 115696,
+          "tokenUsage": {
+            "inputTokens": 2156,
+            "outputTokens": 16070,
+            "cacheCreationTokens": 39054,
+            "cacheReadTokens": 271034,
+            "thinkingTokens": 10037,
+            "factoryCredits": 6439
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v08",
+      "attempts": [
+        {
+          "sessionId": "c4c2f3aa-10b5-49b3-80f2-b36511cbd99d",
+          "success": true,
+          "durationMs": 109459,
+          "tokenUsage": {
+            "inputTokens": 2044,
+            "outputTokens": 14914,
+            "cacheCreationTokens": 39316,
+            "cacheReadTokens": 213004,
+            "thinkingTokens": 8471,
+            "factoryCredits": 5714
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v09",
+      "attempts": [
+        {
+          "sessionId": "fd86e261-a4ac-48ee-81ae-756c34dcd37f",
+          "success": true,
+          "durationMs": 125615,
+          "tokenUsage": {
+            "inputTokens": 2061,
+            "outputTokens": 15769,
+            "cacheCreationTokens": 37807,
+            "cacheReadTokens": 184642,
+            "thinkingTokens": 9559,
+            "factoryCredits": 5716
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v10",
+      "attempts": [
+        {
+          "sessionId": "39fe062e-9500-4a0a-85bc-a5da8dfb2751",
+          "success": true,
+          "durationMs": 107946,
+          "tokenUsage": {
+            "inputTokens": 2063,
+            "outputTokens": 12994,
+            "cacheCreationTokens": 37512,
+            "cacheReadTokens": 226150,
+            "thinkingTokens": 6166,
+            "factoryCredits": 5312
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v11",
+      "attempts": [
+        {
+          "sessionId": "29a68b5a-857c-4afa-8246-120a97f13791",
+          "success": true,
+          "durationMs": 115795,
+          "tokenUsage": {
+            "inputTokens": 2112,
+            "outputTokens": 14421,
+            "cacheCreationTokens": 37495,
+            "cacheReadTokens": 231017,
+            "thinkingTokens": 9312,
+            "factoryCredits": 5949
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v12",
+      "attempts": [
+        {
+          "sessionId": "001b5e75-b8bc-4688-98fb-8952e0f5f0a8",
+          "success": true,
+          "durationMs": 104828,
+          "tokenUsage": {
+            "inputTokens": 2136,
+            "outputTokens": 15325,
+            "cacheCreationTokens": 37849,
+            "cacheReadTokens": 175462,
+            "thinkingTokens": 8819,
+            "factoryCredits": 5618
+          },
+          "why": ""
+        }
+      ]
+    }
+  ],
+  "learn": [
+    {
+      "sessionId": "5407594c-c900-4186-9fa0-9bbe354c1204",
+      "success": true,
+      "durationMs": 44637,
+      "tokenUsage": {
+        "inputTokens": 426,
+        "outputTokens": 4561,
+        "cacheCreationTokens": 28270,
+        "cacheReadTokens": 66564,
+        "thinkingTokens": 1071,
+        "factoryCredits": 84629
+      }
+    }
+  ]
+}

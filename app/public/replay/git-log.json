@@ -1,0 +1,20 @@
+[
+  {
+    "hash": "c9d33d9",
+    "date": "2026-10-25 00:38:24 -0700",
+    "subject": "learn: r2",
+    "body": "Com 14 anúncios reais e sem confundidores, r2 inverte três regras de r1: academia e capa solo_linha passam a ser priorizadas, casual passa a ser evitado, e a capa modelo entra como regra de evitar. O lucro é antes do gasto com ADS, e casual e modelo se sobrepõem em três anúncios, então convém testar esses eixos de forma independente."
+  },
+  {
+    "hash": "8d06919",
+    "date": "2026-10-24 23:37:18 -0700",
+    "subject": "learn: r1",
+    "body": "Na rodada r1, os melhores resultados de lucro vieram de casual, solo_grade e orgânico, enquanto academia, solo_linha e ads ficaram abaixo dos demais; todas as regras têm confiança baixa por causa de confundidores. A base tem 12 de 15 anúncios simulados, então estas regras precisam ser confirmadas com dados reais."
+  },
+  {
+    "hash": "b84bc73",
+    "date": "2026-10-24 21:37:46 -0700",
+    "subject": "feat: phase 5 learn loop (performance-analyst, memory.ts, learn.ts)",
+    "body": "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+  }
+]

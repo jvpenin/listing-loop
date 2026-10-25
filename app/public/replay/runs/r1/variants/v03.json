@@ -1,0 +1,56 @@
+{
+  "variantId": "v03",
+  "axes": {
+    "angulo": "presente",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Kit Presente Top Cropped Kit 4 Cores Feminino Sem Bojo Microfibra Cós Largo Academia Casual",
+  "description": "Kit Presente Top Cropped com 4 cores: preto, branco, azul marinho e rosa. Um presente prático, que serve para o treino e para o dia a dia.\n\nKit com 4 tops cropped femininos sem bojo, em microfibra lisa, com cós largo e alças largas. Procurando top cropped feminino sem bojo em microfibra para academia ou casual? Este kit tem 4 cores e modelagem confortável.\n\nPor que escolher este kit\n- Kit com várias cores: preto, branco, azul marinho e rosa\n- Decote redondo e alças largas, para um caimento confortável no ombro\n- Cós largo na barra, que mantém o top no lugar\n- Microfibra lisa, macia ao toque, sem enchimento e sem bojo\n- Serve para academia fitness, treino, caminhada e também para o look casual\n\nIdeias de presente\n- Presente para mulher: mãe, irmã, amiga, namorada ou para você mesma\n- Presente de aniversário, Dia das Mães ou Dia dos Namorados\n- Presente de moda útil: kit de 4 peças para quem gosta de treinar e de se vestir bem\n\nCombina com\n- Calça de linho, legging, short e saia\n- Look casual de verão e look de academia\n\nDetalhes do produto\n- Tipo: blusa cropped feminina (top), kit com 4 peças\n- Cores: preto, branco, azul marinho e rosa\n- Modelagem: decote redondo, alças largas, cós largo, sem bojo\n- Material: microfibra lisa\n- Tamanhos: consulte a tabela de medidas do anúncio antes de comprar\n\nCuidados\n- Lavar à mão ou no ciclo delicado\n- Não usar alvejante\n- Secar à sombra\n\nPor que comprar este kit de top cropped\n- Quem ganha leva variedade de cores para o guarda-roupa\n- Preço por peça: R$ 12,98 (kit de 4 por R$ 51,90)\n- Top cropped básico, fácil de combinar com o que a pessoa já tem",
+  "keywords": [
+    "kit top cropped feminino",
+    "top cropped sem bojo",
+    "kit presente top cropped",
+    "presente para mulher",
+    "top cropped microfibra",
+    "kit 4 tops cropped",
+    "top cropped academia",
+    "top cropped casual",
+    "top cropped feminino cores",
+    "top cropped alça larga",
+    "kit top feminino 4 cores",
+    "moda feminina cropped"
+  ],
+  "coverBrief": "Capa quadrada 1254x1254 gerada por image-to-image a partir da foto de referência anexada (data/product/photo.jpg), sem recusa do gerador. Os modelos foram removidos e ficaram apenas os 4 tops, com o mesmo corte, decote redondo, alças largas, cós largo, comprimento cropped, microfibra lisa e as 4 cores da referência (preto, branco, azul marinho e rosa), em grade 2x2 (preto e branco em cima; azul marinho e rosa embaixo), no estilo ghost mannequin de catálogo. Fundo neutro bege claro de estúdio, luz suave e sombra natural. Toque de presente discreto: papel de seda bege e fita de cetim fina nos cantos, sem cobrir as peças. Título 'KIT 4' em preto, sans-serif, centralizado no topo, como na referência, sem outro texto.",
+  "coverPath": "runs/r1/covers/v03.png",
+  "appliedRules": [],
+  "hypothesis": "A capa solo_grade em grade 2x2 com toque de presente converte melhor que a capa com modelo no ângulo presente, em aquisição orgânica.",
+  "benchmark": {
+    "competitorsAnalyzed": 48,
+    "referenceItemIds": [
+      "56417405538",
+      "44667451088",
+      "23499181350",
+      "58217160458"
+    ],
+    "pricePosition": "R$ 12,98 por peça (kit de 4 por R$ 51,90) contra mediana de R$ 12,75 por peça dos 48 concorrentes do ângulo presente (mediana do kit R$ 45,60); fica um pouco acima da mediana por peça, mas é mais barato por peça que 47% deles.",
+    "keywordsAdopted": [
+      "cores",
+      "várias cores",
+      "bojo",
+      "academia",
+      "casual",
+      "moda",
+      "fitness",
+      "blusa"
+    ],
+    "differentiators": [
+      "4 cores reais no mesmo kit (preto, branco, azul marinho e rosa); kit4 é o formato dominante no ângulo presente (50% dos concorrentes) e 'cores' aparece em 19% dos títulos.",
+      "Sem bojo e em microfibra lisa, diferente de concorrentes com bojo (19% dos títulos do ângulo presente citam bojo).",
+      "Alças largas e cós largo; alcinha aparece em 31% dos títulos do ângulo presente (15 de 48), e este kit não é de alcinha.",
+      "Preço por peça de R$ 12,98 em kit de 4, mais barato que 47% dos concorrentes do ângulo presente."
+    ]
+  }
+}

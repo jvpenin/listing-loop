@@ -1,0 +1,99 @@
+{
+  "round": "r1",
+  "updatedAt": "2026-10-25T06:23:01.659Z",
+  "lastRunSecs": 326.044,
+  "ok": 12,
+  "total": 12,
+  "titleWarnings": [
+    "v01~v04 (casual) títulos 87% iguais",
+    "v03~v07 (presente) títulos 80% iguais",
+    "v03~v08 (presente) títulos 87% iguais",
+    "v07~v08 (presente) títulos 80% iguais"
+  ],
+  "variants": [
+    {
+      "variantId": "v01",
+      "ok": true,
+      "why": "",
+      "secs": 265.099,
+      "attempts": 2
+    },
+    {
+      "variantId": "v02",
+      "ok": true,
+      "why": "recuperado: saídas válidas, conductor travou após o subagente terminar",
+      "secs": 1064.942,
+      "attempts": 1
+    },
+    {
+      "variantId": "v03",
+      "ok": true,
+      "why": "",
+      "secs": 163.178,
+      "attempts": 1
+    },
+    {
+      "variantId": "v04",
+      "ok": true,
+      "why": "restaurado da etapa (b) (commit 528938a); título parecido com v01",
+      "secs": 1064.913,
+      "attempts": 1
+    },
+    {
+      "variantId": "v05",
+      "ok": true,
+      "why": "",
+      "secs": 107.389,
+      "attempts": 1
+    },
+    {
+      "variantId": "v06",
+      "ok": true,
+      "why": "",
+      "secs": 95.498,
+      "attempts": 1
+    },
+    {
+      "variantId": "v07",
+      "ok": true,
+      "why": "",
+      "secs": 275.09,
+      "attempts": 2
+    },
+    {
+      "variantId": "v08",
+      "ok": true,
+      "why": "",
+      "secs": 112.287,
+      "attempts": 1
+    },
+    {
+      "variantId": "v09",
+      "ok": true,
+      "why": "",
+      "secs": 128.297,
+      "attempts": 1
+    },
+    {
+      "variantId": "v10",
+      "ok": true,
+      "why": "",
+      "secs": 110.726,
+      "attempts": 1
+    },
+    {
+      "variantId": "v11",
+      "ok": true,
+      "why": "",
+      "secs": 118.485,
+      "attempts": 1
+    },
+    {
+      "variantId": "v12",
+      "ok": true,
+      "why": "",
+      "secs": 107.929,
+      "attempts": 1
+    }
+  ]
+}
