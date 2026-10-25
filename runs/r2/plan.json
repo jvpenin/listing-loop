@@ -1,0 +1,306 @@
+{
+  "round": "r2",
+  "createdAt": "2026-10-25T07:16:41.200Z",
+  "dataQuality": "base de demonstração: 3 reais + 12 simulados",
+  "playbookVersion": 1,
+  "variants": [
+    {
+      "variantId": "v01",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "casual",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Aproveita o que já vence: angulo=casual lidera 3.66; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
+      "priorEvidence": [
+        "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
+        "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra angulo-casual-profit (low): Priorizar o ângulo casual, que entregou maior lucro por mil impressões que os demais ângulos.",
+        "regra capa-solo_grade-profit (low): Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v02",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "casual",
+        "capa": "modelo",
+        "aquisicao": "afiliado",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=casual lidera 3.66; capa=modelo μ 2.61; aquisicao=afiliado μ 0.54",
+      "titleHook": "Preço por Peça",
+      "priorEvidence": [
+        "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
+        "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
+        "aquisicao=afiliado: profitPer1kImpr μ=0.54 IC90 [-2.21, 3.29] pBetter=0.25 n=2",
+        "regra angulo-casual-profit (low): Priorizar o ângulo casual, que entregou maior lucro por mil impressões que os demais ângulos."
+      ]
+    },
+    {
+      "variantId": "v03",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
+      "priorEvidence": [
+        "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra capa-solo_grade-profit (low): Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v04",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "casual",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=casual lidera 3.66; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
+      "priorEvidence": [
+        "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra angulo-casual-profit (low): Priorizar o ângulo casual, que entregou maior lucro por mil impressões que os demais ângulos.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v05",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
+      "priorEvidence": [
+        "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra capa-solo_grade-profit (low): Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v06",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
+      "priorEvidence": [
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v07",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=modelo μ 2.61; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
+      "priorEvidence": [
+        "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v08",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
+      "priorEvidence": [
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v09",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=modelo μ 2.61; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
+      "priorEvidence": [
+        "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v10",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=academia μ 0.88; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=0.88 IC90 [-0.26, 1.99] pBetter=0.05 n=8",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra angulo-academia-profit (low): Evitar o ângulo academia como padrão, pois teve lucro por mil impressões bem abaixo dos demais ângulos apesar do CTR maior.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v11",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "solo_linha",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=solo_linha μ -0.47; aquisicao=organico lidera 3.58",
+      "titleHook": "Sem Bojo Microfibra",
+      "priorEvidence": [
+        "capa=solo_linha: profitPer1kImpr μ=-0.47 IC90 [-1.32, 0.33] pBetter=0.00 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra capa-solo_linha-profit (low): Evitar a capa solo_linha, que atrai cliques e carrinhos mas teve lucro por mil impressões negativo.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    },
+    {
+      "variantId": "v12",
+      "round": "r2",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Aproveita o que já vence: angulo=academia μ 0.88; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=0.88 IC90 [-0.26, 1.99] pBetter=0.05 n=8",
+        "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5",
+        "regra angulo-academia-profit (low): Evitar o ângulo academia como padrão, pois teve lucro por mil impressões bem abaixo dos demais ângulos apesar do CTR maior.",
+        "regra capa-solo_grade-profit (low): Priorizar a capa solo_grade, que teve maior lucro por mil impressões e a melhor conversão paga entre as capas.",
+        "regra aquisicao-organico-profit (low): Priorizar a aquisição orgânica, que teve o maior lucro por mil impressões entre os canais de aquisição."
+      ]
+    }
+  ]
+}

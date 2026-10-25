@@ -104,16 +104,31 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   const normal = rng(seed);
 
   // The playbook (memory written by the performance-analyst) shapes the next round:
-  // a backed value gets a narrower belief, an "evitar" value has its mean pushed down 1 sd.
+  // - a backed value gets a narrower, higher belief (sd / 2, mean + sd / 2 of the original);
+  // - an "evitar" value has its mean pushed down 2 sd and is capped at AVOID_CAP variants
+  //   (one stays, so the system keeps exploring it instead of freezing a possibly lucky loser).
   const playbook = loadPlaybook();
   const rulesFor = (a: ScoredAxis, value: string) => playbook.rules.filter((r) => r.axis === a && r.value === value);
+  const avoided = new Set<string>();
   for (const a of SCORED) {
     for (const [value, p] of Object.entries(priors[a])) {
       const rules = rulesFor(a, value);
-      if (rules.some(isPositive)) p.sd /= 2;
-      if (rules.some((r) => !isPositive(r))) p.mean -= p.sd;
+      if (rules.some(isPositive)) {
+        p.mean += p.sd / 2;
+        p.sd /= 2;
+      }
+      if (rules.some((r) => !isPositive(r))) {
+        p.mean -= 2 * p.sd;
+        avoided.add(`${a}=${value}`);
+      }
     }
   }
+  const AVOID_CAP = 1;
+  const avoidCount = new Map<string, number>();
+  const overCap = (c: Axes) => SCORED.some((a) => avoided.has(`${a}=${c[a]}`) && (avoidCount.get(`${a}=${c[a]}`) ?? 0) >= AVOID_CAP);
+  const count = (c: Axes) => {
+    for (const a of SCORED) if (avoided.has(`${a}=${c[a]}`)) avoidCount.set(`${a}=${c[a]}`, (avoidCount.get(`${a}=${c[a]}`) ?? 0) + 1);
+  };
 
   const combos: Axes[] = [];
   for (const angulo of eixos.angulo)
@@ -129,21 +144,28 @@ export function makePlan(round: string, from: string | undefined, seed: number):
   const anchor = combos.reduce((b, c) => (meanScore(c) > meanScore(b) ? c : b));
   const usedPairs = new Set<string>([`${anchor.capa}|${anchor.angulo}`]);
   const chosen: Axes[] = [anchor];
+  count(anchor);
   while (chosen.length < variantesPorRodada) {
     const draw = {} as Record<ScoredAxis, Record<string, number>>;
     for (const axis of SCORED) {
       draw[axis] = {};
       for (const [value, p] of Object.entries(priors[axis])) draw[axis][value] = normal(p.mean, p.sd);
     }
-    let pick: Axes | undefined;
-    let pickScore = -Infinity;
-    for (const c of combos) {
-      if (usedPairs.has(`${c.capa}|${c.angulo}`)) continue;
-      const score = SCORED.reduce((s, a) => s + draw[a][c[a]], 0);
-      if (score > pickScore) [pick, pickScore] = [c, score];
-    }
+    // The avoid cap is soft: when compliance leaves no other pair, an avoided value is allowed.
+    const best = (respectCap: boolean) => {
+      let pick: Axes | undefined;
+      let pickScore = -Infinity;
+      for (const c of combos) {
+        if (usedPairs.has(`${c.capa}|${c.angulo}`) || (respectCap && overCap(c))) continue;
+        const score = SCORED.reduce((s, a) => s + draw[a][c[a]], 0);
+        if (score > pickScore) [pick, pickScore] = [c, score];
+      }
+      return pick;
+    };
+    const pick = best(true) ?? best(false);
     if (!pick) throw new Error(`only ${chosen.length} compliant combinations available`);
     usedPairs.add(`${pick.capa}|${pick.angulo}`);
+    count(pick);
     chosen.push(pick);
   }
 
