@@ -1,11 +1,14 @@
 {
   "round": "r1",
-  "updatedAt": "2026-10-25T06:01:05.037Z",
-  "lastRunSecs": 2210.105,
-  "ok": 5,
+  "updatedAt": "2026-10-25T06:23:01.659Z",
+  "lastRunSecs": 326.044,
+  "ok": 12,
   "total": 12,
   "titleWarnings": [
-    "v03~v07 (presente) títulos 80% iguais"
+    "v01~v04 (casual) títulos 87% iguais",
+    "v03~v07 (presente) títulos 80% iguais",
+    "v03~v08 (presente) títulos 87% iguais",
+    "v07~v08 (presente) títulos 80% iguais"
   ],
   "variants": [
     {
@@ -38,16 +41,16 @@
     },
     {
       "variantId": "v05",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 1064.944,
+      "ok": true,
+      "why": "",
+      "secs": 107.389,
       "attempts": 1
     },
     {
       "variantId": "v06",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 901.773,
+      "ok": true,
+      "why": "",
+      "secs": 95.498,
       "attempts": 1
     },
     {
@@ -59,37 +62,37 @@
     },
     {
       "variantId": "v08",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 240.039,
+      "ok": true,
+      "why": "",
+      "secs": 112.287,
       "attempts": 1
     },
     {
       "variantId": "v09",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 240.034,
+      "ok": true,
+      "why": "",
+      "secs": 128.297,
       "attempts": 1
     },
     {
       "variantId": "v10",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 240.031,
+      "ok": true,
+      "why": "",
+      "secs": 110.726,
       "attempts": 1
     },
     {
       "variantId": "v11",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 240.03,
+      "ok": true,
+      "why": "",
+      "secs": 118.485,
       "attempts": 1
     },
     {
       "variantId": "v12",
-      "ok": false,
-      "why": "aborted after 240s",
-      "secs": 905.149,
+      "ok": true,
+      "why": "",
+      "secs": 107.929,
       "attempts": 1
     }
   ]

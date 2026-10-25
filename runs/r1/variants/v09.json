@@ -1,0 +1,53 @@
+{
+  "variantId": "v09",
+  "axes": {
+    "angulo": "conforto",
+    "capa": "modelo",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Confortável Cós Largo Kit 4 Microfibra Sem Bojo Alça Larga Feminino 4 Cores",
+  "description": "Top Cropped Confortável para o dia a dia, em casa ou na rua: kit 4 tops cropped femininos sem bojo, em microfibra lisa e macia.\n\n- Kit com 4 tops cropped: preto, branco, azul marinho e rosa pink\n- Kit 4 por R$ 51,90, ou seja, R$ 12,98 por peça\n- Microfibra lisa e macia, sem bojo e sem enchimento\n- Alças largas e cós largo na barra, para um top cropped firme e confortável\n- Modelagem cropped básica: combina com calça de linho, shorts, saia e jeans\n\nPor que escolher este kit de top cropped confortável?\n- Conforto o dia todo: tecido macio no contato com a pele\n- Quatro cores na mesma compra para montar looks variados\n- Preço por peça de R$ 12,98 no kit de 4 tops cropped feminino\n- Diferente dos tops de alça fina, este tem alça larga e cós largo\n\nIdeal para: top cropped confortável para casa, top cropped sem bojo para o dia a dia, top cropped alça larga e kit top cropped feminino básico.\n\nTamanhos: escolha pela tabela de medidas do anúncio.\n\nMaterial: microfibra lisa, sem bojo.\n\nCuidados: lavar à mão ou no ciclo delicado, com cores parecidas. Não usar alvejante. Secar à sombra.\n\nO que vem: 4 tops cropped (preto, branco, azul marinho e rosa pink).",
+  "keywords": [
+    "top cropped confortável",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "kit 4 tops cropped",
+    "top cropped feminino kit 4",
+    "top regata cropped microfibra",
+    "cropped sem bojo feminino",
+    "top cropped alça larga",
+    "top cropped cós largo",
+    "kit top cropped confortável",
+    "top microfibra sem bojo",
+    "top cropped dia a dia"
+  ],
+  "coverBrief": "Capa de catálogo quadrada gerada a partir da foto de referência anexada (edição image-to-image; o gerador aceitou a referência). Quatro mulheres brasileiras adultas, lado a lado, cada uma usando um dos quatro tops cropped da referência (preto, branco, azul marinho e rosa pink), com a mesma modelagem: decote redondo, alças largas, comprimento cropped, barra larga, microfibra lisa e sem bojo. Calça de linho bege clara como na referência. Clima relaxado de casa: luz natural suave de janela, poses naturais, sorrisos leves, fundo neutro bege quente liso, sem texto nem logo. Enquadramento da cintura ao quadril, todas as quatro modelos visíveis.",
+  "coverPath": "runs/r1/covers/v09.png",
+  "appliedRules": [],
+  "hypothesis": "Capa modelo com quatro modelos em clima de casa (conforto) gera mais cliques que capa de produto isolado no ângulo conforto.",
+  "benchmark": {
+    "competitorsAnalyzed": 42,
+    "referenceItemIds": [
+      "57118862429",
+      "56417405538",
+      "58218753657"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 11,98 dos 39 concorrentes comparáveis de conforto (kit de R$ 51,90 contra mediana de R$ 40,99); mais barato por peça que 41%, então não é o mais barato do ângulo.",
+    "keywordsAdopted": [
+      "bojo",
+      "microfibra",
+      "confortável",
+      "alça",
+      "regata",
+      "alça fina"
+    ],
+    "differentiators": [
+      "Kit 4 com quatro cores (preto, branco, azul marinho, rosa pink) a R$ 12,98 por peça, cerca de 9% abaixo de R$ 14,22 a R$ 14,25 por peça dos kits 4 de microfibra com forro duplo (56417405538 e 58218753657).",
+      "Sem bojo e microfibra lisa: o termo bojo aparece em 36% dos títulos de conforto, e este kit não tem bojo.",
+      "Alça larga e cós largo (conforme foto de referência), enquanto o concorrente 57118862429 (kit 4 sem bojo a R$ 9,98 por peça) usa alça fina; alça fina aparece em 17% dos bigramas de conforto.",
+      "Kit de 4 é 21% da oferta de conforto, com quatro cores na mesma compra."
+    ]
+  }
+}

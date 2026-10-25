@@ -1,0 +1,55 @@
+{
+  "variantId": "v06",
+  "axes": {
+    "angulo": "conforto",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Confortável Preço por Peça | Kit 4 Tops Sem Bojo Microfibra Alça Larga Cós Largo",
+  "description": "Top cropped confortável para casa e dia a dia: kit com 4 regatas cropped femininas sem bojo, em microfibra, com alça larga e cós largo.\n\nPreço por peça: R$ 12,98. Você leva 4 cores por R$ 51,90.\n\nPor que escolher este kit 4 top cropped sem bojo:\n- Sem bojo: nada de enchimento, só o tecido macio que acompanha o corpo\n- Microfibra lisa: toque suave e confortável no dia a dia\n- Alça larga: mais conforto nos ombros do que as alças finas\n- Cós largo: faixa larga na base do top\n- Decote redondo e cropped: modelagem clássica, combina com calça de linho, jeans ou saia\n\nIdeal para:\n- Casa, home office e descanso\n- Caminhada, yoga leve e pilates\n- Dia a dia no verão, usado sozinho ou por baixo de camisas abertas\n\nO que vem no kit 4 tops cropped:\n- 1 regata cropped preta\n- 1 regata cropped branca\n- 1 regata cropped azul marinho\n- 1 regata cropped rosa pink\n\nConta rápida: R$ 51,90 dividido por 4 peças = R$ 12,98 por peça. Um kit com 4 cores completas para trocar todos os dias.\n\nMaterial e cuidados:\n- Microfibra\n- Sem bojo\n- Lavar à mão ou no ciclo delicado, à sombra\n\nTamanhos: escolha na variação do anúncio e confira a tabela de medidas antes de comprar.\n\nCompre o kit top cropped confortável sem bojo e tenha 4 cores para o seu dia a dia.",
+  "keywords": [
+    "top cropped sem bojo",
+    "top cropped confortável",
+    "top cropped microfibra",
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top sem bojo feminino",
+    "top cropped alça larga",
+    "top microfibra feminino",
+    "top cropped cós largo",
+    "regata cropped sem bojo",
+    "top cropped para casa",
+    "top cropped dia a dia",
+    "kit top cropped 4 cores",
+    "top feminino confortável"
+  ],
+  "coverBrief": "Capa no estilo uso, quadrada 1:1, gerada a partir da foto de referência anexada (passada ao gerador como input_image_paths, edição image-to-image, sem recusa). Uma jovem brasileira de cabelo castanho ondulado, sorrindo, estica os braços para cima em uma sala ensolarada com piso de madeira clara e plantas verdes, usando o top cropped preto com calça de linho bege como na referência. Sobre a mesa de madeira em primeiro plano, os tops branco, azul marinho e rosa aparecem dobrados lado a lado, mostrando as 4 cores do kit. Luz natural quente, clima calmo e de casa, sem texto, logotipo ou marca d'água. Arquivo gerado copiado para runs/r1/covers/v06.png.",
+  "coverPath": "runs/r1/covers/v06.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de uso com modelo em movimento dentro de casa aumenta o CTR frente a capa de catálogo no ângulo conforto.",
+  "benchmark": {
+    "competitorsAnalyzed": 42,
+    "referenceItemIds": [
+      "56417405538",
+      "57118862429",
+      "58218753657",
+      "23404360846"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 11,98 por peça dos 39 concorrentes comparáveis do conforto; o kit de R$ 51,90 está 27% acima da mediana de R$ 40,99 do preço total, e a DNT é mais barata por peça que 41% deles.",
+    "keywordsAdopted": [
+      "confortável",
+      "microfibra",
+      "bojo",
+      "alça",
+      "regata"
+    ],
+    "differentiators": [
+      "Kit de 4 tops a R$ 51,90 (R$ 12,98 por peça) fica abaixo de dois dos kits de 4 do topo do conforto (56417405538 a R$ 56,99 e 58218753657 a R$ 56,88, ambos a cerca de R$ 14,22 por peça).",
+      "Quatro cores fixas e conhecidas (preto, branco, azul marinho e rosa), enquanto o concorrente 54350433794 vende kit sortido sem cor definida.",
+      "Alça larga e cós largo: a alça fina é um dos bigramas mais frequentes do conforto (7 de 42 anúncios), e a DNT se posiciona no lado oposto.",
+      "Microfibra sem bojo, mesmo critério dos líderes do conforto (58268750396 e 57118862429), com kit de 4 peças de cores completas."
+    ]
+  }
+}

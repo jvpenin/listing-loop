@@ -5,7 +5,7 @@ import { ROOT } from './config';
 
 // Every run() opens one paid Factory session. This ledger is the single counter for the whole
 // project (round.ts, learn.ts), and refuses to go past the cap.
-export const BUDGET_CAP = 30;
+export const BUDGET_CAP = 36;
 const BUDGET_FILE = join(ROOT, 'runs', 'budget.json');
 
 interface Budget {

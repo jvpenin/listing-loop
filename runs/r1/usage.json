@@ -81,11 +81,18 @@
       "variantId": "v05",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "358a049d-b1c9-4f7c-92d9-511d653e26f0",
+          "success": true,
+          "durationMs": 104197,
+          "tokenUsage": {
+            "inputTokens": 2101,
+            "outputTokens": 16185,
+            "cacheCreationTokens": 56662,
+            "cacheReadTokens": 352188,
+            "thinkingTokens": 10287,
+            "factoryCredits": 7780
+          },
+          "why": ""
         }
       ]
     },
@@ -93,11 +100,18 @@
       "variantId": "v06",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "42bf6a72-f704-4cf8-a73f-04b25a146452",
+          "success": true,
+          "durationMs": 92494,
+          "tokenUsage": {
+            "inputTokens": 1991,
+            "outputTokens": 14344,
+            "cacheCreationTokens": 53765,
+            "cacheReadTokens": 123072,
+            "thinkingTokens": 9274,
+            "factoryCredits": 6271
+          },
+          "why": ""
         }
       ]
     },
@@ -138,11 +152,18 @@
       "variantId": "v08",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "c4c2f3aa-10b5-49b3-80f2-b36511cbd99d",
+          "success": true,
+          "durationMs": 109459,
+          "tokenUsage": {
+            "inputTokens": 2044,
+            "outputTokens": 14914,
+            "cacheCreationTokens": 39316,
+            "cacheReadTokens": 213004,
+            "thinkingTokens": 8471,
+            "factoryCredits": 5714
+          },
+          "why": ""
         }
       ]
     },
@@ -150,11 +171,18 @@
       "variantId": "v09",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "fd86e261-a4ac-48ee-81ae-756c34dcd37f",
+          "success": true,
+          "durationMs": 125615,
+          "tokenUsage": {
+            "inputTokens": 2061,
+            "outputTokens": 15769,
+            "cacheCreationTokens": 37807,
+            "cacheReadTokens": 184642,
+            "thinkingTokens": 9559,
+            "factoryCredits": 5716
+          },
+          "why": ""
         }
       ]
     },
@@ -162,11 +190,18 @@
       "variantId": "v10",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "39fe062e-9500-4a0a-85bc-a5da8dfb2751",
+          "success": true,
+          "durationMs": 107946,
+          "tokenUsage": {
+            "inputTokens": 2063,
+            "outputTokens": 12994,
+            "cacheCreationTokens": 37512,
+            "cacheReadTokens": 226150,
+            "thinkingTokens": 6166,
+            "factoryCredits": 5312
+          },
+          "why": ""
         }
       ]
     },
@@ -174,11 +209,18 @@
       "variantId": "v11",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "29a68b5a-857c-4afa-8246-120a97f13791",
+          "success": true,
+          "durationMs": 115795,
+          "tokenUsage": {
+            "inputTokens": 2112,
+            "outputTokens": 14421,
+            "cacheCreationTokens": 37495,
+            "cacheReadTokens": 231017,
+            "thinkingTokens": 9312,
+            "factoryCredits": 5949
+          },
+          "why": ""
         }
       ]
     },
@@ -186,11 +228,18 @@
       "variantId": "v12",
       "attempts": [
         {
-          "sessionId": null,
-          "success": false,
-          "durationMs": null,
-          "tokenUsage": null,
-          "why": "aborted after 240s"
+          "sessionId": "001b5e75-b8bc-4688-98fb-8952e0f5f0a8",
+          "success": true,
+          "durationMs": 104828,
+          "tokenUsage": {
+            "inputTokens": 2136,
+            "outputTokens": 15325,
+            "cacheCreationTokens": 37849,
+            "cacheReadTokens": 175462,
+            "thinkingTokens": 8819,
+            "factoryCredits": 5618
+          },
+          "why": ""
         }
       ]
     }
