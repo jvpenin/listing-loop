@@ -2,9 +2,9 @@
 
 # Listing Loop
 
-**Generate product-grounded listings, review the options, and use sales evidence to make the next launch smarter.**
+**Generate product-grounded listings, review the options, and use sales evidence to make the next launch smarter.** with our exclusive beta!
 
-Built around the workflow of DNT, a Brazilian fashion seller on Shopee. Listing Loop brings competitor research, listing production and a versioned learning loop into one interface. The seller reviews every proposal; nothing is published automatically.
+Built and tested using real product and sales data from DNT, a Brazilian fashion seller on Shopee, We offer competitor research, tailored listings production, an iterative learning "looping" feature and dynamic price/promotion management. The seller reviews every proposal; nothing is published automatically... yet. Coming soon as an agent.
 
 [Run the demo](#run-the-demo) · [Inspect the evidence](#evidence-you-can-inspect) · [See how it works](#how-it-works)
 
@@ -12,10 +12,9 @@ Built around the workflow of DNT, a Brazilian fashion seller on Shopee. Listing 
 
 ## Why this exists
 
-For a small seller, launching a product means researching competitors, preparing images, writing copy and choosing what to test. After launch, a high click-through rate still does not explain which approach earns more profit.
-
-Listing Loop keeps the choices and their evidence together. It explores different approaches, covers and acquisition channels, then uses the store's history to update recommendations for the next round.
-
+For a small marketplace seller, launching a product is all about traction. Launching involves researching competitors, preparing images and text, and choosing how to advertise. Or in other words: a lot of time. 
+But traction is a domain of high variance, so no matter the effort, going narrow leaves profits on the table. With Fox.ai, sellers can finally target those profits, as the AI has the compute power to cast a wider net. 
+Fox AI buys sellers time while delivering an innovative, lean and agile approach to marketing.
 ## Run the demo
 
 The default is **replay mode**: existing results, real product photos and saved research. No API keys or Factory sessions are needed.
@@ -26,7 +25,7 @@ npm ci
 npm run dev
 ```
 
-Open **http://localhost:3000**. Start with the product, open the generated listings, approve a few, then visit **O que aprendemos** to compare the rounds. The product interface is in Brazilian Portuguese for its target sellers.
+Open **http://localhost:3000**. Start with the product, open the generated listings, approve a few, then visualise newly generated insights under **What did we learn?**. The product interface is available in English and in Brazilian Portuguese keeping the target group in mind.
 
 <details>
 <summary>See the product interface</summary>
