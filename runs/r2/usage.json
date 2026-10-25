@@ -1,19 +1,81 @@
 {
   "round": "r2",
-  "runs": [],
-  "learn": [
+  "runs": [
     {
-      "sessionId": "19562e2c-a462-45a7-aed9-d093518f00a5",
-      "success": true,
-      "durationMs": 47321,
-      "tokenUsage": {
-        "inputTokens": 426,
-        "outputTokens": 5053,
-        "cacheCreationTokens": 28963,
-        "cacheReadTokens": 66788,
-        "thinkingTokens": 1681,
-        "factoryCredits": 91302
-      }
+      "variantId": "v01",
+      "attempts": [
+        {
+          "sessionId": "e22375dc-8152-4a3e-8be5-c7c4ecdebef7",
+          "success": true,
+          "durationMs": 94954,
+          "tokenUsage": {
+            "inputTokens": 2198,
+            "outputTokens": 13783,
+            "cacheCreationTokens": 39493,
+            "cacheReadTokens": 227438,
+            "thinkingTokens": 7936,
+            "factoryCredits": 5864
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "attempts": [
+        {
+          "sessionId": "1e39948c-d0c2-4a10-927b-cefe6133ad37",
+          "success": true,
+          "durationMs": 111184,
+          "tokenUsage": {
+            "inputTokens": 2047,
+            "outputTokens": 14284,
+            "cacheCreationTokens": 39896,
+            "cacheReadTokens": 234181,
+            "thinkingTokens": 9197,
+            "factoryCredits": 6096
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "attempts": [
+        {
+          "sessionId": "03b718da-9319-4494-b9de-d2eef4b935fe",
+          "success": true,
+          "durationMs": 114583,
+          "tokenUsage": {
+            "inputTokens": 2022,
+            "outputTokens": 15809,
+            "cacheCreationTokens": 53823,
+            "cacheReadTokens": 173087,
+            "thinkingTokens": 9169,
+            "factoryCredits": 6486
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v06",
+      "attempts": [
+        {
+          "sessionId": "25339978-83ae-4c8a-ba9b-f2db7cf9e117",
+          "success": true,
+          "durationMs": 93186,
+          "tokenUsage": {
+            "inputTokens": 2163,
+            "outputTokens": 13525,
+            "cacheCreationTokens": 40359,
+            "cacheReadTokens": 275239,
+            "thinkingTokens": 7532,
+            "factoryCredits": 6113
+          },
+          "why": ""
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,27 @@
+┌─────────┬──────────┬────────────┬──────────────┬────────────┬───────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ (index) │ variante │ angulo     │ capa         │ aquisicao  │ mode      │ rationale                                                                                                         │
+├─────────┼──────────┼────────────┼──────────────┼────────────┼───────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'v01'    │ 'academia' │ 'solo_linha' │ 'organico' │ 'exploit' │ 'Aproveita o que já vence: angulo=academia lidera 7.65; capa=solo_linha lidera 8.76; aquisicao=organico sem dado' │
+│ 1       │ 'v02'    │ 'presente' │ 'solo_linha' │ 'afiliado' │ 'explore' │ 'Explora incerteza: angulo=presente sem dado; capa=solo_linha lidera 8.76; aquisicao=afiliado sem dado'           │
+│ 2       │ 'v04'    │ 'academia' │ 'uso'        │ 'afiliado' │ 'explore' │ 'Explora incerteza: angulo=academia lidera 7.65; capa=uso sem dado; aquisicao=afiliado sem dado'                  │
+│ 3       │ 'v06'    │ 'academia' │ 'solo_grade' │ 'organico' │ 'exploit' │ 'Aproveita o que já vence: angulo=academia lidera 7.65; capa=solo_grade sem dado; aquisicao=organico sem dado'    │
+└─────────┴──────────┴────────────┴──────────────┴────────────┴───────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+4 variantes, 2 explore, 2 exploit
+dados: 14 anúncios reais da DNT (Seller Center, 25/09 a 24/10/2026, linha TP001 com 100+ visitantes). Lucro antes de ADS: o export não traz o gasto com ADS. Todos rodam ADS, então o eixo aquisição não varia.
+[round] competitor intel -> /Users/joaocaldeira/Projects/listing-loop/runs/r2/intel.json
+[budget] round v01,v02,v04,v06: +4 paid sessions -> 31/36 used
+[v01] tools: Task
+[v02] tools: Task
+[v04] tools: Task
+[v06] tools: Task
+┌─────────┬───────────┬──────┬─────┬─────────┬──────────┐
+│ (index) │ variantId │ ok   │ why │ secs    │ attempts │
+├─────────┼───────────┼──────┼─────┼─────────┼──────────┤
+│ 0       │ 'v01'     │ true │ ''  │ '98.8'  │ 1        │
+│ 1       │ 'v02'     │ true │ ''  │ '115.1' │ 1        │
+│ 2       │ 'v04'     │ true │ ''  │ '118.3' │ 1        │
+│ 3       │ 'v06'     │ true │ ''  │ '96.5'  │ 1        │
+└─────────┴───────────┴──────┴─────┴─────────┴──────────┘
+this run: 4/4 ok, total 195.3s
+round r2: 4/4 ok | budget 31/36 sessions
+exit 0
