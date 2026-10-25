@@ -1,0 +1,19 @@
+{
+  "round": "r1",
+  "runs": [
+    {
+      "variantId": "v03",
+      "sessionId": "47e502a8-e849-4664-a8a0-5b797685f58d",
+      "success": true,
+      "durationMs": 112218,
+      "tokenUsage": {
+        "inputTokens": 871,
+        "outputTokens": 10342,
+        "cacheCreationTokens": 46038,
+        "cacheReadTokens": 171339,
+        "thinkingTokens": 3995,
+        "factoryCredits": 4920
+      }
+    }
+  ]
+}

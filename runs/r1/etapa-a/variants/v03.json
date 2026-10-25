@@ -1,0 +1,29 @@
+{
+  "variantId": "v03",
+  "axes": {
+    "angulo": "academia",
+    "capa": "uso",
+    "aquisicao": "afiliado",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Academia Kit 4 Feminino Sem Bojo Microfibra Cós Largo 4 Cores",
+  "description": "Kit 4 Top Cropped Academia Feminino: 4 cores por R$ 51,90, menos de R$ 13 por peça!\n\nTreine com conforto e estilo. Este kit traz 4 tops cropped femininos em cores que combinam com qualquer legging ou short de academia.\n\nCores do kit:\n- Preto\n- Branco\n- Azul marinho\n- Rosa pink\n\nPor que você vai amar:\n- Sem bojo: modelagem leve, sem enchimento\n- Decote redondo que fica bem em diferentes corpos\n- Alças largas para mais conforto no treino\n- Cós largo na parte de baixo, que mantém o top no lugar durante o movimento\n- Tecido em microfibra lisa, macio na pele\n\nIdeal para:\n- Musculação, pilates, yoga e corrida\n- Treino em casa\n- Dia a dia com look fitness\n\nFrases para o seu vídeo:\n- 4 tops de academia por menos de R$ 13 cada!\n- Uma cor para cada dia da semana\n- Preto, branco, azul marinho e rosa pink no mesmo kit\n\nComo cuidar: lave à mão ou na máquina em ciclo delicado, use sabão neutro e não use alvejante. Seque à sombra para manter a cor e a elasticidade.\n\nTamanhos: confira a tabela de medidas do anúncio antes de comprar. Em caso de dúvida, fale com a loja.\n\nO que vem no kit: 4 tops cropped (preto, branco, azul marinho e rosa pink).\n\nGaranta o seu kit agora pelo melhor preço.",
+  "keywords": [
+    "top cropped academia",
+    "kit top cropped",
+    "top cropped feminino",
+    "top sem bojo",
+    "top microfibra academia",
+    "cropped academia feminino",
+    "kit 4 tops academia",
+    "top cropped cós largo",
+    "top fitness feminino",
+    "roupa de academia feminina",
+    "top academia kit"
+  ],
+  "coverBrief": "Capa de uso em formato quadrado (1254 x 1254 px). Uma modelo de cabelo castanho ondulado faz um alongamento lateral em uma academia moderna com janelas amplas e luz natural, em movimento e com expressão de energia, sem pose de catálogo. Ela usa o top cropped preto com legging preta. No primeiro plano, sobre um banco de academia, há uma pilha dobrada dos outros três tops do kit (rosa pink, azul marinho e branco), para que as quatro cores fiquem visíveis. Fundo desfocado de academia, com espelhos e luz quente. Observação: a foto de referência não pôde ser anexada à geração, porque o gerador aceita apenas imagens geradas na sessão ou anexadas pelo usuário. O produto foi descrito apenas por texto, então o corte e os detalhes dos tops podem diferir levemente da foto de referência.",
+  "coverPath": "runs/r1/covers/v03.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de uso (modelo em movimento numa academia, com o kit de 4 cores visível) gera mais cliques do que uma capa de modelo parada no ângulo academia, quando o afiliado fala o preço por peça no vídeo."
+}

@@ -1,0 +1,18 @@
+{
+  "cap": 30,
+  "used": 2,
+  "log": [
+    {
+      "at": "2026-10-25T04:13:27.004Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "round v03"
+    },
+    {
+      "at": "2026-10-25T04:22:32.778Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "round v03"
+    }
+  ]
+}
