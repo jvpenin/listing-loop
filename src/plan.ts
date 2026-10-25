@@ -179,7 +179,8 @@ export function makePlan(round: string, from: string | undefined, seed: number):
     };
     // Exploit = every value has data and at least 2 of the 3 are proven (leader or pBetter >= 0.8).
     // With the (capa, angulo) compliance rule, all-3-proven would allow a single exploit per round.
-    const known = SCORED.every((a) => !!priors[a][axes[a]].stat);
+    // Known = measured in stats.json, or backed by a playbook rule (memory counts as knowledge).
+    const known = SCORED.every((a) => !!priors[a][axes[a]].stat || rulesFor(a, axes[a]).some(isPositive));
     const mode = known && SCORED.filter(strong).length >= 2 ? 'exploit' : 'explore';
     const notes: string[] = [];
     const evidence: string[] = [];

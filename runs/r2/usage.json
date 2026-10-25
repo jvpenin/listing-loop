@@ -1,0 +1,19 @@
+{
+  "round": "r2",
+  "runs": [],
+  "learn": [
+    {
+      "sessionId": "19562e2c-a462-45a7-aed9-d093518f00a5",
+      "success": true,
+      "durationMs": 47321,
+      "tokenUsage": {
+        "inputTokens": 426,
+        "outputTokens": 5053,
+        "cacheCreationTokens": 28963,
+        "cacheReadTokens": 66788,
+        "thinkingTokens": 1681,
+        "factoryCredits": 91302
+      }
+    }
+  ]
+}
