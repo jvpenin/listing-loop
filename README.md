@@ -1,6 +1,6 @@
-![Listing Loop — Better listings. A smarter next round. Lo, Fox and Spark guide a learning loop for small marketplace sellers.](app/public/readme/header.png)
+![Fox.ai — Better listings. A smarter next round. Lo, Fox and Spark guide a learning loop for small marketplace sellers.](app/public/readme/header.png)
 
-# Listing Loop
+# Fox.ai
 
 **Generate product-grounded listings, review the options, and use sales evidence to make the next launch smarter.** with our exclusive beta!
 
@@ -30,7 +30,7 @@ Open **http://localhost:3000**. Start with the product, open the generated listi
 <details>
 <summary>See the product interface</summary>
 
-![The Listing Loop launch screen, with the real DNT product, competitor research and Lo, Fox and Spark.](app/public/readme/product.png)
+![The Fox.ai launch screen, with the real DNT product, competitor research and Lo, Fox and Spark.](app/public/readme/product.png)
 
 </details>
 
