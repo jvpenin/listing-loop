@@ -1,6 +1,6 @@
 {
   "round": "r2",
-  "createdAt": "2026-10-25T07:38:55.359Z",
+  "createdAt": "2026-10-25T07:39:07.510Z",
   "dataQuality": "14 anúncios reais da DNT (Seller Center, 25/09 a 24/10/2026, linha TP001 com 100+ visitantes). Lucro antes de ADS: o export não traz o gasto com ADS. Todos rodam ADS, então o eixo aquisição não varia.",
   "playbookVersion": 2,
   "variants": [
@@ -278,8 +278,8 @@
         "aquisicao": "organico",
         "oferta": "kit4"
       },
-      "mode": "exploit",
-      "rationale": "Aproveita o que já vence: angulo=academia lidera 7.65; capa=modelo μ 5.53; aquisicao=organico sem dado",
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=academia lidera 7.65; capa=modelo μ 5.53; aquisicao=organico sem dado",
       "titleHook": "Sem Bojo Microfibra",
       "priorEvidence": [
         "angulo=academia: profitPer1kImpr μ=7.65 IC90 [6.81, 8.50] pBetter=0.97 n=11",

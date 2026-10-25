@@ -181,7 +181,8 @@ export function makePlan(round: string, from: string | undefined, seed: number):
     // With the (capa, angulo) compliance rule, all-3-proven would allow a single exploit per round.
     // Known = measured in stats.json, or backed by a playbook rule (memory counts as knowledge).
     const known = SCORED.every((a) => !!priors[a][axes[a]].stat || rulesFor(a, axes[a]).some(isPositive));
-    const mode = known && SCORED.filter(strong).length >= 2 ? 'exploit' : 'explore';
+    const hasAvoided = SCORED.some((a) => avoided.has(`${a}=${axes[a]}`));
+    const mode = known && !hasAvoided && SCORED.filter(strong).length >= 2 ? 'exploit' : 'explore';
     const notes: string[] = [];
     const evidence: string[] = [];
     for (const a of SCORED) {
