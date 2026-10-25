@@ -14,7 +14,7 @@ Built and tested using real product and sales data from DNT, a Brazilian fashion
 
 For a small marketplace seller, launching a product is all about traction. Launching involves researching competitors, preparing images and text, and choosing how to advertise. Or in other words: a lot of time. 
 But traction is a domain of high variance, so no matter the effort, going narrow leaves profits on the table. With Fox.ai, sellers can finally target those profits, as the AI has the compute power to cast a wider net. 
-Fox AI buys sellers time while delivering an innovative, lean and agile approach to marketing.
+Fox.ai buys sellers time while delivering an innovative, lean and agile approach to marketing.
 ## Run the demo
 
 The default is **replay mode**: existing results, real product photos and saved research. No API keys or Factory sessions are needed.

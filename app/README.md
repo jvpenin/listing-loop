@@ -1,4 +1,4 @@
-# Listing Loop · Front-end
+# Fox.ai · Front-end
 
 Interface em português para a loja DNT: lançamento, revisão dos anúncios, pesquisa de concorrência e aprendizado entre rodadas. Usa as artes Lo, Fox e Spark do guia visual fornecido, com o fundo retirado pela skill Imagegen. O arquivo original do guia permanece intacto; o recorte transparente está em `public/brand/mascots-cutout.png`.
 

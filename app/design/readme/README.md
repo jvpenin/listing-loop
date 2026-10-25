@@ -1,4 +1,4 @@
-# Listing Loop · README design kit
+# Fox.ai · README design kit
 
 A small GitHub-oriented kit for Cal Hacks judges and technical visitors. It follows the existing palette, Inter typography and Lo / Fox / Spark artwork. Two graphic bands carry the identity; the rest stays in accessible, searchable Markdown.
 
