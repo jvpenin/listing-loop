@@ -1,6 +1,6 @@
 {
   "round": "r1",
-  "createdAt": "2026-10-25T04:38:04.104Z",
+  "createdAt": "2026-10-25T05:17:35.797Z",
   "dataQuality": "base de demonstração: 3 reais + 12 simulados",
   "playbookVersion": 0,
   "variants": [
@@ -21,6 +21,7 @@
       },
       "mode": "exploit",
       "rationale": "Aproveita o que já vence: angulo=casual lidera 3.66; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
       "priorEvidence": [
         "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
         "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
@@ -44,6 +45,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=casual lidera 3.66; capa=modelo μ 2.61; aquisicao=afiliado μ 0.54",
+      "titleHook": "Preço por Peça",
       "priorEvidence": [
         "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
         "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
@@ -67,6 +69,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=presente sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
       "priorEvidence": [
         "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -89,6 +92,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=casual lidera 3.66; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
       "priorEvidence": [
         "angulo=casual: profitPer1kImpr μ=3.66 IC90 [0.73, 6.22] pBetter=0.93 n=4",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -111,6 +115,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=conforto sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
       "priorEvidence": [
         "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -133,6 +138,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=conforto sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
       "priorEvidence": [
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
       ]
@@ -154,6 +160,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=presente sem dado; capa=modelo μ 2.61; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
       "priorEvidence": [
         "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -176,6 +183,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=presente sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
       "priorEvidence": [
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
       ]
@@ -197,6 +205,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=conforto sem dado; capa=modelo μ 2.61; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
       "priorEvidence": [
         "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -219,6 +228,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=academia μ 0.88; capa=uso sem dado; aquisicao=organico lidera 3.58",
+      "titleHook": "Kit 4 Cores",
       "priorEvidence": [
         "angulo=academia: profitPer1kImpr μ=0.88 IC90 [-0.26, 1.99] pBetter=0.05 n=8",
         "aquisicao=organico: profitPer1kImpr μ=3.58 IC90 [1.65, 5.52] pBetter=0.98 n=5"
@@ -241,6 +251,7 @@
       },
       "mode": "exploit",
       "rationale": "Aproveita o que já vence: angulo=academia μ 0.88; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58",
+      "titleHook": "Preço por Peça",
       "priorEvidence": [
         "angulo=academia: profitPer1kImpr μ=0.88 IC90 [-0.26, 1.99] pBetter=0.05 n=8",
         "capa=solo_grade: profitPer1kImpr μ=3.17 IC90 [2.05, 4.30] pBetter=0.97 n=5",
@@ -264,6 +275,7 @@
       },
       "mode": "explore",
       "rationale": "Explora incerteza: angulo=academia μ 0.88; capa=modelo μ 2.61; aquisicao=organico lidera 3.58",
+      "titleHook": "Cós Largo",
       "priorEvidence": [
         "angulo=academia: profitPer1kImpr μ=0.88 IC90 [-0.26, 1.99] pBetter=0.05 n=8",
         "capa=modelo: profitPer1kImpr μ=2.61 IC90 [0.60, 4.73] pBetter=0.79 n=5",

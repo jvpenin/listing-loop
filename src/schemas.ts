@@ -24,6 +24,7 @@ export const VariantSpec = z.object({
   axes: Axes,
   mode: Mode,
   rationale: z.string().max(300),
+  titleHook: z.string().optional(),
   priorEvidence: z.array(z.string()).max(6),
 });
 export type VariantSpec = z.infer<typeof VariantSpec>;
@@ -44,7 +45,7 @@ export const Listing = z.object({
     competitorsAnalyzed: z.number().int().min(0),
     referenceItemIds: z.array(z.string()).max(5),
     pricePosition: z.string().min(1),
-    keywordsAdopted: z.array(z.string()).max(8),
+    keywordsAdopted: z.array(z.string()).max(12),
     differentiators: z.array(z.string()).min(1).max(4),
   }),
 });

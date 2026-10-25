@@ -1,0 +1,50 @@
+{
+  "variantId": "v02",
+  "axes": {
+    "angulo": "casual",
+    "capa": "modelo",
+    "aquisicao": "afiliado",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Casual Kit 4 Tops Microfibra Sem Bojo Cós Largo Moda Feminina 4 Cores",
+  "description": "Kit 4 Top Cropped Casual em microfibra lisa, sem bojo, com cós largo. Um top para cada dia, 4 cores por R$ 51,90.\n\nPor que esse kit:\n- 4 cores no mesmo kit: preto, branco, azul marinho e rosa pink\n- Preço por peça: R$ 12,98, menos que a maioria dos kits casuais\n- Microfibra lisa e macia, sem bojo e sem enchimento\n- Cós largo para uma base firme e confortável, com alças largas\n- Modelagem cropped: combina com calça de linho, jeans, saia e short\n\nFrases prontas para vídeo curto:\n- Quatro tops por R$ 51,90: sai R$ 12,98 cada\n- Look casual de rua com 4 cores diferentes\n- Sem bojo, microfibra lisa, cós largo\n- Se você usa top cropped no dia a dia, esse kit resolve as 4 cores de uma vez\n\nPara usar no dia a dia:\n- Look casual com top cropped e calça de linho ou jeans\n- Passeio, almoço, faculdade, viagem\n- Também funciona em casa, no descanso\n\nO que vem no kit:\n- 4 tops cropped femininos: 1 preto, 1 branco, 1 azul marinho, 1 rosa\n\nMaterial e cuidados:\n- Microfibra lisa\n- Recomendado lavar em ciclo delicado e secar à sombra para preservar a malha\n\nTamanhos: confira a tabela de medidas do anúncio antes de comprar.\n\nGaranta seu kit: 4 cores, 4 tops, R$ 12,98 por peça.",
+  "keywords": [
+    "top cropped casual",
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top cropped microfibra",
+    "top cropped sem bojo",
+    "moda casual feminina",
+    "top casual feminino",
+    "blusa cropped feminina casual",
+    "cropped feminino básico",
+    "top cropped cós largo",
+    "kit top cropped 4 cores",
+    "top cropped moda"
+  ],
+  "coverBrief": "Capa quadrada 1:1 gerada a partir da foto de referência anexada (data/product/photo.jpg), usada como referência de edição. Quatro modelos em uma fileira, cada uma com um dos tops do kit (preto, branco, azul marinho e rosa), com calça de linho bege de cintura alta, sorrisos naturais e mãos nos bolsos ou relaxadas, em clima de rua casual. Fundo neutro cinza-quente claro, luz natural suave, sem logos, com o texto KIT 4 no topo, como na referência. Os tops mantêm corte, decote canoa, alças largas, faixa inferior larga, microfibra lisa e as mesmas 4 cores da referência. O gerador não recusou a referência. Arquivo salvo como runs/r1/covers/v02.png (1254 x 1254 px).",
+  "coverPath": "runs/r1/covers/v02.png",
+  "appliedRules": [],
+  "hypothesis": "Capa modelo casual (4 modelos com as cores do kit, fundo neutro) com preço por peça no título e na descrição aumenta o clique do ângulo casual em afiliados, frente a capas de kit sem pessoas.",
+  "benchmark": {
+    "competitorsAnalyzed": 57,
+    "referenceItemIds": [
+      "58269308875",
+      "58206609367",
+      "58269533315",
+      "58218110445"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 15,00 dos 52 concorrentes casual com preço por peça; mais barato por peça que 67%. O preço total de R$ 51,90 fica 33% acima da mediana de R$ 39,00, mas kit de 4 é raro no casual (5% dos kits).",
+    "keywordsAdopted": [
+      "casual",
+      "moda",
+      "kit (95% dos títulos casual começam com kit)"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98: mais barato que 67% dos concorrentes casual (mediana R$ 15,00 por peça)",
+      "Kit de 4 peças com 4 cores no mesmo pedido, enquanto kits 2 e 3 dominam o casual (72% dos kits)",
+      "Microfibra lisa, sem bojo e cós largo; nenhum título casual de referência cita cós largo"
+    ]
+  }
+}

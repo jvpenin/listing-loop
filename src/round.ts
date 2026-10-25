@@ -171,6 +171,31 @@ async function runVariant(spec: VariantSpec): Promise<{ outcome: Outcome; usage:
   };
 }
 
+const titleWords = (t: string) => new Set(t.toLowerCase().match(/[a-zà-ú0-9]+/g) ?? []);
+
+// Near-duplicate titles inside one angle (Jaccard >= 0.8 on words) are a spam risk on Shopee.
+function similarTitles(plan: Plan): string[] {
+  const listings = plan.variants.flatMap((v) => {
+    const file = outputsOf(v).json;
+    if (!existsSync(file)) return [];
+    try {
+      return [{ id: v.variantId, angulo: v.axes.angulo, words: titleWords(Listing.parse(JSON.parse(readFileSync(file, 'utf8'))).title) }];
+    } catch {
+      return [];
+    }
+  });
+  const warnings: string[] = [];
+  for (const [i, a] of listings.entries()) {
+    for (const b of listings.slice(i + 1)) {
+      if (a.angulo !== b.angulo) continue;
+      const inter = [...a.words].filter((w) => b.words.has(w)).length;
+      const jaccard = inter / (a.words.size + b.words.size - inter);
+      if (jaccard >= 0.8) warnings.push(`${a.id}~${b.id} (${a.angulo}) títulos ${Math.round(jaccard * 100)}% iguais`);
+    }
+  }
+  return warnings;
+}
+
 // --only reruns update their rows and keep the rest of the round's record.
 function mergeById<T extends { variantId: string }>(file: string, key: string, rows: T[]): T[] {
   const old: T[] = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8'))[key] ?? []) : [];
@@ -226,14 +251,20 @@ async function main() {
   const outcomes = mergeById(summaryFile, 'variants', results.map((r) => r.outcome));
   const usages = mergeById(usageFile, 'runs', results.map((r) => r.usage));
   const okCount = outcomes.filter((o) => o.ok).length;
+  const titleWarnings = similarTitles(plan);
   writeFileSync(
     summaryFile,
-    JSON.stringify({ round, updatedAt: new Date().toISOString(), lastRunSecs: total, ok: okCount, total: outcomes.length, variants: outcomes }, null, 2) + '\n',
+    JSON.stringify(
+      { round, updatedAt: new Date().toISOString(), lastRunSecs: total, ok: okCount, total: outcomes.length, titleWarnings, variants: outcomes },
+      null,
+      2,
+    ) + '\n',
   );
   writeFileSync(usageFile, JSON.stringify({ round, runs: usages }, null, 2) + '\n');
 
   console.table(results.map(({ outcome: o }) => ({ ...o, secs: o.secs.toFixed(1) })));
   console.log(`this run: ${results.filter((r) => r.outcome.ok).length}/${results.length} ok, total ${total.toFixed(1)}s`);
+  for (const w of titleWarnings) console.warn(`[round] títulos parecidos: ${w}`);
   const budget = readBudget();
   console.log(`round ${round}: ${okCount}/${outcomes.length} ok | budget ${budget.used}/${budget.cap} sessions`);
   process.exitCode = results.every((r) => r.outcome.ok) ? 0 : 1;

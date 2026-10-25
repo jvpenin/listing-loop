@@ -1,6 +1,6 @@
 {
   "cap": 30,
-  "used": 2,
+  "used": 8,
   "log": [
     {
       "at": "2026-10-25T04:13:27.004Z",
@@ -13,6 +13,24 @@
       "round": "r1",
       "sessions": 1,
       "what": "round v03"
+    },
+    {
+      "at": "2026-10-25T05:12:05.707Z",
+      "round": "r1",
+      "sessions": 4,
+      "what": "round v01,v02,v04,v07"
+    },
+    {
+      "at": "2026-10-25T05:14:06.125Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "retry v01"
+    },
+    {
+      "at": "2026-10-25T05:14:42.785Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "retry v07"
     }
   ]
 }

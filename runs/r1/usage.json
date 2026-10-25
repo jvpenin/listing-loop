@@ -1,0 +1,109 @@
+{
+  "round": "r1",
+  "runs": [
+    {
+      "variantId": "v01",
+      "attempts": [
+        {
+          "sessionId": "ceeaa14b-25f4-4726-be03-bc6cf037a861",
+          "success": true,
+          "durationMs": 116431,
+          "tokenUsage": {
+            "inputTokens": 2090,
+            "outputTokens": 13282,
+            "cacheCreationTokens": 54061,
+            "cacheReadTokens": 251621,
+            "thinkingTokens": 7601,
+            "factoryCredits": 6618
+          },
+          "why": "invalid json: [ { \"origin\": \"array\", \"code\": \"too_big\", \"maximum\": 8, \"inclusive\": true, \"path\": [ \"benchmark\", \"keywordsAdopted\" ], \"message\": \"Too big: expected array to have <=8 items\" } ]"
+        },
+        {
+          "sessionId": "3cbf871f-8918-4d27-ab00-b2e844f63a78",
+          "success": true,
+          "durationMs": 142303,
+          "tokenUsage": {
+            "inputTokens": 2212,
+            "outputTokens": 18243,
+            "cacheCreationTokens": 46708,
+            "cacheReadTokens": 441480,
+            "thinkingTokens": 9789,
+            "factoryCredits": 7965
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "attempts": [
+        {
+          "sessionId": "d3856361-259c-43f3-b7bb-79b36ef633c9",
+          "success": true,
+          "durationMs": 143089,
+          "tokenUsage": {
+            "inputTokens": 2123,
+            "outputTokens": 15109,
+            "cacheCreationTokens": 40766,
+            "cacheReadTokens": 229958,
+            "thinkingTokens": 8288,
+            "factoryCredits": 5937
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "attempts": [
+        {
+          "sessionId": "19fa4a50-ee59-4d6f-8dd7-ed9adc47e152",
+          "success": true,
+          "durationMs": 120853,
+          "tokenUsage": {
+            "inputTokens": 2114,
+            "outputTokens": 12926,
+            "cacheCreationTokens": 50071,
+            "cacheReadTokens": 248704,
+            "thinkingTokens": 8017,
+            "factoryCredits": 6319
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v07",
+      "attempts": [
+        {
+          "sessionId": "3e0f4a89-5b16-4b56-967d-3d78b2e2a406",
+          "success": true,
+          "durationMs": 154355,
+          "tokenUsage": {
+            "inputTokens": 2083,
+            "outputTokens": 13312,
+            "cacheCreationTokens": 40419,
+            "cacheReadTokens": 188255,
+            "thinkingTokens": 5319,
+            "factoryCredits": 5362
+          },
+          "why": "invalid json: [ { \"origin\": \"array\", \"code\": \"too_big\", \"maximum\": 8, \"inclusive\": true, \"path\": [ \"benchmark\", \"keywordsAdopted\" ], \"message\": \"Too big: expected array to have <=8 items\" } ]"
+        },
+        {
+          "sessionId": "55f569c3-a453-4898-ad7e-f4294353ae6d",
+          "success": true,
+          "durationMs": 115696,
+          "tokenUsage": {
+            "inputTokens": 2156,
+            "outputTokens": 16070,
+            "cacheCreationTokens": 39054,
+            "cacheReadTokens": 271034,
+            "thinkingTokens": 10037,
+            "factoryCredits": 6439
+          },
+          "why": ""
+        }
+      ]
+    }
+  ]
+}

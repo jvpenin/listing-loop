@@ -21,7 +21,7 @@ You receive a VariantSpec as JSON:
 ## Step 2: write the listing (Brazilian Portuguese)
 - `title`: at most 120 characters. It MUST START with the keyword of the angle:
   - academia → "Top Cropped Academia ..." / casual → "Top Cropped Casual ..." / conforto → "Top Cropped Confortável ..." / presente → "Kit Presente Top Cropped ..." (or an equivalent that starts with the angle's keyword).
-  Mention "Kit 4" in the title.
+  Mention "Kit 4" in the title. If the spec has `titleHook`, put it right after the angle keyword: other variants of the same angle get different hooks, and their titles must not look alike (Shopee treats near-duplicate titles as spam).
 - `description`: at most 3000 characters, Shopee style (short paragraphs, bullet lines, sizes/material/care, what is in the kit). Built around the angle.
   If `aquisicao` = afiliado: highlight benefits that are easy for an affiliate to repeat in a short video (one-line hooks, price per piece, "4 cores por R$ X").
   If `aquisicao` = ads: the first 2 lines must carry the main search keywords.
@@ -37,7 +37,7 @@ Compare this variant with the real competitors in `angles.<angulo>` and write:
 - `competitorsAnalyzed`: `angles.<angulo>.n` (0 if there is no intel).
 - `referenceItemIds`: 2 to 5 `itemId`s from `topCompetitors` that you actually compared against (copy them exactly; never invent ids). [] only if there is no intel.
 - `pricePosition`: one sentence in Portuguese with the numbers, e.g. "R$ 12,98 por peça contra mediana de R$ 14,83 dos 66 concorrentes; mais barato por peça que 64%".
-- `keywordsAdopted`: the competitor words or bigrams (from `topWords`, `topBigrams`, `keywordGaps`) you used in the title, description or keywords. Use a `keywordGaps` word only if it is TRUE for this product (e.g. never "suplex", "bojo" or "alcinha": it is microfiber, no padding, wide straps).
+- `keywordsAdopted`: up to 8 competitor words or bigrams (from `topWords`, `topBigrams`, `keywordGaps`) you used in the title, description or keywords. Use a `keywordGaps` word only if it is TRUE for this product (e.g. never "suplex", "bojo" or "alcinha": it is microfiber, no padding, wide straps).
 - `differentiators`: 1 to 4 short reasons this kit wins against those competitors (price per piece, 4 colors, cós largo, sem bojo...), each backed by the data.
 Use the benchmark in the copy: the title follows the competitor title pattern when it helps search, and the description makes the price-per-piece argument when DNT is cheaper.
 

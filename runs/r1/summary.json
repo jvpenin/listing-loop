@@ -1,0 +1,37 @@
+{
+  "round": "r1",
+  "updatedAt": "2026-10-25T05:16:40.825Z",
+  "lastRunSecs": 275.109,
+  "ok": 4,
+  "total": 4,
+  "variants": [
+    {
+      "variantId": "v01",
+      "ok": true,
+      "why": "",
+      "secs": 265.099,
+      "attempts": 2
+    },
+    {
+      "variantId": "v02",
+      "ok": true,
+      "why": "",
+      "secs": 145.56,
+      "attempts": 1
+    },
+    {
+      "variantId": "v04",
+      "ok": true,
+      "why": "",
+      "secs": 123.693,
+      "attempts": 1
+    },
+    {
+      "variantId": "v07",
+      "ok": true,
+      "why": "",
+      "secs": 275.09,
+      "attempts": 2
+    }
+  ]
+}

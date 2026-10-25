@@ -1,0 +1,52 @@
+{
+  "variantId": "v01",
+  "axes": {
+    "angulo": "casual",
+    "capa": "solo_grade",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "exploit",
+  "title": "Top Cropped Casual Kit 4 Tops Microfibra Sem Bojo Cós Largo Moda Verão 4 Cores",
+  "description": "Kit 4 Top Cropped Casual em microfibra lisa, sem bojo, com cós largo e alça larga. Quatro tops por R$ 51,90, sai R$ 12,98 cada.\n\nPor que esse kit:\n- 4 cores no mesmo kit: preto, branco, azul marinho e rosa\n- Preço por peça de R$ 12,98, mais barato que a maioria dos kits casuais\n- Microfibra lisa e macia, sem bojo e sem enchimento\n- Cós largo para uma base firme e confortável\n- Alças largas, como na foto\n\nModa verão para o dia a dia:\n- Combina com calça de linho, jeans, saia e short\n- Passeio, almoço, faculdade, viagem ou um dia de folga em casa\n- Modelagem cropped para um look fresco de verão\n\nFrases prontas para vídeo curto:\n- Quatro tops por R$ 51,90: sai R$ 12,98 cada\n- Look casual de rua com 4 cores diferentes\n- Sem bojo, microfibra lisa, cós largo\n\nO que vem no kit:\n- 4 tops cropped femininos: 1 preto, 1 branco, 1 azul marinho e 1 rosa\n\nMaterial e cuidados:\n- Microfibra lisa\n- Lave em ciclo delicado e seque à sombra para preservar a malha\n\nTamanhos: confira a tabela de medidas do anúncio antes de comprar.\n\nGaranta seu kit: 4 cores, 4 tops, R$ 12,98 por peça.",
+  "keywords": [
+    "top cropped casual",
+    "kit top cropped feminino",
+    "kit 4 tops cropped",
+    "top cropped microfibra",
+    "top cropped sem bojo",
+    "moda casual feminina",
+    "blusa cropped casual",
+    "regata cropped feminina",
+    "moda verão feminina",
+    "top cropped cós largo"
+  ],
+  "coverBrief": "Capa quadrada 1254 x 1254 px no formato solo_grade, sem pessoas. Gerada por image-to-image a partir da foto de referência anexada à sessão (data/product/photo.jpg, enviada pela cópia anexada, porque o gerador recusou o caminho do repositório). Os quatro tops ficam em grade 2x2 sobre fundo neutro bege claro com textura suave de linho, luz natural difusa e sombra leve, em clima de rua casual. Preto em cima à esquerda, branco em cima à direita, azul marinho embaixo à esquerda e rosa embaixo à direita. Corte, decote arredondado, alças largas, faixa inferior larga e microfibra lisa iguais à referência, com o texto KIT 4 no topo, como na foto. O gerador não recusou a referência. Arquivo salvo em runs/r1/covers/v01.png.",
+  "coverPath": "runs/r1/covers/v01.png",
+  "appliedRules": [],
+  "hypothesis": "",
+  "benchmark": {
+    "competitorsAnalyzed": 57,
+    "referenceItemIds": [
+      "58269308875",
+      "58206609367",
+      "58267373854",
+      "58218110445"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 15,00 dos 52 concorrentes casual com preço por peça; mais barato por peça que 67%. O preço total de R$ 51,90 fica 33% acima da mediana de R$ 39,00, por isso a argumentação usa o preço por peça.",
+    "keywordsAdopted": [
+      "casual",
+      "moda",
+      "verão",
+      "moda verão",
+      "blusa",
+      "regata",
+      "alça"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98: mais barato que 67% dos concorrentes casual (mediana R$ 15,00 por peça)",
+      "4 cores no mesmo kit (preto, branco, azul marinho, rosa); kits 2 e 3 dominam o casual com 72% dos anúncios",
+      "Microfibra lisa, sem bojo, cós largo e alças largas; nenhum dos 8 concorrentes casual listados cita cós largo"
+    ]
+  }
+}

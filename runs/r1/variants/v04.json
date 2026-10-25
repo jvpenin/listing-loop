@@ -1,0 +1,52 @@
+{
+  "variantId": "v04",
+  "axes": {
+    "angulo": "casual",
+    "capa": "uso",
+    "aquisicao": "organico",
+    "oferta": "kit4"
+  },
+  "mode": "explore",
+  "title": "Top Cropped Casual Kit 4 Feminino Sem Bojo Microfibra Cós Largo Moda Verão 4 Cores",
+  "description": "Top Cropped Casual Kit 4 para o dia a dia: 4 cores no mesmo kit\n\nProcurando um top cropped casual feminino que combine com tudo? Este kit traz 4 tops cropped nas cores preto, branco, azul marinho e rosa.\n\n- Kit com 4 tops cropped femininos (preto, branco, azul marinho e rosa)\n- Microfibra lisa, toque macio e caimento confortável\n- Sem bojo: modelagem básica para o dia a dia\n- Decote redondo, alças largas e cós largo na barra\n- Para looks casuais, passeios e combinações de verão\n\nPor que este top cropped casual vale a pena\n- Preço por peça: R$ 12,98 (4 tops por R$ 51,90)\n- 4 cores para combinar com calça de linho, jeans, saia midi ou short de cintura alta\n- Peça coringa do guarda-roupa de verão\n\nTop cropped feminino para moda verão\nO top cropped feminino de microfibra é uma peça básica da moda casual: fica confortável no calor, tem toque liso e pode ser usado sozinho ou por baixo de camisa aberta.\n\nMaterial e cuidados\n- Microfibra lisa, sem bojo\n- Lavar à mão ou no ciclo delicado, à sombra\n- Não usar alvejante, para manter a cor do preto, branco, azul marinho e rosa\n\nTamanhos\nConfira a tabela de medidas do anúncio antes de escolher o tamanho.",
+  "keywords": [
+    "top cropped casual",
+    "kit top cropped",
+    "kit 4 top cropped",
+    "top cropped feminino",
+    "top cropped sem bojo",
+    "top cropped microfibra",
+    "cropped casual feminino",
+    "moda verão feminina",
+    "top casual feminino",
+    "cropped moda verão",
+    "top cropped básico",
+    "kit cropped feminino"
+  ],
+  "coverBrief": "Foto quadrada 1:1 gerada a partir da foto de referência (image-to-image): quatro mulheres caminhando e sorrindo numa calçada ensolarada de cidade brasileira, com fundo desfocado de árvores e fachada de café, em movimento leve e sem pose de catálogo. Cada mulher usa um dos quatro tops nas cores da referência (preto, branco, azul marinho e rosa pink), com calça de linho bege de perna larga, mantendo o mesmo corte, decote redondo, alças largas, faixa larga inferior e microfibra lisa. Texto 'KIT 4' em preto no topo, como na referência. O gerador aceitou a referência sem recusa.",
+  "coverPath": "runs/r1/covers/v04.png",
+  "appliedRules": [],
+  "hypothesis": "Capa de uso (quatro modelos caminhando na rua, em movimento, com as quatro cores) gera mais cliques que a capa de catálogo no ângulo casual com aquisição orgânica.",
+  "benchmark": {
+    "competitorsAnalyzed": 57,
+    "referenceItemIds": [
+      "58269308875",
+      "58206609367",
+      "58267373854",
+      "58218110445"
+    ],
+    "pricePosition": "R$ 12,98 por peça contra mediana de R$ 15,00 dos 52 concorrentes casual com preço por peça; mais barato por peça que 67% deles, mas o kit de R$ 51,90 fica 33% acima da mediana total de R$ 39,00.",
+    "keywordsAdopted": [
+      "casual",
+      "moda",
+      "verão",
+      "moda verão"
+    ],
+    "differentiators": [
+      "Preço por peça de R$ 12,98, mais barato que 67% dos concorrentes casual (mediana de R$ 15,00 por peça).",
+      "Kit com 4 cores (preto, branco, azul marinho e rosa): kit4 é só 5% dos concorrentes casual (kit2 lidera com 42%), o que destaca a quantidade por preço.",
+      "Microfibra lisa, sem bojo e cós largo, atributos reais do produto; nenhum dos 8 concorrentes casual de topCompetitors cita microfibra no título.",
+      "Top cropped casual com 4 cores para combinar com looks de verão, sem depender de termos como suplex ou alcinha que não descrevem o produto."
+    ]
+  }
+}

@@ -59,6 +59,10 @@ function rng(seed: number) {
   };
 }
 
+// Same-angle variants share the angle keyword at the start of the title; a distinct hook right
+// after it keeps their titles apart (Shopee flags near-duplicate listings as spam).
+const TITLE_HOOKS = ['Kit 4 Cores', 'Preço por Peça', 'Cós Largo', 'Sem Bojo Microfibra'];
+
 const sdOf = (s: ValueStat) => Math.max((s.ci90[1] - s.ci90[0]) / 3.29, 1e-6);
 const fmt = (x: number) => x.toFixed(2);
 
@@ -143,7 +147,10 @@ export function makePlan(round: string, from: string | undefined, seed: number):
     chosen.push(pick);
   }
 
+  const hookIndex = new Map<string, number>();
   const variants: VariantSpec[] = chosen.map((axes, i) => {
+    const h = hookIndex.get(axes.angulo) ?? 0;
+    hookIndex.set(axes.angulo, h + 1);
     const strong = (a: ScoredAxis) => {
       const s = priors[a][axes[a]].stat;
       return (!!s && (best[a] === axes[a] || (s.pBetter ?? 0) >= 0.8)) || rulesFor(a, axes[a]).some(isPositive);
@@ -179,6 +186,7 @@ export function makePlan(round: string, from: string | undefined, seed: number):
       axes,
       mode,
       rationale,
+      titleHook: TITLE_HOOKS[h % TITLE_HOOKS.length],
       priorEvidence: evidence.slice(0, 6),
     };
   });
