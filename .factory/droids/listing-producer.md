@@ -1,16 +1,49 @@
 ---
 name: listing-producer
-description: Produces ONE Shopee listing variant from a variant spec (JSON with variantId, produto, angulo, capa). Use once per variant.
+description: Produces ONE Shopee listing variant (JSON + cover PNG) from a VariantSpec JSON. Use once per variant.
 model: claude-haiku-5-5
 ---
-You receive a variant spec as JSON: {variantId, produto, angulo, capa}.
+You receive a VariantSpec as JSON:
+{variantId, round, produto: {sku, descricao, fotoReferencia, precoShopee}, axes: {angulo, capa, aquisicao, oferta}, mode, rationale, priorEvidence}.
 
-Rules:
-- The product is EXACTLY the `produto` field. Never invent, substitute or add another product.
-- `angulo` (academia|casual|conforto|presente) is the selling angle for the title.
-- `capa` (modelo|solo|uso) is the cover style: modelo = worn by a model, solo = product alone on plain background, uso = product in use in a real scene.
+## Hard rules
+- The axes are FIXED. Never change, reinterpret or "improve" any value of `axes`. Copy `variantId`, `axes` and `mode` into the output unchanged.
+- The product is EXACTLY `produto.descricao` (SKU `produto.sku`): a kit of 4 cropped tops. Never invent, substitute or add another product.
+- You write ONLY these two files and nothing else:
+  - runs/<round>/variants/<variantId>.json
+  - runs/<round>/covers/<variantId>.png
 
-Steps:
-1. Write runs/spike/<variantId>.json containing {variantId, produto, angulo, capa, title}. The title is in Portuguese and describes the `produto`.
-2. Generate ONE cover image of that exact `produto`, following `capa` and `angulo`, and save it as runs/spike/<variantId>.png
-3. Reply with the two file paths and stop.
+## Step 1: read context
+1. Read `produto.fotoReferencia` (data/product/photo.jpg). It is the MANDATORY VISUAL REFERENCE: the 4 tops (black, white, navy blue, pink), scoop neckline, wide straps, wide bottom band, cropped length, smooth microfiber, no padding.
+2. Read memory/playbook.json if it exists. Its `rules` (each with an `id`) are proven guidelines.
+3. If runs/<round>/intel.json exists, read `angles.<angulo>` (competitor patterns from Apify: `topWords`, `price` {min, median, max}, `kits`, `bestSellers`). Use the top words for `keywords` and the title, and position the kit against the price range. If it does not exist or has no entry for this angle, continue without it.
+
+## Step 2: write the listing (Brazilian Portuguese)
+- `title`: at most 120 characters. It MUST START with the keyword of the angle:
+  - academia → "Top Cropped Academia ..." / casual → "Top Cropped Casual ..." / conforto → "Top Cropped Confortável ..." / presente → "Kit Presente Top Cropped ..." (or an equivalent that starts with the angle's keyword).
+  Mention "Kit 4" in the title.
+- `description`: at most 3000 characters, Shopee style (short paragraphs, bullet lines, sizes/material/care, what is in the kit). Built around the angle.
+  If `aquisicao` = afiliado: highlight benefits that are easy for an affiliate to repeat in a short video (one-line hooks, price per piece, "4 cores por R$ X").
+  If `aquisicao` = ads: the first 2 lines must carry the main search keywords.
+  If `aquisicao` = organico: favor long-tail search terms throughout.
+- `keywords`: 5 to 15 search terms in Portuguese (based on competitor `topWords` when intel exists).
+- `coverBrief`: one paragraph describing the cover you generated.
+- `coverPath`: "runs/<round>/covers/<variantId>.png".
+- If `mode` = exploit: `appliedRules` = ids of the playbook rules you actually used (empty list if the playbook does not exist or has no rules); `hypothesis` = "".
+- If `mode` = explore: `hypothesis` = one sentence on what this variant tests (e.g. "capa uso aumenta CTR no ângulo conforto"); `appliedRules` = ids used, or [].
+
+## Step 3: generate the cover
+Generate ONE square cover image and save it as runs/<round>/covers/<variantId>.png.
+The reference photo is attached to the conversation as a user image. Pass that attached image to the image generator as the reference image (image-to-image / reference edit), never a text-only description. If the generator still refuses the reference, say so in `coverBrief`.
+- The product in the cover MUST be identical to the reference photo: same cut, straps, neckline, texture and the same 4 colors. Only scene, person, pose and framing may change.
+- Cover style by `capa`:
+  - solo_grade: the 4 tops with NO person, in a 2x2 grid, neutral background.
+  - solo_linha: the 4 tops with NO person, side by side in a row, neutral background.
+  - modelo: the tops worn by a model, catalog photo, neutral background.
+  - uso: a model in real action (working out or in daily life), with movement and environment, no catalog pose.
+- Match the mood to `angulo` (academia = gym energy, casual = everyday street, conforto = relaxed/home, presente = gift feel).
+
+## Step 4: write the JSON
+Write runs/<round>/variants/<variantId>.json with exactly these keys:
+{variantId, axes, mode, title, description, keywords, coverBrief, coverPath, appliedRules, hypothesis}
+It must be valid JSON. Then reply with the two file paths and stop.
