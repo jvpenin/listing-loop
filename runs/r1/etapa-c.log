@@ -1,0 +1,37 @@
+┌─────────┬──────────┬────────────┬──────────────┬────────────┬───────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ (index) │ variante │ angulo     │ capa         │ aquisicao  │ mode      │ rationale                                                                                                       │
+├─────────┼──────────┼────────────┼──────────────┼────────────┼───────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'v02'    │ 'casual'   │ 'modelo'     │ 'afiliado' │ 'explore' │ 'Explora incerteza: angulo=casual lidera 3.66; capa=modelo μ 2.61; aquisicao=afiliado μ 0.54'                   │
+│ 1       │ 'v03'    │ 'presente' │ 'solo_grade' │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=presente sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58'      │
+│ 2       │ 'v04'    │ 'casual'   │ 'uso'        │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=casual lidera 3.66; capa=uso sem dado; aquisicao=organico lidera 3.58'               │
+│ 3       │ 'v05'    │ 'conforto' │ 'solo_grade' │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=conforto sem dado; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58'      │
+│ 4       │ 'v06'    │ 'conforto' │ 'uso'        │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=conforto sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58'                │
+│ 5       │ 'v08'    │ 'presente' │ 'uso'        │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=presente sem dado; capa=uso sem dado; aquisicao=organico lidera 3.58'                │
+│ 6       │ 'v09'    │ 'conforto' │ 'modelo'     │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=conforto sem dado; capa=modelo μ 2.61; aquisicao=organico lidera 3.58'               │
+│ 7       │ 'v10'    │ 'academia' │ 'uso'        │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=academia μ 0.88; capa=uso sem dado; aquisicao=organico lidera 3.58'                  │
+│ 8       │ 'v11'    │ 'academia' │ 'solo_grade' │ 'organico' │ 'exploit' │ 'Aproveita o que já vence: angulo=academia μ 0.88; capa=solo_grade lidera 3.17; aquisicao=organico lidera 3.58' │
+│ 9       │ 'v12'    │ 'academia' │ 'modelo'     │ 'organico' │ 'explore' │ 'Explora incerteza: angulo=academia μ 0.88; capa=modelo μ 2.61; aquisicao=organico lidera 3.58'                 │
+└─────────┴──────────┴────────────┴──────────────┴────────────┴───────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+10 variantes, 9 explore, 1 exploit
+dados: base de demonstração: 3 reais + 12 simulados
+[round] competitor intel -> /Users/joaocaldeira/Projects/listing-loop/runs/r1/intel.json
+[budget] round v02,v03,v04,v05,v06,v08,v09,v10,v11,v12: +10 paid sessions -> 18/30 used
+[v03] tools: Task
+┌─────────┬───────────┬───────┬──────────────────────┬──────────┬──────────┐
+│ (index) │ variantId │ ok    │ why                  │ secs     │ attempts │
+├─────────┼───────────┼───────┼──────────────────────┼──────────┼──────────┤
+│ 0       │ 'v02'     │ false │ 'aborted after 240s' │ '1064.9' │ 1        │
+│ 1       │ 'v03'     │ true  │ ''                   │ '163.2'  │ 1        │
+│ 2       │ 'v04'     │ false │ 'aborted after 240s' │ '1064.9' │ 1        │
+│ 3       │ 'v05'     │ false │ 'aborted after 240s' │ '1064.9' │ 1        │
+│ 4       │ 'v06'     │ false │ 'aborted after 240s' │ '901.8'  │ 1        │
+│ 5       │ 'v08'     │ false │ 'aborted after 240s' │ '240.0'  │ 1        │
+│ 6       │ 'v09'     │ false │ 'aborted after 240s' │ '240.0'  │ 1        │
+│ 7       │ 'v10'     │ false │ 'aborted after 240s' │ '240.0'  │ 1        │
+│ 8       │ 'v11'     │ false │ 'aborted after 240s' │ '240.0'  │ 1        │
+│ 9       │ 'v12'     │ false │ 'aborted after 240s' │ '905.1'  │ 1        │
+└─────────┴───────────┴───────┴──────────────────────┴──────────┴──────────┘
+this run: 1/10 ok, total 2210.1s
+[round] títulos parecidos: v03~v07 (presente) títulos 80% iguais
+round r1: 3/12 ok | budget 18/30 sessions
+exit 1

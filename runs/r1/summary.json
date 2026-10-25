@@ -1,9 +1,12 @@
 {
   "round": "r1",
-  "updatedAt": "2026-10-25T05:16:40.825Z",
-  "lastRunSecs": 275.109,
-  "ok": 4,
-  "total": 4,
+  "updatedAt": "2026-10-25T06:01:05.037Z",
+  "lastRunSecs": 2210.105,
+  "ok": 5,
+  "total": 12,
+  "titleWarnings": [
+    "v03~v07 (presente) títulos 80% iguais"
+  ],
   "variants": [
     {
       "variantId": "v01",
@@ -15,15 +18,36 @@
     {
       "variantId": "v02",
       "ok": true,
+      "why": "recuperado: saídas válidas, conductor travou após o subagente terminar",
+      "secs": 1064.942,
+      "attempts": 1
+    },
+    {
+      "variantId": "v03",
+      "ok": true,
       "why": "",
-      "secs": 145.56,
+      "secs": 163.178,
       "attempts": 1
     },
     {
       "variantId": "v04",
       "ok": true,
-      "why": "",
-      "secs": 123.693,
+      "why": "restaurado da etapa (b) (commit 528938a); título parecido com v01",
+      "secs": 1064.913,
+      "attempts": 1
+    },
+    {
+      "variantId": "v05",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 1064.944,
+      "attempts": 1
+    },
+    {
+      "variantId": "v06",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 901.773,
       "attempts": 1
     },
     {
@@ -32,6 +56,41 @@
       "why": "",
       "secs": 275.09,
       "attempts": 2
+    },
+    {
+      "variantId": "v08",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 240.039,
+      "attempts": 1
+    },
+    {
+      "variantId": "v09",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 240.034,
+      "attempts": 1
+    },
+    {
+      "variantId": "v10",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 240.031,
+      "attempts": 1
+    },
+    {
+      "variantId": "v11",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 240.03,
+      "attempts": 1
+    },
+    {
+      "variantId": "v12",
+      "ok": false,
+      "why": "aborted after 240s",
+      "secs": 905.149,
+      "attempts": 1
     }
   ]
 }

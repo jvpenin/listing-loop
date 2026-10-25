@@ -23,8 +23,8 @@ export const eixos = {
 export const modelos = { conductor: 'claude-haiku-5-5', producer: 'claude-haiku-5-5' } as const;
 
 export const variantesPorRodada = 12;
-export const concorrencia = 4;
-export const timeoutMs = 240_000;
+export const concorrencia = 3;
+export const timeoutMs = 360_000;
 
 // Demo budget guard: a variant whose output is bad (missing file, Zod error, axes changed) is redone
 // once, at most `maxRetriesPerRun` times per execution and only while the budget has

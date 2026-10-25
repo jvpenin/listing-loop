@@ -38,16 +38,28 @@
       "variantId": "v02",
       "attempts": [
         {
-          "sessionId": "d3856361-259c-43f3-b7bb-79b36ef633c9",
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v03",
+      "attempts": [
+        {
+          "sessionId": "cb86c227-7856-4d09-bcb8-dc8c6e3428b9",
           "success": true,
-          "durationMs": 143089,
+          "durationMs": 159572,
           "tokenUsage": {
-            "inputTokens": 2123,
-            "outputTokens": 15109,
-            "cacheCreationTokens": 40766,
-            "cacheReadTokens": 229958,
-            "thinkingTokens": 8288,
-            "factoryCredits": 5937
+            "inputTokens": 2079,
+            "outputTokens": 16406,
+            "cacheCreationTokens": 42103,
+            "cacheReadTokens": 230921,
+            "thinkingTokens": 10637,
+            "factoryCredits": 6471
           },
           "why": ""
         }
@@ -57,18 +69,35 @@
       "variantId": "v04",
       "attempts": [
         {
-          "sessionId": "19fa4a50-ee59-4d6f-8dd7-ed9adc47e152",
-          "success": true,
-          "durationMs": 120853,
-          "tokenUsage": {
-            "inputTokens": 2114,
-            "outputTokens": 12926,
-            "cacheCreationTokens": 50071,
-            "cacheReadTokens": 248704,
-            "thinkingTokens": 8017,
-            "factoryCredits": 6319
-          },
-          "why": ""
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v05",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v06",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
         }
       ]
     },
@@ -102,6 +131,66 @@
             "factoryCredits": 6439
           },
           "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v08",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v09",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v10",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v11",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
+        }
+      ]
+    },
+    {
+      "variantId": "v12",
+      "attempts": [
+        {
+          "sessionId": null,
+          "success": false,
+          "durationMs": null,
+          "tokenUsage": null,
+          "why": "aborted after 240s"
         }
       ]
     }

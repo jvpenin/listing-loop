@@ -9,6 +9,7 @@ You receive a VariantSpec as JSON:
 ## Hard rules
 - The axes are FIXED. Never change, reinterpret or "improve" any value of `axes`. Copy `variantId`, `axes` and `mode` into the output unchanged.
 - The product is EXACTLY `produto.descricao` (SKU `produto.sku`): a kit of 4 cropped tops. Never invent, substitute or add another product.
+- Never run git or any shell command that is not needed to write your two files: time is limited.
 - You write ONLY these two files and nothing else:
   - runs/<round>/variants/<variantId>.json
   - runs/<round>/covers/<variantId>.png

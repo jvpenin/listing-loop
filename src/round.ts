@@ -1,3 +1,4 @@
+import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -108,12 +109,12 @@ const referenceImage = () => ({
   mediaType: 'image/jpeg' as const,
 });
 
-// `badOutput` marks the failures worth one more paid attempt (the agent ran but its files are wrong).
-async function runAttempt(spec: VariantSpec, previousProblem?: string): Promise<Attempt & { badOutput: boolean }> {
+type AttemptResult = Attempt & { badOutput: boolean };
+
+// Runs inside a worker process (see spawnAttempt). `badOutput` marks the failures worth one more
+// paid attempt (the agent ran but its files are wrong).
+async function runAttempt(spec: VariantSpec, previousProblem?: string): Promise<AttemptResult> {
   const id = spec.variantId;
-  const { json, png } = outputsOf(spec);
-  rmSync(json, { force: true });
-  rmSync(png, { force: true });
   const signal = AbortSignal.timeout(timeoutMs);
   try {
     const result = await run(promptFor(spec, previousProblem), {
@@ -144,6 +145,48 @@ async function runAttempt(spec: VariantSpec, previousProblem?: string): Promise<
   }
 }
 
+const RESULT_TAG = '__ATTEMPT_RESULT__';
+
+// The SDK's abortSignal does not interrupt a model call in flight (r1 stage c: conductors hung 15 min
+// after a timeout and held the pool). Each attempt runs in its own process group, killed on timeout.
+// Outputs are checked even after a kill or an error: if the files are valid, the work is done.
+function spawnAttempt(spec: VariantSpec, previousProblem?: string): Promise<AttemptResult> {
+  const id = spec.variantId;
+  const { json, png } = outputsOf(spec);
+  rmSync(json, { force: true });
+  rmSync(png, { force: true });
+  const args = ['tsx', __filename, '--round', spec.round, '--worker', id, ...(previousProblem ? ['--problem', previousProblem] : [])];
+  const child = spawn('npx', args, { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'inherit'] });
+  let out = '';
+  child.stdout.on('data', (d: Buffer) => {
+    const text = d.toString();
+    out += text;
+    for (const line of text.split('\n')) if (line && !line.startsWith(RESULT_TAG)) console.log(line);
+  });
+  return new Promise((resolve) => {
+    let killed = false;
+    const timer = setTimeout(() => {
+      killed = true;
+      try {
+        process.kill(-child.pid!, 'SIGKILL');
+      } catch {}
+    }, timeoutMs + 15_000);
+    child.on('close', () => {
+      clearTimeout(timer);
+      const line = out.split('\n').find((l) => l.startsWith(RESULT_TAG));
+      const result: AttemptResult = line
+        ? JSON.parse(line.slice(RESULT_TAG.length))
+        : { sessionId: null, success: false, durationMs: null, tokenUsage: null, why: killed ? `killed after ${timeoutMs / 1000}s` : 'worker exited without result', badOutput: false };
+      if (result.why && checkOutputs(spec) === null) {
+        console.log(`[${id}] outputs valid despite: ${result.why}`);
+        result.why = '';
+        result.badOutput = false;
+      }
+      resolve(result);
+    });
+  });
+}
+
 // Shared by the concurrent variants of one execution (JS is single-threaded, so no race).
 let retriesLeft: number = retry.maxRetriesPerRun;
 
@@ -151,14 +194,14 @@ async function runVariant(spec: VariantSpec): Promise<{ outcome: Outcome; usage:
   const id = spec.variantId;
   const start = Date.now();
   const attempts: Attempt[] = [];
-  let last = await runAttempt(spec);
+  let last = await spawnAttempt(spec);
   attempts.push(last);
   if (last.badOutput) {
     if (retriesLeft > 0 && remaining() - 1 >= retry.minBudgetLeftForRetry) {
       retriesLeft--;
       reserveSessions(1, spec.round, `retry ${id}`);
       console.log(`[${id}] bad output (${last.why}), redoing once`);
-      last = await runAttempt(spec, last.why);
+      last = await spawnAttempt(spec, last.why);
       attempts.push(last);
     } else {
       console.log(`[${id}] bad output, no retry left (retries ${retriesLeft}, budget left ${remaining()})`);
@@ -216,10 +259,21 @@ async function main() {
   // FACTORY_API_KEY lives in .env; the SDK only reads process.env.
   if (!process.env.FACTORY_API_KEY) process.loadEnvFile(join(ROOT, '.env'));
 
-  const { values } = parseArgs({ options: { round: { type: 'string' }, only: { type: 'string' } } });
+  const { values } = parseArgs({
+    options: { round: { type: 'string' }, only: { type: 'string' }, worker: { type: 'string' }, problem: { type: 'string' } },
+  });
   const round = values.round;
   if (!round) throw new Error('--round is required');
   const dir = runDir(round);
+
+  if (values.worker) {
+    const plan = Plan.parse(JSON.parse(readFileSync(join(dir, 'plan.json'), 'utf8')));
+    const spec = plan.variants.find((v) => v.variantId === values.worker);
+    if (!spec) throw new Error(`no variant ${values.worker}`);
+    const result = await runAttempt(spec, values.problem);
+    process.stdout.write(`${RESULT_TAG}${JSON.stringify(result)}\n`);
+    process.exit(0);
+  }
 
   const planFile = join(dir, 'plan.json');
   if (!existsSync(planFile)) {
