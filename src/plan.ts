@@ -38,7 +38,7 @@ function loadStats(file: string): Stats {
   const perListing: { profitPer1kImpr: number }[] = raw.perListing ?? [];
   if (perListing.length) out.overallMean = perListing.reduce((s, l) => s + l.profitPer1kImpr, 0) / perListing.length;
   const dq = raw.dataQuality;
-  if (dq) out.dataQuality = `base de demonstração: ${dq.realPartial} reais + ${dq.simulated} simulados`;
+  if (dq) out.dataQuality = dq.real ? dq.note : `base de demonstração: ${dq.realPartial} reais + ${dq.simulated} simulados`;
   return out;
 }
 

@@ -59,7 +59,8 @@ function listingMetrics(r: Row): Record<Metric, number> {
   const vendas = num(r.vendas), unidades = num(r.unidades);
   const lucro =
     vendas * (1 - s.comissaoPct - s.impostoPct) -
-    unidades * (s.taxaFixaPorItem + CONFIG.custoKit4) -
+    // custo_kit = real kit cost from Plataforma DNT (R$ 5,85 per piece); older files only had kit 4
+    unidades * (s.taxaFixaPorItem + (num(r.custo_kit) || CONFIG.custoKit4)) -
     num(r.gasto_ads) -
     num(r.vendas_afiliados) * CONFIG.comissaoAfiliadoPct;
   return {
@@ -145,9 +146,12 @@ export function computeStats(rows: Row[]) {
     thresholds: { minListings: CONFIG.minListings, pBetterRule: CONFIG.pBetterRule },
     dataQuality: {
       listings: rows.length,
+      real: rows.filter((r) => r.fonte === "real").length,
       realPartial: rows.filter((r) => r.fonte === "real_parcial").length,
       simulated: rows.filter((r) => r.fonte === "simulado").length,
-      note: `Base de demonstração: ${rows.filter((r) => r.fonte === "real_parcial").length} anúncios reais parciais (vendas, unidades e preço reais; funil estimado) e ${rows.filter((r) => r.fonte === "simulado").length} simulados. Não apresentar os simulados como histórico real da loja.`,
+      note: rows.every((r) => r.fonte === "real")
+        ? `${rows.length} anúncios reais da DNT (Seller Center, 25/09 a 24/10/2026, linha TP001 com 100+ visitantes). Lucro antes de ADS: o export não traz o gasto com ADS. Todos rodam ADS, então o eixo aquisição não varia.`
+        : `Base de demonstração: ${rows.filter((r) => r.fonte === "real_parcial").length} anúncios reais parciais e ${rows.filter((r) => r.fonte === "simulado").length} simulados. Não apresentar os simulados como histórico real da loja.`,
     },
     confounders: rows
       .filter((r) => r.campanha === "sim" || num(r.dias_sem_estoque) >= 3)
@@ -167,7 +171,8 @@ if (isMain) {
   writeFileSync(join(outDir, "stats.json"), JSON.stringify(stats, null, 2));
 
   // Resumo legível no terminal
-  console.log(`stats: ${rows.length} anúncios (${stats.dataQuality.realPartial} reais parciais, ${stats.dataQuality.simulated} simulados)`);
+  const dq = stats.dataQuality;
+  console.log(`stats: ${rows.length} anúncios (${dq.real} reais, ${dq.realPartial} reais parciais, ${dq.simulated} simulados)`);
   for (const [axis, values] of Object.entries(stats.axes)) {
     for (const [value, e] of Object.entries(values as Record<string, any>)) {
       const p = e.metrics.profitPer1kImpr;
