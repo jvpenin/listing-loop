@@ -6,6 +6,14 @@ O back-end é de outro agente (Claude Code). **Você só cria e edita arquivos d
 
 ---
 
+## 0. Atualização (dados reais): leia antes de tudo
+- **r1** foi planejada com a base de demonstração (3 reais + 12 simulados). O `runs/r1/stats.json` é dessa base.
+- **r2** usa **14 anúncios reais da DNT** (Seller Center, 25/09 a 24/10/2026). Ficam em `runs/r2/stats.json`, com `dataQuality.real = 14`. O lucro é antes de ADS.
+- Memória: o **playbook v2** (commit "learn: r2") **inverteu regras da v1**. Academia e solo_linha passaram a ser priorizadas, e casual e modelo passaram a ser evitados. O `runs/r2/memory-diff.json` mostra isso em `update`/`add`. **Essa inversão é o clímax da demo:** "o dado real chegou e a memória se corrigiu".
+- Comparação r1 → r2 (do `plan.json`): casual 3→1, modelo 4→2, solo_linha 0→3, academia 3→4.
+- A tela de Aprendizado deve ter um seletor r1/r2 e destacar as regras que mudaram entre o playbook v1 e o v2. O v1 está no git: `git show 8d06919:memory/playbook.json`. Se não houver git, use um snapshot.
+- O `data/history/dnt_tops.csv` agora traz `titulo`, `capa_url` (capa real do anúncio), `kit` e `custo_kit`. Use isso numa seção "histórico real da loja", com as capas reais.
+
 ## 1. Regras inegociáveis
 
 1. **Só escreva em `app/`.** Nunca edite `src/`, `.factory/`, `runs/`, `memory/`, `data/`, `package.json` da raiz nem `.env`. O app tem o próprio `app/package.json`.

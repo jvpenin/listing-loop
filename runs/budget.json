@@ -1,6 +1,6 @@
 {
   "cap": 36,
-  "used": 26,
+  "used": 27,
   "log": [
     {
       "at": "2026-10-25T04:13:27.004Z",
@@ -47,6 +47,12 @@
     {
       "at": "2026-10-25T06:36:31.502Z",
       "round": "r1",
+      "sessions": 1,
+      "what": "learn analyst"
+    },
+    {
+      "at": "2026-10-25T07:37:34.920Z",
+      "round": "r2",
       "sessions": 1,
       "what": "learn analyst"
     }
