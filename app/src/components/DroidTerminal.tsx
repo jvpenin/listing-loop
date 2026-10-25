@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { Bot, LoaderCircle, CircleCheck, CircleX } from "lucide-react";
-import type { LabEvent } from "@/lib/labFixture";
+import { sponsorOf, type LabEvent } from "@/lib/labTypes";
+import { SponsorBadge } from "./EngineTerminal";
 
 export const secs = (ms: number) => `${(ms / 1000).toFixed(ms < 10000 ? 1 : 0)}s`;
 
@@ -60,6 +61,7 @@ export function DroidTerminal({
         {lines.map((l, i) => (
           <p key={i} className={`${l.type} tone-${toneOf(l.source)}`}>
             <time>{secs(l.t).padStart(5, " ")}</time>
+            <SponsorBadge by={sponsorOf(l)} />
             {wanted.length > 1 && <em>{l.source}</em>}
             {l.type === "tool" ? (
               <>

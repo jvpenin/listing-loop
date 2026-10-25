@@ -29,6 +29,14 @@ export type Proof = {
   budget: { used: number; cap: number } | null;
   realListings: number | null;
 };
+export type Evidence = {
+  listings: number;
+  factorySessions: number | null;
+  sessionBatches: number | null;
+  apifyDatasets: number;
+  competitorItems: number;
+  memoryCommits: number;
+};
 
 const droidRoles: Record<string, { role: string; io: [string, string][] }> = {
   "listing-producer": {
@@ -46,6 +54,14 @@ const droidRoles: Record<string, { role: string; io: [string, string][] }> = {
     ],
   },
 };
+
+// What each sponsor already did in this repo, counted from files (see app/src/app/page.tsx).
+const trackEvidence = (e: Evidence): Record<string, string> => ({
+  "Anthropic · Claude": `${e.listings} listings written by Claude through the producer droid · ${e.memoryCommits} memory commits decided by the analyst ("learn: rN" in git)`,
+  Factory: `${e.factorySessions ?? "—"} paid Factory sessions run so far, in ${e.sessionBatches ?? "—"} batches (runs/budget.json)`,
+  Apify: `${e.apifyDatasets} Apify datasets in the repo, ${e.competitorItems} competitor rows scraped from Shopee (179 unique comparables in the case study)`,
+  Figma: "Design-time only: Figma does not run in the pipeline.",
+});
 
 const tracks = [
   {
@@ -81,8 +97,8 @@ const tracks = [
     name: "Figma",
     icon: Figma,
     points: [
-      "Design guide and screen mockups made in Figma, then turned into React components.",
-      "The variant card's component properties are the experiment axes: angle, cover, acquisition, explore/exploit.",
+      "The design guide, wireframe and screen mockups were drawn in Figma and used as the visual spec for this UI.",
+      "The mascots (Lo, Fox, Spark) live in a Figma workspace linked from the README.",
       "The UX was mapped for small sellers first. This judge view sits on top of it.",
     ],
   },
@@ -95,10 +111,12 @@ const fmt = (x: { ok: number; total: number } | null) => (x ? `${x.ok}/${x.total
 export function Overview({
   droids,
   proof,
+  evidence,
   live,
 }: {
   droids: DroidInfo[];
   proof: Proof;
+  evidence: Evidence;
   live: boolean;
 }) {
   return (
@@ -138,6 +156,12 @@ export function Overview({
               See a real 2-round campaign <ArrowRight size={16} />
             </Link>
           </div>
+          <p className="ov-note">
+            <strong>Judges: use the DNT case product</strong> (one click in the Live Lab). Its
+            feedback memory is real: 14 DNT Shopee listings from the Seller Center stand in for
+            the sales feedback our own listings generate after a few rounds. Any other product
+            runs cold.
+          </p>
           {!live && (
             <p className="ov-note">
               Replay mode: this deploy replays recorded runs. Live runs happen on our laptop
@@ -262,7 +286,7 @@ export function Overview({
       <section className="ov-section">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">BUILT WITH · TRACKS</span>
+            <span className="eyebrow">BUILT WITH · TRACKS · WHAT EACH ONE ALREADY DID HERE</span>
             <h2>What exactly we used, and why</h2>
           </div>
         </div>
@@ -280,6 +304,9 @@ export function Overview({
                   <li key={p}>{p}</li>
                 ))}
               </ul>
+              <p className="ov-evidence">
+                <strong>In this repo:</strong> {trackEvidence(evidence)[name]}
+              </p>
             </article>
           ))}
         </div>

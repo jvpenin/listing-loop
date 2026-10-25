@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Logo, Mascot } from "./Brand";
+import { EngineTerminal } from "./EngineTerminal";
 
 type NavItem = { href: string; label: string; icon: typeof Layers };
 const mainNav: NavItem[] = [
@@ -206,6 +207,7 @@ export function Shell({
           <span>Built at Cal Hacks 13 · Anthropic · Factory · Apify · Figma</span>
           <span>The seller decides. The loop learns.</span>
         </footer>
+        <EngineTerminal />
       </div>
       {help && (
         <div className="modal-backdrop" onClick={() => setHelp(false)}>

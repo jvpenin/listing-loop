@@ -1,0 +1,24 @@
+{
+  "round": "r1",
+  "updatedAt": "2026-10-25T10:01:44.654Z",
+  "lastRunSecs": 198.006,
+  "ok": 2,
+  "total": 2,
+  "titleWarnings": [],
+  "variants": [
+    {
+      "variantId": "v01",
+      "ok": true,
+      "why": "",
+      "secs": 110.309,
+      "attempts": 1
+    },
+    {
+      "variantId": "v02",
+      "ok": true,
+      "why": "",
+      "secs": 190.256,
+      "attempts": 2
+    }
+  ]
+}

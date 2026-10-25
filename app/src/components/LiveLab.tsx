@@ -25,15 +25,16 @@ import {
   Radio,
 } from "lucide-react";
 import { DroidTerminal, secs } from "./DroidTerminal";
+import { SponsorBadge } from "./EngineTerminal";
 import {
-  fallbackStatus,
-  fixtureJob,
-  fixtureLearn,
+  initialStatus,
   type LabEvent,
   type LabStatus,
+  type MemoryEventRule,
+  type Sponsor,
   type StageName,
   type StageStatus,
-} from "@/lib/labFixture";
+} from "@/lib/labTypes";
 import type { Listing, MemoryDiff, MemoryRule, RoundData, VariantSpec } from "@/lib/types";
 
 // ---------- helpers shared with the campaign pages ----------
@@ -128,6 +129,40 @@ export function CoverImage({
   );
 }
 
+// What each axis value makes the droid do (mirrors .factory/droids/listing-producer.md).
+const COVER_STRATEGY: Record<string, string> = {
+  solo_grade: "The 4 tops, no person, 2×2 grid on a neutral background.",
+  solo_linha: "The 4 tops, no person, side by side in a row on a neutral background.",
+  solo: "The product alone on a neutral background.",
+  modelo: "Worn by a model, catalog photo, neutral background.",
+  uso: "A model in real action (gym or daily life), with movement and environment.",
+};
+const ACQUISITION_STRATEGY: Record<string, string> = {
+  organico: "Organic search: the description favors long-tail search terms throughout.",
+  ads: "Paid ads: the first 2 lines of the description carry the main search keywords.",
+  afiliado: "Affiliates: one-line hooks easy to repeat in a short video (price per piece, 4 colors).",
+};
+const ANGLE_KEYWORD: Record<string, string> = {
+  academia: "Top Cropped Academia",
+  casual: "Top Cropped Casual",
+  conforto: "Top Cropped Confortável",
+  presente: "Kit Presente Top Cropped",
+};
+
+function Section({ title, by, open, children }: { title: string; by?: Sponsor; open?: boolean; children: React.ReactNode }) {
+  return (
+    <details className="lab-strat" open={open}>
+      <summary>
+        <span>{title}</span>
+        {by && <SponsorBadge by={by} />}
+      </summary>
+      <div className="lab-strat-body">{children}</div>
+    </details>
+  );
+}
+
+export type VariantEvidence = Extract<LabEvent, { type: "variant" }>;
+
 export function LabVariantCard({
   spec,
   listing,
@@ -139,6 +174,9 @@ export function LabVariantCard({
   secsTaken,
   currency,
   price,
+  memoryRules = [],
+  competitorUrls = {},
+  evidence,
 }: {
   spec?: VariantSpec;
   listing?: Listing | null;
@@ -150,11 +188,18 @@ export function LabVariantCard({
   secsTaken?: number;
   currency?: string;
   price?: number;
+  memoryRules?: MemoryEventRule[];
+  competitorUrls?: Record<string, string>;
+  evidence?: VariantEvidence;
 }) {
   const vid = listing?.variantId ?? spec?.variantId ?? "v??";
   const axes = (listing?.axes ?? spec?.axes ?? {}) as Record<string, string>;
   const mode = listing?.mode ?? spec?.mode;
   const showCover = state === "cover" || state === "ok" || (!!listing && state !== "error");
+  const titleMax = (spec?.produto as { tituloMax?: number } | undefined)?.tituloMax ?? 120;
+  const ruleText = (id: string) => memoryRules.find((r) => r.id === id);
+  const backing = memoryRules.filter((r) => axes[r.axis] === r.value);
+  const keyword = ANGLE_KEYWORD[axes.angulo];
   return (
     <article className={`lab-card ${state}`}>
       <div className="lab-card-cover">
@@ -169,7 +214,7 @@ export function LabVariantCard({
           </div>
         )}
         <span className="lab-card-id">{vid}</span>
-        {mode && <span className={`lab-mode ${mode}`}>{mode === "explore" ? "Exploring" : "Exploiting"}</span>}
+        {mode && <span className={`lab-mode ${mode}`}>{mode === "explore" ? "Explore" : "Exploit"}</span>}
       </div>
       <div className="lab-card-body">
         <div className="lab-axes">
@@ -181,38 +226,127 @@ export function LabVariantCard({
               </span>
             ))}
         </div>
+        {spec?.rationale && (
+          <p className="lab-why">
+            <SponsorBadge by="code" /> {spec.rationale}
+          </p>
+        )}
         {listing ? (
-          <>
-            <h4>{listing.title}</h4>
-            {price !== undefined && <strong className="lab-price">{formatMoney(price, currency)}</strong>}
-            <p className="lab-desc">{listing.description}</p>
-            {listing.benchmark?.pricePosition && (
-              <p className="lab-bench">
-                <Search size={12} /> {listing.benchmark.pricePosition}
+          <div className="lab-strats">
+            <Section title="Title strategy" by="claude" open>
+              <h4>{listing.title}</h4>
+              <small className={listing.title.length > titleMax ? "lab-over" : ""}>
+                {listing.title.length}/{titleMax} chars
+                {keyword ? ` · starts with the angle keyword “${keyword}”` : ""}
+                {spec?.titleHook ? ` · hook “${spec.titleHook}” keeps same-angle titles apart` : ""}
+              </small>
+              {price !== undefined && <strong className="lab-price">{formatMoney(price, currency)}</strong>}
+            </Section>
+            <Section title="Description strategy" by="claude" open>
+              <p className="lab-strat-rule">{ACQUISITION_STRATEGY[axes.aquisicao] ?? `Acquisition: ${axisValue(axes.aquisicao ?? "")}`}</p>
+              <details className="lab-desc-full">
+                <summary>Read the full description ({listing.description.length} chars)</summary>
+                <p className="lab-desc">{listing.description}</p>
+              </details>
+              {listing.keywords?.length > 0 && (
+                <p className="lab-kw">
+                  {listing.keywords.map((k) => (
+                    <span key={k}>{k}</span>
+                  ))}
+                </p>
+              )}
+            </Section>
+            <Section title="Cover strategy" by="claude">
+              <p className="lab-strat-rule">
+                <b>{axisValue(axes.capa ?? "")}</b> · {COVER_STRATEGY[axes.capa] ?? "Cover style set by the plan."} Generated from the real
+                product photo inside the droid.
               </p>
-            )}
-            {listing.hypothesis ? (
-              <p className="lab-why">
-                <FlaskConical size={12} /> {listing.hypothesis}
+              <p>{listing.coverBrief}</p>
+            </Section>
+            <Section title="Benchmark" by="apify">
+              <p>{listing.benchmark.pricePosition}</p>
+              {listing.benchmark.differentiators.length > 0 && (
+                <ul>
+                  {listing.benchmark.differentiators.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
+              )}
+              {listing.benchmark.keywordsAdopted.length > 0 && (
+                <p className="lab-kw">
+                  <small>Competitor words adopted:</small>
+                  {listing.benchmark.keywordsAdopted.map((k) => (
+                    <span key={k}>{k}</span>
+                  ))}
+                </p>
+              )}
+              {listing.benchmark.referenceItemIds.length > 0 && (
+                <p className="lab-refs">
+                  <small>Compared against {listing.benchmark.competitorsAnalyzed} scraped listings; cites:</small>
+                  {listing.benchmark.referenceItemIds.map((id) =>
+                    competitorUrls[id] ? (
+                      <a key={id} href={competitorUrls[id]} target="_blank" rel="noreferrer">
+                        {id}
+                      </a>
+                    ) : (
+                      <code key={id}>{id}</code>
+                    ),
+                  )}
+                </p>
+              )}
+            </Section>
+            <Section title="Acquisition" by="code">
+              <p className="lab-strat-rule">
+                <b>{axisValue(axes.aquisicao ?? "")}</b> · {ACQUISITION_STRATEGY[axes.aquisicao] ?? "Set by the plan."}
               </p>
-            ) : listing.appliedRules?.length ? (
-              <p className="lab-why">
-                <Brain size={12} /> Applies playbook rules: {listing.appliedRules.join(", ")}
-              </p>
-            ) : null}
-          </>
+              <small>The axis is fixed by the planner; the droid must not change it (checked by Zod).</small>
+            </Section>
+            <Section title={mode === "explore" ? "Hypothesis & memory" : "Memory used"} by="claude">
+              {listing.hypothesis && (
+                <p className="lab-strat-rule">
+                  <FlaskConical size={12} /> {listing.hypothesis}
+                </p>
+              )}
+              {listing.appliedRules.length > 0 ? (
+                <ul className="lab-rules-used">
+                  {listing.appliedRules.map((id) => {
+                    const r = ruleText(id);
+                    return (
+                      <li key={id}>
+                        <code>{id}</code>
+                        {r && (
+                          <span>
+                            {" "}
+                            · {r.effect} <small>({r.confidence}, P(better) {r.evidence.pBetter.toFixed(2)})</small>
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : backing.length ? (
+                <p className="muted">Rules backing these axes: {backing.map((r) => r.id).join(", ")}</p>
+              ) : (
+                <p className="muted">No playbook rule cited by the droid.</p>
+              )}
+            </Section>
+          </div>
         ) : state === "error" ? (
           <p className="lab-card-error">{why || "The droid output failed validation."}</p>
         ) : (
           <>
             <div className="lab-skel w80" />
             <div className="lab-skel w60" />
-            {spec?.rationale && <p className="lab-why">{spec.rationale}</p>}
           </>
         )}
-        {secsTaken !== undefined && (
+        {(secsTaken !== undefined || evidence) && (
           <small className="lab-card-foot">
-            {state === "ok" ? "Zod-validated" : "finished"} in {secsTaken.toFixed(0)}s
+            <SponsorBadge by="factory" />
+            {state === "ok" ? " Zod-validated" : " finished"}
+            {secsTaken !== undefined ? ` in ${secsTaken.toFixed(0)}s` : ""}
+            {evidence?.sessionId ? ` · session ${evidence.sessionId.slice(0, 8)}…` : ""}
+            {evidence?.factoryCredits ? ` · ${evidence.factoryCredits} credits` : ""}
+            {evidence?.attempts && evidence.attempts > 1 ? ` · ${evidence.attempts} attempts` : ""}
           </small>
         )}
       </div>
@@ -222,10 +356,7 @@ export function LabVariantCard({
 
 // ---------- job stream ----------
 
-type JobSource =
-  | { kind: "sse"; id: string }
-  | { kind: "recorded"; id: string; fallback: LabEvent[] }
-  | { kind: "fixture"; events: LabEvent[] };
+type JobSource = { kind: "sse"; id: string } | { kind: "recorded"; id: string };
 
 // Recorded runs are compressed to roughly this many seconds when replayed.
 const REPLAY_TARGET_MS = 28_000;
@@ -252,13 +383,6 @@ function useJob(source: JobSource | null) {
       // Keep `t` faithful (it is shown in the UI); only the playback speed is compressed.
       for (const e of all) timers.push(setTimeout(() => push(e), e.t / factor));
     };
-    if (source.kind === "fixture") {
-      play(source.events);
-      return () => {
-        closed = true;
-        timers.forEach(clearTimeout);
-      };
-    }
     const es = new EventSource(`/api/lab/jobs/${encodeURIComponent(source.id)}/stream`);
     const buffer: LabEvent[] = [];
     let finished = false;
@@ -286,7 +410,8 @@ function useJob(source: JobSource | null) {
       if (finished || closed) return;
       if (source.kind === "recorded") {
         es.close();
-        play(buffer.length ? buffer : source.fallback);
+        if (buffer.length) play(buffer);
+        else setError("The recorded run could not be loaded.");
       } else setError("Lost the connection to the job stream — reconnecting…");
     };
     return () => {
@@ -333,7 +458,7 @@ function Stepper({
   now,
   finished,
 }: {
-  steps: { id: StageName; label: string; hint: string }[];
+  steps: { id: StageName; label: string; hint: string; by: Sponsor }[];
   stages: Partial<Record<StageName, StageView>>;
   now: number;
   finished: boolean;
@@ -360,7 +485,9 @@ function Stepper({
               )}
             </span>
             <div>
-              <strong>{s.label}</strong>
+              <strong>
+                {s.label} <SponsorBadge by={s.by} />
+              </strong>
               <small>{v.detail ?? s.hint}</small>
             </div>
             {took !== undefined && <time>{secs(took)}</time>}
@@ -371,17 +498,77 @@ function Stepper({
   );
 }
 
-const ROUND_STEPS = (n: number): { id: StageName; label: string; hint: string }[] => [
-  { id: "apify", label: "Apify scrape", hint: "Live competitor search on Shopee Brazil" },
-  { id: "intel", label: "Competitor intel", hint: "Price bands, title patterns, keyword gaps (TypeScript)" },
-  { id: "plan", label: "Plan · Thompson sampling", hint: "Picks axes per variant from beliefs + playbook" },
-  { id: "producer", label: `listing-producer × ${n}`, hint: "Factory custom droids, in parallel" },
-  { id: "validate", label: "Zod validation", hint: "Schema, fixed axes, cited competitor ids" },
+type Step = { id: StageName; label: string; hint: string; by: Sponsor };
+const ROUND_STEPS = (n: number): Step[] => [
+  { id: "apify", label: "Apify scrape", hint: "Actor run on Apify cloud: live Shopee Brazil search", by: "apify" },
+  { id: "intel", label: "Competitor intel", hint: "Price bands, title patterns, keyword gaps (TypeScript)", by: "code" },
+  { id: "plan", label: "Plan · Thompson sampling", hint: "Picks axes per variant from beliefs + feedback memory", by: "code" },
+  { id: "producer", label: `listing-producer × ${n}`, hint: "Factory custom droids, one session each, in parallel", by: "factory" },
+  { id: "validate", label: "Zod validation", hint: "Schema, fixed axes, cited competitor ids", by: "code" },
 ];
-const LEARN_STEPS: { id: StageName; label: string; hint: string }[] = [
-  { id: "analyst", label: "performance-analyst", hint: "Factory custom droid on Opus 5.5" },
-  { id: "memory", label: "Memory diff validation", hint: "Zod MemoryDiff, dry-run (no commit)" },
+const LEARN_STEPS: Step[] = [
+  { id: "analyst", label: "performance-analyst", hint: "Factory custom droid on Claude Opus 5.5", by: "factory" },
+  { id: "memory", label: "Memory diff validation", hint: "Zod MemoryDiff, dry-run (no commit)", by: "code" },
 ];
+
+// ---------- feedback memory ----------
+
+function MemoryPanel({ memory, plan }: { memory: Extract<LabEvent, { type: "memory" }>; plan: VariantSpec[] }) {
+  const backs = (r: MemoryEventRule) =>
+    plan.filter((v) => (v.axes as Record<string, string>)[r.axis] === r.value).map((v) => v.variantId);
+  return (
+    <section className="panel lab-memory">
+      <span className="eyebrow">
+        <Brain size={13} /> FEEDBACK MEMORY · <SponsorBadge by="code" />
+      </span>
+      <h3>
+        Feedback memory (playbook v{memory.version}
+        {memory.commit ? `, commit ${memory.commit.hash}` : ""}) — what the planner reads
+      </h3>
+      <p className="lab-note">
+        {memory.commit ? (
+          <>
+            <code>memory/playbook.json</code> last changed by <code>{memory.commit.subject}</code> on {memory.commit.date}.{" "}
+          </>
+        ) : null}
+        Scope <b>{memory.scope.category}</b> on <b>{memory.scope.channel}</b>: {memory.rules.length} of {memory.totalRules} rules
+        apply. {memory.source ? <>Source: {memory.source}.</> : null}
+      </p>
+      {memory.rules.length === 0 ? (
+        <p className="muted">
+          No rules in scope: this product has no feedback history, so every axis starts as an exploration (cold start).
+        </p>
+      ) : (
+        <ul className="lab-mem-rules">
+          {memory.rules.map((r) => {
+            const used = backs(r);
+            const avoid = r.evidence.pBetter < 0.5;
+            return (
+              <li key={r.id} className={avoid ? "avoid" : "prefer"}>
+                <div>
+                  <b>
+                    {axisName(r.axis)} = {axisValue(r.value)}
+                  </b>{" "}
+                  <span className={`lab-rule-conf conf-${r.confidence}`}>{r.confidence}</span>
+                  <p>{r.effect}</p>
+                  <small>
+                    n={r.evidence.n} · P(better) {r.evidence.pBetter.toFixed(2)} · 90% CI [{r.evidence.ci90[0].toFixed(2)},{" "}
+                    {r.evidence.ci90[1].toFixed(2)}]
+                  </small>
+                </div>
+                {plan.length > 0 && (
+                  <span className={`lab-mem-use ${used.length ? "on" : ""}`}>
+                    {used.length ? `${avoid ? "capped in" : "backs"} ${used.join(", ")}` : avoid ? "avoided" : "not picked"}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+  );
+}
 
 // ---------- memory diff ----------
 
@@ -477,6 +664,7 @@ type FormState = {
   name: string;
   description: string;
   price: string;
+  category: string;
   marketplace: string;
   angles: string[];
   variants: number;
@@ -486,6 +674,7 @@ const EMPTY_FORM: FormState = {
   name: "",
   description: "",
   price: "",
+  category: "",
   marketplace: "shopee_br",
   angles: [],
   variants: 2,
@@ -519,7 +708,8 @@ async function errorText(r: Response) {
 type Ctx = { campaignId?: string; round?: string; currency: string; price?: number };
 
 export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: string }) {
-  const [status, setStatus] = useState<LabStatus>({ ...fallbackStatus, live });
+  const [status, setStatus] = useState<LabStatus>({ ...initialStatus, live });
+  const [noRecording, setNoRecording] = useState(false);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [angleDraft, setAngleDraft] = useState("");
   const [preview, setPreview] = useState("");
@@ -539,7 +729,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       const r = await fetch("/api/lab/status", { cache: "no-store" });
       if (r.ok) {
         const s = (await r.json()) as LabStatus;
-        setStatus({ ...fallbackStatus, ...s, marketplaces: s.marketplaces?.length ? s.marketplaces : fallbackStatus.marketplaces });
+        setStatus({ ...initialStatus, ...s, marketplaces: s.marketplaces?.length ? s.marketplaces : initialStatus.marketplaces });
         return s;
       }
     } catch {}
@@ -549,11 +739,11 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   useEffect(() => {
     refreshStatus().then((s) => {
       const isLive = s?.live ?? live;
-      if (!isLive && !initialJob)
-        setRoundSource(
-          s?.replayJobId ? { kind: "recorded", id: s.replayJobId, fallback: fixtureJob } : { kind: "fixture", events: fixtureJob },
-        );
-      if (!isLive && initialJob) setRoundSource({ kind: "recorded", id: initialJob, fallback: fixtureJob });
+      if (!isLive && !initialJob) {
+        if (s?.replayJobId) setRoundSource({ kind: "recorded", id: s.replayJobId });
+        else setNoRecording(true);
+      }
+      if (!isLive && initialJob) setRoundSource({ kind: "recorded", id: initialJob });
     });
   }, [refreshStatus, live, initialJob]);
 
@@ -575,6 +765,25 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
     return p?.variants ?? [];
   }, [round.events]);
   const intel = round.events.find((e): e is Extract<LabEvent, { type: "intel" }> => e.type === "intel");
+  const memory = round.events.find((e): e is Extract<LabEvent, { type: "memory" }> => e.type === "memory");
+  // Competitor id -> Shopee URL, from the Apify sample in the intel event.
+  const competitorUrls = useMemo(() => {
+    const m: Record<string, string> = {};
+    for (const c of intel?.top ?? []) if (c.url) m[c.itemId] = c.url;
+    return m;
+  }, [intel]);
+  // Factory session per lane, from the "[session] <id>" lines and the final variant event.
+  const sessions = useMemo(() => {
+    const m: Record<string, string> = {};
+    for (const e of [...round.events, ...learn.events]) {
+      if (e.type === "log") {
+        const id = e.text.match(/^\[session\] ([0-9a-f-]{8,})/)?.[1];
+        if (id) m[e.source] = id;
+      }
+      if (e.type === "variant" && e.sessionId) m[e.variantId] = e.sessionId;
+    }
+    return m;
+  }, [round.events, learn.events]);
   const covers = useMemo(() => {
     const m: Record<string, number> = {};
     for (const e of round.events) if (e.type === "cover") m[e.variantId] = e.t;
@@ -628,24 +837,26 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
     setForm((f) => ({ ...f, angles: [...f.angles, a] }));
     setAngleDraft("");
   }
-  async function prefill() {
+  // The DNT case: the only product with feedback memory (its real Shopee listings).
+  async function useDntCase() {
     setFormError("");
     let photo: File | null = null;
     try {
       const r = await fetch("/api/product");
-      if (r.ok) photo = new File([await r.blob()], "example.jpg", { type: "image/jpeg" });
+      if (r.ok) photo = new File([await r.blob()], "dnt-tp001-k4.jpg", { type: "image/jpeg" });
     } catch {}
     setForm({
-      name: "Kit 4 seamless cropped tops",
-      description: "Kit of 4 women's cropped tops, no padding, microfiber, wide band. Black, white, navy, pink.",
+      name: "Kit 4 Top Cropped Sem Bojo",
+      description: "kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo",
       price: "51.90",
-      marketplace: status.marketplaces.find((m) => m.id === "shopee_br")?.id ?? status.marketplaces[0]?.id ?? "shopee_br",
-      angles: ["gym", "everyday", "gift"],
+      category: "tops",
+      marketplace: "shopee_br",
+      angles: ["academia", "casual", "conforto", "presente"],
       variants: 2,
       photo: null,
     });
     setPhoto(photo);
-    if (!photo) setFormError("Example filled in. Add a product photo to continue.");
+    if (!photo) setFormError("Case filled in, but the product photo could not be loaded. Upload it to continue.");
   }
 
   function startJob(source: JobSource, next: Ctx) {
@@ -669,6 +880,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
       body.set("description", form.description.trim());
       body.set("price", String(Number(form.price.replace(",", "."))));
       body.set("marketplace", form.marketplace);
+      body.set("category", form.category.trim().toLowerCase());
       if (form.angles.length) body.set("angles", form.angles.join(","));
       body.set("variants", String(form.variants));
       body.set("photo", form.photo!);
@@ -691,11 +903,8 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
   async function runAnalyst() {
     setActionError("");
     if (!isLive) {
-      setLearnSource(
-        status.replayLearnJobId
-          ? { kind: "recorded", id: status.replayLearnJobId, fallback: fixtureLearn }
-          : { kind: "fixture", events: fixtureLearn },
-      );
+      if (status.replayLearnJobId) setLearnSource({ kind: "recorded", id: status.replayLearnJobId });
+      else setActionError("No recorded analyst run available.");
       return;
     }
     try {
@@ -735,15 +944,23 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
           <span className="eyebrow">
             <Radio size={13} /> LIVE LAB · RUN BOTH FACTORY DROIDS NOW
           </span>
-          <h1>Pick any product. Watch the droids build the campaign.</h1>
+          <h1>Give it a product. Watch Apify, Factory and Claude build the listings.</h1>
           <p>
-            Apify scrapes real competitors, the planner picks what to test, parallel <code>listing-producer</code> droids write
-            listings and generate covers from your photo, and the <code>performance-analyst</code> turns sales evidence into memory.
+            An <b>Apify</b> actor scrapes real Shopee competitors, our planner reads the feedback memory and picks what to test,
+            parallel <b>Factory</b> <code>listing-producer</code> droids (<b>Claude</b>) write title, description, benchmark and cover for
+            each variant, and the <code>performance-analyst</code> turns sales evidence into memory.
           </p>
         </div>
         <div className="lab-meters">
           <span>
-            <Wallet size={14} /> Factory sessions <b>{status.budget.used}</b>/{status.budget.cap}
+            <Wallet size={14} /> Factory sessions{" "}
+            {status.budget ? (
+              <>
+                <b>{status.budget.used}</b>/{status.budget.cap}
+              </>
+            ) : (
+              "—"
+            )}
           </span>
           <span>
             <Timer size={14} /> {roundSource ? secs(now) : "—"}
@@ -758,8 +975,10 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
         <div className="lab-banner">
           <Play size={16} />
           <p>
-            <b>Live droids run on our laptop at the judging table.</b> Below: a recorded live run, replayed with compressed
-            timing. Come by the table to run it on your own product.
+            <b>Live droids run on our laptop at the judging table.</b>{" "}
+            {noRecording
+              ? "No recorded run is available in this deployment."
+              : "Below: a real recorded run (same events the engine wrote), replayed with compressed timing."}
           </p>
         </div>
       )}
@@ -772,9 +991,15 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
                 <span className="eyebrow">1 · PRODUCT</span>
                 <h2>What are we launching?</h2>
               </div>
-              <button type="button" className="button secondary small" onClick={prefill}>
-                <Sparkles size={14} /> Prefill example
+            </div>
+            <div className="lab-case">
+              <button type="button" className="button primary" onClick={useDntCase}>
+                <Sparkles size={15} /> Use the DNT case product
               </button>
+              <p>
+                Feedback memory exists for this product only: DNT&apos;s 14 real Shopee listings (Seller Center, 30 days) stand in for
+                the sales feedback our own listings would generate over time. Any other product runs cold (no memory in scope).
+              </p>
             </div>
             <label className="lab-photo">
               {preview ? (
@@ -827,6 +1052,15 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
                 <input readOnly value="Shopee Brazil" aria-describedby="lab-market-note" />
               </label>
             </div>
+            <label>
+              Category <small>(memory scope; the DNT case is “tops”)</small>
+              <input
+                value={form.category}
+                onChange={(e) => setForm({ ...form, category: e.target.value })}
+                placeholder="e.g. tops — empty = general (no memory)"
+                maxLength={40}
+              />
+            </label>
             {market && (
               <small className="lab-hint">
                 <span id="lab-market-note">Shopee Brazil case: listings in {market.language} (the store&apos;s customers) · title limit {market.titleMax} chars · prices in {market.currency}</span>
@@ -954,7 +1188,7 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
           {intel && (
             <section className="panel lab-intel">
               <span className="eyebrow">
-                <Search size={13} /> APIFY · {intel.actor}
+                <Search size={13} /> <SponsorBadge by="apify" /> {intel.actor}
               </span>
               <div className="lab-intel-top">
                 <strong>{intel.n}</strong>
@@ -963,17 +1197,72 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
                   <br />“{intel.query}”
                 </span>
               </div>
+              <dl className="lab-evidence">
+                {intel.runId && (
+                  <div>
+                    <dt>Actor run</dt>
+                    <dd>
+                      <code>{intel.runId}</code>
+                    </dd>
+                  </div>
+                )}
+                {intel.datasetId && (
+                  <div>
+                    <dt>Dataset</dt>
+                    <dd>
+                      <code>{intel.datasetId}</code>
+                    </dd>
+                  </div>
+                )}
+                {intel.secs !== undefined && (
+                  <div>
+                    <dt>Run time</dt>
+                    <dd>{intel.secs.toFixed(1)}s</dd>
+                  </div>
+                )}
+                {intel.cached && (
+                  <div>
+                    <dt>Source</dt>
+                    <dd>live scrape empty; cached from {intel.cached}</dd>
+                  </div>
+                )}
+              </dl>
               <ul>
                 {intel.headlines.map((h, i) => (
                   <li key={i}>{h}</li>
                 ))}
               </ul>
+              {intel.top && intel.top.length > 0 && (
+                <ol className="lab-top">
+                  {intel.top.map((c) => (
+                    <li key={c.itemId}>
+                      {c.url ? (
+                        <a href={c.url} target="_blank" rel="noreferrer">
+                          {c.title}
+                        </a>
+                      ) : (
+                        c.title
+                      )}{" "}
+                      <b>{formatMoney(c.price)}</b>
+                      <small>
+                        {" "}
+                        · id {c.itemId}
+                        {c.sold ? ` · ${c.sold} sold` : ""}
+                      </small>
+                    </li>
+                  ))}
+                </ol>
+              )}
             </section>
           )}
 
+          {memory && <MemoryPanel memory={memory} plan={specs} />}
+
           {specs.length > 0 && (
             <section className="panel lab-plan">
-              <span className="eyebrow">PLAN · THOMPSON SAMPLING</span>
+              <span className="eyebrow">
+                PLAN · THOMPSON SAMPLING · <SponsorBadge by="code" />
+              </span>
               <div className="lab-table-wrap">
                 <table>
                   <thead>
@@ -1007,7 +1296,10 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
             </section>
           )}
 
-          {sources.length > 0 && (
+          {roundStages.producer?.status === "skip" && (
+            <p className="lab-note">Dry run: the plan was written, no Factory droid session was opened.</p>
+          )}
+          {sources.length > 0 && roundStages.producer?.status !== "skip" && (
             <div className="lab-lanes">
               {sources.map((s) => {
                 const f = finished[s];
@@ -1017,7 +1309,9 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
                     key={s}
                     source={s}
                     title={`listing-producer · ${s}`}
-                    subtitle={`via conductor ${status.models.conductor}`}
+                    subtitle={`Factory session ${sessions[s] ? sessions[s].slice(0, 8) + "…" : "opening…"} · conductor ${
+                      f?.models?.conductor ?? status.models.conductor
+                    } → producer ${f?.models?.producer ?? status.models.producer}${f?.factoryCredits ? ` · ${f.factoryCredits} credits` : ""}`}
                     events={round.events}
                     state={st}
                   />
@@ -1031,7 +1325,8 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
               {specs.map((v) => {
                 const f = finished[v.variantId];
                 const listing = f?.ok ? listingOf(v.variantId) : null;
-                const state = f ? (f.ok ? "ok" : "error") : covers[v.variantId] !== undefined ? "cover" : roundStages.producer ? "generating" : "planned";
+                const producing = roundStages.producer && roundStages.producer.status !== "skip";
+                const state = f ? (f.ok ? "ok" : "error") : covers[v.variantId] !== undefined ? "cover" : producing && !round.done ? "generating" : "planned";
                 return (
                   <LabVariantCard
                     key={v.variantId}
@@ -1044,7 +1339,10 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
                     why={f?.why}
                     secsTaken={f?.secs}
                     currency={ctx.currency}
-                    price={ctx.price ?? v.produto?.precoShopee}
+                    price={ctx.price ?? (v.produto as { preco?: number } | undefined)?.preco ?? v.produto?.precoShopee}
+                    memoryRules={memory?.rules}
+                    competitorUrls={competitorUrls}
+                    evidence={f}
                   />
                 );
               })}
@@ -1109,11 +1407,19 @@ export function LiveLab({ live, initialJob }: { live: boolean; initialJob?: stri
               <DroidTerminal
                 source="analyst"
                 title="performance-analyst"
-                subtitle="reads runs/r2/stats.json + memory/playbook.json"
+                subtitle={`Factory session ${sessions.analyst ? sessions.analyst.slice(0, 8) + "…" : "opening…"} · reads runs/r2/stats.json + memory/playbook.json`}
                 events={learn.events}
                 state={learn.done ? (learn.done.ok ? "ok" : "error") : "running"}
               />
-              {diff && <DiffView diff={diff} />}
+              {diff && (
+                <>
+                  <p className="lab-note">
+                    <SponsorBadge by="claude" /> Written by {status.models.analyst} inside the <code>performance-analyst</code> droid;
+                    validated by Zod before it is shown.
+                  </p>
+                  <DiffView diff={diff} />
+                </>
+              )}
             </section>
           )}
         </div>

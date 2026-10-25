@@ -12,7 +12,9 @@ import {
 } from '@factory/droid-sdk/node';
 
 import { readBudget, reserveSessions } from './budget';
-import { ROOT, modelos, timeoutMs } from './config';
+import { execFileSync } from 'node:child_process';
+
+import { ROOT, eixos, modelos, timeoutMs } from './config';
 import { MARKETPLACES, scrapeCompetitors } from './marketplaces';
 import { applyDiff, readDiff, readPlaybook } from './memory';
 import { makePlan } from './plan';
@@ -60,8 +62,33 @@ export const jobDir = (id: string) => join(ROOT, 'runs', 'jobs', id);
 
 let eventsFile = '';
 const start = Date.now();
+// `by` = who is acting, shown as a badge in the app's engine terminal: apify (actor runs), factory
+// (droid sessions, Task delegation, tool calls), claude (text the model wrote), code (our TypeScript:
+// planner, statistics, Zod), system (orchestrator housekeeping).
+type By = 'apify' | 'factory' | 'claude' | 'code' | 'system';
+const STAGE_BY: Record<string, By> = { apify: 'apify', intel: 'code', plan: 'code', producer: 'factory', validate: 'code', analyst: 'factory', memory: 'code' };
+function byOf(e: Record<string, unknown>): By {
+  if (e.by) return e.by as By;
+  switch (e.type) {
+    case 'stage':
+      return STAGE_BY[e.stage as string] ?? 'system';
+    case 'intel':
+      return 'apify';
+    case 'plan':
+    case 'memory':
+    case 'diff':
+      return e.type === 'diff' ? 'claude' : 'code';
+    case 'tool':
+    case 'variant':
+      return 'factory';
+    case 'cover':
+      return 'claude';
+    default:
+      return 'system';
+  }
+}
 function emit(event: Record<string, unknown>) {
-  appendFileSync(eventsFile, JSON.stringify({ t: Date.now() - start, ...event }) + '\n');
+  appendFileSync(eventsFile, JSON.stringify({ t: Date.now() - start, by: byOf(event), ...event }) + '\n');
 }
 
 // Worker output arrives as "[v01] [tool] Task listing-producer" lines (src/round.ts); each becomes an event.
@@ -73,8 +100,14 @@ function captureConsole() {
       if (m?.[2] === 'tool') {
         const [name, ...rest] = m[3].split(' ');
         emit({ type: 'tool', source: m[1], name, detail: rest.join(' ') });
-      } else if (m) emit({ type: 'log', source: m[1], text: m[2] && m[2] !== 'say' ? `[${m[2]}] ${m[3]}` : m[3] });
-      else emit({ type: 'log', source: 'system', text: line.slice(0, 400) });
+      } else if (m) {
+        // [session]/[result]/[retry] come from the Factory runtime; [say] and bare text are the model's words;
+        // [file]/[wait] are our orchestrator watching the droid's output files.
+        const tag = m[2];
+        const by: By = tag === 'say' || !tag ? 'claude' : tag === 'file' || tag === 'wait' ? 'code' : 'factory';
+        emit({ type: 'log', source: m[1], by, text: tag && tag !== 'say' ? `[${tag}] ${m[3]}` : m[3] });
+      }
+      else emit({ type: 'log', source: line.startsWith('[apify]') ? 'apify' : 'system', by: line.startsWith('[apify]') ? 'apify' : 'system', text: line.slice(0, 400) });
     }
   };
   for (const k of ['log', 'warn', 'error'] as const) {
@@ -104,8 +137,10 @@ async function runRound(job: Job) {
   // 1. Apify: real competitors for this product on this marketplace.
   const query = c.product.name;
   emit({ type: 'stage', stage: 'apify', status: 'start', detail: `${mp.label}: "${query}"` });
+  emit({ type: 'log', source: 'apify', by: 'apify', text: `calling actor ${mp.actor} on Apify cloud: keyword "${query}", sort by sales, 20 items` });
   let items: Awaited<ReturnType<typeof scrapeCompetitors>>['items'] = [];
   let actor = '';
+  let apifyRun: { runId?: string; datasetId?: string; secs?: number; cached?: string } = {};
   // Marketplace actors are occasionally empty for a query that worked minutes before: retry once,
   // then fall back to this campaign's latest earlier scrape (labelled as cached).
   for (let attempt = 1; attempt <= 2 && !items.length; attempt++) {
@@ -113,10 +148,12 @@ async function runRound(job: Job) {
       const scraped = await scrapeCompetitors(c.marketplace, query, 20);
       items = scraped.items;
       actor = scraped.actor;
+      apifyRun = { runId: scraped.runId, datasetId: scraped.datasetId, secs: scraped.secs };
+      emit({ type: 'log', source: 'apify', by: 'apify', text: `actor ${actor} · run ${scraped.runId} SUCCEEDED · dataset ${scraped.datasetId} · ${items.length} items · ${scraped.secs.toFixed(1)}s` });
       writeFileSync(join(dir, 'competitors.json'), JSON.stringify(scraped, null, 2) + '\n');
       emit({ type: 'stage', stage: 'apify', status: 'ok', detail: `${items.length} competitors in ${scraped.secs.toFixed(0)}s via ${actor}` });
     } catch (err) {
-      emit({ type: 'log', source: 'apify', text: `attempt ${attempt}: ${(err as Error).message}` });
+      emit({ type: 'log', source: 'apify', by: 'apify', text: `attempt ${attempt}: ${(err as Error).message}` });
     }
   }
   if (!items.length) {
@@ -126,6 +163,7 @@ async function runRound(job: Job) {
       const scraped = JSON.parse(readFileSync(cached, 'utf8'));
       items = scraped.items;
       actor = scraped.actor;
+      apifyRun = { runId: scraped.runId, datasetId: scraped.datasetId, secs: scraped.secs, cached: rel(cached) };
       emit({ type: 'stage', stage: 'apify', status: 'ok', detail: `live scrape empty; using ${items.length} competitors cached from ${rel(cached)}` });
     } else emit({ type: 'stage', stage: 'apify', status: 'error', detail: 'no usable competitors — continuing without competitor intel' });
   }
@@ -136,7 +174,12 @@ async function runRound(job: Job) {
   if (items.length) {
     const intel = buildProductIntel({ marketplaceId: c.marketplace, query, price: c.product.price, items, angles: c.angles }) as Record<string, unknown>;
     writeFileSync(intelFile, JSON.stringify({ ...intel, round, itemIds: items.map((i) => String(i.itemId)) }, null, 2) + '\n');
-    emit({ type: 'intel', n: items.length, query, actor, headlines: (intel.headlines as string[]) ?? [] });
+    const top = items
+      .slice()
+      .sort((a, b) => (b.sold ?? 0) - (a.sold ?? 0))
+      .slice(0, 5)
+      .map((i) => ({ itemId: i.itemId, title: i.title, price: i.price, sold: i.sold ?? null, url: i.url ?? null }));
+    emit({ type: 'intel', n: items.length, query, actor, ...apifyRun, top, headlines: (intel.headlines as string[]) ?? [] });
     emit({ type: 'stage', stage: 'intel', status: 'ok', detail: rel(intelFile) });
   } else {
     rmSync(intelFile, { force: true });
@@ -146,10 +189,15 @@ async function runRound(job: Job) {
   // 3. Plan: Thompson sampling over the campaign's axes; playbook rules only inside their scope.
   emit({ type: 'stage', stage: 'plan', status: 'start' });
   const photoRel = rel(join(campaignDir(c.id), c.photo));
+  // Tops on Shopee is the category with feedback memory (DNT's real listings), so it plans on the
+  // same cover and offer values those rules were learned on; any other product starts cold.
+  const tops = c.product.category === 'tops' && c.marketplace === 'shopee_br';
+  const scope = { category: c.product.category, channel: CHANNEL[c.marketplace] ?? c.marketplace };
+  emitMemory(scope);
   const plan = makePlan(round, undefined, Date.now() % 100_000, {
     n,
-    eixos: { angulo: c.angles, capa: CAPAS, aquisicao: AQUISICAO, oferta: ['single'] },
-    scope: { category: c.product.category, channel: CHANNEL[c.marketplace] ?? c.marketplace },
+    eixos: { angulo: c.angles, capa: tops ? eixos.capa : CAPAS, aquisicao: AQUISICAO, oferta: tops ? eixos.oferta : ['single'] },
+    scope,
     hooks: [],
     produto: {
       sku: c.product.sku,
@@ -171,6 +219,15 @@ async function runRound(job: Job) {
   });
   writeFileSync(join(dir, 'plan.json'), JSON.stringify(plan, null, 2) + '\n');
   emit({ type: 'plan', variants: plan.variants });
+  const combos = c.angles.length * (tops ? eixos.capa.length : CAPAS.length) * AQUISICAO.length;
+  for (const v of plan.variants)
+    emit({ type: 'log', source: 'plan', by: 'code', text: `${v.variantId} ${v.mode.toUpperCase()} ${v.axes.angulo} · ${v.axes.capa} · ${v.axes.aquisicao} — ${v.rationale}` });
+  emit({
+    type: 'log',
+    source: 'plan',
+    by: 'code',
+    text: `Thompson sampling over ${combos} combinations (no duplicate cover+angle pairs): ${plan.variants.filter((v) => v.mode === 'exploit').length} exploit, ${plan.variants.filter((v) => v.mode === 'explore').length} explore`,
+  });
   emit({ type: 'stage', stage: 'plan', status: 'ok', detail: `${plan.variants.length} variants, playbook v${plan.playbookVersion}` });
 
   if (job.dry) {
@@ -210,9 +267,22 @@ async function runRound(job: Job) {
       }
     }
   }, 1000);
-  const results = await runSpecs(plan.variants as VariantSpec[], ({ outcome }) => {
+  const results = await runSpecs(plan.variants as VariantSpec[], ({ outcome, usage }) => {
     finished.add(outcome.variantId);
-    emit({ type: 'variant', variantId: outcome.variantId, ok: outcome.ok, why: outcome.why || undefined, secs: outcome.secs });
+    // Evidence of the Factory session that produced this variant (ids, model, credits from the SDK result).
+    const last = usage.attempts[usage.attempts.length - 1];
+    const credits = usage.attempts.reduce((s, a) => s + ((a.tokenUsage as { factoryCredits?: number } | null)?.factoryCredits ?? 0), 0);
+    emit({
+      type: 'variant',
+      variantId: outcome.variantId,
+      ok: outcome.ok,
+      why: outcome.why || undefined,
+      secs: outcome.secs,
+      sessionId: last?.sessionId ?? null,
+      attempts: usage.attempts.length,
+      factoryCredits: credits || null,
+      models: { conductor: modelos.conductor, producer: modelos.producer },
+    });
   });
   clearInterval(watcher);
   const ok = results.filter((r) => r.outcome.ok).length;
@@ -238,6 +308,30 @@ async function runRound(job: Job) {
   );
   writeFileSync(join(dir, 'usage.json'), JSON.stringify({ round, runs: results.map((r) => r.usage) }, null, 2) + '\n');
   return ok > 0;
+}
+
+// The memory this plan reads: playbook version, its git commit, and the rules inside this campaign's scope.
+function emitMemory(scope: { category: string; channel: string }) {
+  const pb = readPlaybook();
+  let commit: { hash: string; subject: string; date: string } | null = null;
+  try {
+    const [hash, subject, date] = execFileSync('git', ['log', '-1', '--format=%h%x1f%s%x1f%ad', '--date=short', '--', 'memory/playbook.json'], { cwd: ROOT, encoding: 'utf8' })
+      .trim()
+      .split('\x1f');
+    if (hash) commit = { hash, subject, date };
+  } catch {}
+  const rules = pb.rules
+    .filter((r) => r.scope.category === scope.category && r.scope.channel === scope.channel)
+    .map((r) => ({ id: r.id, axis: r.axis, value: r.value, effect: r.effect, confidence: r.confidence, evidence: r.evidence }));
+  emit({
+    type: 'memory',
+    version: pb.version,
+    commit,
+    scope,
+    totalRules: pb.rules.length,
+    rules,
+    source: 'DNT Seller Center export, 14 real Shopee listings (25/09–24/10/2026), standing in for the feedback our own listings generate over time',
+  });
 }
 
 async function runLearn(job: Job) {

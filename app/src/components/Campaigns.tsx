@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { fetchRound, formatMoney } from "./LiveLab";
 import { Portfolio } from "./Portfolio";
-import type { CampaignSummary } from "@/lib/labFixture";
+import type { CampaignSummary } from "@/lib/labTypes";
 import type { RoundData } from "@/lib/types";
 
 const MARKET_LABEL: Record<string, string> = {

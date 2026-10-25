@@ -78,7 +78,7 @@ export async function scrapeCompetitors(
   marketplaceId: MarketplaceId,
   query: string,
   max = 20,
-): Promise<{ actor: string; items: CompetitorItem[]; secs: number }> {
+): Promise<{ actor: string; runId: string; datasetId: string; items: CompetitorItem[]; secs: number }> {
   const market = MARKETPLACES[marketplaceId];
   if (!market) throw new Error(`unknown marketplace ${marketplaceId}`);
   if (!process.env.APIFY_TOKEN) process.loadEnvFile(join(ROOT, '.env'));
@@ -97,7 +97,7 @@ export async function scrapeCompetitors(
     .filter((it): it is CompetitorItem => !!it && !seen.has(it.itemId) && !!seen.add(it.itemId))
     .slice(0, max);
   if (!out.length) throw new Error(`apify ${actor} returned no usable items for "${query}"`);
-  return { actor, items: out, secs: (Date.now() - start) / 1000 };
+  return { actor, runId: run.id, datasetId: run.defaultDatasetId, items: out, secs: (Date.now() - start) / 1000 };
 }
 
 if (require.main === module) {

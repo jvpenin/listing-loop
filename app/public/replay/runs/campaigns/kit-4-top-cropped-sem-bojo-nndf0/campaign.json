@@ -1,0 +1,20 @@
+{
+  "id": "kit-4-top-cropped-sem-bojo-nndf0",
+  "createdAt": "2026-10-25T09:58:26.221Z",
+  "product": {
+    "name": "Kit 4 Top Cropped Sem Bojo",
+    "description": "kit com 4 tops cropped femininos sem bojo (preto, branco, azul-marinho, rosa), microfibra, alça larga, cós largo",
+    "price": 51.9,
+    "currency": "BRL",
+    "sku": "KIT-4-TOP-CROPPED-SE",
+    "category": "tops"
+  },
+  "marketplace": "shopee_br",
+  "angles": [
+    "academia",
+    "casual",
+    "conforto",
+    "presente"
+  ],
+  "photo": "photo.jpg"
+}

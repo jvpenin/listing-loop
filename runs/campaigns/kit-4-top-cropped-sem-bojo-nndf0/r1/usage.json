@@ -1,0 +1,57 @@
+{
+  "round": "r1",
+  "runs": [
+    {
+      "variantId": "v01",
+      "attempts": [
+        {
+          "sessionId": "48d627cc-5760-4aab-84a9-d06a9892f0ab",
+          "success": true,
+          "durationMs": 103656,
+          "tokenUsage": {
+            "inputTokens": 2478,
+            "outputTokens": 15670,
+            "cacheCreationTokens": 43783,
+            "cacheReadTokens": 230440,
+            "thinkingTokens": 9977,
+            "factoryCredits": 6713
+          },
+          "why": ""
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "attempts": [
+        {
+          "sessionId": "99ff12f5-1690-400a-83ac-7121972513c6",
+          "success": true,
+          "durationMs": 76186,
+          "tokenUsage": {
+            "inputTokens": 1111,
+            "outputTokens": 14157,
+            "cacheCreationTokens": 42868,
+            "cacheReadTokens": 180124,
+            "thinkingTokens": 9340,
+            "factoryCredits": 6159
+          },
+          "why": "missing png"
+        },
+        {
+          "sessionId": "0cd0c740-bbd9-4f08-ae6c-a15ca4e1b316",
+          "success": true,
+          "durationMs": 107857,
+          "tokenUsage": {
+            "inputTokens": 2403,
+            "outputTokens": 13518,
+            "cacheCreationTokens": 37996,
+            "cacheReadTokens": 285499,
+            "thinkingTokens": 7615,
+            "factoryCredits": 6122
+          },
+          "why": ""
+        }
+      ]
+    }
+  ]
+}

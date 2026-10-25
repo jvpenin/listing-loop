@@ -1,47 +1,51 @@
-# Roteiro da mesa de julgamento (Cal Hacks 13)
+# Roteiro da demo para jurados (Cal Hacks 13)
 
-## Antes do jurado chegar (2 min)
+## A história em uma frase
+
+O PME lança um produto na Shopee. O Listing Loop pesquisa o mercado, propõe anúncios com estratégias diferentes de título, descrição, capa, benchmark e aquisição, aprende com as vendas e realoca a próxima rodada. **A Apify faz a varredura, os droids da Factory orquestram e executam, e o Claude escreve e decide.**
+
+**Por que todo jurado usa o top cropped:** é o único produto com memória de feedback. Os 14 anúncios reais da DNT (Seller Center, 30 dias) fazem o papel dos dados que teríamos depois de algumas rodadas analisando os anúncios criados pelo sistema. Um produto sem memória funciona, mas roda "frio": só explora. Diga isso com essas palavras, porque é uma simulação assumida e não um truque.
+
+## Antes do jurado chegar
 
 ```sh
-cd app
-LISTING_LOOP_LIVE=1 npm run dev     # http://localhost:3000
+cd app && LISTING_LOOP_LIVE=1 npm run dev     # http://localhost:3000
 ```
 
-Confira na sidebar o box **Engine status**: Mode = Live (droids armed), Factory sessions `x / 80`, versão do droid CLI.
-Se o CLI aparecer como "—": rode `droid --version` no terminal. Se a sessão Factory expirou, refaça o login.
+Na sidebar, o box **Engine status** precisa mostrar: Mode Live, sessões `x / 80` e a versão do droid CLI. Abra o **Engine terminal** no rodapé.
 
-## O que o jurado faz (≈ 4 min)
+## Workflow (≈ 4 min), com o sponsor de cada passo
 
-1. **Overview (`/`), 30s.** "Mapeamos a UX para o pequeno vendedor, mas esta página é para vocês: a arquitetura." Mostre o diagrama, os dois droids lidos de `.factory/droids/` e a seção *Built with*.
-2. **Live Lab (`/lab`).** O jurado escolhe um produto: **Prefill example** ou o dele (foto do celular). O canal é sempre **Shopee Brasil** (Apify ~10s, anúncio em pt-BR, análise em inglês). Outros marketplaces entram só no pitch de escala.
-   Deixe **2 variantes** e clique em **Run droids**: ~2 min no total.
-   - Enquanto roda: o stepper (Apify → intel → plano Thompson → producers em paralelo → Zod), o plano com explore/exploit e um terminal por droid. O stream mostra `Task → listing-producer`, os arquivos gravados e um aviso "still working" a cada 15s.
-   - Os cards aparecem com a capa gerada a partir da foto real, título, descrição e benchmark com IDs reais de concorrentes.
-3. **Run performance-analyst (Opus 5.5)**, ~50s. Como não existem vendas de um anúncio criado agora, ele roda sobre os 14 anúncios reais da DNT, em dry-run. O diff aparece com add/update/retire/inconclusive e evidência (n, μ, IC90, P(melhor)). Na última execução ele aposentou as regras que vinham dos dados simulados da r1.
-4. **Campaigns → campanha nova**: rodadas, aprovar/rejeitar e **Plan next round live**, que mostra a campanha como trabalho de longo prazo.
-5. **Case study → Learning loop (`/aprendizado`)**: a prova com dado real. Na r2 a memória inverteu regras da r1, com `git log memory/`.
+| # | O jurado faz | O que aparece | Quem está agindo (selo no terminal) |
+| --- | --- | --- | --- |
+| 1 | Abre a **Overview** (30s) | Arquitetura, os dois droids lidos de `.factory/droids/` e "Built with", com a linha **In this repo** contada dos arquivos (44 sessões Factory, 18 listings, 5 datasets Apify, 2 commits de memória) | — |
+| 2 | **Live Lab → "Use the DNT case product" → Run droids** (2 variantes) | Formulário com foto, preço e ângulos | — |
+| 3 | Espera ~7s | Stage Apify com actor `xtracto/shopee-search`, **run id e dataset id**, 20 concorrentes e os top 5 com link | **APIFY** |
+| 4 | Instantâneo | **Feedback memory**: playbook v2, commit `c9d33d9 learn: r2`, 7 regras com n, P(melhor) e IC90. Depois o plano: v01/v02 **EXPLOIT**, apoiados por `angulo-academia-profit` e `capa-solo_linha-profit`, e uma variante **EXPLORE** | **CODE** (Thompson sampling) lendo a memória que o **CLAUDE** (analyst) escreveu |
+| 5 | ~2 min | Duas sessões Factory em paralelo: `session …`, `Task → listing-producer`, arquivos gravados, "still working" a cada 15s | **FACTORY** (orquestra) e **CLAUDE** (escreve e gera a capa) |
+| 6 | Ao terminar | Cada card aberto por estratégia: **título** (keyword do ângulo + hook, chars/120), **descrição** (por aquisição: orgânico = cauda longa, ads = keywords nas 2 primeiras linhas, afiliado = ganchos de vídeo curto), **capa** (estilo + brief + imagem a partir da foto real), **benchmark** (preço vs. mediana, IDs de concorrentes citados e verificados), **aquisição**, **memória usada** (regras aplicadas ou hipótese) | **CODE** (Zod: eixos fixos e IDs de concorrentes reais) |
+| 7 | **Run performance-analyst** (~55s) | Diff do playbook: confirma 4 regras e aposenta 3 que vinham de dados simulados, citando `enoughData=false`. Dry-run: não commita | **FACTORY** + **CLAUDE Opus** |
+| 8 | **Case study → Learning loop** | A prova longitudinal: r1 → r2, o dado real inverteu regras, `git log memory/` | — |
+
+## Frases para cada sponsor
+
+- **Apify:** "Toda rodada começa com um run real do actor. O ID está na tela. Sem a Apify, o droid não tem o que citar, e o Zod rejeita um benchmark com concorrente inventado."
+- **Factory:** "O conductor é uma sessão do Droid SDK. Cada variante é um custom droid em processo próprio, e os de uma rodada rodam em paralelo. Os IDs de sessão e os créditos aparecem por variante. Já rodamos 44 sessões neste repo."
+- **Anthropic:** "O Claude escreve o anúncio, gera a capa a partir da foto real e, no Opus, decide o que vira regra, com evidência. Quando não há dado suficiente, ele diz 'inconclusivo'."
+- **Figma:** "Design-time: o guia, o wireframe e as telas foram desenhados no Figma e serviram de spec para esta UI. O Figma não roda no pipeline."
 
 ## Custos e limites
 
-- Cada rodada usa 1 sessão Factory por variante (2 por padrão). O analyst usa 1. O teto está em `runs/budget.json` (cap 80), que o código respeita (`src/budget.ts`).
-- Só **um job por vez**. Um segundo clique recebe 409 com mensagem clara.
-- Nada é publicado em marketplace nenhum.
+- Cada rodada usa 1 sessão por variante, e o analyst usa 1. Teto de 80 em `runs/budget.json`.
+- Só um job por vez. Um segundo clique recebe 409 com mensagem clara.
+- Nada é publicado na Shopee.
 
 ## Se algo falhar
 
 | Sintoma | O que fazer |
 | --- | --- |
-| Apify deu erro | A rodada continua sem intel (o stage fica vermelho e explica). É só seguir. |
-| Uma variante falhou na validação | O card mostra o motivo (é o Zod funcionando). Mostre isso como feature. |
-| Wi-Fi caiu / Factory fora | Abra `/lab?job=round-mvnlndri` (ou o último job em `runs/jobs/`): replay do run real gravado. |
-| Servidor travou | Ctrl+C, rode `LISTING_LOOP_LIVE=1 npm run dev` de novo e reanexe com `/lab?job=<id>`. |
-| Plano B total | O link do Vercel (modo replay) e o vídeo de backup. |
-
-## Deploy replay (Vercel)
-
-```sh
-cd app && npm run snapshot && npm run build
-```
-
-O snapshot copia `runs/r1`, `runs/r2`, `runs/campaigns`, `runs/jobs` (sem `stdout.log`), `.factory/droids` e `memory`.
-No Vercel, o Lab reproduz o job real mais recente, os botões pagos ficam desativados e a API responde 403.
+| Apify vazio | Ele tenta de novo e depois usa o cache da rodada anterior da campanha (o stage avisa). No primeiro uso não há cache, então a rodada segue sem intel. |
+| Variante reprovada no Zod | O card mostra o motivo. Apresente como feature. |
+| Droid travado | Corte em 4 min, e o job sempre termina. Mostre a outra variante. |
+| Sem Wi-Fi ou Factory fora | O Engine terminal e o Lab reproduzem o último run real gravado (`/lab?job=<id>`). |
+| Plano B total | O link do Vercel (replay) e o vídeo de backup. |

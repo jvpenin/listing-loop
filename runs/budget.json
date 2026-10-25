@@ -1,6 +1,6 @@
 {
   "cap": 80,
-  "used": 44,
+  "used": 47,
   "log": [
     {
       "at": "2026-10-25T04:13:27.004Z",
@@ -109,6 +109,18 @@
       "round": "kit-4-top-cropped-sem-bojo-mvk6j/r1",
       "sessions": 2,
       "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T09:58:34.394Z",
+      "round": "kit-4-top-cropped-sem-bojo-nndf0/r1",
+      "sessions": 2,
+      "what": "lab round v01,v02"
+    },
+    {
+      "at": "2026-10-25T09:59:53.925Z",
+      "round": "r1",
+      "sessions": 1,
+      "what": "retry v02"
     }
   ]
 }
