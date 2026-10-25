@@ -39,6 +39,14 @@ export const Listing = z.object({
   coverPath: z.string().min(1),
   appliedRules: z.array(z.string()),
   hypothesis: z.string(),
+  // Proof that the producer benchmarked real competitors (ids are checked against the Apify data).
+  benchmark: z.object({
+    competitorsAnalyzed: z.number().int().min(0),
+    referenceItemIds: z.array(z.string()).max(5),
+    pricePosition: z.string().min(1),
+    keywordsAdopted: z.array(z.string()).max(8),
+    differentiators: z.array(z.string()).min(1).max(4),
+  }),
 });
 export type Listing = z.infer<typeof Listing>;
 

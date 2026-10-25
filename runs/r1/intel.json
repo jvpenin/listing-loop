@@ -1,469 +1,1526 @@
 {
   "round": "r1",
-  "generatedAt": "2026-10-25T05:03:43.785Z",
-  "source": "Apify (data/competitors)",
-  "angles": {
-    "academia": {
-      "n": 17,
+  "generatedAt": "2026-10-25T05:11:25.248Z",
+  "source": "Apify xtracto/shopee-search, shopee.com.br, ordenado por mais vendidos",
+  "queries": {
+    "academia": [
+      "kit top cropped academia",
+      "kit top fitness academia feminino"
+    ],
+    "casual": [
+      "kit top cropped casual",
+      "kit cropped feminino basico"
+    ],
+    "conforto": [
+      "kit top cropped sem bojo",
+      "kit top cropped microfibra"
+    ],
+    "presente": [
+      "kit 4 top cropped feminino",
+      "kit top cropped cores"
+    ]
+  },
+  "headlines": [
+    "academia: 66 concorrentes comparáveis (3 excluídos: outro tipo de peça); mediana R$ 39,90 (R$ 14,83/peça); kit dominante kit3 (45%); DNT R$ 12,98/peça é mais barato por peça que 64% deles; palavras que a DNT não usa: suplex, sustentação, nadador, poliamida",
+    "casual: 57 concorrentes comparáveis (13 excluídos: outro tipo de peça); mediana R$ 39,00 (R$ 15,00/peça); kit dominante kit2 (42%); DNT R$ 12,98/peça é mais barato por peça que 67% deles; palavras que a DNT não usa: moda, verão, nua, suplex",
+    "conforto: 42 concorrentes comparáveis (24 excluídos: outro tipo de peça); mediana R$ 40,99 (R$ 11,98/peça); kit dominante kit3 (31%); DNT R$ 12,98/peça é mais barato por peça que 41% deles; palavras que a DNT não usa: alça, alcinha, suplex, moda",
+    "presente: 48 concorrentes comparáveis (23 excluídos: outro tipo de peça); mediana R$ 45,60 (R$ 12,75/peça); kit dominante kit4 (50%); DNT R$ 12,98/peça é mais barato por peça que 47% deles; palavras que a DNT não usa: moda, suplex, alcinha, canelado"
+  ],
+  "market": {
+    "n": 179,
+    "excludedNotComparable": 47,
+    "price": {
+      "min": 12.99,
+      "p25": 29.99,
+      "median": 39.9,
+      "p75": 51.99,
+      "max": 209.7
+    },
+    "pricePerPiece": {
+      "n": 162,
+      "p25": 9.97,
+      "median": 13.86,
+      "p75": 18.13
+    },
+    "kits": [
+      {
+        "term": "kit3",
+        "count": 56,
+        "sharePct": 31
+      },
+      {
+        "term": "kit2",
+        "count": 49,
+        "sharePct": 27
+      },
+      {
+        "term": "kit4",
+        "count": 33,
+        "sharePct": 18
+      },
+      {
+        "term": "kit5",
+        "count": 12,
+        "sharePct": 7
+      },
+      {
+        "term": "kit10",
+        "count": 6,
+        "sharePct": 3
+      }
+    ],
+    "discount": {
+      "sharePct": 1,
+      "medianPct": 25
+    },
+    "ratingMedian": 4.9,
+    "titles": {
+      "avgLength": 79,
+      "startsWithKitPct": 94,
       "topWords": [
         {
           "term": "academia",
-          "count": 17
+          "count": 85,
+          "sharePct": 47
         },
         {
           "term": "fitness",
-          "count": 11
+          "count": 64,
+          "sharePct": 36
         },
         {
           "term": "suplex",
-          "count": 8
+          "count": 49,
+          "sharePct": 27
         },
         {
-          "term": "sustentação",
-          "count": 7
-        },
-        {
-          "term": "forro",
-          "count": 6
-        },
-        {
-          "term": "duplo",
-          "count": 6
-        },
-        {
-          "term": "treino",
-          "count": 4
-        },
-        {
-          "term": "alcinha",
-          "count": 3
-        },
-        {
-          "term": "tops",
-          "count": 3
-        },
-        {
-          "term": "microfibra",
-          "count": 3
-        },
-        {
-          "term": "firme",
-          "count": 3
-        },
-        {
-          "term": "esportivo",
-          "count": 2
+          "term": "bojo",
+          "count": 41,
+          "sharePct": 23
         },
         {
           "term": "moda",
-          "count": 2
+          "count": 31,
+          "sharePct": 17
         },
         {
-          "term": "alta",
-          "count": 2
+          "term": "casual",
+          "count": 31,
+          "sharePct": 17
+        },
+        {
+          "term": "treino",
+          "count": 29,
+          "sharePct": 16
+        },
+        {
+          "term": "alcinha",
+          "count": 29,
+          "sharePct": 16
         },
         {
           "term": "alça",
-          "count": 2
+          "count": 28,
+          "sharePct": 16
+        },
+        {
+          "term": "verão",
+          "count": 27,
+          "sharePct": 15
+        },
+        {
+          "term": "duplo",
+          "count": 22,
+          "sharePct": 12
+        },
+        {
+          "term": "regata",
+          "count": 21,
+          "sharePct": 12
+        },
+        {
+          "term": "sustentação",
+          "count": 20,
+          "sharePct": 11
+        },
+        {
+          "term": "forro",
+          "count": 19,
+          "sharePct": 11
+        },
+        {
+          "term": "canelado",
+          "count": 19,
+          "sharePct": 11
         }
       ],
+      "topBigrams": [
+        {
+          "term": "forro duplo",
+          "count": 16,
+          "sharePct": 9
+        },
+        {
+          "term": "fitness academia",
+          "count": 15,
+          "sharePct": 8
+        },
+        {
+          "term": "costa nua",
+          "count": 14,
+          "sharePct": 8
+        },
+        {
+          "term": "alça fina",
+          "count": 13,
+          "sharePct": 7
+        },
+        {
+          "term": "academia fitness",
+          "count": 12,
+          "sharePct": 7
+        },
+        {
+          "term": "frente única",
+          "count": 11,
+          "sharePct": 6
+        },
+        {
+          "term": "moda verão",
+          "count": 10,
+          "sharePct": 6
+        },
+        {
+          "term": "academia treino",
+          "count": 9,
+          "sharePct": 5
+        }
+      ]
+    },
+    "dnt": {
+      "price": 51.9,
+      "kit": 4,
+      "pricePerPiece": 12.98,
+      "cheaperPerPieceThanPct": 59,
+      "priceVsMedianPct": 30
+    },
+    "keywordGaps": [
+      {
+        "term": "suplex",
+        "count": 49,
+        "sharePct": 27
+      },
+      {
+        "term": "moda",
+        "count": 31,
+        "sharePct": 17
+      },
+      {
+        "term": "alcinha",
+        "count": 29,
+        "sharePct": 16
+      },
+      {
+        "term": "alça",
+        "count": 28,
+        "sharePct": 16
+      },
+      {
+        "term": "verão",
+        "count": 27,
+        "sharePct": 15
+      },
+      {
+        "term": "regata",
+        "count": 21,
+        "sharePct": 12
+      },
+      {
+        "term": "sustentação",
+        "count": 20,
+        "sharePct": 11
+      },
+      {
+        "term": "canelado",
+        "count": 19,
+        "sharePct": 11
+      }
+    ]
+  },
+  "angles": {
+    "academia": {
+      "n": 66,
+      "excludedNotComparable": 3,
+      "price": {
+        "min": 12.99,
+        "p25": 29.9,
+        "median": 39.9,
+        "p75": 50,
+        "max": 209.7
+      },
+      "pricePerPiece": {
+        "n": 59,
+        "p25": 11.32,
+        "median": 14.83,
+        "p75": 20
+      },
       "kits": [
         {
           "term": "kit3",
-          "count": 7
+          "count": 30,
+          "sharePct": 45
         },
         {
           "term": "kit2",
-          "count": 5
+          "count": 18,
+          "sharePct": 27
         },
         {
           "term": "kit4",
-          "count": 2
+          "count": 7,
+          "sharePct": 11
+        },
+        {
+          "term": "kit5",
+          "count": 2,
+          "sharePct": 3
         },
         {
           "term": "kit10",
-          "count": 1
+          "count": 1,
+          "sharePct": 2
         }
       ],
-      "price": {
-        "min": 17.34,
-        "median": 41.9,
-        "max": 209.7
+      "discount": {
+        "sharePct": 2,
+        "medianPct": 25
       },
-      "medianDiscountPct": 25,
-      "bestSellers": [
+      "ratingMedian": 4.9,
+      "titles": {
+        "avgLength": 79,
+        "startsWithKitPct": 91,
+        "topWords": [
+          {
+            "term": "academia",
+            "count": 55,
+            "sharePct": 83
+          },
+          {
+            "term": "fitness",
+            "count": 47,
+            "sharePct": 71
+          },
+          {
+            "term": "suplex",
+            "count": 22,
+            "sharePct": 33
+          },
+          {
+            "term": "sustentação",
+            "count": 19,
+            "sharePct": 29
+          },
+          {
+            "term": "treino",
+            "count": 19,
+            "sharePct": 29
+          },
+          {
+            "term": "bojo",
+            "count": 18,
+            "sharePct": 27
+          },
+          {
+            "term": "nadador",
+            "count": 12,
+            "sharePct": 18
+          },
+          {
+            "term": "duplo",
+            "count": 9,
+            "sharePct": 14
+          },
+          {
+            "term": "poliamida",
+            "count": 9,
+            "sharePct": 14
+          },
+          {
+            "term": "costas",
+            "count": 9,
+            "sharePct": 14
+          },
+          {
+            "term": "alcinha",
+            "count": 9,
+            "sharePct": 14
+          },
+          {
+            "term": "esportivo",
+            "count": 8,
+            "sharePct": 12
+          },
+          {
+            "term": "alça",
+            "count": 8,
+            "sharePct": 12
+          },
+          {
+            "term": "confortável",
+            "count": 8,
+            "sharePct": 12
+          },
+          {
+            "term": "forro",
+            "count": 7,
+            "sharePct": 11
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "fitness academia",
+            "count": 11,
+            "sharePct": 17
+          },
+          {
+            "term": "academia fitness",
+            "count": 8,
+            "sharePct": 12
+          },
+          {
+            "term": "bojo removível",
+            "count": 7,
+            "sharePct": 11
+          },
+          {
+            "term": "academia treino",
+            "count": 6,
+            "sharePct": 9
+          },
+          {
+            "term": "forro duplo",
+            "count": 5,
+            "sharePct": 8
+          },
+          {
+            "term": "academia suplex",
+            "count": 5,
+            "sharePct": 8
+          },
+          {
+            "term": "fitness treino",
+            "count": 5,
+            "sharePct": 8
+          },
+          {
+            "term": "academia forro",
+            "count": 4,
+            "sharePct": 6
+          }
+        ]
+      },
+      "dnt": {
+        "price": 51.9,
+        "kit": 4,
+        "pricePerPiece": 12.98,
+        "cheaperPerPieceThanPct": 64,
+        "priceVsMedianPct": 30
+      },
+      "keywordGaps": [
         {
-          "title": "KIT 03 - Top Academia Alcinha Fitness Com Cruzado nas Costas Suplex Power - Costas Xis Top Fitness - Varias Cores",
-          "price": 49.98,
-          "sold": 0
+          "term": "suplex",
+          "count": 22,
+          "sharePct": 33
         },
         {
+          "term": "sustentação",
+          "count": 19,
+          "sharePct": 29
+        },
+        {
+          "term": "nadador",
+          "count": 12,
+          "sharePct": 18
+        },
+        {
+          "term": "poliamida",
+          "count": 9,
+          "sharePct": 14
+        },
+        {
+          "term": "costas",
+          "count": 9,
+          "sharePct": 14
+        },
+        {
+          "term": "alcinha",
+          "count": 9,
+          "sharePct": 14
+        },
+        {
+          "term": "esportivo",
+          "count": 8,
+          "sharePct": 12
+        },
+        {
+          "term": "alça",
+          "count": 8,
+          "sharePct": 12
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "58264919459",
+          "title": "Kit 3 Top Fitness Feminino Alcinha Suplex Alta Sustentação Confortável Para Academia",
+          "price": 31.9,
+          "kit": 3,
+          "pricePerPiece": 10.63,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 1,
+          "query": "kit top fitness academia feminino",
+          "url": "https://shopee.com.br/Kit-3-Top-Fitness-Feminino-Alcinha-Suplex-Alta-Sustentação-Confortável-Para-Academia-i.393625084.58264919459"
+        },
+        {
+          "itemId": "56417405538",
           "title": "Kit 4 Tops Cropped Academia Forro Duplo Microfibra Feminino",
           "price": 56.99,
-          "sold": 0
+          "kit": 4,
+          "pricePerPiece": 14.25,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 2,
+          "query": "kit top cropped academia",
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.435383573.56417405538"
         },
         {
+          "itemId": "22794946896",
+          "title": "Kit 3 Tops Feminino Academia Fitness com Bojo Caminhada Nadador Yoga Confortável",
+          "price": 56.98,
+          "kit": 3,
+          "pricePerPiece": 18.99,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 2,
+          "query": "kit top fitness academia feminino",
+          "url": "https://shopee.com.br/Kit-3-Tops-Feminino-Academia-Fitness-com-Bojo-Caminhada-Nadador-Yoga-Confortável-i.412470104.22794946896"
+        },
+        {
+          "itemId": "22399710152",
           "title": "Kit 2 Top Fitness Sem Costura Academia Duplo Feminino Suplex Firme Esportivo Sustentação Treino Cropped",
           "price": 49.9,
-          "sold": 0
+          "kit": 2,
+          "pricePerPiece": 24.95,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 3,
+          "query": "kit top cropped academia",
+          "url": "https://shopee.com.br/Kit-2-Top-Fitness-Sem-Costura-Academia-Duplo-Feminino-Suplex-Firme-Esportivo-Sustentação-Treino-Cropped-i.1760800232.22399710152"
         },
         {
-          "title": "Kit 3 top fitness feminino top academia feminino  top suplex firme top esportivo com sustentação top treino feminino",
+          "itemId": "58267963002",
+          "title": "Kit 3 Blusa Cropped Furadinha Academia Feminino Dry Fit",
+          "price": 59.99,
+          "kit": 3,
+          "pricePerPiece": 20,
+          "discountPct": null,
+          "rating": 4,
+          "salesRank": 4,
+          "query": "kit top cropped academia",
+          "url": "https://shopee.com.br/Kit-3-Blusa-Cropped-Furadinha-Academia-Feminino-Dry-Fit-i.372852142.58267963002"
+        },
+        {
+          "itemId": "47915579990",
+          "title": "Kit c até 4 Top Fitness Feminino Sem Costura Canelado Zíper Frontal Poliamida Academia",
+          "price": 26.9,
+          "kit": null,
+          "pricePerPiece": null,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 4,
+          "query": "kit top fitness academia feminino",
+          "url": "https://shopee.com.br/Kit-c-até-4-Top-Fitness-Feminino-Sem-Costura-Canelado-Zíper-Frontal-Poliamida-Academia-i.438070685.47915579990"
+        },
+        {
+          "itemId": "58266995829",
+          "title": "Kit 3 Regatas Cropped Feminina Dry Fit Academia Treino Fitness Cross",
+          "price": 29.99,
+          "kit": 3,
+          "pricePerPiece": 10,
+          "discountPct": null,
+          "rating": 4.7,
+          "salesRank": 5,
+          "query": "kit top cropped academia",
+          "url": "https://shopee.com.br/Kit-3-Regatas-Cropped-Feminina-Dry-Fit-Academia-Treino-Fitness-Cross-i.425246967.58266995829"
+        },
+        {
+          "itemId": "22697738089",
+          "title": "Kit 6 Top Academia Fitness Feminino Treino Casual Esportes Plus Size Sem Bojo",
           "price": 69.99,
-          "sold": 0
-        },
-        {
-          "title": "Kit 2 Cropped Top Feminino Academia Moda Fitness Sustentação",
-          "price": 49.9,
-          "sold": 0
+          "kit": 6,
+          "pricePerPiece": 11.67,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 5,
+          "query": "kit top fitness academia feminino",
+          "url": "https://shopee.com.br/Kit-6-Top-Academia-Fitness-Feminino-Treino-Casual-Esportes-Plus-Size-Sem-Bojo-i.286403516.22697738089"
         }
       ]
     },
     "casual": {
-      "n": 20,
-      "topWords": [
-        {
-          "term": "casual",
-          "count": 9
-        },
-        {
-          "term": "frente",
-          "count": 8
-        },
-        {
-          "term": "moda",
-          "count": 8
-        },
-        {
-          "term": "halter",
-          "count": 7
-        },
-        {
-          "term": "única",
-          "count": 7
-        },
-        {
-          "term": "nua",
-          "count": 7
-        },
-        {
-          "term": "costa",
-          "count": 6
-        },
-        {
-          "term": "verão",
-          "count": 6
-        },
-        {
-          "term": "tomara",
-          "count": 5
-        },
-        {
-          "term": "que",
-          "count": 5
-        },
-        {
-          "term": "caia",
-          "count": 5
-        },
-        {
-          "term": "blusas",
-          "count": 5
-        },
-        {
-          "term": "ajustado",
-          "count": 5
-        },
-        {
-          "term": "blusa",
-          "count": 5
-        },
-        {
-          "term": "suplex",
-          "count": 4
-        }
-      ],
+      "n": 57,
+      "excludedNotComparable": 13,
+      "price": {
+        "min": 12.99,
+        "p25": 29.99,
+        "median": 39,
+        "p75": 45.98,
+        "max": 85.5
+      },
+      "pricePerPiece": {
+        "n": 52,
+        "p25": 11.45,
+        "median": 15,
+        "p75": 18.6
+      },
       "kits": [
         {
-          "term": "kit3",
-          "count": 9
-        },
-        {
           "term": "kit2",
-          "count": 5
+          "count": 24,
+          "sharePct": 42
         },
         {
-          "term": "kit5",
-          "count": 2
+          "term": "kit3",
+          "count": 17,
+          "sharePct": 30
+        },
+        {
+          "term": "kit10",
+          "count": 3,
+          "sharePct": 5
         },
         {
           "term": "kit4",
-          "count": 1
+          "count": 3,
+          "sharePct": 5
+        },
+        {
+          "term": "kit5",
+          "count": 2,
+          "sharePct": 4
         }
       ],
-      "price": {
-        "min": 19.99,
-        "median": 37.78,
-        "max": 69.99
+      "discount": {
+        "sharePct": 2,
+        "medianPct": 14
       },
-      "medianDiscountPct": null,
-      "bestSellers": [
+      "ratingMedian": 4.9,
+      "titles": {
+        "avgLength": 77,
+        "startsWithKitPct": 95,
+        "topWords": [
+          {
+            "term": "casual",
+            "count": 18,
+            "sharePct": 32
+          },
+          {
+            "term": "moda",
+            "count": 17,
+            "sharePct": 30
+          },
+          {
+            "term": "verão",
+            "count": 17,
+            "sharePct": 30
+          },
+          {
+            "term": "nua",
+            "count": 12,
+            "sharePct": 21
+          },
+          {
+            "term": "suplex",
+            "count": 12,
+            "sharePct": 21
+          },
+          {
+            "term": "blusas",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "halter",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "frente",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "costa",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "blusa",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "regata",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "única",
+            "count": 9,
+            "sharePct": 16
+          },
+          {
+            "term": "algodão",
+            "count": 9,
+            "sharePct": 16
+          },
+          {
+            "term": "ajustado",
+            "count": 8,
+            "sharePct": 14
+          },
+          {
+            "term": "canelado",
+            "count": 8,
+            "sharePct": 14
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "costa nua",
+            "count": 10,
+            "sharePct": 18
+          },
+          {
+            "term": "frente única",
+            "count": 9,
+            "sharePct": 16
+          },
+          {
+            "term": "blusas halter",
+            "count": 7,
+            "sharePct": 12
+          },
+          {
+            "term": "nua casual",
+            "count": 7,
+            "sharePct": 12
+          },
+          {
+            "term": "casual moda",
+            "count": 7,
+            "sharePct": 12
+          },
+          {
+            "term": "moda verão",
+            "count": 7,
+            "sharePct": 12
+          },
+          {
+            "term": "halter ajustado",
+            "count": 6,
+            "sharePct": 11
+          },
+          {
+            "term": "ajustado frente",
+            "count": 6,
+            "sharePct": 11
+          }
+        ]
+      },
+      "dnt": {
+        "price": 51.9,
+        "kit": 4,
+        "pricePerPiece": 12.98,
+        "cheaperPerPieceThanPct": 67,
+        "priceVsMedianPct": 33
+      },
+      "keywordGaps": [
         {
-          "title": "Kit 5 Cropped Top Tomara que Caia",
-          "price": 39.64,
-          "sold": 0
+          "term": "moda",
+          "count": 17,
+          "sharePct": 30
         },
         {
+          "term": "verão",
+          "count": 17,
+          "sharePct": 30
+        },
+        {
+          "term": "nua",
+          "count": 12,
+          "sharePct": 21
+        },
+        {
+          "term": "suplex",
+          "count": 12,
+          "sharePct": 21
+        },
+        {
+          "term": "blusas",
+          "count": 10,
+          "sharePct": 18
+        },
+        {
+          "term": "halter",
+          "count": 10,
+          "sharePct": 18
+        },
+        {
+          "term": "frente",
+          "count": 10,
+          "sharePct": 18
+        },
+        {
+          "term": "costa",
+          "count": 10,
+          "sharePct": 18
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "58269308875",
           "title": "KIT 3 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO 2026",
           "price": 45,
-          "sold": 0
+          "kit": 3,
+          "pricePerPiece": 15,
+          "discountPct": null,
+          "rating": 4.1,
+          "salesRank": 1,
+          "query": "kit top cropped casual",
+          "url": "https://shopee.com.br/KIT-3-BLUSAS-FEMININA-TOP-HALTER-CROPPED-AJUSTADO-FRENTE-ÚNICA-COSTA-NUA-CASUAL-MODA-VERÃO-2026-i.1733231691.58269308875"
         },
         {
-          "title": "Kit 2 Croppeds Feminino Básico Canelado premium Alcinha Casual Básico Moda Feminina croped",
-          "price": 19.99,
-          "sold": 0
+          "itemId": "58206609367",
+          "title": "KIT 2 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO 2026",
+          "price": 45.91,
+          "kit": 2,
+          "pricePerPiece": 22.96,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 2,
+          "query": "kit top cropped casual",
+          "url": "https://shopee.com.br/KIT-2-BLUSAS-FEMININA-TOP-HALTER-CROPPED-AJUSTADO-FRENTE-ÚNICA-COSTA-NUA-CASUAL-MODA-VERÃO-2026-i.667499415.58206609367"
         },
         {
+          "itemId": "58267373854",
           "title": "Kit com 2 blusas Cropped Blusa feminina Top Halter Antonella  Frente Unica Costa Nua  Ajustado Moda Gringa Verão Casual",
           "price": 32.99,
-          "sold": 0
+          "kit": 2,
+          "pricePerPiece": 16.5,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 3,
+          "query": "kit top cropped casual",
+          "url": "https://shopee.com.br/Kit-com-2-blusas-Cropped-Blusa-feminina-Top-Halter-Antonella-Frente-Unica-Costa-Nua-Ajustado-Moda-Gringa-Verão-Casual-i.1630956901.58267373854"
         },
         {
+          "itemId": "58218110445",
+          "title": "Kit 3 Cropped Feminino Blusa Cropped Lisa Manga Curta Gola Redonda Algodao Basica Blusinha Verao",
+          "price": 59.9,
+          "kit": 3,
+          "pricePerPiece": 19.97,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 4,
+          "query": "kit cropped feminino basico",
+          "url": "https://shopee.com.br/Kit-3-Cropped-Feminino-Blusa-Cropped-Lisa-Manga-Curta-Gola-Redonda-Algodao-Basica-Blusinha-Verao-i.446855432.58218110445"
+        },
+        {
+          "itemId": "58269533315",
+          "title": "KIT 2 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO BLOGUEIRA",
+          "price": 30.8,
+          "kit": 2,
+          "pricePerPiece": 15.4,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 5,
+          "query": "kit top cropped casual",
+          "url": "https://shopee.com.br/KIT-2-BLUSAS-FEMININA-TOP-HALTER-CROPPED-AJUSTADO-FRENTE-ÚNICA-COSTA-NUA-CASUAL-MODA-VERÃO-BLOGUEIRA-i.749221761.58269533315"
+        },
+        {
+          "itemId": "58216766886",
+          "title": "kit 1/2 Cropped Gola Quadrada Plus Manga Curta Feminino Suplex Premium Forro Duplo Blusa Moda Gringa",
+          "price": 28.46,
+          "kit": 1,
+          "pricePerPiece": 28.46,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 5,
+          "query": "kit cropped feminino basico",
+          "url": "https://shopee.com.br/kit-1-2-Cropped-Gola-Quadrada-Plus-Manga-Curta-Feminino-Suplex-Premium-Forro-Duplo-Blusa-Moda-Gringa-i.1830384095.58216766886"
+        },
+        {
+          "itemId": "58265651420",
+          "title": "Kit 2 Cropped Oversized 100% Algodão | King Premium",
+          "price": 38.45,
+          "kit": 2,
+          "pricePerPiece": 19.23,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 6,
+          "query": "kit cropped feminino basico",
+          "url": "https://shopee.com.br/Kit-2-Cropped-Oversized-100-Algodão-King-Premium-i.1622769356.58265651420"
+        },
+        {
+          "itemId": "58265979123",
           "title": "KIT 3 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO 2026",
           "price": 40.97,
-          "sold": 0
+          "kit": 3,
+          "pricePerPiece": 13.66,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 7,
+          "query": "kit top cropped casual",
+          "url": "https://shopee.com.br/KIT-3-BLUSAS-FEMININA-TOP-HALTER-CROPPED-AJUSTADO-FRENTE-ÚNICA-COSTA-NUA-CASUAL-MODA-VERÃO-2026-i.293162721.58265979123"
         }
       ]
     },
     "conforto": {
-      "n": 17,
-      "topWords": [
-        {
-          "term": "bojo",
-          "count": 8
-        },
-        {
-          "term": "confortável",
-          "count": 8
-        },
-        {
-          "term": "tomara",
-          "count": 7
-        },
-        {
-          "term": "que",
-          "count": 7
-        },
-        {
-          "term": "caia",
-          "count": 7
-        },
-        {
-          "term": "faixa",
-          "count": 5
-        },
-        {
-          "term": "fitness",
-          "count": 4
-        },
-        {
-          "term": "academia",
-          "count": 4
-        },
-        {
-          "term": "tops",
-          "count": 3
-        },
-        {
-          "term": "sustentação",
-          "count": 3
-        },
-        {
-          "term": "alcinha",
-          "count": 3
-        },
-        {
-          "term": "tube",
-          "count": 2
-        },
-        {
-          "term": "015",
-          "count": 2
-        },
-        {
-          "term": "microfibra",
-          "count": 2
-        },
-        {
-          "term": "forrado",
-          "count": 2
-        }
-      ],
+      "n": 42,
+      "excludedNotComparable": 24,
+      "price": {
+        "min": 17.5,
+        "p25": 36.99,
+        "median": 40.99,
+        "p75": 49.98,
+        "max": 72.9
+      },
+      "pricePerPiece": {
+        "n": 39,
+        "p25": 8.96,
+        "median": 11.98,
+        "p75": 15
+      },
       "kits": [
         {
           "term": "kit3",
-          "count": 6
-        },
-        {
-          "term": "kit2",
-          "count": 4
+          "count": 13,
+          "sharePct": 31
         },
         {
           "term": "kit4",
-          "count": 4
+          "count": 9,
+          "sharePct": 21
+        },
+        {
+          "term": "kit2",
+          "count": 7,
+          "sharePct": 17
         },
         {
           "term": "kit5",
-          "count": 2
+          "count": 6,
+          "sharePct": 14
+        },
+        {
+          "term": "kit10",
+          "count": 3,
+          "sharePct": 7
         }
       ],
-      "price": {
-        "min": 13.99,
-        "median": 29.99,
-        "max": 54
+      "discount": {
+        "sharePct": 0,
+        "medianPct": null
       },
-      "medianDiscountPct": null,
-      "bestSellers": [
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 81,
+        "startsWithKitPct": 100,
+        "topWords": [
+          {
+            "term": "academia",
+            "count": 24,
+            "sharePct": 57
+          },
+          {
+            "term": "fitness",
+            "count": 15,
+            "sharePct": 36
+          },
+          {
+            "term": "bojo",
+            "count": 15,
+            "sharePct": 36
+          },
+          {
+            "term": "alça",
+            "count": 13,
+            "sharePct": 31
+          },
+          {
+            "term": "duplo",
+            "count": 11,
+            "sharePct": 26
+          },
+          {
+            "term": "alcinha",
+            "count": 11,
+            "sharePct": 26
+          },
+          {
+            "term": "suplex",
+            "count": 11,
+            "sharePct": 26
+          },
+          {
+            "term": "moda",
+            "count": 9,
+            "sharePct": 21
+          },
+          {
+            "term": "microfibra",
+            "count": 8,
+            "sharePct": 19
+          },
+          {
+            "term": "fina",
+            "count": 8,
+            "sharePct": 19
+          },
+          {
+            "term": "forro",
+            "count": 8,
+            "sharePct": 19
+          },
+          {
+            "term": "verão",
+            "count": 8,
+            "sharePct": 19
+          },
+          {
+            "term": "confortável",
+            "count": 7,
+            "sharePct": 17
+          },
+          {
+            "term": "regata",
+            "count": 7,
+            "sharePct": 17
+          },
+          {
+            "term": "premium",
+            "count": 6,
+            "sharePct": 14
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "forro duplo",
+            "count": 8,
+            "sharePct": 19
+          },
+          {
+            "term": "alça fina",
+            "count": 7,
+            "sharePct": 17
+          },
+          {
+            "term": "fitness academia",
+            "count": 4,
+            "sharePct": 10
+          },
+          {
+            "term": "microfibra bojo",
+            "count": 3,
+            "sharePct": 7
+          },
+          {
+            "term": "academia fitness",
+            "count": 3,
+            "sharePct": 7
+          },
+          {
+            "term": "plus size",
+            "count": 3,
+            "sharePct": 7
+          },
+          {
+            "term": "academia forro",
+            "count": 3,
+            "sharePct": 7
+          },
+          {
+            "term": "duplo microfibra",
+            "count": 3,
+            "sharePct": 7
+          }
+        ]
+      },
+      "dnt": {
+        "price": 51.9,
+        "kit": 4,
+        "pricePerPiece": 12.98,
+        "cheaperPerPieceThanPct": 41,
+        "priceVsMedianPct": 27
+      },
+      "keywordGaps": [
         {
-          "title": "Kit 3 Tops Faixa Cropped SEM BOJO Tomara que Caia Confortável",
-          "price": 19.9,
-          "sold": 0
+          "term": "alça",
+          "count": 13,
+          "sharePct": 31
         },
         {
-          "title": "Kit 2 Top Faixa Cropped Sem Bojo Tomara que Caia Confortável",
-          "price": 15.9,
-          "sold": 0
+          "term": "alcinha",
+          "count": 11,
+          "sharePct": 26
         },
         {
-          "title": "Kit 5 Cropped Top Tomara que Caia",
-          "price": 39.64,
-          "sold": 0
+          "term": "suplex",
+          "count": 11,
+          "sharePct": 26
         },
         {
-          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
-          "price": 47.9,
-          "sold": 0
+          "term": "moda",
+          "count": 9,
+          "sharePct": 21
         },
         {
-          "title": "Kit 3 Cropped Tube Tomara Que Caia RF 015",
-          "price": 29.99,
-          "sold": 0
+          "term": "fina",
+          "count": 8,
+          "sharePct": 19
+        },
+        {
+          "term": "verão",
+          "count": 8,
+          "sharePct": 19
+        },
+        {
+          "term": "confortável",
+          "count": 7,
+          "sharePct": 17
+        },
+        {
+          "term": "regata",
+          "count": 7,
+          "sharePct": 17
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "56417405538",
+          "title": "Kit 4 Tops Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 56.99,
+          "kit": 4,
+          "pricePerPiece": 14.25,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 4,
+          "query": "kit top cropped microfibra",
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.435383573.56417405538"
+        },
+        {
+          "itemId": "58268750396",
+          "title": "Kit 2 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 32.34,
+          "kit": 2,
+          "pricePerPiece": 16.17,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 6,
+          "query": "kit top cropped sem bojo",
+          "url": "https://shopee.com.br/Kit-2-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58268750396"
+        },
+        {
+          "itemId": "57118862429",
+          "title": "Kit 4 Top Cropped Alça Fina Sem Bojo Feminino Academia Fitness Básico Liso Dia a Dia",
+          "price": 39.9,
+          "kit": 4,
+          "pricePerPiece": 9.98,
+          "discountPct": null,
+          "rating": 4.7,
+          "salesRank": 9,
+          "query": "kit top cropped sem bojo",
+          "url": "https://shopee.com.br/Kit-4-Top-Cropped-Alça-Fina-Sem-Bojo-Feminino-Academia-Fitness-Básico-Liso-Dia-a-Dia-i.296735539.57118862429"
+        },
+        {
+          "itemId": "58265431253",
+          "title": "Kit 5 Top Feminino Alça Reforçada Sem Costura Poliamida Academia Top Nadador",
+          "price": 45,
+          "kit": 5,
+          "pricePerPiece": 9,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 9,
+          "query": "kit top cropped microfibra",
+          "url": "https://shopee.com.br/Kit-5-Top-Feminino-Alça-Reforçada-Sem-Costura-Poliamida-Academia-Top-Nadador-i.1854350746.58265431253"
+        },
+        {
+          "itemId": "54350433794",
+          "title": "Kit com 5 Top Feminino Adulto Sortidos em Algodão Cotton",
+          "price": 31,
+          "kit": 5,
+          "pricePerPiece": 6.2,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 10,
+          "query": "kit top cropped sem bojo",
+          "url": "https://shopee.com.br/Kit-com-5-Top-Feminino-Adulto-Sortidos-em-Algodão-Cotton-i.718944547.54350433794"
+        },
+        {
+          "itemId": "23404360846",
+          "title": "Kit 10 Top Feminino Forrado Sem Bojo de Microfibra",
+          "price": 72.9,
+          "kit": 10,
+          "pricePerPiece": 7.29,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 11,
+          "query": "kit top cropped microfibra",
+          "url": "https://shopee.com.br/Kit-10-Top-Feminino-Forrado-Sem-Bojo-de-Microfibra-i.376176628.23404360846"
+        },
+        {
+          "itemId": "58218753657",
+          "title": "Kit 4 Tops Cropped Duplo Fitness Feminino Academia Microfibra Sem Bojo",
+          "price": 56.88,
+          "kit": 4,
+          "pricePerPiece": 14.22,
+          "discountPct": null,
+          "rating": null,
+          "salesRank": 12,
+          "query": "kit top cropped sem bojo",
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Duplo-Fitness-Feminino-Academia-Microfibra-Sem-Bojo-i.1931685401.58218753657"
+        },
+        {
+          "itemId": "22930412700",
+          "title": "Kit 5 Tops Gringa Moda Feminina Cropped Costa Nua Alcinha Fina Academia Dyeu Modas",
+          "price": 41.9,
+          "kit": 5,
+          "pricePerPiece": 8.38,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 12,
+          "query": "kit top cropped microfibra",
+          "url": "https://shopee.com.br/Kit-5-Tops-Gringa-Moda-Feminina-Cropped-Costa-Nua-Alcinha-Fina-Academia-Dyeu-Modas-i.393056186.22930412700"
         }
       ]
     },
     "presente": {
-      "n": 20,
-      "topWords": [
-        {
-          "term": "tomara",
-          "count": 8
-        },
-        {
-          "term": "que",
-          "count": 8
-        },
-        {
-          "term": "caia",
-          "count": 8
-        },
-        {
-          "term": "faixa",
-          "count": 4
-        },
-        {
-          "term": "tube",
-          "count": 4
-        },
-        {
-          "term": "alcinha",
-          "count": 4
-        },
-        {
-          "term": "blogueira",
-          "count": 4
-        },
-        {
-          "term": "moda",
-          "count": 4
-        },
-        {
-          "term": "suplex",
-          "count": 4
-        },
-        {
-          "term": "forro",
-          "count": 4
-        },
-        {
-          "term": "duplo",
-          "count": 4
-        },
-        {
-          "term": "croppeds",
-          "count": 3
-        },
-        {
-          "term": "fitness",
-          "count": 3
-        },
-        {
-          "term": "liso",
-          "count": 3
-        },
-        {
-          "term": "bojo",
-          "count": 2
-        }
-      ],
+      "n": 48,
+      "excludedNotComparable": 23,
+      "price": {
+        "min": 19.99,
+        "p25": 36.99,
+        "median": 45.6,
+        "p75": 56.1,
+        "max": 79.84
+      },
+      "pricePerPiece": {
+        "n": 45,
+        "p25": 9.5,
+        "median": 12.75,
+        "p75": 14.25
+      },
       "kits": [
         {
-          "term": "kit3",
-          "count": 9
-        },
-        {
-          "term": "kit5",
-          "count": 3
-        },
-        {
-          "term": "kit10",
-          "count": 3
+          "term": "kit4",
+          "count": 24,
+          "sharePct": 50
         },
         {
           "term": "kit2",
-          "count": 2
+          "count": 8,
+          "sharePct": 17
+        },
+        {
+          "term": "kit3",
+          "count": 5,
+          "sharePct": 10
+        },
+        {
+          "term": "kit5",
+          "count": 5,
+          "sharePct": 10
+        },
+        {
+          "term": "kit10",
+          "count": 2,
+          "sharePct": 4
         }
       ],
-      "price": {
-        "min": 19.8,
-        "median": 39,
-        "max": 97.57
+      "discount": {
+        "sharePct": 0,
+        "medianPct": null
       },
-      "medianDiscountPct": 25,
-      "bestSellers": [
+      "ratingMedian": 4.8,
+      "titles": {
+        "avgLength": 80,
+        "startsWithKitPct": 96,
+        "topWords": [
+          {
+            "term": "moda",
+            "count": 15,
+            "sharePct": 31
+          },
+          {
+            "term": "suplex",
+            "count": 15,
+            "sharePct": 31
+          },
+          {
+            "term": "alcinha",
+            "count": 15,
+            "sharePct": 31
+          },
+          {
+            "term": "academia",
+            "count": 14,
+            "sharePct": 29
+          },
+          {
+            "term": "fitness",
+            "count": 10,
+            "sharePct": 21
+          },
+          {
+            "term": "canelado",
+            "count": 10,
+            "sharePct": 21
+          },
+          {
+            "term": "regata",
+            "count": 9,
+            "sharePct": 19
+          },
+          {
+            "term": "bojo",
+            "count": 9,
+            "sharePct": 19
+          },
+          {
+            "term": "cores",
+            "count": 9,
+            "sharePct": 19
+          },
+          {
+            "term": "blusa",
+            "count": 9,
+            "sharePct": 19
+          },
+          {
+            "term": "casual",
+            "count": 9,
+            "sharePct": 19
+          },
+          {
+            "term": "croppeds",
+            "count": 8,
+            "sharePct": 17
+          },
+          {
+            "term": "forro",
+            "count": 7,
+            "sharePct": 15
+          },
+          {
+            "term": "duplo",
+            "count": 7,
+            "sharePct": 15
+          },
+          {
+            "term": "verão",
+            "count": 7,
+            "sharePct": 15
+          }
+        ],
+        "topBigrams": [
+          {
+            "term": "forro duplo",
+            "count": 7,
+            "sharePct": 15
+          },
+          {
+            "term": "alcinha canelado",
+            "count": 6,
+            "sharePct": 13
+          },
+          {
+            "term": "moda gringa",
+            "count": 4,
+            "sharePct": 8
+          },
+          {
+            "term": "alças finas",
+            "count": 4,
+            "sharePct": 8
+          },
+          {
+            "term": "regata alcinha",
+            "count": 4,
+            "sharePct": 8
+          },
+          {
+            "term": "várias cores",
+            "count": 4,
+            "sharePct": 8
+          },
+          {
+            "term": "alça fina",
+            "count": 4,
+            "sharePct": 8
+          },
+          {
+            "term": "frente única",
+            "count": 3,
+            "sharePct": 6
+          }
+        ]
+      },
+      "dnt": {
+        "price": 51.9,
+        "kit": 4,
+        "pricePerPiece": 12.98,
+        "cheaperPerPieceThanPct": 47,
+        "priceVsMedianPct": 14
+      },
+      "keywordGaps": [
         {
-          "title": "Kit 5 Cropped Top Tomara que Caia",
-          "price": 39.64,
-          "sold": 0
+          "term": "moda",
+          "count": 15,
+          "sharePct": 31
         },
         {
-          "title": "Kit 5 Cropped Faixa Com Bojo Estampa Tropical Variados",
-          "price": 34.9,
-          "sold": 0
+          "term": "suplex",
+          "count": 15,
+          "sharePct": 31
         },
         {
-          "title": "Kit 3 Cropped tube Top Tomara que Caia feminino",
-          "price": 28.62,
-          "sold": 0
+          "term": "alcinha",
+          "count": 15,
+          "sharePct": 31
         },
         {
-          "title": "KIT 5 Top Blogueirinha Feminino Tomara que Caia e Croppeds Promoção",
-          "price": 23.8,
-          "sold": 0
+          "term": "canelado",
+          "count": 10,
+          "sharePct": 21
         },
         {
+          "term": "regata",
+          "count": 9,
+          "sharePct": 19
+        },
+        {
+          "term": "cores",
+          "count": 9,
+          "sharePct": 19
+        },
+        {
+          "term": "blusa",
+          "count": 9,
+          "sharePct": 19
+        },
+        {
+          "term": "croppeds",
+          "count": 8,
+          "sharePct": 17
+        }
+      ],
+      "topCompetitors": [
+        {
+          "itemId": "58208074966",
           "title": "kit 10 top cropped alcinha canelado com dupla face com elástico cores  aleatórias",
           "price": 59.9,
-          "sold": 0
+          "kit": 10,
+          "pricePerPiece": 5.99,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 2,
+          "query": "kit top cropped cores",
+          "url": "https://shopee.com.br/kit-10-top-cropped-alcinha-canelado-com-dupla-face-com-elástico-cores-aleatórias-i.1765260593.58208074966"
+        },
+        {
+          "itemId": "56417405538",
+          "title": "Kit 4 Tops Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 56.99,
+          "kit": 4,
+          "pricePerPiece": 14.25,
+          "discountPct": null,
+          "rating": 5,
+          "salesRank": 3,
+          "query": "kit 4 top cropped feminino",
+          "url": "https://shopee.com.br/Kit-4-Tops-Cropped-Academia-Forro-Duplo-Microfibra-Feminino-i.435383573.56417405538"
+        },
+        {
+          "itemId": "44667451088",
+          "title": "Kit 4 Top Halter Frente Única Regata Blusinha Halter Neck Moda Gringa Cropped Costas Academia Treino Nuas",
+          "price": 37.78,
+          "kit": 4,
+          "pricePerPiece": 9.45,
+          "discountPct": null,
+          "rating": 4.5,
+          "salesRank": 4,
+          "query": "kit 4 top cropped feminino",
+          "url": "https://shopee.com.br/Kit-4-Top-Halter-Frente-Única-Regata-Blusinha-Halter-Neck-Moda-Gringa-Cropped-Costas-Academia-Treino-Nuas-i.1113263349.44667451088"
+        },
+        {
+          "itemId": "58203290236",
+          "title": "Kit 2 Cropped Regata Feminina Suplex Top Alcinha Blusinha Croped Moda Fitness Treino Verão Premium",
+          "price": 22.9,
+          "kit": 2,
+          "pricePerPiece": 11.45,
+          "discountPct": null,
+          "rating": 4.7,
+          "salesRank": 5,
+          "query": "kit top cropped cores",
+          "url": "https://shopee.com.br/Kit-2-Cropped-Regata-Feminina-Suplex-Top-Alcinha-Blusinha-Croped-Moda-Fitness-Treino-Verão-Premium-i.823182052.58203290236"
+        },
+        {
+          "itemId": "23499181350",
+          "title": "Kit 4 Croppeds Alças Finas Com Bojo Moda Primavera Verão",
+          "price": 72.5,
+          "kit": 4,
+          "pricePerPiece": 18.13,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 7,
+          "query": "kit 4 top cropped feminino",
+          "url": "https://shopee.com.br/Kit-4-Croppeds-Alças-Finas-Com-Bojo-Moda-Primavera-Verão-i.1385387034.23499181350"
+        },
+        {
+          "itemId": "58217160458",
+          "title": "KIT COM 4 CROPEED BABY LOOK COM DECOTE QUADRADO VARIAS CORES MODERNO",
+          "price": 54.99,
+          "kit": 4,
+          "pricePerPiece": 13.75,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 8,
+          "query": "kit 4 top cropped feminino",
+          "url": "https://shopee.com.br/KIT-COM-4-CROPEED-BABY-LOOK-COM-DECOTE-QUADRADO-VARIAS-CORES-MODERNO-i.1760657314.58217160458"
+        },
+        {
+          "itemId": "29387323889",
+          "title": "Kit com 3 Cropped Top Fitness Femininos | Alça Fina Canelado | Look Academia e Casual | Cores Sortidas",
+          "price": 27.8,
+          "kit": 3,
+          "pricePerPiece": 9.27,
+          "discountPct": null,
+          "rating": 4.8,
+          "salesRank": 8,
+          "query": "kit top cropped cores",
+          "url": "https://shopee.com.br/Kit-com-3-Cropped-Top-Fitness-Femininos-Alça-Fina-Canelado-Look-Academia-e-Casual-Cores-Sortidas-i.415905140.29387323889"
+        },
+        {
+          "itemId": "58267005944",
+          "title": "Kit 2 Blusa Feminina Top Halter Cropped Frente Única Costas Nua",
+          "price": 39.9,
+          "kit": 2,
+          "pricePerPiece": 19.95,
+          "discountPct": null,
+          "rating": 4.9,
+          "salesRank": 10,
+          "query": "kit top cropped cores",
+          "url": "https://shopee.com.br/Kit-2-Blusa-Feminina-Top-Halter-Cropped-Frente-Única-Costas-Nua-i.1605347080.58267005944"
         }
       ]
     }

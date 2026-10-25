@@ -14,7 +14,7 @@ import pLimit from 'p-limit';
 
 import { readBudget, remaining, reserveSessions } from './budget';
 import { ROOT, concorrencia, modelos, produto, retry, runDir, timeoutMs } from './config';
-import { buildIntel } from './intel';
+import { buildIntel, competitorIds } from './intel';
 import { makePlan, printPlan, writePlan } from './plan';
 import { Listing, Plan, type VariantSpec } from './schemas';
 
@@ -69,6 +69,13 @@ function checkOutputs(spec: VariantSpec): string | null {
   if (listing.variantId !== spec.variantId) return `json variantId=${listing.variantId}`;
   if (JSON.stringify(listing.axes) !== JSON.stringify(spec.axes)) return `axes changed: ${JSON.stringify(listing.axes)}`;
   if (listing.mode !== spec.mode) return `mode changed: ${listing.mode}`;
+  const known = competitorIds(spec.round, spec.axes.angulo);
+  if (known) {
+    const refs = listing.benchmark.referenceItemIds;
+    if (refs.length < 2) return 'benchmark cites fewer than 2 competitors';
+    const unknown = refs.filter((id) => !known.has(id));
+    if (unknown.length) return `benchmark cites competitors not in the Apify data: ${unknown.join(', ')}`;
+  }
   return null;
 }
 
