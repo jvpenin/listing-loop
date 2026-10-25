@@ -1,0 +1,471 @@
+{
+  "round": "r1",
+  "generatedAt": "2026-10-25T05:03:43.785Z",
+  "source": "Apify (data/competitors)",
+  "angles": {
+    "academia": {
+      "n": 17,
+      "topWords": [
+        {
+          "term": "academia",
+          "count": 17
+        },
+        {
+          "term": "fitness",
+          "count": 11
+        },
+        {
+          "term": "suplex",
+          "count": 8
+        },
+        {
+          "term": "sustentação",
+          "count": 7
+        },
+        {
+          "term": "forro",
+          "count": 6
+        },
+        {
+          "term": "duplo",
+          "count": 6
+        },
+        {
+          "term": "treino",
+          "count": 4
+        },
+        {
+          "term": "alcinha",
+          "count": 3
+        },
+        {
+          "term": "tops",
+          "count": 3
+        },
+        {
+          "term": "microfibra",
+          "count": 3
+        },
+        {
+          "term": "firme",
+          "count": 3
+        },
+        {
+          "term": "esportivo",
+          "count": 2
+        },
+        {
+          "term": "moda",
+          "count": 2
+        },
+        {
+          "term": "alta",
+          "count": 2
+        },
+        {
+          "term": "alça",
+          "count": 2
+        }
+      ],
+      "kits": [
+        {
+          "term": "kit3",
+          "count": 7
+        },
+        {
+          "term": "kit2",
+          "count": 5
+        },
+        {
+          "term": "kit4",
+          "count": 2
+        },
+        {
+          "term": "kit10",
+          "count": 1
+        }
+      ],
+      "price": {
+        "min": 17.34,
+        "median": 41.9,
+        "max": 209.7
+      },
+      "medianDiscountPct": 25,
+      "bestSellers": [
+        {
+          "title": "KIT 03 - Top Academia Alcinha Fitness Com Cruzado nas Costas Suplex Power - Costas Xis Top Fitness - Varias Cores",
+          "price": 49.98,
+          "sold": 0
+        },
+        {
+          "title": "Kit 4 Tops Cropped Academia Forro Duplo Microfibra Feminino",
+          "price": 56.99,
+          "sold": 0
+        },
+        {
+          "title": "Kit 2 Top Fitness Sem Costura Academia Duplo Feminino Suplex Firme Esportivo Sustentação Treino Cropped",
+          "price": 49.9,
+          "sold": 0
+        },
+        {
+          "title": "Kit 3 top fitness feminino top academia feminino  top suplex firme top esportivo com sustentação top treino feminino",
+          "price": 69.99,
+          "sold": 0
+        },
+        {
+          "title": "Kit 2 Cropped Top Feminino Academia Moda Fitness Sustentação",
+          "price": 49.9,
+          "sold": 0
+        }
+      ]
+    },
+    "casual": {
+      "n": 20,
+      "topWords": [
+        {
+          "term": "casual",
+          "count": 9
+        },
+        {
+          "term": "frente",
+          "count": 8
+        },
+        {
+          "term": "moda",
+          "count": 8
+        },
+        {
+          "term": "halter",
+          "count": 7
+        },
+        {
+          "term": "única",
+          "count": 7
+        },
+        {
+          "term": "nua",
+          "count": 7
+        },
+        {
+          "term": "costa",
+          "count": 6
+        },
+        {
+          "term": "verão",
+          "count": 6
+        },
+        {
+          "term": "tomara",
+          "count": 5
+        },
+        {
+          "term": "que",
+          "count": 5
+        },
+        {
+          "term": "caia",
+          "count": 5
+        },
+        {
+          "term": "blusas",
+          "count": 5
+        },
+        {
+          "term": "ajustado",
+          "count": 5
+        },
+        {
+          "term": "blusa",
+          "count": 5
+        },
+        {
+          "term": "suplex",
+          "count": 4
+        }
+      ],
+      "kits": [
+        {
+          "term": "kit3",
+          "count": 9
+        },
+        {
+          "term": "kit2",
+          "count": 5
+        },
+        {
+          "term": "kit5",
+          "count": 2
+        },
+        {
+          "term": "kit4",
+          "count": 1
+        }
+      ],
+      "price": {
+        "min": 19.99,
+        "median": 37.78,
+        "max": 69.99
+      },
+      "medianDiscountPct": null,
+      "bestSellers": [
+        {
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "sold": 0
+        },
+        {
+          "title": "KIT 3 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO 2026",
+          "price": 45,
+          "sold": 0
+        },
+        {
+          "title": "Kit 2 Croppeds Feminino Básico Canelado premium Alcinha Casual Básico Moda Feminina croped",
+          "price": 19.99,
+          "sold": 0
+        },
+        {
+          "title": "Kit com 2 blusas Cropped Blusa feminina Top Halter Antonella  Frente Unica Costa Nua  Ajustado Moda Gringa Verão Casual",
+          "price": 32.99,
+          "sold": 0
+        },
+        {
+          "title": "KIT 3 BLUSAS FEMININA TOP HALTER CROPPED AJUSTADO FRENTE ÚNICA COSTA NUA CASUAL MODA VERÃO 2026",
+          "price": 40.97,
+          "sold": 0
+        }
+      ]
+    },
+    "conforto": {
+      "n": 17,
+      "topWords": [
+        {
+          "term": "bojo",
+          "count": 8
+        },
+        {
+          "term": "confortável",
+          "count": 8
+        },
+        {
+          "term": "tomara",
+          "count": 7
+        },
+        {
+          "term": "que",
+          "count": 7
+        },
+        {
+          "term": "caia",
+          "count": 7
+        },
+        {
+          "term": "faixa",
+          "count": 5
+        },
+        {
+          "term": "fitness",
+          "count": 4
+        },
+        {
+          "term": "academia",
+          "count": 4
+        },
+        {
+          "term": "tops",
+          "count": 3
+        },
+        {
+          "term": "sustentação",
+          "count": 3
+        },
+        {
+          "term": "alcinha",
+          "count": 3
+        },
+        {
+          "term": "tube",
+          "count": 2
+        },
+        {
+          "term": "015",
+          "count": 2
+        },
+        {
+          "term": "microfibra",
+          "count": 2
+        },
+        {
+          "term": "forrado",
+          "count": 2
+        }
+      ],
+      "kits": [
+        {
+          "term": "kit3",
+          "count": 6
+        },
+        {
+          "term": "kit2",
+          "count": 4
+        },
+        {
+          "term": "kit4",
+          "count": 4
+        },
+        {
+          "term": "kit5",
+          "count": 2
+        }
+      ],
+      "price": {
+        "min": 13.99,
+        "median": 29.99,
+        "max": 54
+      },
+      "medianDiscountPct": null,
+      "bestSellers": [
+        {
+          "title": "Kit 3 Tops Faixa Cropped SEM BOJO Tomara que Caia Confortável",
+          "price": 19.9,
+          "sold": 0
+        },
+        {
+          "title": "Kit 2 Top Faixa Cropped Sem Bojo Tomara que Caia Confortável",
+          "price": 15.9,
+          "sold": 0
+        },
+        {
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "sold": 0
+        },
+        {
+          "title": "Kit 4 Top Fitness Academia sem Bojo Sustentação Alcinha Conforto Esportivo Malhar",
+          "price": 47.9,
+          "sold": 0
+        },
+        {
+          "title": "Kit 3 Cropped Tube Tomara Que Caia RF 015",
+          "price": 29.99,
+          "sold": 0
+        }
+      ]
+    },
+    "presente": {
+      "n": 20,
+      "topWords": [
+        {
+          "term": "tomara",
+          "count": 8
+        },
+        {
+          "term": "que",
+          "count": 8
+        },
+        {
+          "term": "caia",
+          "count": 8
+        },
+        {
+          "term": "faixa",
+          "count": 4
+        },
+        {
+          "term": "tube",
+          "count": 4
+        },
+        {
+          "term": "alcinha",
+          "count": 4
+        },
+        {
+          "term": "blogueira",
+          "count": 4
+        },
+        {
+          "term": "moda",
+          "count": 4
+        },
+        {
+          "term": "suplex",
+          "count": 4
+        },
+        {
+          "term": "forro",
+          "count": 4
+        },
+        {
+          "term": "duplo",
+          "count": 4
+        },
+        {
+          "term": "croppeds",
+          "count": 3
+        },
+        {
+          "term": "fitness",
+          "count": 3
+        },
+        {
+          "term": "liso",
+          "count": 3
+        },
+        {
+          "term": "bojo",
+          "count": 2
+        }
+      ],
+      "kits": [
+        {
+          "term": "kit3",
+          "count": 9
+        },
+        {
+          "term": "kit5",
+          "count": 3
+        },
+        {
+          "term": "kit10",
+          "count": 3
+        },
+        {
+          "term": "kit2",
+          "count": 2
+        }
+      ],
+      "price": {
+        "min": 19.8,
+        "median": 39,
+        "max": 97.57
+      },
+      "medianDiscountPct": 25,
+      "bestSellers": [
+        {
+          "title": "Kit 5 Cropped Top Tomara que Caia",
+          "price": 39.64,
+          "sold": 0
+        },
+        {
+          "title": "Kit 5 Cropped Faixa Com Bojo Estampa Tropical Variados",
+          "price": 34.9,
+          "sold": 0
+        },
+        {
+          "title": "Kit 3 Cropped tube Top Tomara que Caia feminino",
+          "price": 28.62,
+          "sold": 0
+        },
+        {
+          "title": "KIT 5 Top Blogueirinha Feminino Tomara que Caia e Croppeds Promoção",
+          "price": 23.8,
+          "sold": 0
+        },
+        {
+          "title": "kit 10 top cropped alcinha canelado com dupla face com elástico cores  aleatórias",
+          "price": 59.9,
+          "sold": 0
+        }
+      ]
+    }
+  }
+}
