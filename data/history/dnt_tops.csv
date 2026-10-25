@@ -1,0 +1,16 @@
+item_id,fonte,angulo,capa,aquisicao,preco,impressoes,cliques,visitantes,add_carrinho,pedidos_pagos,unidades,vendas,gasto_ads,vendas_afiliados,campanha,dias_sem_estoque
+TP001K4-S13,simulado,academia,capa_C,organico,51.9,182000,6697,6055,760,350,365,18943.5,0,0,nao,0
+TP001K4-S14,simulado,casual,capa_A,ads,51.9,96000,2044,1738,217,58,65,3373.5,510.23,0,sim,0
+TP001K4-S15,simulado,neutro,capa_B,organico,51.9,61000,925,805,92,31,32,1660.8,0,0,nao,4
+TP001K4-S01,simulado,academia,capa_A,ads,51.9,74000,1619,1372,175,65,68,3529.2,435.5,0,nao,0
+TP001K4-S02,simulado,academia,capa_C,afiliado,51.9,88000,3146,2771,289,160,168,8719.2,0,4614.68,nao,0
+TP001K4-S03,simulado,academia,capa_B,organico,51.9,52000,1219,1103,118,57,63,3269.7,0,0,nao,1
+TP001K4-S04,simulado,academia,capa_C,ads,51.9,67000,1873,1676,181,74,81,4203.9,487.01,0,nao,0
+TP001K4-S05,simulado,academia,capa_A,organico,51.9,45000,1243,1084,143,56,61,3165.9,0,0,nao,0
+TP001K4-S06,simulado,casual,capa_C,organico,51.9,58000,1705,1468,168,58,63,3269.7,0,0,nao,0
+TP001K4-S07,simulado,casual,capa_B,afiliado,51.9,39000,675,574,82,21,23,1193.7,0,713.86,nao,0
+TP001K4-S08,simulado,casual,capa_C,ads,51.9,71000,2201,1884,289,91,101,5241.9,514.12,0,nao,2
+TP001K4-S09,simulado,casual,capa_A,afiliado,51.9,42000,937,826,113,41,45,2335.5,0,1474.99,sim,0
+TP001K4-S10,simulado,neutro,capa_C,afiliado,51.9,36000,972,867,116,36,38,1972.2,0,1191.25,nao,0
+TP001K4-S11,simulado,neutro,capa_A,organico,51.9,33000,673,597,91,23,26,1349.4,0,0,nao,0
+TP001K4-S12,simulado,neutro,capa_B,ads,51.9,48000,679,574,75,17,19,986.1,155.91,0,nao,0

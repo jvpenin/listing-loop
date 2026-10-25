@@ -1,0 +1,603 @@
+{
+  "generatedAt": "2026-10-25T04:36:30.088Z",
+  "unit": "listing",
+  "method": "bootstrap por anúncio; pBetter = P(média do grupo > média dos demais anúncios do eixo)",
+  "thresholds": {
+    "minListings": 3,
+    "pBetterRule": 0.8
+  },
+  "dataQuality": {
+    "listings": 15,
+    "realPartial": 0,
+    "simulated": 15,
+    "note": "Base de demonstração: 0 anúncios reais parciais (vendas, unidades e preço reais; funil estimado) e 15 simulados. Não apresentar os simulados como histórico real da loja."
+  },
+  "confounders": [
+    {
+      "item_id": "TP001K4-S14",
+      "campanha": "sim",
+      "diasSemEstoque": 0
+    },
+    {
+      "item_id": "TP001K4-S15",
+      "campanha": "nao",
+      "diasSemEstoque": 4
+    },
+    {
+      "item_id": "TP001K4-S09",
+      "campanha": "sim",
+      "diasSemEstoque": 0
+    }
+  ],
+  "perListing": [
+    {
+      "item_id": "TP001K4-S13",
+      "fonte": "simulado",
+      "ctr": 0.036796703296703294,
+      "cartRate": 0.1255161023947151,
+      "paidConversion": 0.057803468208092484,
+      "profitPer1kImpr": 24.192280219780226
+    },
+    {
+      "item_id": "TP001K4-S14",
+      "fonte": "simulado",
+      "ctr": 0.021291666666666667,
+      "cartRate": 0.12485615650172613,
+      "paidConversion": 0.0333716915995397,
+      "profitPer1kImpr": 2.852760416666669
+    },
+    {
+      "item_id": "TP001K4-S15",
+      "fonte": "simulado",
+      "ctr": 0.015163934426229509,
+      "cartRate": 0.11428571428571428,
+      "paidConversion": 0.03850931677018633,
+      "profitPer1kImpr": 6.328131147540985
+    },
+    {
+      "item_id": "TP001K4-S01",
+      "fonte": "simulado",
+      "ctr": 0.021878378378378378,
+      "cartRate": 0.12755102040816327,
+      "paidConversion": 0.047376093294460644,
+      "profitPer1kImpr": 5.1997837837837855
+    },
+    {
+      "item_id": "TP001K4-S02",
+      "fonte": "simulado",
+      "ctr": 0.03575,
+      "cartRate": 0.10429447852760736,
+      "paidConversion": 0.057740887766149405,
+      "profitPer1kImpr": 15.163431818181826
+    },
+    {
+      "item_id": "TP001K4-S03",
+      "fonte": "simulado",
+      "ctr": 0.023442307692307693,
+      "cartRate": 0.10698096101541252,
+      "paidConversion": 0.051677243880326386,
+      "profitPer1kImpr": 14.614788461538462
+    },
+    {
+      "item_id": "TP001K4-S04",
+      "fonte": "simulado",
+      "ctr": 0.027955223880597013,
+      "cartRate": 0.10799522673031026,
+      "paidConversion": 0.0441527446300716,
+      "profitPer1kImpr": 7.314820895522383
+    },
+    {
+      "item_id": "TP001K4-S05",
+      "fonte": "simulado",
+      "ctr": 0.02762222222222222,
+      "cartRate": 0.13191881918819187,
+      "paidConversion": 0.05166051660516605,
+      "profitPer1kImpr": 16.35206666666667
+    },
+    {
+      "item_id": "TP001K4-S06",
+      "fonte": "simulado",
+      "ctr": 0.02939655172413793,
+      "cartRate": 0.11444141689373297,
+      "paidConversion": 0.039509536784741145,
+      "profitPer1kImpr": 13.10291379310345
+    },
+    {
+      "item_id": "TP001K4-S07",
+      "fonte": "simulado",
+      "ctr": 0.01730769230769231,
+      "cartRate": 0.14285714285714285,
+      "paidConversion": 0.036585365853658534,
+      "profitPer1kImpr": 4.36846153846154
+    },
+    {
+      "item_id": "TP001K4-S08",
+      "fonte": "simulado",
+      "ctr": 0.031,
+      "cartRate": 0.15339702760084925,
+      "paidConversion": 0.048301486199575375,
+      "profitPer1kImpr": 9.91891549295775
+    },
+    {
+      "item_id": "TP001K4-S09",
+      "fonte": "simulado",
+      "ctr": 0.02230952380952381,
+      "cartRate": 0.1368038740920097,
+      "paidConversion": 0.04963680387409201,
+      "profitPer1kImpr": 7.656821428571429
+    },
+    {
+      "item_id": "TP001K4-S10",
+      "fonte": "simulado",
+      "ctr": 0.027,
+      "cartRate": 0.13379469434832755,
+      "paidConversion": 0.04152249134948097,
+      "profitPer1kImpr": 7.7696250000000004
+    },
+    {
+      "item_id": "TP001K4-S11",
+      "fonte": "simulado",
+      "ctr": 0.020393939393939395,
+      "cartRate": 0.152428810720268,
+      "paidConversion": 0.038525963149078725,
+      "profitPer1kImpr": 9.50418181818182
+    },
+    {
+      "item_id": "TP001K4-S12",
+      "fonte": "simulado",
+      "ctr": 0.014145833333333333,
+      "cartRate": 0.13066202090592335,
+      "paidConversion": 0.029616724738675958,
+      "profitPer1kImpr": 1.5268125000000001
+    }
+  ],
+  "axes": {
+    "angulo": {
+      "academia": {
+        "n": 6,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S13",
+          "TP001K4-S01",
+          "TP001K4-S02",
+          "TP001K4-S03",
+          "TP001K4-S04",
+          "TP001K4-S05"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.028907472578368103,
+            "ci90": [
+              0.025146730521730526,
+              0.032748489694385215
+            ],
+            "baselineMean": 0.022001015740169213,
+            "pBetter": 0.99125
+          },
+          "cartRate": {
+            "mean": 0.11737610137740007,
+            "ci90": [
+              0.10996049273562801,
+              0.12518052348026884
+            ],
+            "baselineMean": 0.13372520646729932,
+            "pBetter": 0.00475
+          },
+          "paidConversion": {
+            "mean": 0.05173515906404443,
+            "ci90": [
+              0.04844664327421039,
+              0.05502088697468508
+            ],
+            "baselineMean": 0.03950882003544764,
+            "pBetter": 1
+          },
+          "profitPer1kImpr": {
+            "mean": 13.806195307578891,
+            "ci90": [
+              9.487077791678535,
+              18.215353821328826
+            ],
+            "baselineMean": 7.003180348387071,
+            "pBetter": 0.9945
+          }
+        }
+      },
+      "casual": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S14",
+          "TP001K4-S06",
+          "TP001K4-S07",
+          "TP001K4-S08",
+          "TP001K4-S09"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.024261086901604143,
+            "ci90": [
+              0.020522259062776306,
+              0.028416954022988505
+            ],
+            "baselineMean": 0.025014854262371083,
+            "pBetter": 0.4165
+          },
+          "cartRate": {
+            "mean": 0.13447112358909216,
+            "ci90": [
+              0.12431548695675487,
+              0.14437022267925673
+            ],
+            "baselineMean": 0.12354278485246335,
+            "pBetter": 0.92375
+          },
+          "paidConversion": {
+            "mean": 0.041480976862321356,
+            "ci90": [
+              0.0365274651890513,
+              0.04649238920019866
+            ],
+            "baselineMean": 0.04585854503916886,
+            "pBetter": 0.1385
+          },
+          "profitPer1kImpr": {
+            "mean": 7.579974533952168,
+            "ci90": [
+              4.872271880642833,
+              10.287677187261503
+            ],
+            "baselineMean": 10.796592231119618,
+            "pBetter": 0.10925
+          }
+        }
+      },
+      "neutro": {
+        "n": 4,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S15",
+          "TP001K4-S10",
+          "TP001K4-S11",
+          "TP001K4-S12"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.01917592678837556,
+            "ci90": [
+              0.014909409153005464,
+              0.0236969696969697
+            ],
+            "baselineMean": 0.02679547908892994,
+            "pBetter": 0.00925
+          },
+          "cartRate": {
+            "mean": 0.1327928100650583,
+            "ci90": [
+              0.12247386759581882,
+              0.14311175253429778
+            ],
+            "baselineMean": 0.12514656601907828,
+            "pBetter": 0.818
+          },
+          "paidConversion": {
+            "mean": 0.0370436240018555,
+            "ci90": [
+              0.03406302075443114,
+              0.04002422724927984
+            ],
+            "baselineMean": 0.0470741671541703,
+            "pBetter": 0.00025
+          },
+          "profitPer1kImpr": {
+            "mean": 6.282187616430701,
+            "ci90": [
+              3.521154829545455,
+              8.63690340909091
+            ],
+            "baselineMean": 10.976094955930382,
+            "pBetter": 0.01725
+          }
+        }
+      }
+    },
+    "capa": {
+      "modelo": {
+        "n": 6,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S13",
+          "TP001K4-S02",
+          "TP001K4-S04",
+          "TP001K4-S06",
+          "TP001K4-S08",
+          "TP001K4-S10"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.031316413150239704,
+            "ci90": [
+              0.028864942528735633,
+              0.033833654529550054
+            ],
+            "baselineMean": 0.020395055358921478,
+            "pBetter": 1
+          },
+          "cartRate": {
+            "mean": 0.12323982441592375,
+            "ci90": [
+              0.11244731136173482,
+              0.13572349386446694
+            ],
+            "baselineMean": 0.1298160577749502,
+            "pBetter": 0.22
+          },
+          "paidConversion": {
+            "mean": 0.04817176915635183,
+            "ci90": [
+              0.04354954699136426,
+              0.05317081596944775
+            ],
+            "baselineMean": 0.041884413307242706,
+            "pBetter": 0.94775
+          },
+          "profitPer1kImpr": {
+            "mean": 12.910331203257606,
+            "ci90": [
+              9.29913594575689,
+              17.13745306217415
+            ],
+            "baselineMean": 7.600423084601262,
+            "pBetter": 0.97875
+          }
+        }
+      },
+      "solo_grade": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S14",
+          "TP001K4-S01",
+          "TP001K4-S05",
+          "TP001K4-S09",
+          "TP001K4-S11"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.02269914609414609,
+            "ci90": [
+              0.021073944073944074,
+              0.024910454545454548
+            ],
+            "baselineMean": 0.025795824666100108,
+            "pBetter": 0.13075
+          },
+          "cartRate": {
+            "mean": 0.1347117361820718,
+            "ci90": [
+              0.12788560738288154,
+              0.14207683776254948
+            ],
+            "baselineMean": 0.12342247855597355,
+            "pBetter": 0.9535
+          },
+          "paidConversion": {
+            "mean": 0.04411421370446742,
+            "ci90": [
+              0.038686422674265766,
+              0.04918466175816573
+            ],
+            "baselineMean": 0.044541926618095806,
+            "pBetter": 0.4745
+          },
+          "profitPer1kImpr": {
+            "mean": 8.313122822774075,
+            "ci90": [
+              5.143856899350651,
+              11.913156369047622
+            ],
+            "baselineMean": 10.430018086708664,
+            "pBetter": 0.2265
+          }
+        }
+      },
+      "solo_linha": {
+        "n": 4,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S15",
+          "TP001K4-S03",
+          "TP001K4-S07",
+          "TP001K4-S12"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.01751494193989071,
+            "ci90": [
+              0.014909409153005464,
+              0.020375
+            ],
+            "baselineMean": 0.02739947357928807,
+            "pBetter": 0.00025
+          },
+          "cartRate": {
+            "mean": 0.12369645976604826,
+            "ci90": [
+              0.11245952596813884,
+              0.1357142857142857
+            ],
+            "baselineMean": 0.12845432976417287,
+            "pBetter": 0.27925
+          },
+          "paidConversion": {
+            "mean": 0.03909716281071181,
+            "ci90": [
+              0.033101045296167246,
+              0.046162114094913775
+            ],
+            "baselineMean": 0.046327425769131646,
+            "pBetter": 0.063
+          },
+          "profitPer1kImpr": {
+            "mean": 6.709548411885246,
+            "ci90": [
+              2.94763701923077,
+              11.342794471153846
+            ],
+            "baselineMean": 10.820691030310547,
+            "pBetter": 0.0875
+          }
+        }
+      }
+    },
+    "aquisicao": {
+      "organico": {
+        "n": 6,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S13",
+          "TP001K4-S15",
+          "TP001K4-S03",
+          "TP001K4-S05",
+          "TP001K4-S06",
+          "TP001K4-S11"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.025469276459256673,
+            "ci90": [
+              0.020726985704034886,
+              0.03027945174238278
+            ],
+            "baselineMean": 0.0242931464862435,
+            "pBetter": 0.61975
+          },
+          "cartRate": {
+            "mean": 0.12426197074967245,
+            "ci90": [
+              0.11484154821536618,
+              0.1347495127495582
+            ],
+            "baselineMean": 0.1291346268857844,
+            "pBetter": 0.24875
+          },
+          "paidConversion": {
+            "mean": 0.046281007566265187,
+            "ci90": [
+              0.04103736447734995,
+              0.05152466413789175
+            ],
+            "baselineMean": 0.04314492103396713,
+            "pBetter": 0.77975
+          },
+          "profitPer1kImpr": {
+            "mean": 14.015727017801936,
+            "ci90": [
+              10.438580176608458,
+              17.882420226516782
+            ],
+            "baselineMean": 6.863492541571708,
+            "pBetter": 0.99775
+          }
+        }
+      },
+      "ads": {
+        "n": 5,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S14",
+          "TP001K4-S01",
+          "TP001K4-S04",
+          "TP001K4-S08",
+          "TP001K4-S12"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.023254220451795076,
+            "ci90": [
+              0.01866801801801802,
+              0.027840422885572137
+            ],
+            "baselineMean": 0.025518287487275616,
+            "pBetter": 0.26
+          },
+          "cartRate": {
+            "mean": 0.12889229042939446,
+            "ci90": [
+              0.11918973015573461,
+              0.13914746598820424
+            ],
+            "baselineMean": 0.12633220143231222,
+            "pBetter": 0.63275
+          },
+          "paidConversion": {
+            "mean": 0.04056374809246465,
+            "ci90": [
+              0.03467058519417839,
+              0.04627183240972797
+            ],
+            "baselineMean": 0.0463171594240972,
+            "pBetter": 0.08125
+          },
+          "profitPer1kImpr": {
+            "mean": 5.362618617786117,
+            "ci90": [
+              3.2147933457711444,
+              7.561858135864741
+            ],
+            "baselineMean": 11.905270189202643,
+            "pBetter": 0.00125
+          }
+        }
+      },
+      "afiliado": {
+        "n": 4,
+        "enoughData": true,
+        "listings": [
+          "TP001K4-S02",
+          "TP001K4-S07",
+          "TP001K4-S09",
+          "TP001K4-S10"
+        ],
+        "metrics": {
+          "ctr": {
+            "mean": 0.025591804029304027,
+            "ci90": [
+              0.01980860805860806,
+              0.031375
+            ],
+            "baselineMean": 0.024462432819501403,
+            "pBetter": 0.6055
+          },
+          "cartRate": {
+            "mean": 0.12943754745627187,
+            "ci90": [
+              0.11904458643796745,
+              0.1398305084745763
+            ],
+            "baselineMean": 0.12636666151318246,
+            "pBetter": 0.64075
+          },
+          "paidConversion": {
+            "mean": 0.04637138721084523,
+            "ci90": [
+              0.039848225358766906,
+              0.0536862886619823
+            ],
+            "baselineMean": 0.04368225325999221,
+            "pBetter": 0.698
+          },
+          "profitPer1kImpr": {
+            "mean": 8.7395849463037,
+            "ci90": [
+              6.012641483516485,
+              11.466528409090913
+            ],
+            "baselineMean": 10.082495926885654,
+            "pBetter": 0.31175
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "round": "r1",
+  "createdAt": "2026-10-25T04:37:04.521Z",
+  "dataQuality": "base de demonstração: 0 reais + 15 simulados",
+  "playbookVersion": 0,
+  "variants": [
+    {
+      "variantId": "v01",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Aproveita o que já vence: angulo=academia lidera 13.81; capa=modelo lidera 12.91; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=13.81 IC90 [9.49, 18.22] pBetter=0.99 n=6",
+        "capa=modelo: profitPer1kImpr μ=12.91 IC90 [9.30, 17.14] pBetter=0.98 n=6",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v02",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "solo_linha",
+        "aquisicao": "afiliado",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=academia lidera 13.81; capa=solo_linha μ 6.71; aquisicao=afiliado μ 8.74",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=13.81 IC90 [9.49, 18.22] pBetter=0.99 n=6",
+        "capa=solo_linha: profitPer1kImpr μ=6.71 IC90 [2.95, 11.34] pBetter=0.09 n=4",
+        "aquisicao=afiliado: profitPer1kImpr μ=8.74 IC90 [6.01, 11.47] pBetter=0.31 n=4"
+      ]
+    },
+    {
+      "variantId": "v03",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=academia lidera 13.81; capa=uso sem dado; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=13.81 IC90 [9.49, 18.22] pBetter=0.99 n=6",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v04",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=uso sem dado; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v05",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=modelo lidera 12.91; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "capa=modelo: profitPer1kImpr μ=12.91 IC90 [9.30, 17.14] pBetter=0.98 n=6",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v06",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "academia",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Aproveita o que já vence: angulo=academia lidera 13.81; capa=solo_grade μ 8.31; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "angulo=academia: profitPer1kImpr μ=13.81 IC90 [9.49, 18.22] pBetter=0.99 n=6",
+        "capa=solo_grade: profitPer1kImpr μ=8.31 IC90 [5.14, 11.91] pBetter=0.23 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v07",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=modelo lidera 12.91; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "capa=modelo: profitPer1kImpr μ=12.91 IC90 [9.30, 17.14] pBetter=0.98 n=6",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v08",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "solo_grade",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=solo_grade μ 8.31; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "capa=solo_grade: profitPer1kImpr μ=8.31 IC90 [5.14, 11.91] pBetter=0.23 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v09",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "casual",
+        "capa": "modelo",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "exploit",
+      "rationale": "Aproveita o que já vence: angulo=casual μ 7.58; capa=modelo lidera 12.91; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "angulo=casual: profitPer1kImpr μ=7.58 IC90 [4.87, 10.29] pBetter=0.11 n=5",
+        "capa=modelo: profitPer1kImpr μ=12.91 IC90 [9.30, 17.14] pBetter=0.98 n=6",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v10",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "casual",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=casual μ 7.58; capa=uso sem dado; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "angulo=casual: profitPer1kImpr μ=7.58 IC90 [4.87, 10.29] pBetter=0.11 n=5",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v11",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "conforto",
+        "capa": "uso",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=conforto sem dado; capa=uso sem dado; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    },
+    {
+      "variantId": "v12",
+      "round": "r1",
+      "produto": {
+        "sku": "TP001-K4",
+        "descricao": "kit com 4 tops cropped femininos sem bojo, microfibra, cós largo",
+        "fotoReferencia": "data/product/photo.jpg",
+        "precoShopee": 51.9
+      },
+      "axes": {
+        "angulo": "presente",
+        "capa": "solo_linha",
+        "aquisicao": "organico",
+        "oferta": "kit4"
+      },
+      "mode": "explore",
+      "rationale": "Explora incerteza: angulo=presente sem dado; capa=solo_linha μ 6.71; aquisicao=organico lidera 14.02",
+      "priorEvidence": [
+        "capa=solo_linha: profitPer1kImpr μ=6.71 IC90 [2.95, 11.34] pBetter=0.09 n=4",
+        "aquisicao=organico: profitPer1kImpr μ=14.02 IC90 [10.44, 17.88] pBetter=1.00 n=6"
+      ]
+    }
+  ]
+}
